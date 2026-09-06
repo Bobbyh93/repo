@@ -1,0 +1,23 @@
+lesson_build_request:
+  source_files:
+    - chapter2_maternal_newborn_foundations_deck.pptx
+  learner_population: prelicensure_bsn
+  course_context: maternal_newborn
+  chapter_or_topic: Reproductive anatomy, physiology, conception, and fetal development
+  session_length_minutes: 90
+  exam_orientation: ati_nclex_ngn
+  output_mode:
+    primary: learner_facing_content_experience
+    secondary:
+      - student_handout
+      - instructor_facilitation_notes
+      - item_map
+      - qa_log
+  learner_priority:
+    - exam_readiness
+    - clinical_judgment
+    - retention
+    - patient_teaching
+  source_status:
+    exact_source_text_available: false
+    proprietary_text_restriction: true

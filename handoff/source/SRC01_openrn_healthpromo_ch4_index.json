@@ -1,0 +1,232 @@
+{
+  "source_id": "SRC01",
+  "title": "Nursing Health Promotion, Chapter 4: Family Dynamics",
+  "series": "Open RN (Open Resources for Nursing)",
+  "editors": "Ernstmeyer K, Christman E",
+  "publisher": "Chippewa Valley Technical College / WisTech Open",
+  "year": 2025,
+  "isbn_ebook": "978-1-957068-18-3",
+  "kind": "authoritative",
+  "license": "CC BY 4.0",
+  "license_verified": {
+    "date": "2026-09-05",
+    "evidence": [
+      "https://wtcs.pressbooks.pub/healthpromo/ — footer: 'licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted'",
+      "https://www.ncbi.nlm.nih.gov/books/NBK615335/ — 'Licensed under a Creative Commons Attribution 4.0 International License'"
+    ],
+    "exceptions_registered": true
+  },
+  "canonical_urls": {
+    "pressbooks": "https://wtcs.pressbooks.pub/healthpromo/",
+    "ncbi_bookshelf_chapter": "https://www.ncbi.nlm.nih.gov/books/NBK615335/",
+    "ncbi_bookshelf_book": "https://www.ncbi.nlm.nih.gov/books/NBK615319/",
+    "pdf_full_book": "https://www.ncbi.nlm.nih.gov/books/n/openrnnhp/pdf/",
+    "bulk_download": "https://ftp.ncbi.nlm.nih.gov/pub/litarch/45/dd/openrnnhp_NBK615319.tar.gz"
+  },
+  "attribution_statement": "Adapted from Open RN, Nursing Health Promotion, Chapter 4 (Ernstmeyer & Christman, eds., 2025), CC BY 4.0. https://wtcs.pressbooks.pub/healthpromo/",
+  "coverage_status": "confirmed",
+  "gaps": [
+    "Tables 4.2, 4.3, 4.5a, 4.5b, 4.7 render as icons in the NCBI text export; cell content not captured. Fetch from Pressbooks section pages before citing table content.",
+    "Learning activities, glossary cards, question sets, and the Ch.4 case study are CC BY-NC 4.0 — separate license; not usable in any commercial delivery without permission.",
+    "Figure 4.11 is CC BY-SA 4.0 (share-alike). Do not reuse the image; all other figures are CC0 or public domain.",
+    "Open RN's own footnote 1 cites StatPearls (CC BY-NC-ND). This is their citation, not our content; do not quote StatPearls text."
+  ],
+  "license_register": [
+    {"component": "chapter body text 4.1-4.8", "license": "CC BY 4.0", "usable": true},
+    {"component": "glossary IV", "license": "CC BY 4.0", "usable": true},
+    {"component": "spotlight application 4.8", "license": "CC BY 4.0", "usable": true},
+    {"component": "4.9 case study (Carter family)", "license": "CC BY-NC 4.0", "usable": "non-commercial only"},
+    {"component": "H5P glossary cards, question sets 1-2", "license": "CC BY-NC 4.0", "usable": "non-commercial only; interactive, not in text export"},
+    {"component": "ADAPT NGN question and case study", "license": "CC BY-NC 4.0", "usable": "non-commercial only; external link"},
+    {"component": "figures 4.1-4.10", "license": "CC0 / public domain", "usable": true},
+    {"component": "figure 4.11", "license": "CC BY-SA 4.0", "usable": false}
+  ],
+  "chapter_learning_objectives": [
+    "Identify family roles, structure, and functions",
+    "Examine family dynamics",
+    "Identify various factors that can lead to actual and potential family health problems",
+    "Compare and contrast parenting styles and behaviors",
+    "Consider the influence of family cultural practices related to health",
+    "Identify the psychosocial effect of illness on a client and their family's health",
+    "Apply the nursing process to caring for a client in the context of the family"
+  ],
+  "sections": [
+    {
+      "chunk_id": "SRC01.4.1",
+      "title": "Introduction",
+      "anchor": "https://www.ncbi.nlm.nih.gov/books/NBK615335/#ch4.s1",
+      "pressbooks": "https://wtcs.pressbooks.pub/healthpromo/chapter/4-1-introduction/",
+      "facts": [
+        "Family dynamics affect health, illness, and recovery outcomes",
+        "Plan of care considers family roles, cultural practices, psychosocial impact of chronic disease/disability on family functioning",
+        "For pediatric clients: assess parenting styles/behaviors, provide anticipatory guidance",
+        "Health teaching includes family while respecting client confidentiality and privacy"
+      ]
+    },
+    {
+      "chunk_id": "SRC01.4.2",
+      "title": "Family Structures, Cultural Practices, Roles, and Functions",
+      "anchor": "https://www.ncbi.nlm.nih.gov/books/NBK615335/#ch4.s2",
+      "pressbooks": "https://wtcs.pressbooks.pub/healthpromo/chapter/4-2-family-structures-cultural-practices-roles-and-functions/",
+      "facts": [
+        "Family (US Census): two or more people, one the householder, related by birth, marriage, or adoption, residing together",
+        "Family of orientation = family grew up in; family of procreation = family formed as adult",
+        "Family developmental stages: independence → coupling/marriage → parenting → launching adult children → retirement/senior years",
+        "Culture: shared values, norms, symbols, language, objects, way of life passed between generations",
+        "ANA standard 'Respectful and Equitable Practice' = cultural humility + inclusiveness",
+        "Implicit bias: unconscious negative attitude toward a social group; shaped by experience; can affect nursing care",
+        "Family roles: recurrent behavior patterns fulfilling family functions; expand/change over life; impaired by chronic illness",
+        "Informal roles: decision-maker (culturally determined, may vary by decision type), peace-maker, tradition-holder",
+        "Unhealthy roles in dysfunction: golden child, hero, mascot, identified patient/scapegoat, invisible child, lost child, enabler/caretaker, parentified child",
+        "Five family functions: economic support, emotional support, socialization, control of sexuality/reproduction, ascribed social status",
+        "Intimacy = mutually shared trust; buffers external stressors",
+        "Socialization: family as first teacher of norms, values, emotional display rules; can also transmit unhealthy behaviors",
+        "Ascribed status (at birth) vs achieved status (by effort); family support affects achievement"
+      ],
+      "tables_not_captured": ["Table 4.2 Examples of Modern Family Structures"]
+    },
+    {
+      "chunk_id": "SRC01.4.3",
+      "title": "Family Dynamics",
+      "anchor": "https://www.ncbi.nlm.nih.gov/books/NBK615335/#ch4.s3",
+      "pressbooks": "https://wtcs.pressbooks.pub/healthpromo/chapter/4-3-family-dynamics/",
+      "facts": [
+        "Family dynamics: roles, relationships, communication patterns, factors shaping interactions",
+        "Healthy relationships = security/comfort; unhealthy = stress (arguments, intrusion, criticism)",
+        "Families can be functional in some characteristics and dysfunctional in others simultaneously",
+        "High-resource families: resiliency + resources (financial, extended family, friends, faith community)",
+        "Low-resource families: do not effectively meet members' needs",
+        "Family dysfunction = failure of the five family functions; usually unintended; transmitted across generations",
+        "Caregiver trauma affects child's sense of self, communication, relationships, future health"
+      ],
+      "tables_not_captured": ["Table 4.3 Characteristics of Healthy and Unhealthy Family Dynamics"]
+    },
+    {
+      "chunk_id": "SRC01.4.4",
+      "title": "Factors That Lead to Actual and Potential Family Health Problems",
+      "anchor": "https://www.ncbi.nlm.nih.gov/books/NBK615335/#ch4.s4",
+      "pressbooks": "https://wtcs.pressbooks.pub/healthpromo/chapter/4-4-factors-that-lead-to-actual-and-potential-family-health-problems/",
+      "facts": [
+        "ACE: neglect (physical/emotional), abuse (physical/emotional/sexual), divorce, family member imprisonment, witnessing substance abuse/mental illness, witnessing parent treated violently",
+        "ACE Study (late 1990s, >17,000 participants): dose-response — more ACE → more adolescent risk behavior, adult chronic illness (alcoholism, COPD, depression, liver disease); highest ACE → 20-year lower life expectancy",
+        "Family risk factors for ACE: special-needs caregiving, limited understanding of child development, caregiver abused as child, young caregivers, single parents, low income/education, financial stress, inconsistent discipline/spanking, low supervision, isolation, high conflict, attitudes accepting violence",
+        "Community risk factors: violence/crime, limited opportunity, poverty/unemployment/food insecurity, drug/alcohol access, low involvement, few youth activities, unstable housing",
+        "Family protective factors: basic needs met, stable secure nurturing relationships, social support, positive shared activities, school valued, peaceful conflict resolution, outside mentors, caregiver education/employment, effective supervision/discipline, problem-solving help",
+        "Community protective factors: parenting education, financial assistance, medical/mental health services, safe housing, safe childcare, quality preschool, after-school programs, family-friendly employment",
+        "Divorce is an ACE; effect moderated by how parents treat each other before/during/after",
+        "Divorce guidance for parents: never force sides, no arguments/criticism in front of child, talk early and often, allow child to share fears; be honest in simple terms, child not at fault, reassure love, be patient with questions",
+        "Maintain routine, friends, school, environment; consistent rules across households; keep promises",
+        "Inform teachers/counselors so problems at school are reported"
+      ]
+    },
+    {
+      "chunk_id": "SRC01.4.5",
+      "title": "Parenting Styles and Behaviors",
+      "anchor": "https://www.ncbi.nlm.nih.gov/books/NBK615335/#ch4.s5",
+      "pressbooks": "https://wtcs.pressbooks.pub/healthpromo/chapter/4-5-parenting-styles-and-behaviors/",
+      "facts": [
+        "Psychosocial development: intersection of social, cultural, environmental influences on mind and behavior",
+        "Parenting: nurturing, caring for, socializing, preparing children for adult roles; child response, genetics, peers also influence",
+        "Two axes: parental responsiveness (warmth/support) × parental demandingness (behavioral control)",
+        "Four styles: uninvolved (low/low), permissive (high warmth/low control), authoritarian (low warmth/high control), authoritative (high/high)",
+        "Third dimension: psychological control (guilt, love withdrawal, shaming); authoritarian expects unquestioned compliance, authoritative explains rationale",
+        "Outcomes: uninvolved → poor in all domains; permissive → behavior problems, lower academics, but higher self-esteem/social skills; authoritarian → moderate academics, poorer social skills, lower self-esteem, more depression; authoritative → best across domains incl. lowest underage drinking risk",
+        "Positive parenting behaviors: good communication, effective discipline, socialization, teaching responsibility",
+        "Good communication: active listening, eye contact, screens off, scheduled connection, validate feelings, read/talk to infants; avoid commanding, lecturing, ridiculing",
+        "Communication patterns: 'I' language; focus on behavior not personality; focus on solution not person; model calm and manners; attend to good behavior",
+        "Discipline = guidance, not punishment; age-appropriate",
+        "Time-out: 1 minute per year of age; follow with hug, positive words, reinforcement",
+        "Spanking: not effective; teaches hitting to get what you want",
+        "Older children: short-term privilege removal; then restate rule, positive attention, reinforce",
+        "Consequence steps: clear guidelines + warning → specific if-then consequence fitting behavior → immediate follow-through → positive reinforcement after",
+        "Behaviorism: attend to desired behavior, ignore undesired if child is safe (e.g., tantrum); afterwards name the emotion and teach acceptable expression",
+        "Without intentional positive attention, child may act out — any attention beats none",
+        "Socialization: name the behavior not the child; specific praise not vague 'good job'; model empathy; balanced self-esteem / growth mindset",
+        "Responsibility: developmentally matched chores; specific instructions (what/when/how), supervise, praise/small rewards (sticker chart), consequence only if repeated non-completion; rewards more effective than consequences",
+        "Parental traits: warm, conscientious, agreeable, low-anxiety caregivers support autonomy; developmental history repeats or is deliberately changed",
+        "Bidirectional: child temperament, birth order, health status shape parent behavior; challenging children → more punitive parents over time",
+        "Parenting characteristics driven by parent's psychological needs: martyr, pal, police officer/drill sergeant, expert, coach",
+        "Sociocultural: financial hardship, cultural values (autonomy vs group harmony), dangerous neighborhood → less warmth, more restriction (adaptive)"
+      ],
+      "tables_not_captured": ["Table 4.5a Parenting Styles", "Table 4.5b Parenting Characteristics"]
+    },
+    {
+      "chunk_id": "SRC01.4.6",
+      "title": "Psychosocial Effect of Illness on Client and Family Health",
+      "anchor": "https://www.ncbi.nlm.nih.gov/books/NBK615335/#ch4.s6",
+      "pressbooks": "https://wtcs.pressbooks.pub/healthpromo/chapter/4-6-psychosocial-effect-of-illness-on-client-and-family-health/",
+      "facts": [
+        "One member's illness affects the family: parents manage regimens/appointments/finances; siblings may feel unvalued, adopt lost-child role; SUD in family → enabling, ignoring, financial drain",
+        "Family caregivers: regular care for chronic illness/disability — ADLs, bills, shopping, transport, emotional support; strain rises as needs rise",
+        "Caregiver role strain: difficulty performing the caregiver role",
+        "US: 22% of adults provided care in past 30 days; 10% to someone with dementia/cognitive impairment; ~25% of dementia caregivers are sandwich-generation",
+        "Caregiving can enhance quality of life but also impair work, social life, physical and mental health",
+        "Caregiver stress signs to monitor: anger/frustration, social withdrawal, anxiety about future, depression/decreased coping, exhaustion, sleeplessness, irritability/poor concentration, emerging health problems",
+        "Community resources: child/adult day care, respite care (home volunteer/paid), residential facility, palliative care",
+        "Caregiver self-care teaching: provider visits, nutrition, exercise, rest; relaxation breathing, progressive muscle relaxation, visualization, meditation; 'taking care of yourself helps you be a better caregiver'",
+        "Family-centered care: client-centered approach emphasizing family involvement/collaboration in care and decisions",
+        "FCC benefits: better outcomes, less family stress/anxiety, better family-provider relationships, higher satisfaction, better resource use",
+        "FCC principles: respect and dignity; collaboration; empowerment; information sharing",
+        "Family therapy targets relationship/interaction patterns; refer when SUD affects family",
+        "Support groups: Al-Anon, Nar-Anon (family SUD); Sibshop (siblings of children with disabilities)"
+      ]
+    },
+    {
+      "chunk_id": "SRC01.4.7",
+      "title": "Applying the Nursing Process and Clinical Judgment Model",
+      "anchor": "https://www.ncbi.nlm.nih.gov/books/NBK615335/#ch4.s7",
+      "pressbooks": "https://wtcs.pressbooks.pub/healthpromo/chapter/4-7-applying-the-nursing-process-and-clinical-judgment-model-to-caring-for-clients-in-the-context-of-family/",
+      "cjm_explicit": true,
+      "facts": [
+        "ASSESSMENT / RECOGNIZE CUES: establish cultural safety and privacy first; open-ended cultural question; identify decision-maker (parent/guardian <18, POA, cultural elder) while advocating autonomy",
+        "Ask client privately who they want present; nurse asks others to leave if client prefers — client may not feel empowered to",
+        "General survey of client AND family: hygiene, affect/mood, communication, nutrition, fluid status → signs of neglect, abuse, substance misuse; observe roles, relationships, interaction patterns, emotional support",
+        "Healthy cue: mutual respect, trust, caring communication. Unhealthy cue: unfriendly, disrespectful, hostile → notify provider, refer social work/case management per policy; suspected abuse → state mandated reporting + agency policy",
+        "Family effect questions: what family knows about illness; how family responds (overprotective/frustrated/anxious); awareness of support groups, respite, community resources",
+        "Cultural Formulation Interview (APA) family items: supports that help; stresses that worsen; background/identity aspects that matter; help others have suggested",
+        "DIAGNOSIS / ANALYZE CUES: NANDA diagnoses related to family processes, parenting, caregiving (Table 4.7); use current evidence-based care-planning resource",
+        "OUTCOME IDENTIFICATION / GENERATE SOLUTIONS: collaborative goals with client and family per values/culture; sample goals — effective coping and support systems; meet member needs or seek help; identify risks; focus on wellness/prevention; balance exercise/work/leisure/rest/nutrition",
+        "SMART outcome examples: after teaching, family describes three healthy coping strategies; parent describes available supports; parent describes three home safety risks",
+        "IMPLEMENTATION / TAKE ACTION: reprioritize against current condition; focused assessments — understanding of condition and needs, economic resources/social support, ACE, strengths/weaknesses",
+        "Interventions: rapport; recognize formal/informal decision roles; acknowledge emotions; encourage expression; encourage visits/participation (with adult client permission); strength-oriented psychoeducation; spiritual support; caregiver skill-building; mobilize social support; refer family therapy/resources; model communication and regulation; involve family in discharge planning",
+        "EVALUATION / EVALUATE OUTCOMES: was diagnosis accurate/complete; goals met per timeline or progressing; keep/modify/delete diagnoses, goals, outcomes, interventions; need more data?"
+      ],
+      "tables_not_captured": ["Table 4.7 NANDA Nursing Diagnoses Related to Family Dynamics"]
+    },
+    {
+      "chunk_id": "SRC01.4.8",
+      "title": "Spotlight Application",
+      "anchor": "https://www.ncbi.nlm.nih.gov/books/NBK615335/#ch4.s8",
+      "pressbooks": "https://wtcs.pressbooks.pub/healthpromo/chapter/4-8-spotlight-application/",
+      "license_note": "CC BY 4.0 — this worked case IS usable, unlike the 4.9 case study",
+      "case": {
+        "situation": "8-year-old with abdominal pain; mother present; parents divorcing",
+        "assessment": ["pain assessment (onset, location, duration, character, aggravating/relieving, treatment)", "family members and interactions", "living situation/household", "dynamics: respect, communication, nurturing, protection; needs met?", "child's feelings about divorce; sense of responsibility", "strengths and stressors", "supports"],
+        "diagnosis": "Dysfunctional Family Processes",
+        "goal": "family works cooperatively to provide support for the child",
+        "smart_outcome": "by end of teaching session, parent describes three ways to mitigate effects of divorce for the child",
+        "interventions": ["teach child divorce is not their fault", "model acceptance", "recommend community resources for divorcing families", "encourage child to verbalize feelings"],
+        "evaluation": ["abdominal pain relieved?", "child verbalizes understanding of divorce and living arrangements?", "child expresses feelings?", "parents report ability to support child's emotional health?"],
+        "next_step": "document progress toward goal; SMART outcome met/partially/not met; set reevaluation time"
+      }
+    },
+    {
+      "chunk_id": "SRC01.4.9",
+      "title": "Learning Activities",
+      "anchor": "https://www.ncbi.nlm.nih.gov/books/NBK615335/#ch4.s9",
+      "license_note": "CC BY-NC 4.0 — do not carry into any commercial package; usable only as a model for original items",
+      "usable_for": "pattern reference only: 5-item case (family structure, caregiver strain intervention, role conflict, family meeting, role identification)"
+    },
+    {
+      "chunk_id": "SRC01.4.GL",
+      "title": "Glossary IV",
+      "anchor": "https://www.ncbi.nlm.nih.gov/books/NBK615335/#ptiv.gl",
+      "terms": ["achieved status", "adverse childhood experiences (ACE)", "ascribed status", "authoritarian parents", "authoritative parents", "autonomy", "behaviorism", "blended family", "caregiver role strain", "closed adoption", "cultural humility", "cultural safety", "culture", "decision-maker", "developmental histories", "discipline", "family", "family caregivers", "family-centered care", "family dynamics", "family dysfunction", "family functions", "family of orientation", "family of procreation", "family roles", "gestational carrier", "high-resource families", "implicit bias", "inclusiveness", "intimacy", "low-resource families", "open adoption", "parental demandingness", "parental responsiveness", "parenting", "peace-maker", "permissive parents", "psychological control", "psychosocial development", "resiliency", "resource families", "socialization", "surrogate mother", "time-out", "tradition-holder", "uninvolved parents"]
+    }
+  ],
+  "legacy_crosswalk": {
+    "legacy_chapter": "NCC Unit 1 Ch.1 Family-Centered Nursing Care (ATI-aligned, no source text)",
+    "coverage": "Every legacy slide topic (family structure/function, parenting/discipline, assessment cues, priority risks, nursing actions, teaching, communication, safety/policy, interprofessional, case, evaluation, documentation) has a corresponding SRC01 section. Legacy S04 'Parenting + Discipline' → 4.5; S05 'Assessment Cues' → 4.7 recognize cues; S06 'Priority Risks' → 4.4 ACE; S07 'Nursing Actions' → 4.7 take action; S09 'Therapeutic Communication' → 4.5 communication patterns + 4.7; S10 'Safety + Policy' → 4.7 mandated reporting; S11 'Interprofessional' → 4.6 resources; S12 case → 4.8 spotlight.",
+    "implication": "The legacy chapter can be re-grounded on SRC01 without changing its structure. Chapter 4 also supplies what legacy lacked: an organizing question candidate (4.1), explicit CJM mapping (4.7), and a CC BY worked case (4.8)."
+  }
+}

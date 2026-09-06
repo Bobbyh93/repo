@@ -1,0 +1,10 @@
+interface:
+  display_name: "Harrity Lesson Builder Pipeline"
+  short_description: "Learner-facing, exam-prep nursing lesson experience builder."
+  icon: "presentation"
+  accent_color: "#12324A"
+run_defaults:
+  primary_output_mode: "learner_facing_content_experience"
+  learner_population: "prelicensure_bsn"
+  exam_orientation: "ati_nclex_ngn"
+  no_audio_by_default: true

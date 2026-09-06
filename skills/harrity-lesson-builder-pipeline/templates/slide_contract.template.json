@@ -1,0 +1,33 @@
+{
+  "slide_id": "{{slide.slide_id}}",
+  "slide_number": "{{slide.slide_number}}",
+  "slide_title": "{{slide.slide_title}}",
+  "slide_archetype": "{{slide.slide_archetype}}",
+  "lesson_section": "{{slide.lesson_section}}",
+  "concept_lane": "{{slide.concept_lane}}",
+  "source_refs": [],
+  "evidence_status": "{{slide.evidence_status}}",
+  "cjm_functions": [],
+  "nursing_action_category": "{{slide.nursing_action_category}}",
+  "learning_objective": "{{slide.learning_objective}}",
+  "on_slide_text": [],
+  "activity_prompt": "{{slide.activity_prompt}}",
+  "answer_key": [],
+  "visual_notes": "{{slide.visual_notes}}",
+  "speaker_script": "{{narration.speaker_script}}",
+  "tts_text": "{{speech.tts_text}}",
+  "target_duration_sec": "{{timing.target_duration_sec}}",
+  "audio_duration_sec": "{{timing.audio_duration_sec}}",
+  "auto_advance": "{{media.auto_advance}}",
+  "layout_spec": {},
+  "allow_overlap": false,
+  "qa_status": "{{qa.qa_status}}",
+  "qa_notes": "{{qa.qa_notes}}",
+  "remediation_target": {
+    "concept_lane": "{{remediation.concept_lane}}",
+    "cjm_function": "{{remediation.cjm_function}}",
+    "misconception": "{{remediation.misconception}}",
+    "fix_type": "{{remediation.fix_type}}"
+  },
+  "audio_filename": "{{media.audio_filename}}"
+}

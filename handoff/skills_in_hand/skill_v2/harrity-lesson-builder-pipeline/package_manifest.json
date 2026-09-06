@@ -1,0 +1,97 @@
+{
+  "package_name": "harrity_lesson_builder_pipeline_skill_v2_20260509",
+  "skill_name": "harrity-lesson-builder-pipeline",
+  "version": "0.3.0",
+  "generated_at_utc": "2026-05-10T04:57:43.161941+00:00",
+  "update_type": "full_replacement_skillbuilder_package",
+  "reason": "Correct skill drift from instructor/meta lesson artifacts toward learner-facing exam-prep content experience.",
+  "generated_artifacts": [
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 924
+    },
+    {
+      "path": "README.md",
+      "bytes": 949
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 9945
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 372
+    },
+    {
+      "path": "references/learner_facing_contract.md",
+      "bytes": 628
+    },
+    {
+      "path": "references/output_schema.md",
+      "bytes": 430
+    },
+    {
+      "path": "references/pipeline.md",
+      "bytes": 581
+    },
+    {
+      "path": "references/qa_gates.md",
+      "bytes": 1070
+    },
+    {
+      "path": "references/slide_grammar.md",
+      "bytes": 614
+    },
+    {
+      "path": "references/student_reception_review.md",
+      "bytes": 791
+    },
+    {
+      "path": "schemas/package_manifest.schema.json",
+      "bytes": 482
+    },
+    {
+      "path": "schemas/student_reception_review.schema.json",
+      "bytes": 414
+    },
+    {
+      "path": "scripts/validate_lesson_package.py",
+      "bytes": 3258
+    },
+    {
+      "path": "templates/assessment_blueprint_template.csv",
+      "bytes": 80
+    },
+    {
+      "path": "templates/intake.yaml",
+      "bytes": 563
+    },
+    {
+      "path": "templates/item_map_template.csv",
+      "bytes": 99
+    },
+    {
+      "path": "templates/qa_log_template.csv",
+      "bytes": 71
+    },
+    {
+      "path": "templates/slide_map_template.csv",
+      "bytes": 130
+    },
+    {
+      "path": "tests/example_request.yaml",
+      "bytes": 687
+    }
+  ],
+  "qa_summary": {
+    "skill_md_present": true,
+    "learner_facing_default_set": true,
+    "qa_gates_added": true,
+    "templates_added": true,
+    "validator_added": true
+  },
+  "limitations": [
+    "Runtime installed skill directory was not writable/available for direct patching.",
+    "This package should be installed or uploaded through the user's Skill Builder/update flow."
+  ]
+}

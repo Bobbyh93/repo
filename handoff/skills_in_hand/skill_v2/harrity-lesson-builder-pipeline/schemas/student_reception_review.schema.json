@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "engagement_score_0_to_10",
+    "exam_readiness_score_0_to_10",
+    "clinical_judgment_score_0_to_10",
+    "cognitive_load_score_0_to_10",
+    "retention_design_score_0_to_10",
+    "confidence_after_lecture_score_0_to_10",
+    "defects"
+  ],
+  "properties": {
+    "defects": {
+      "type": "array"
+    }
+  }
+}

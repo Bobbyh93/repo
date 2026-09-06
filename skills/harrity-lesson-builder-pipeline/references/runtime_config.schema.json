@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://harrity.local/schemas/runtime_config.schema.json",
+  "title": "Harrity Lesson Builder Runtime Config",
+  "type": "object",
+  "required": [
+    "runtime",
+    "lesson",
+    "sources",
+    "taxonomy",
+    "outputs",
+    "layout",
+    "qa"
+  ],
+  "properties": {
+    "runtime": {
+      "type": "object",
+      "required": [
+        "run_date_yyyymmdd",
+        "package_id",
+        "build_mode",
+        "deployment_mode",
+        "rebuild_scope",
+        "output_root"
+      ],
+      "properties": {
+        "run_date_yyyymmdd": {
+          "type": "string",
+          "pattern": "^[0-9]{8}$"
+        },
+        "generated_at_iso": {
+          "type": "string"
+        },
+        "package_id": {
+          "type": "string"
+        },
+        "request_id": {
+          "type": "string"
+        },
+        "build_mode": {
+          "type": "string",
+          "enum": [
+            "source_preflight",
+            "blueprint",
+            "full_production",
+            "revision",
+            "audio_video_handoff"
+          ]
+        },
+        "deployment_mode": {
+          "type": "string",
+          "enum": [
+            "chatgpt_skill",
+            "frontend_app",
+            "hybrid"
+          ]
+        },
+        "rebuild_scope": {
+          "type": "string"
+        },
+        "output_root": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "lesson": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "sources": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "taxonomy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "media": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "revision": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "unresolved_variables": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "additionalProperties": true
+}

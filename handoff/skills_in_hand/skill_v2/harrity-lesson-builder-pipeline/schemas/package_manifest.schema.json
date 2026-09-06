@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "package_name",
+    "version",
+    "generated_artifacts",
+    "qa_summary",
+    "limitations"
+  ],
+  "properties": {
+    "package_name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "generated_artifacts": {
+      "type": "array"
+    },
+    "qa_summary": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array"
+    }
+  }
+}

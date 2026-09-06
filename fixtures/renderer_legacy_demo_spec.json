@@ -1,0 +1,787 @@
+{
+  "metadata": {
+    "course": "maternal newborn nursing",
+    "chapter": "chapter 2 active learning",
+    "topic": "from biology to bedside",
+    "subtitle": "reproductive anatomy, conception, fetal development, and early pregnancy safety decisions",
+    "audience": "prelicensure nursing students",
+    "duration_minutes": 75
+  },
+  "clinical_question": "how does the body create, support, protect, and signal risk in early pregnancy?",
+  "concept_lanes": [
+    {
+      "label": "create",
+      "description": "anatomy and gametes make conception possible"
+    },
+    {
+      "label": "support",
+      "description": "hormones, placenta, membranes, cord, and circulation support growth"
+    },
+    {
+      "label": "protect",
+      "description": "timing and barriers shape preventable exposure risk"
+    },
+    {
+      "label": "signal",
+      "description": "bleeding, pain, fever, symptoms, and abnormal cues require action"
+    }
+  ],
+  "quiz_analysis": [
+    {
+      "objective": "sort early pregnancy cues by urgency",
+      "score_percent": 58,
+      "miss_type": "risk priority",
+      "cjm_step": "prioritize hypotheses",
+      "remediation": "urgency sort plus patient teaching script"
+    }
+  ],
+  "slides": [
+    {
+      "type": "title",
+      "module_label": "chapter 2 active learning",
+      "title": "From biology to bedside",
+      "subtitle": "reproductive anatomy, conception, fetal development, and early pregnancy safety decisions",
+      "cjm_steps": [
+        "orientation"
+      ],
+      "goals": [
+        "build the map",
+        "connect structure to cue",
+        "practice safe teaching",
+        "choose next action"
+      ]
+    },
+    {
+      "type": "opening_case",
+      "module_label": "opening case",
+      "title": "Maya has a question",
+      "patient_prompt": "I had a positive home pregnancy test. I am not sure what is normal. I had slight spotting yesterday.",
+      "know": [
+        "positive home pregnancy test",
+        "spotting yesterday",
+        "early pregnancy concern"
+      ],
+      "need": [
+        "bleeding amount",
+        "pain or cramping",
+        "dizziness/syncope",
+        "fever",
+        "gestational age or LMP"
+      ],
+      "task": "Separate reassurance, assessment, teaching, and urgent cues. Do not jump to certainty.",
+      "cjm_steps": [
+        "recognize cues"
+      ],
+      "concepts": [
+        "signal"
+      ],
+      "learner_task": "name known cues and missing safety data"
+    },
+    {
+      "type": "clinical_question",
+      "module_label": "organizing question",
+      "title": "The clinical question that organizes the chapter",
+      "cjm_steps": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "concepts": [
+        "create",
+        "support",
+        "protect",
+        "signal"
+      ],
+      "learner_task": "explain which lane a patient cue belongs to"
+    },
+    {
+      "type": "chapter_map",
+      "module_label": "chapter map",
+      "title": "Chapter map: follow the patient question",
+      "milestones": [
+        {
+          "label": "anatomy",
+          "body": "what structures matter?"
+        },
+        {
+          "label": "hormones",
+          "body": "how is timing controlled?"
+        },
+        {
+          "label": "conception",
+          "body": "where do cells meet and implant?"
+        },
+        {
+          "label": "fetal support",
+          "body": "how does exchange occur?"
+        },
+        {
+          "label": "safety",
+          "body": "what should the nurse teach or escalate?"
+        }
+      ],
+      "cjm_steps": [
+        "analyze cues"
+      ],
+      "concepts": [
+        "create",
+        "support",
+        "signal"
+      ],
+      "learner_task": "use the map to locate a weak concept"
+    },
+    {
+      "type": "warmup_sequence",
+      "module_label": "warm-up",
+      "title": "Warm-up: what must happen first?",
+      "prompt": "Place these events in the most logical sequence.",
+      "items": [
+        "implantation in the endometrium",
+        "fertilization in the fallopian tube",
+        "early cell division during travel toward the uterus",
+        "placental development begins"
+      ],
+      "cjm_steps": [
+        "analyze cues"
+      ],
+      "concepts": [
+        "create"
+      ],
+      "learner_task": "sequence conception to implantation events"
+    },
+    {
+      "type": "concept_cards",
+      "module_label": "anatomy",
+      "title": "Anatomy: structure drives the clinical question",
+      "cards": [
+        {
+          "title": "ovaries",
+          "body": "produce ova and reproductive hormones"
+        },
+        {
+          "title": "fallopian tubes",
+          "body": "site of fertilization and transport to uterus"
+        },
+        {
+          "title": "uterus",
+          "body": "supports implantation, fetal growth, and contractions"
+        },
+        {
+          "title": "cervix and vagina",
+          "body": "protect passage, secretions, and birth canal functions"
+        },
+        {
+          "title": "breasts",
+          "body": "prepare for lactation through hormonal influence"
+        }
+      ],
+      "callout": "When a structure matters, ask: what does it help happen or prevent?",
+      "cjm_steps": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "concepts": [
+        "create",
+        "support"
+      ],
+      "learner_task": "connect each structure to a clinical function"
+    },
+    {
+      "type": "match_activity",
+      "module_label": "activity",
+      "title": "Activity: match the structure to the cue",
+      "sources": [
+        "conception can happen before the uterus is involved",
+        "heavy bleeding and cramping soon after early pregnancy",
+        "cyclic dates help estimate pregnancy timing",
+        "privacy concerns arise during reproductive assessment"
+      ],
+      "targets": [
+        "fallopian tubes",
+        "uterus",
+        "ovaries",
+        "cervix / vagina / external structures"
+      ],
+      "cjm_steps": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "concepts": [
+        "create",
+        "signal"
+      ],
+      "learner_task": "match a cue to the structure most directly involved"
+    },
+    {
+      "type": "debrief",
+      "module_label": "debrief",
+      "title": "Debrief: structure-function reasoning",
+      "cards": [
+        {
+          "title": "fallopian tubes",
+          "body": "fertilization usually occurs before the conceptus reaches the uterus."
+        },
+        {
+          "title": "uterus",
+          "body": "heavy bleeding and cramping can signal a pregnancy complication and require assessment."
+        },
+        {
+          "title": "ovaries",
+          "body": "ovarian and menstrual cycle timing helps estimate ovulation and gestational age."
+        },
+        {
+          "title": "cervical/vaginal/external structures",
+          "body": "assessment requires consent, privacy, trauma-informed communication, and respectful terminology."
+        }
+      ],
+      "cjm_steps": [
+        "analyze cues"
+      ],
+      "concepts": [
+        "create",
+        "signal"
+      ],
+      "learner_task": "explain one match in structure-function language"
+    },
+    {
+      "type": "control_room",
+      "module_label": "hormones",
+      "title": "Hormones: think control room, not flashcards",
+      "center": "brain + gonads coordinate timing",
+      "nodes": [
+        {
+          "title": "hypothalamus",
+          "body": "starts regulatory signaling"
+        },
+        {
+          "title": "ovaries / testes",
+          "body": "produce gametes and reproductive hormones"
+        },
+        {
+          "title": "pituitary",
+          "body": "FSH and LH support follicle development and ovulation"
+        },
+        {
+          "title": "estrogen / progesterone",
+          "body": "prepare and maintain reproductive environment"
+        }
+      ],
+      "cjm_steps": [
+        "analyze cues"
+      ],
+      "concepts": [
+        "support"
+      ],
+      "learner_task": "explain hormone control without memorizing isolated labels"
+    },
+    {
+      "type": "timeline",
+      "module_label": "cycle",
+      "title": "Cycle timeline: fertility timing has a physiology story",
+      "milestones": [
+        {
+          "label": "follicular",
+          "body": "follicle development and estrogen change"
+        },
+        {
+          "label": "ovulation",
+          "body": "egg release after LH surge"
+        },
+        {
+          "label": "luteal",
+          "body": "progesterone supports endometrium"
+        },
+        {
+          "label": "no implantation",
+          "body": "hormone change and menstruation"
+        }
+      ],
+      "cjm_steps": [
+        "analyze cues"
+      ],
+      "concepts": [
+        "create",
+        "support"
+      ],
+      "learner_task": "connect timing to fertility and pregnancy testing questions"
+    },
+    {
+      "type": "checkpoint_mcq",
+      "module_label": "checkpoint",
+      "title": "Checkpoint: choose the best explanation",
+      "question": "A patient asks, 'Why does my cycle date matter if I already have a positive pregnancy test?' Best nursing response?",
+      "options": [
+        "Cycle dates are only used for infertility, not pregnancy.",
+        "Cycle dates help estimate timing, but symptoms and prenatal follow-up still matter.",
+        "The exact conception day can always be calculated from the positive test.",
+        "You do not need to discuss cycle dates once pregnancy is confirmed."
+      ],
+      "answer": "B",
+      "rationale": "cycle timing supports estimation, but does not replace assessment and follow-up.",
+      "cjm_steps": [
+        "analyze cues",
+        "generate solutions"
+      ],
+      "concepts": [
+        "support",
+        "signal"
+      ],
+      "learner_task": "select a patient-centered explanation"
+    },
+    {
+      "type": "process_map",
+      "module_label": "conception",
+      "title": "Conception: from gametes to zygote",
+      "milestones": [
+        {
+          "label": "gametes",
+          "body": "sperm and ovum carry genetic material"
+        },
+        {
+          "label": "fertilization",
+          "body": "usually in fallopian tube"
+        },
+        {
+          "label": "zygote",
+          "body": "chromosomal combination established"
+        },
+        {
+          "label": "cell division",
+          "body": "conceptus travels toward uterus"
+        },
+        {
+          "label": "implantation",
+          "body": "developing blastocyst embeds in endometrium"
+        }
+      ],
+      "cjm_steps": [
+        "analyze cues"
+      ],
+      "concepts": [
+        "create"
+      ],
+      "learner_task": "map conception events to anatomic locations"
+    },
+    {
+      "type": "teaching_point",
+      "module_label": "implantation",
+      "title": "Implantation: the point where early teaching becomes concrete",
+      "cards": [
+        {
+          "title": "blastocyst reaches uterus",
+          "body": "developing structure reaches endometrium"
+        },
+        {
+          "title": "implants in endometrium",
+          "body": "attachment begins pregnancy-supporting relationship"
+        },
+        {
+          "title": "placental development begins",
+          "body": "early support structures start forming"
+        }
+      ],
+      "warning": "The nurse explains expected possibilities and screens for urgent symptoms, not guarantees safety.",
+      "cjm_steps": [
+        "generate solutions",
+        "take action"
+      ],
+      "concepts": [
+        "create",
+        "signal"
+      ],
+      "learner_task": "turn implantation science into safe patient teaching"
+    },
+    {
+      "type": "exchange_model",
+      "module_label": "placenta",
+      "title": "Placenta: exchange organ, not a shield",
+      "left": {
+        "title": "maternal side",
+        "body": "maternal blood supply"
+      },
+      "center": {
+        "title": "placenta",
+        "body": "oxygen + nutrients + waste exchange; hormones that support pregnancy; interface, not complete barrier"
+      },
+      "right": {
+        "title": "fetal side",
+        "body": "fetal circulation"
+      },
+      "warning": "The placenta supports exchange. It does not block every harmful exposure.",
+      "cjm_steps": [
+        "analyze cues",
+        "prioritize hypotheses"
+      ],
+      "concepts": [
+        "support",
+        "protect"
+      ],
+      "learner_task": "explain why placenta function affects teaching about exposure risk"
+    },
+    {
+      "type": "triad",
+      "module_label": "support structures",
+      "title": "Fetal support triad: fluid, membranes, cord",
+      "cards": [
+        {
+          "title": "amniotic fluid",
+          "body": "cushions the fetus and supports movement; volume can affect assessment"
+        },
+        {
+          "title": "membranes",
+          "body": "help protect the intrauterine environment; rupture changes infection risk"
+        },
+        {
+          "title": "umbilical cord",
+          "body": "connects fetus and placenta; compression or compromise affects oxygenation"
+        }
+      ],
+      "cjm_steps": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "concepts": [
+        "support",
+        "protect"
+      ],
+      "learner_task": "name the function and risk signal for each support structure"
+    },
+    {
+      "type": "safety_chain",
+      "module_label": "circulation",
+      "title": "Fetal circulation: oxygenation depends on placenta and cord",
+      "milestones": [
+        {
+          "label": "placenta",
+          "body": "gas exchange occurs here"
+        },
+        {
+          "label": "cord",
+          "body": "connects fetus to placenta"
+        },
+        {
+          "label": "shunts",
+          "body": "support fetal circulation pathways"
+        },
+        {
+          "label": "delivery",
+          "body": "transition after birth changes flow"
+        },
+        {
+          "label": "monitor",
+          "body": "later fetal assessment builds on this"
+        }
+      ],
+      "cjm_steps": [
+        "analyze cues",
+        "prioritize hypotheses"
+      ],
+      "concepts": [
+        "support",
+        "signal"
+      ],
+      "learner_task": "connect support structures to fetal oxygenation risk"
+    },
+    {
+      "type": "compare",
+      "module_label": "development",
+      "title": "Embryonic vs fetal period: timing changes risk",
+      "columns": [
+        {
+          "title": "embryonic period",
+          "items": [
+            "early organ development",
+            "high vulnerability to exposures that affect organ formation"
+          ]
+        },
+        {
+          "title": "fetal period",
+          "items": [
+            "growth and maturation",
+            "functional development and late-pregnancy growth concerns"
+          ]
+        }
+      ],
+      "cjm_steps": [
+        "prioritize hypotheses"
+      ],
+      "concepts": [
+        "protect"
+      ],
+      "learner_task": "explain why timing changes exposure risk"
+    },
+    {
+      "type": "risk_engine",
+      "module_label": "teratogens",
+      "title": "Teratogen risk engine: do not reduce risk to one variable",
+      "center": "exposure risk question",
+      "factors": [
+        {
+          "title": "susceptibility",
+          "body": "maternal and fetal factors"
+        },
+        {
+          "title": "duration",
+          "body": "how long or how often"
+        },
+        {
+          "title": "timing",
+          "body": "when during development"
+        },
+        {
+          "title": "dose",
+          "body": "how much exposure"
+        },
+        {
+          "title": "context",
+          "body": "medications, infection, environment, resources"
+        }
+      ],
+      "cjm_steps": [
+        "prioritize hypotheses",
+        "generate solutions"
+      ],
+      "concepts": [
+        "protect",
+        "signal"
+      ],
+      "learner_task": "identify risk modifiers before giving teaching"
+    },
+    {
+      "type": "mini_case",
+      "module_label": "mini case",
+      "title": "Mini case: respond to Maya without guessing",
+      "scenario": "Maya says, 'I took ibuprofen twice and had alcohol before I knew. I feel okay today. Plus, I had light spotting yesterday.'",
+      "steps": [
+        {
+          "title": "1. assess first",
+          "body": "bleeding amount, pain, dizziness, fever, LMP, medication dose, exposure details"
+        },
+        {
+          "title": "2. teach clearly",
+          "body": "stop avoidable exposures now; review meds with prenatal provider; keep follow-up"
+        },
+        {
+          "title": "3. avoid false certainty",
+          "body": "do not promise no risk; do not create panic; focus on urgent cues and next steps"
+        }
+      ],
+      "cjm_steps": [
+        "recognize cues",
+        "generate solutions",
+        "take action"
+      ],
+      "concepts": [
+        "protect",
+        "signal"
+      ],
+      "learner_task": "write one assessment sentence, one teaching sentence, and one safety limit"
+    },
+    {
+      "type": "urgency_sort",
+      "module_label": "clinical judgment",
+      "title": "Clinical judgment: sort cues by urgency",
+      "categories": [
+        {
+          "title": "escalate now",
+          "items": [
+            "heavy bleeding",
+            "severe abdominal pain",
+            "syncope",
+            "fever with worsening symptoms"
+          ]
+        },
+        {
+          "title": "assess and teach",
+          "items": [
+            "light spotting without red flags",
+            "medication question",
+            "mild expected symptom"
+          ]
+        }
+      ],
+      "cjm_steps": [
+        "prioritize hypotheses"
+      ],
+      "concepts": [
+        "signal"
+      ],
+      "learner_task": "sort cues by immediate risk and explain why"
+    },
+    {
+      "type": "script_template",
+      "module_label": "practice",
+      "title": "Practice: patient teaching script",
+      "steps": [
+        {
+          "title": "acknowledge",
+          "body": "I hear that you are worried."
+        },
+        {
+          "title": "assess safety",
+          "body": "ask targeted symptom and exposure questions."
+        },
+        {
+          "title": "explain simply",
+          "body": "tie teaching to support, protection, and risk."
+        },
+        {
+          "title": "reduce risk",
+          "body": "avoid preventable exposures and know urgent symptoms."
+        },
+        {
+          "title": "follow up",
+          "body": "connect to prenatal care or escalation based on symptoms."
+        }
+      ],
+      "cjm_steps": [
+        "generate solutions",
+        "take action"
+      ],
+      "concepts": [
+        "protect",
+        "signal"
+      ],
+      "learner_task": "build a patient-centered response using the template"
+    },
+    {
+      "type": "basics_grid",
+      "module_label": "genetics",
+      "title": "Genetic basics: know your nursing lane",
+      "cards": [
+        {
+          "title": "what students should know",
+          "body": "chromosomes carry genetic information; inheritance patterns can affect screening and risk discussion"
+        },
+        {
+          "title": "what nurses assess",
+          "body": "family history, pregnancy history, congenital concerns, screening questions, patient understanding"
+        },
+        {
+          "title": "what nurses do not overclaim",
+          "body": "do not provide genetic counseling beyond scope; refer to genetics resources when appropriate"
+        },
+        {
+          "title": "what nurses teach",
+          "body": "plain language, consent, limits of screening, and follow-up"
+        }
+      ],
+      "cjm_steps": [
+        "analyze cues",
+        "generate solutions"
+      ],
+      "concepts": [
+        "protect"
+      ],
+      "learner_task": "separate basic knowledge from nursing scope and referral needs"
+    },
+    {
+      "type": "capstone_mcq",
+      "module_label": "capstone",
+      "title": "Capstone scenario: choose the next safe action",
+      "scenario": "Maya calls back: 'The spotting is heavier. I have sharp pain on one side and I almost fainted in the bathroom.'",
+      "question": "What is the priority nursing response?",
+      "options": [
+        "Explain that spotting can be normal and schedule routine teaching.",
+        "Ask her to track symptoms for 24 hours and call back if they continue.",
+        "Recognize urgent cues, assess immediate safety, and direct urgent evaluation/escalation per protocol.",
+        "Begin a detailed explanation of fetal development to reduce anxiety."
+      ],
+      "answer": "C",
+      "rationale": "heavier bleeding, unilateral sharp pain, and near-syncope are urgent cues requiring escalation, not reassurance alone.",
+      "cjm_steps": [
+        "prioritize hypotheses",
+        "take action"
+      ],
+      "concepts": [
+        "signal"
+      ],
+      "learner_task": "choose the safest next action and justify it"
+    },
+    {
+      "type": "debrief_three",
+      "module_label": "rationale",
+      "title": "Capstone debrief: why C is safest",
+      "cards": [
+        {
+          "title": "recognize cues",
+          "body": "heavier bleeding, sharp unilateral pain, near-syncope are not routine teaching cues."
+        },
+        {
+          "title": "analyze risk",
+          "body": "early pregnancy complication is possible; maternal safety comes first."
+        },
+        {
+          "title": "take action",
+          "body": "escalate according to protocol and direct urgent evaluation; do not reassure without assessment."
+        }
+      ],
+      "cjm_steps": [
+        "recognize cues",
+        "analyze cues",
+        "take action",
+        "evaluate outcomes"
+      ],
+      "concepts": [
+        "signal"
+      ],
+      "learner_task": "explain why the distractors are unsafe or incomplete"
+    },
+    {
+      "type": "retrieval_check",
+      "module_label": "rapid retrieval",
+      "title": "Rapid retrieval: five-item exit check",
+      "questions": [
+        "Where does fertilization usually occur?",
+        "What hormone surge is associated with ovulation?",
+        "What organ supports exchange but is not a complete barrier?",
+        "Name one urgent early pregnancy cue.",
+        "What are the four nursing action frames from this lesson?"
+      ],
+      "cjm_steps": [
+        "evaluate outcomes"
+      ],
+      "concepts": [
+        "create",
+        "support",
+        "protect",
+        "signal"
+      ],
+      "learner_task": "answer by spoken or written exit check"
+    },
+    {
+      "type": "takeaway",
+      "module_label": "takeaway",
+      "title": "Chapter 2 takeaway: biology becomes nursing action",
+      "actions": [
+        {
+          "title": "teach",
+          "body": "use plain language for timing, anatomy, implantation, and fetal support"
+        },
+        {
+          "title": "assess",
+          "body": "ask about history, symptoms, medications, exposures, and risk factors"
+        },
+        {
+          "title": "escalate",
+          "body": "prioritize bleeding, severe pain, syncope, fever, and abnormal cues"
+        },
+        {
+          "title": "reassure",
+          "body": "only after understanding, context, and red flags are ruled out"
+        }
+      ],
+      "statement": "A safe nurse can explain the process, reduce preventable risk, screen for urgent cues, and connect the patient to timely follow-up.",
+      "cjm_steps": [
+        "take action",
+        "evaluate outcomes"
+      ],
+      "concepts": [
+        "create",
+        "support",
+        "protect",
+        "signal"
+      ],
+      "learner_task": "state one bedside action for each frame"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "course": "{{lesson.course_code}}",
+    "unit": "{{lesson.unit_title}}",
+    "chapter": "{{lesson.chapter_title}}",
+    "topic": "{{lesson.lesson_title}}",
+    "audience": "{{lesson.audience}}",
+    "duration_minutes": "{{outputs.target_duration_minutes}}",
+    "source_status": "{{sources.coverage_status}}",
+    "package_id": "{{runtime.package_id}}"
+  },
+  "clinical_question": "{{lesson.organizing_clinical_question}}",
+  "concept_lanes": [],
+  "slides": [
+    {
+      "type": "title",
+      "slide_id": "S01",
+      "title": "{{lesson.lesson_title}}",
+      "subtitle": "map first, then clinical judgment drill-down",
+      "module_label": "{{lesson.chapter_title}}",
+      "concept_lane": "overview",
+      "cjm_steps": ["recognize cues"],
+      "speaker_notes": "{{narration.speaker_script}}",
+      "content": {}
+    }
+  ],
+  "quiz_analysis": [],
+  "runtime_config_ref": "{{runtime.package_id}}/runtime_config.json"
+}

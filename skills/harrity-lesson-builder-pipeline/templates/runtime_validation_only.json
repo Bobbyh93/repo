@@ -1,0 +1,31 @@
+{
+  "runtime": {
+    "run_date_yyyymmdd": "20260510",
+    "generated_at_iso": "2026-05-10T00:00:00Z",
+    "package_id": "runtime_validation_only",
+    "request_id": "validation_only",
+    "build_mode": "source_preflight",
+    "deployment_mode": "chatgpt_skill",
+    "rebuild_scope": "all",
+    "output_root": "output/runtime_validation_only"
+  },
+  "lesson": {
+    "lesson_title": "runtime_validation_only"
+  },
+  "sources": {
+    "files": [],
+    "pasted_text_blocks": [],
+    "coverage_status": "absent"
+  },
+  "taxonomy": {},
+  "outputs": {
+    "target_outputs": []
+  },
+  "layout": {},
+  "media": {},
+  "qa": {
+    "required_gates": []
+  },
+  "revision": {},
+  "unresolved_variables": []
+}

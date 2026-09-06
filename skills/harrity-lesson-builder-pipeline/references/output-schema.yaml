@@ -1,0 +1,110 @@
+runtime_config:
+  runtime: object
+  lesson: object
+  sources: object
+  taxonomy: object
+  outputs: object
+  layout: object
+  media: object
+  qa: object
+  revision: object
+  unresolved_variables: array
+source_package:
+  package_id: string
+  source_inventory: array
+  source_hierarchy: array
+  coverage_status: confirmed | partial | absent | mixed
+  source_refs: array
+  assumption_log: array
+  conflict_log: array
+  gap_log: array
+  classification:
+    teach_on_slide: array
+    mention_verbally: array
+    appendix: array
+    exclude: array
+glossary_taxonomy_package:
+  glossary: array
+  concept_tags: array
+  outcome_tags: array
+  nclex_client_needs: array
+  ngn_cjmm_functions: array
+  priority_frameworks: array
+  synonym_policy: string
+  proposed_new_tags: array
+harrity_blueprint_package:
+  opening_patient_question: string
+  organizing_clinical_question: string
+  concept_lanes: array
+  chapter_map: array
+  map_to_drill_down_plan: array
+  likely_difficulty_points: array
+  cjm_coverage_plan: object
+outline_package:
+  stage: outline
+  package_id: string
+  lesson_title: string
+  audience_level: string
+  lesson_goal: string
+  duration_budget_seconds: number
+  slides: array
+script_package:
+  stage: script
+  package_id: string
+  slides: array
+audio_package:
+  stage: audio
+  package_id: string
+  voice_style: string
+  slides: array
+slide_contract:
+  slide_id: string
+  slide_number: integer
+  slide_title: string
+  slide_archetype: string
+  lesson_section: string
+  concept_lane: string
+  source_refs: array
+  evidence_status: string
+  cjm_functions: array
+  nursing_action_category: teach | assess | escalate | reassure | other
+  learning_objective: string
+  on_slide_text: array
+  activity_prompt: string
+  answer_key: array
+  visual_notes: string
+  speaker_script: string
+  tts_text: string
+  target_duration_sec: number
+  audio_duration_sec: number
+  auto_advance: boolean
+  layout_spec: object
+  allow_overlap: boolean
+  qa_status: pass | minor | major | blocker
+  qa_notes: string
+  remediation_target:
+    concept_lane: string
+    cjm_function: string
+    misconception: string
+    fix_type: string
+  audio_filename: string
+assessment_map_row:
+  slide_id: string
+  objective: string
+  concept_lane: string
+  cjm_function: string
+  learner_task: string
+  item_type: string
+  remediation_target: string
+  evidence_of_learning: string
+lesson_manifest:
+  package_id: string
+  runtime_config: object
+  package_status: release-ready | faculty-review-needed | draft-only | blocked
+  source_status: string
+  assumptions: array
+  unresolved_variables: array
+  slides: array
+  cjm_coverage: object
+  qa_summary: object
+  revision_log: array

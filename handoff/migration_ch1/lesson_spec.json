@@ -1,0 +1,1194 @@
+{
+  "schema_version": "1.0",
+  "runtime_config": {
+    "runtime": {
+      "run_date_yyyymmdd": "20260906",
+      "package_id": "MIGRATION_20260610_NCC_RN2019_NCOC_Unit_1_full_production_CH01",
+      "build_mode": "revision",
+      "deployment_mode": "hybrid",
+      "rebuild_scope": "full",
+      "output_root": "."
+    },
+    "outputs": {
+      "filename_pattern": "{{runtime.run_date_yyyymmdd}}_{{lesson.course_code}}_{{lesson.chapter_title}}_Part_{{deck.part_number}}.pptx"
+    }
+  },
+  "lesson": {
+    "course_code": "NCC",
+    "program_level": "RN",
+    "audience": "RN 2019 Nursing Care of Children",
+    "unit_title": "Unit 1 Foundations of Nursing Care of Children",
+    "chapter_id": "1",
+    "chapter_title": "Family-Centered Nursing Care",
+    "lesson_title": "Family-Centered Nursing Care",
+    "concept": "Family-Centered Nursing Care",
+    "exemplars": [],
+    "clinical_domain": "pediatrics",
+    "source_family": "RN 2019 Nursing Care of Children",
+    "source_anchor": "Perspectives of Nursing Care of Children",
+    "page_range": "3-6",
+    "organizing_clinical_question": "",
+    "opening_patient_question": "",
+    "concept_lanes": [
+      "recognize",
+      "interpret",
+      "prioritize",
+      "act",
+      "evaluate"
+    ],
+    "target_duration_minutes": 0
+  },
+  "sources": [
+    {
+      "source_id": "SRC01",
+      "title": "RN 2019 Nursing Care of Children",
+      "kind": "authoritative",
+      "license": "restricted",
+      "locator": "pp. 3-6",
+      "coverage_status": "absent"
+    }
+  ],
+  "taxonomy": {
+    "glossary": [],
+    "concept_tags": [
+      "Family-Centered Nursing Care",
+      "NCLEX NGN",
+      "Perspectives of Nursing Care of Children",
+      "nursing concepts",
+      "pediatric clinical judgment"
+    ],
+    "outcome_tags": [],
+    "nclex_client_needs": [],
+    "cjm_functions": [
+      "recognize cues",
+      "analyze cues",
+      "prioritize hypotheses",
+      "generate solutions",
+      "take action",
+      "evaluate outcomes"
+    ],
+    "proposed_new_tags": []
+  },
+  "slides": [
+    {
+      "slide_id": "S01",
+      "slide_number": 1,
+      "slide_title": "Chapter Orientation",
+      "slide_archetype": "title",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "title",
+      "learning_objective": "Explain Family-Centered Nursing Care: chapter orientation using pediatric clinical judgment.",
+      "on_slide_text": [
+        "RN Nursing Care of Children: Ch. 1",
+        "Family is the constant in pediatric care",
+        "nurses partner with caregivers while protecting child safety.",
+        "Clinical thread: family partnership, development, safety, communication"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Set the chapter lens.",
+      "speaker_script": "This chapter is presented as a source-aligned teaching deck for RN 2019 Nursing Care of Children. The goal is not to memorize isolated facts; the goal is to practice pediatric clinical judgment. As we move through Family-Centered Nursing Care, listen for the same pattern on every slide: recognize the cue, decide what risk matters most, choose the nursing action that reduces that risk, teach the child and family in usable language, and evaluate with an observable outcome. Because pediatric care changes with development, the safest answer is usually the one that fits the child age, includes the caregiver as clinical data, and protects safety first.",
+      "tts_text": "",
+      "target_duration_sec": 45,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "title",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S001",
+      "legacy_archetype": "title",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S02",
+      "slide_number": 2,
+      "slide_title": "Core Concept Map",
+      "slide_archetype": "content",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "interpret",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "concept",
+      "learning_objective": "Explain Family-Centered Nursing Care: core concept map using pediatric clinical judgment.",
+      "on_slide_text": [
+        "Family is the constant in pediatric care",
+        "nurses partner with caregivers while protecting child safety.",
+        "Key lens: family partnership, development, safety, communication",
+        "Connect child needs, family needs, and observable outcomes"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Define the central concept.",
+      "speaker_script": "This slide focuses on core concept map in Family-Centered Nursing Care. The first clinical point is Family is the constant in pediatric care; nurses partner with caregivers while protecting child safety.. The second point is Key lens: family partnership, development, safety, communication. The third point is Connect child needs, family needs, and observable outcomes. For practice and for NCLEX-style questions, connect each point to the same pattern: cue, risk, action, teaching, and evaluation. Pediatric care is never only about the child body system. It also includes development, caregiver knowledge, communication, and safety. By the end of this slide, the learner should be able to explain which cue would change the priority and what outcome would prove the nursing action worked.",
+      "tts_text": "",
+      "target_duration_sec": 51,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "content",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "interpret",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S002",
+      "legacy_archetype": "concept",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S03",
+      "slide_number": 3,
+      "slide_title": "Family Structure + Function",
+      "slide_archetype": "content",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "interpret",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "concept",
+      "learning_objective": "Explain Family-Centered Nursing Care: family structure + function using pediatric clinical judgment.",
+      "on_slide_text": [
+        "Identify who provides daily care and decision support",
+        "Assess family strengths before deficits",
+        "Map routines that will affect discharge success"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Use this as the clinical lens.",
+      "speaker_script": "This slide focuses on family structure + function in Family-Centered Nursing Care. The first clinical point is Identify who provides daily care and decision support. The second point is Assess family strengths before deficits. The third point is Map routines that will affect discharge success. For practice and for NCLEX-style questions, connect each point to the same pattern: cue, risk, action, teaching, and evaluation. Pediatric care is never only about the child body system. It also includes development, caregiver knowledge, communication, and safety. By the end of this slide, the learner should be able to explain which cue would change the priority and what outcome would prove the nursing action worked.",
+      "tts_text": "",
+      "target_duration_sec": 48,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "content",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "interpret",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S003",
+      "legacy_archetype": "concept",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S04",
+      "slide_number": 4,
+      "slide_title": "Parenting + Discipline Lens",
+      "slide_archetype": "content",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "act",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "take action"
+      ],
+      "nursing_action_category": "teaching",
+      "learning_objective": "Explain Family-Centered Nursing Care: parenting + discipline lens using pediatric clinical judgment.",
+      "on_slide_text": [
+        "Development shapes discipline expectations",
+        "Teaching should separate behavior from the child worth",
+        "Positive reinforcement is safer than shame or threats"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Use this as the clinical lens.",
+      "speaker_script": "This teaching slide should be heard as a discharge-safety slide. The nurse teaches Development shapes discipline expectations, then checks whether the family can use that teaching at home. Teaching should separate behavior from the child worth is important because pediatric teaching fails when it does not fit the child age, caregiver literacy, language, culture, or resources. Positive reinforcement is safer than shame or threats gives the nurse a way to evaluate learning. Teach-back is not a quiz for the caregiver. It is a safety check for the nurse. If the caregiver cannot explain or demonstrate the plan, the nurse changes the teaching method before the child leaves care.",
+      "tts_text": "",
+      "target_duration_sec": 46,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "content",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "act",
+        "cjm_function": "take action",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S004",
+      "legacy_archetype": "teaching",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S05",
+      "slide_number": 5,
+      "slide_title": "Assessment Cues",
+      "slide_archetype": "content",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "recognize",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "recognize cues"
+      ],
+      "nursing_action_category": "assessment",
+      "learning_objective": "Explain Family-Centered Nursing Care: assessment cues using pediatric clinical judgment.",
+      "on_slide_text": [
+        "caregiver concern that the child is not acting right",
+        "family structure, culture, stressors, and support",
+        "home routines, coping patterns, and caregiver understanding"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Identify the cues that should change care.",
+      "speaker_script": "This slide focuses on assessment cues in Family-Centered Nursing Care. The first clinical point is caregiver concern that the child is not acting right. The second point is family structure, culture, stressors, and support. The third point is home routines, coping patterns, and caregiver understanding. For practice and for NCLEX-style questions, connect each point to the same pattern: cue, risk, action, teaching, and evaluation. Pediatric care is never only about the child body system. It also includes development, caregiver knowledge, communication, and safety. By the end of this slide, the learner should be able to explain which cue would change the priority and what outcome would prove the nursing action worked.",
+      "tts_text": "",
+      "target_duration_sec": 48,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "content",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "recognize",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S005",
+      "legacy_archetype": "assessment",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S06",
+      "slide_number": 6,
+      "slide_title": "Priority Risks",
+      "slide_archetype": "content",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "prioritize",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "prioritize hypotheses"
+      ],
+      "nursing_action_category": "priority",
+      "learning_objective": "Explain Family-Centered Nursing Care: priority risks using pediatric clinical judgment.",
+      "on_slide_text": [
+        "missed caregiver concern",
+        "teaching that does not fit the home routine",
+        "unsafe routine during family stress"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Prioritize the preventable harm.",
+      "speaker_script": "This slide is a priority slide. In Family-Centered Nursing Care, the cue that matters most is the cue that signals preventable harm. Start by noticing missed caregiver concern. Then compare that with teaching that does not fit the home routine and unsafe routine during family stress. The nurse does not wait for a perfect picture before acting on a safety concern. The nurse gathers focused data, protects the child, involves the caregiver when appropriate, and escalates when the assessment suggests deterioration or unsafe conditions. The key is to connect the risk to a specific action and then evaluate whether the risk actually decreased.",
+      "tts_text": "",
+      "target_duration_sec": 44,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "content",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "prioritize",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S006",
+      "legacy_archetype": "priority",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S07",
+      "slide_number": 7,
+      "slide_title": "Nursing Actions",
+      "slide_archetype": "content",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "act",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "generate solutions",
+        "take action"
+      ],
+      "nursing_action_category": "actions",
+      "learning_objective": "Explain Family-Centered Nursing Care: nursing actions using pediatric clinical judgment.",
+      "on_slide_text": [
+        "treat caregivers as experts on the child baseline",
+        "include the child in communication when developmentally appropriate",
+        "coordinate resources that match family needs"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Act on the cue and reduce risk.",
+      "speaker_script": "This slide focuses on nursing actions in Family-Centered Nursing Care. The first clinical point is treat caregivers as experts on the child baseline. The second point is include the child in communication when developmentally appropriate. The third point is coordinate resources that match family needs. For practice and for NCLEX-style questions, connect each point to the same pattern: cue, risk, action, teaching, and evaluation. Pediatric care is never only about the child body system. It also includes development, caregiver knowledge, communication, and safety. By the end of this slide, the learner should be able to explain which cue would change the priority and what outcome would prove the nursing action worked.",
+      "tts_text": "",
+      "target_duration_sec": 48,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "content",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "act",
+        "cjm_function": "generate solutions",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S007",
+      "legacy_archetype": "actions",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S08",
+      "slide_number": 8,
+      "slide_title": "Family-Centered Teaching",
+      "slide_archetype": "content",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "act",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "take action"
+      ],
+      "nursing_action_category": "teaching",
+      "learning_objective": "Explain Family-Centered Nursing Care: family-centered teaching using pediatric clinical judgment.",
+      "on_slide_text": [
+        "use teach-back instead of yes-no confirmation",
+        "model positive reinforcement and clear limits",
+        "adapt instructions to language, literacy, culture, and resources"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Make teaching usable by the family.",
+      "speaker_script": "This teaching slide should be heard as a discharge-safety slide. The nurse teaches use teach-back instead of yes-no confirmation, then checks whether the family can use that teaching at home. model positive reinforcement and clear limits is important because pediatric teaching fails when it does not fit the child age, caregiver literacy, language, culture, or resources. adapt instructions to language, literacy, culture, and resources gives the nurse a way to evaluate learning. Teach-back is not a quiz for the caregiver. It is a safety check for the nurse. If the caregiver cannot explain or demonstrate the plan, the nurse changes the teaching method before the child leaves care.",
+      "tts_text": "",
+      "target_duration_sec": 46,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "content",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "act",
+        "cjm_function": "take action",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S008",
+      "legacy_archetype": "teaching",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S09",
+      "slide_number": 9,
+      "slide_title": "Therapeutic Communication",
+      "slide_archetype": "content",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "act",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "take action"
+      ],
+      "nursing_action_category": "communication",
+      "learning_objective": "Explain Family-Centered Nursing Care: therapeutic communication using pediatric clinical judgment.",
+      "on_slide_text": [
+        "speak to the child at eye level when possible",
+        "use a qualified interpreter when needed",
+        "avoid labels such as noncompliant until barriers are assessed"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Choose words that protect trust.",
+      "speaker_script": "This slide focuses on therapeutic communication in Family-Centered Nursing Care. The first clinical point is speak to the child at eye level when possible. The second point is use a qualified interpreter when needed. The third point is avoid labels such as noncompliant until barriers are assessed. For practice and for NCLEX-style questions, connect each point to the same pattern: cue, risk, action, teaching, and evaluation. Pediatric care is never only about the child body system. It also includes development, caregiver knowledge, communication, and safety. By the end of this slide, the learner should be able to explain which cue would change the priority and what outcome would prove the nursing action worked.",
+      "tts_text": "",
+      "target_duration_sec": 48,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "content",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "act",
+        "cjm_function": "take action",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S009",
+      "legacy_archetype": "communication",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S10",
+      "slide_number": 10,
+      "slide_title": "Safety + Policy Check",
+      "slide_archetype": "content",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "act",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "take action"
+      ],
+      "nursing_action_category": "policy",
+      "learning_objective": "Explain Family-Centered Nursing Care: safety + policy check using pediatric clinical judgment.",
+      "on_slide_text": [
+        "verify consent, assent, confidentiality, and custody rules",
+        "follow mandatory reporting requirements",
+        "document caregiver education and response"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Name what must be verified locally.",
+      "speaker_script": "This slide separates stable nursing judgment from items that require local verification. The nurse should know the concept, but must still verify verify consent, assent, confidentiality, and custody rules. The nurse also checks follow mandatory reporting requirements and document caregiver education and response according to facility policy and current references. This matters in pediatric care because medication procedures, consent rules, immunization schedules, screening practices, and safety policies can vary by setting and can change over time. The safest practice is to use clinical judgment, follow the policy in force, and document the assessment, intervention, teaching, and response clearly.",
+      "tts_text": "",
+      "target_duration_sec": 42,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "content",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "act",
+        "cjm_function": "take action",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S010",
+      "legacy_archetype": "policy",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S11",
+      "slide_number": 11,
+      "slide_title": "Interprofessional Care",
+      "slide_archetype": "content",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "act",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "generate solutions"
+      ],
+      "nursing_action_category": "interprofessional",
+      "learning_objective": "Explain Family-Centered Nursing Care: interprofessional care using pediatric clinical judgment.",
+      "on_slide_text": [
+        "child life for coping and preparation",
+        "social work for resources and discharge barriers",
+        "interpreters and spiritual care when indicated"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Match the resource to the need.",
+      "speaker_script": "This slide focuses on interprofessional care in Family-Centered Nursing Care. The first clinical point is child life for coping and preparation. The second point is social work for resources and discharge barriers. The third point is interpreters and spiritual care when indicated. For practice and for NCLEX-style questions, connect each point to the same pattern: cue, risk, action, teaching, and evaluation. Pediatric care is never only about the child body system. It also includes development, caregiver knowledge, communication, and safety. By the end of this slide, the learner should be able to explain which cue would change the priority and what outcome would prove the nursing action worked.",
+      "tts_text": "",
+      "target_duration_sec": 46,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "content",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "act",
+        "cjm_function": "generate solutions",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S011",
+      "legacy_archetype": "interprofessional",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S12",
+      "slide_number": 12,
+      "slide_title": "Clinical Judgment Drill",
+      "slide_archetype": "mini_case",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "prioritize",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "prioritize hypotheses",
+        "generate solutions"
+      ],
+      "nursing_action_category": "case",
+      "learning_objective": "Explain Family-Centered Nursing Care: clinical judgment drill using pediatric clinical judgment.",
+      "on_slide_text": [
+        "A caregiver says, \"This is not how my child normally acts.\" The priority is to validate the cue and perform a focused assessment.",
+        "Priority: listen, assess, act",
+        "Evaluate child and family response"
+      ],
+      "activity_prompt": "Choose the first nursing response.",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Use this case to practice the clinical judgment loop. The presenting cue is this: A caregiver says, \"This is not how my child normally acts.\" The priority is to validate the cue and perform a focused assessment.. The nurse first determines whether there is an immediate threat to airway, breathing, circulation, neurologic status, safety, or comfort. After that, the nurse links the cue to the most likely risk and chooses an action that can be evaluated. In Family-Centered Nursing Care, the safest response is not the most complicated response. It is the response that fits the child developmental level, uses family information appropriately, reduces preventable harm, and produces evidence that the child or caregiver is safer after the intervention.",
+      "tts_text": "",
+      "target_duration_sec": 51,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "mini_case",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "prioritize",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S012",
+      "legacy_archetype": "case",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S13",
+      "slide_number": 13,
+      "slide_title": "Evaluation Outcomes",
+      "slide_archetype": "content",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "evaluate",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "evaluation",
+      "learning_objective": "Explain Family-Centered Nursing Care: evaluation outcomes using pediatric clinical judgment.",
+      "on_slide_text": [
+        "caregiver explains the plan in their own words",
+        "the child shows improved comfort or participation",
+        "the care plan fits the family routine"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Define how you know the plan worked.",
+      "speaker_script": "This slide focuses on evaluation outcomes in Family-Centered Nursing Care. The first clinical point is caregiver explains the plan in their own words. The second point is the child shows improved comfort or participation. The third point is the care plan fits the family routine. For practice and for NCLEX-style questions, connect each point to the same pattern: cue, risk, action, teaching, and evaluation. Pediatric care is never only about the child body system. It also includes development, caregiver knowledge, communication, and safety. By the end of this slide, the learner should be able to explain which cue would change the priority and what outcome would prove the nursing action worked.",
+      "tts_text": "",
+      "target_duration_sec": 48,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "content",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "evaluate",
+        "cjm_function": "evaluate outcomes",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S013",
+      "legacy_archetype": "evaluation",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S14",
+      "slide_number": 14,
+      "slide_title": "Documentation + Handoff",
+      "slide_archetype": "content",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "act",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "take action"
+      ],
+      "nursing_action_category": "documentation",
+      "learning_objective": "Explain Family-Centered Nursing Care: documentation + handoff using pediatric clinical judgment.",
+      "on_slide_text": [
+        "document objective cues and caregiver report",
+        "include teaching, response, and follow-up plan",
+        "handoff the risk that could change first"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Transfer the risk clearly.",
+      "speaker_script": "This slide focuses on documentation + handoff in Family-Centered Nursing Care. The first clinical point is document objective cues and caregiver report. The second point is include teaching, response, and follow-up plan. The third point is handoff the risk that could change first. For practice and for NCLEX-style questions, connect each point to the same pattern: cue, risk, action, teaching, and evaluation. Pediatric care is never only about the child body system. It also includes development, caregiver knowledge, communication, and safety. By the end of this slide, the learner should be able to explain which cue would change the priority and what outcome would prove the nursing action worked.",
+      "tts_text": "",
+      "target_duration_sec": 47,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "content",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "act",
+        "cjm_function": "take action",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S014",
+      "legacy_archetype": "documentation",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S15",
+      "slide_number": 15,
+      "slide_title": "NCLEX/NGN Takeaways",
+      "slide_archetype": "retrieval_check",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "evaluate",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "nclex",
+      "learning_objective": "Explain Family-Centered Nursing Care: nclex/ngn takeaways using pediatric clinical judgment.",
+      "on_slide_text": [
+        "family knowledge is data",
+        "development shapes communication",
+        "safety outranks convenience"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Retrieve the judgment thread.",
+      "speaker_script": "This slide converts the chapter into NCLEX and NGN thinking. The first point is family knowledge is data. The second point is development shapes communication. The third point is safety outranks convenience. On test items, avoid choosing an answer just because it sounds caring or familiar. Choose the answer that matches the cue in the stem, reduces the highest priority risk, and includes evaluation. In pediatric questions, the family report, the child developmental stage, and the safety risk often determine the priority. When two answers look correct, select the one that acts on the cue that can cause harm first.",
+      "tts_text": "",
+      "target_duration_sec": 43,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "retrieval_check",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "evaluate",
+        "cjm_function": "evaluate outcomes",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S015",
+      "legacy_archetype": "nclex",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S16",
+      "slide_number": 16,
+      "slide_title": "Case Rationale",
+      "slide_archetype": "content",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "evaluate",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "rationale",
+      "learning_objective": "Explain Family-Centered Nursing Care: case rationale using pediatric clinical judgment.",
+      "on_slide_text": [
+        "recognize the cue before choosing an action",
+        "prioritize airway, breathing, circulation, safety, or comfort as indicated",
+        "evaluate with observable outcomes"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Explain why the safest answer is safest.",
+      "speaker_script": "This slide converts the chapter into NCLEX and NGN thinking. The first point is recognize the cue before choosing an action. The second point is prioritize airway, breathing, circulation, safety, or comfort as indicated. The third point is evaluate with observable outcomes. On test items, avoid choosing an answer just because it sounds caring or familiar. Choose the answer that matches the cue in the stem, reduces the highest priority risk, and includes evaluation. In pediatric questions, the family report, the child developmental stage, and the safety risk often determine the priority. When two answers look correct, select the one that acts on the cue that can cause harm first.",
+      "tts_text": "",
+      "target_duration_sec": 47,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "content",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "evaluate",
+        "cjm_function": "evaluate outcomes",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S016",
+      "legacy_archetype": "rationale",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S17",
+      "slide_number": 17,
+      "slide_title": "Common Pitfalls",
+      "slide_archetype": "content",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "prioritize",
+      "source_refs": [],
+      "evidence_status": "needs-verification",
+      "cjm_functions": [
+        "prioritize hypotheses"
+      ],
+      "nursing_action_category": "pitfalls",
+      "learning_objective": "Explain Family-Centered Nursing Care: common pitfalls using pediatric clinical judgment.",
+      "on_slide_text": [
+        "educating only the adult and ignoring the child",
+        "assuming culture explains risk without assessment",
+        "missing caregiver concern because vital signs look stable"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Avoid the unsafe shortcut.",
+      "speaker_script": "This slide focuses on common pitfalls in Family-Centered Nursing Care. The first clinical point is educating only the adult and ignoring the child. The second point is assuming culture explains risk without assessment. The third point is missing caregiver concern because vital signs look stable. For practice and for NCLEX-style questions, connect each point to the same pattern: cue, risk, action, teaching, and evaluation. Pediatric care is never only about the child body system. It also includes development, caregiver knowledge, communication, and safety. By the end of this slide, the learner should be able to explain which cue would change the priority and what outcome would prove the nursing action worked.",
+      "tts_text": "",
+      "target_duration_sec": 48,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "content",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "prioritize",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S017",
+      "legacy_archetype": "pitfalls",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    },
+    {
+      "slide_id": "S18",
+      "slide_number": 18,
+      "slide_title": "Chapter Close",
+      "slide_archetype": "takeaway",
+      "lesson_section": "Perspectives of Nursing Care of Children",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "summary",
+      "learning_objective": "Explain Family-Centered Nursing Care: chapter close using pediatric clinical judgment.",
+      "on_slide_text": [
+        "one cue can change the priority",
+        "one action should reduce the risk",
+        "one evaluation proves whether care worked"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "legacy activity_statement: Close the clinical judgment loop.",
+      "speaker_script": "This slide focuses on chapter close in Family-Centered Nursing Care. The first clinical point is one cue can change the priority. The second point is one action should reduce the risk. The third point is one evaluation proves whether care worked. For practice and for NCLEX-style questions, connect each point to the same pattern: cue, risk, action, teaching, and evaluation. Pediatric care is never only about the child body system. It also includes development, caregiver knowledge, communication, and safety. By the end of this slide, the learner should be able to explain which cue would change the priority and what outcome would prove the nursing action worked.",
+      "tts_text": "",
+      "target_duration_sec": 46,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "takeaway",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "Projection-safe transformed content; current practice sensitive items flagged in QA.",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "legacy_slide_id": "NCOC_RN2019_CH001_S020",
+      "legacy_archetype": "summary",
+      "migration": {
+        "lane_inferred": true,
+        "cjm_inferred": true
+      }
+    }
+  ],
+  "assessment_items": [],
+  "remediation_map": [],
+  "qa": {
+    "release_status": "draft-only",
+    "gates_passed": [],
+    "defects": [
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[legacy current practice verification] Deck avoids current numeric schedules and medication dose ranges; verify institutional policy and current public health schedules before use."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[legacy source fidelity] Content is source-aligned and transformed; exact official headings or verbatim text were not claimed."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[legacy speaker notes] 18 of 18 slides include inserted lecturer script in notes."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[legacy nursing accuracy] Nursing safety language avoids unsupported medication dosing and current schedule claims; high-alert local policy items flagged for verification."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[legacy developmental accuracy] Age/development content sequenced by infant toddler preschool school-age adolescent and tied to communication safety and teaching."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[legacy NCLEX NGN relevance] Slides use recurring cue-risk-action-teach-evaluate clinical judgment thread with priority/rationale slides."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[legacy concept coverage] All 11 Unit 1 chapters represented as separate chapter decks plus all-chapters master deck."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[legacy slide density] Visible slide text limited to three main points plus one decision statement on most content slides."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[legacy visual readability] Rendered sample chapter decks visually inspected; native text remains readable and uncluttered."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[legacy overlap/out-of-bounds] Automated slide warnings rerun after layout revision: 0 warnings."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[legacy deck split compliance] No chapter exceeds 45 slides; all chapters exported as Part 1 decks."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[legacy filename compliance] Deck files use date unit title chapter title and part number with ASCII-safe stems."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[legacy manifest accuracy] Master manifest slide blueprint source inventory visual asset register and assumption gap log exported."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[legacy export/openability] All PPTX zip structure checks passed; individual and master decks exported."
+      }
+    ],
+    "cjm_coverage_rationale": ""
+  },
+  "revision_log": [
+    {
+      "revision_id": "R00",
+      "date": "2026-09-06",
+      "changed_ids": [
+        "*"
+      ],
+      "previous_summary": "legacy blueprint CSV + notes",
+      "new_summary": "lesson_spec v1.0",
+      "reason": "schema migration",
+      "downstream_effects": [
+        "all"
+      ]
+    }
+  ]
+}

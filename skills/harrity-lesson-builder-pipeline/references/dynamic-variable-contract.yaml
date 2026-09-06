@@ -1,0 +1,109 @@
+version: 2.0.0
+name: harrity_lesson_builder_dynamic_variable_contract
+purpose: resolve lesson-specific values at runtime, prevent hardcoded example content, and route all lesson-builder/video-builder workflows into one Harrity package pipeline.
+canonical_skill: harrity-lesson-builder-pipeline
+historical_aliases:
+  - lesson-builder-pipeline
+  - lesson-video-builder
+required_by_mode:
+  source_preflight:
+    - runtime.run_date_yyyymmdd
+    - runtime.package_id
+    - runtime.build_mode
+    - sources.files
+    - sources.pasted_text_blocks
+  blueprint:
+    - runtime.run_date_yyyymmdd
+    - runtime.package_id
+    - runtime.build_mode
+    - lesson.lesson_title
+    - lesson.audience
+    - sources.coverage_status
+    - outputs.target_outputs
+  full_production:
+    - runtime.run_date_yyyymmdd
+    - runtime.package_id
+    - runtime.build_mode
+    - lesson.lesson_title
+    - lesson.audience
+    - lesson.unit_title
+    - lesson.chapter_title
+    - sources.coverage_status
+    - taxonomy.learning_outcomes
+    - taxonomy.ngn_cjmm_functions
+    - outputs.target_outputs
+    - outputs.filename_pattern
+    - layout.archetype_set
+    - qa.required_gates
+  revision:
+    - runtime.run_date_yyyymmdd
+    - runtime.package_id
+    - runtime.build_mode
+    - revision.prior_package_id
+    - revision.change_request
+    - runtime.rebuild_scope
+  audio_video_handoff:
+    - runtime.run_date_yyyymmdd
+    - runtime.package_id
+    - runtime.build_mode
+    - lesson.lesson_title
+    - media.voice_id
+    - media.wpm_target
+    - outputs.include_audio_package
+fallback_rules:
+  package_id: derive from run_date, sanitized lesson_title, and short hash of user_request
+  deck_id: derive from package_id and deck_part
+  output_root: derive from package_id when not supplied
+  source_status: use provisional or needs-verification rather than inventing source confirmation
+  build_mode: infer narrowest mode from user verbs; default to source_preflight if scope is ambiguous
+  slide_count: use source density and output controls; split above outputs.max_slides_per_deck
+  cjm_functions: require six CJMM functions in the map; document intentional omissions for short packages
+  remediation_targets: derive from quiz misses, learner questions, QA gaps, or leave empty when no performance data exists
+prohibited_hardcoding:
+  - fixed topic names
+  - fixed patient names
+  - fixed chapter IDs
+  - fixed source families
+  - fixed output paths
+  - synthetic cases unless user explicitly requests simulation or demo mode
+source_status_values:
+  - source-grounded
+  - source-confirmed
+  - source-aligned
+  - instructor-added
+  - inferred
+  - illustrative-example
+  - provisional
+  - unresolved
+  - needs-verification
+qa_status_values:
+  - pass
+  - minor
+  - major
+  - blocker
+release_status_values:
+  - release-ready
+  - faculty-review-needed
+  - draft-only
+  - blocked
+required_cjm_functions:
+  - recognize cues
+  - analyze cues
+  - prioritize hypotheses
+  - generate solutions
+  - take action
+  - evaluate outcomes
+package_outputs:
+  default:
+    - lesson_deck.pptx
+    - facilitator_guide.md
+    - learner_handout.md
+    - assessment_map.csv
+    - lesson_manifest.json
+  optional:
+    - outline.json
+    - script.json
+    - audio_handoff.json
+    - binding_manifest.json
+    - video_export_plan.md
+    - qa_log.md

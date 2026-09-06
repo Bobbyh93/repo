@@ -1,0 +1,139 @@
+{
+  "runtime": {
+    "run_date_yyyymmdd": "{{runtime.run_date_yyyymmdd}}",
+    "generated_at_iso": "{{runtime.generated_at_iso}}",
+    "package_id": "{{runtime.package_id}}",
+    "request_id": "{{runtime.request_id}}",
+    "build_mode": "{{runtime.build_mode}}",
+    "deployment_mode": "{{runtime.deployment_mode}}",
+    "rebuild_scope": "{{runtime.rebuild_scope}}",
+    "output_root": "{{runtime.output_root}}"
+  },
+  "lesson": {
+    "course_code": "{{lesson.course_code}}",
+    "program_level": "{{lesson.program_level}}",
+    "audience": "{{lesson.audience}}",
+    "unit_title": "{{lesson.unit_title}}",
+    "chapter_id": "{{lesson.chapter_id}}",
+    "chapter_title": "{{lesson.chapter_title}}",
+    "lesson_title": "{{lesson.lesson_title}}",
+    "concept": "{{lesson.concept}}",
+    "exemplars": [],
+    "clinical_domain": "{{lesson.clinical_domain}}",
+    "source_family": "{{lesson.source_family}}",
+    "source_anchor": "{{lesson.source_anchor}}",
+    "page_range": "{{lesson.page_range}}",
+    "organizing_clinical_question": "{{lesson.organizing_clinical_question}}"
+  },
+  "sources": {
+    "files": [],
+    "pasted_text_blocks": [],
+    "tables": [],
+    "approved_outline_path": "{{sources.approved_outline_path}}",
+    "prior_package_path": "{{sources.prior_package_path}}",
+    "source_hierarchy": [],
+    "coverage_status": "{{sources.coverage_status}}"
+  },
+  "taxonomy": {
+    "nclex_client_needs": [],
+    "ngn_cjmm_functions": [
+      "recognize cues",
+      "analyze cues",
+      "prioritize hypotheses",
+      "generate solutions",
+      "take action",
+      "evaluate outcomes"
+    ],
+    "priority_frameworks": [],
+    "active_learning_templates": [],
+    "concept_tags": [],
+    "learning_outcomes": []
+  },
+  "outputs": {
+    "target_outputs": [
+      "lesson_deck.pptx",
+      "facilitator_guide.md",
+      "learner_handout.md",
+      "assessment_map.csv",
+      "lesson_manifest.json"
+    ],
+    "max_slides_per_deck": 45,
+    "target_slide_count": "{{outputs.target_slide_count}}",
+    "include_learner_deck": true,
+    "include_faculty_deck": true,
+    "include_speaker_notes": true,
+    "include_tts_text": false,
+    "include_audio_package": false,
+    "include_binding_manifest": false,
+    "include_video_export_plan": false,
+    "filename_pattern": "{{runtime.run_date_yyyymmdd}}_{{lesson.course_code}}_{{lesson.unit_title}}_{{lesson.chapter_title}}_Part_{{deck.part_number}}.pptx",
+    "include_assessment_map": true,
+    "include_remediation_plan": true,
+    "include_qa_log": true,
+    "target_duration_minutes": "{{outputs.target_duration_minutes}}"
+  },
+  "layout": {
+    "theme_id": "{{layout.theme_id}}",
+    "pptx_template_path": "{{layout.pptx_template_path}}",
+    "archetype_set": [
+      "title",
+      "opening_case",
+      "clinical_question",
+      "chapter_map",
+      "warmup_sequence",
+      "concept_cards",
+      "match_activity",
+      "debrief",
+      "timeline",
+      "checkpoint_mcq",
+      "mini_case",
+      "urgency_sort",
+      "capstone_mcq",
+      "retrieval_check",
+      "takeaway"
+    ],
+    "allow_overlap": false,
+    "safe_regions": {}
+  },
+  "media": {
+    "voice_id": "{{media.voice_id}}",
+    "wpm_target": 140,
+    "audio_format": "mp3",
+    "auto_advance_strategy": "duration_plus_buffer"
+  },
+  "qa": {
+    "required_gates": [
+      "runtime",
+      "source",
+      "taxonomy",
+      "blueprint",
+      "cjm_coverage",
+      "outline",
+      "script",
+      "timing",
+      "layout",
+      "deck_render",
+      "package_manifest"
+    ],
+    "blocker_rules": [
+      "missing required runtime variables",
+      "unsupported clinical claims labeled as source-grounded",
+      "duplicate slide ids",
+      "missing cjm coverage without documented rationale",
+      "claimed files not created"
+    ],
+    "release_status_allowed": [
+      "release-ready",
+      "faculty-review-needed",
+      "draft-only",
+      "blocked"
+    ]
+  },
+  "revision": {
+    "prior_package_id": "{{revision.prior_package_id}}",
+    "target_slide_ids": [],
+    "change_request": "{{revision.change_request}}",
+    "dependency_impact": []
+  },
+  "unresolved_variables": []
+}

@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0.0",
+  "package_type": "harrity_master_lesson",
+  "promotion_state": "template",
+  "administrative_metadata": {
+    "lesson_id": "LESSON-REPLACE-ME",
+    "course_id": "REQUIRED",
+    "course_name": "REQUIRED",
+    "program_level": "REQUIRED",
+    "lesson_title": "REQUIRED",
+    "version": "0.1.0",
+    "content_owner": "REQUIRED",
+    "faculty_reviewer": "REQUIRED",
+    "created_date": "2026-07-19",
+    "target_release_date": "REQUIRED"
+  },
+  "source_governance": {
+    "approval_status": "unapproved",
+    "coverage_status": "absent",
+    "organizing_clinical_question": "REQUIRED",
+    "sources": [
+      {
+        "reference_id": "REF-001",
+        "source_type": "REQUIRED",
+        "title": "REQUIRED",
+        "edition_or_version": "REQUIRED",
+        "locator": "REQUIRED",
+        "evidence_status": "unverified",
+        "approved_by": "REQUIRED",
+        "approval_date": "REQUIRED"
+      }
+    ]
+  },
+  "taxonomy_lock": {
+    "status": "unlocked",
+    "concept": "REQUIRED",
+    "nclex_client_need": "REQUIRED",
+    "body_system": "REQUIRED",
+    "priority_framework": "REQUIRED",
+    "bloom_levels": ["REQUIRED"],
+    "qsen_domains": ["REQUIRED"],
+    "aacn_competencies": ["REQUIRED"],
+    "ncjmm_functions": [
+      "recognize_cues",
+      "analyze_cues",
+      "prioritize_hypotheses",
+      "generate_solutions",
+      "take_action",
+      "evaluate_outcomes"
+    ],
+    "approved_by": "REQUIRED",
+    "approval_date": "REQUIRED"
+  },
+  "learning_outcomes": [
+    {
+      "objective_id": "LO-01",
+      "statement": "REQUIRED: measurable learner outcome",
+      "bloom_level": "REQUIRED",
+      "nclex_alignment": "REQUIRED",
+      "aacn_alignment": ["REQUIRED"],
+      "qsen_alignment": ["REQUIRED"],
+      "assessment_method": "REQUIRED",
+      "approval_status": "draft"
+    }
+  ],
+  "lesson_design": {
+    "estimated_minutes": 0,
+    "audience_prerequisites": ["REQUIRED"],
+    "glossary": [
+      {
+        "term": "REQUIRED",
+        "definition": "REQUIRED",
+        "reference_ids": ["REF-001"]
+      }
+    ],
+    "slides": [
+      {
+        "slide_id": "S001",
+        "slide_type": "lesson_title",
+        "title": "REQUIRED",
+        "learner_facing_content": ["REQUIRED"],
+        "objective_ids": ["LO-01"],
+        "reference_ids": ["REF-001"],
+        "speaker_notes": "REQUIRED",
+        "tts_text": "REQUIRED",
+        "estimated_seconds": 0,
+        "layout_instruction": "REQUIRED",
+        "media": [],
+        "accessibility": {
+          "reading_order": ["title", "body"],
+          "alt_text": "not_applicable",
+          "contrast_checked": false,
+          "meaning_not_color_only": false,
+          "captions_required": false,
+          "transcript_required": true
+        },
+        "approval_status": "draft"
+      }
+    ],
+    "required_slide_types": [
+      "lesson_title",
+      "learning_objectives",
+      "why_it_matters",
+      "assessment",
+      "concept_foundation",
+      "pathophysiology",
+      "clinical_manifestations",
+      "diagnostics",
+      "interventions",
+      "medications",
+      "clinical_judgment",
+      "case_study",
+      "summary",
+      "nclex_review",
+      "references"
+    ]
+  },
+  "assessment_plan": {
+    "case_studies": [],
+    "nclex_items": [],
+    "all_objectives_assessed": false,
+    "answer_rationales_verified": false
+  },
+  "media_binding": {
+    "tts_model": "gpt-4o-mini-tts",
+    "voice": "coral",
+    "audio_format": "mp3",
+    "bindings": []
+  },
+  "quality_assurance": {
+    "clinical_accuracy_review": "not_started",
+    "instructional_design_review": "not_started",
+    "accessibility_review": "not_started",
+    "reference_review": "not_started",
+    "media_review": "not_started",
+    "critical_defects": [],
+    "major_defects": []
+  },
+  "approvals": {
+    "source_approved": false,
+    "taxonomy_approved": false,
+    "objectives_approved": false,
+    "outline_approved": false,
+    "script_approved": false,
+    "faculty_approved": false,
+    "release_approved": false
+  },
+  "release_metadata": {
+    "release_id": "UNASSIGNED",
+    "release_status": "blocked",
+    "artifact_manifest": [],
+    "released_by": "UNASSIGNED",
+    "released_at": "UNASSIGNED"
+  }
+}
