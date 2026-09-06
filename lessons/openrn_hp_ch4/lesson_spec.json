@@ -1,0 +1,2039 @@
+{
+  "schema_version": "1.2",
+  "runtime_config": {
+    "runtime": {
+      "run_date_yyyymmdd": "20260906",
+      "package_id": "HP-CH4-FAMILY-DYNAMICS-R1",
+      "build_mode": "full_production",
+      "deployment_mode": "hybrid",
+      "rebuild_scope": "full",
+      "output_root": "."
+    },
+    "outputs": {
+      "filename_pattern": "{{runtime.run_date_yyyymmdd}}_{{lesson.course_code}}_{{lesson.chapter_title}}_Part_{{deck.part_number}}.pptx"
+    },
+    "media": {
+      "wpm_target": 140
+    }
+  },
+  "lesson": {
+    "course_code": "NHP",
+    "program_level": "prelicensure RN",
+    "audience": "prelicensure nursing students",
+    "unit_title": "Health Promotion Across the Lifespan",
+    "chapter_id": "4",
+    "chapter_title": "Family Dynamics",
+    "lesson_title": "Family Dynamics: assessing and acting on the family as part of the client",
+    "concept": "family dynamics",
+    "exemplars": [
+      "adverse childhood experiences",
+      "parenting styles",
+      "caregiver role strain",
+      "family-centered care"
+    ],
+    "clinical_domain": "health promotion / psychosocial integrity",
+    "source_family": "Open RN Nursing Health Promotion",
+    "source_anchor": "Chapter 4, sections 4.1-4.8",
+    "page_range": "n/a (web text)",
+    "organizing_clinical_question": "When one person is the client, how does the nurse recognize whether the family is helping or harming that person's health, and what does the nurse do first?",
+    "opening_patient_question": "My son's stomach hurts. Is it because of the divorce?",
+    "concept_lanes": [
+      "structure",
+      "dynamics",
+      "risk",
+      "strain",
+      "action"
+    ],
+    "target_duration_minutes": 50,
+    "program_outcomes": [],
+    "course_objectives": [
+      {
+        "id": "CO1",
+        "text": "Identify family roles, structure, and functions",
+        "maps_to": []
+      },
+      {
+        "id": "CO2",
+        "text": "Examine family dynamics",
+        "maps_to": []
+      },
+      {
+        "id": "CO3",
+        "text": "Identify various factors that can lead to actual and potential family health problems",
+        "maps_to": []
+      },
+      {
+        "id": "CO4",
+        "text": "Compare and contrast parenting styles and behaviors",
+        "maps_to": []
+      },
+      {
+        "id": "CO5",
+        "text": "Consider the influence of family cultural practices related to health",
+        "maps_to": []
+      },
+      {
+        "id": "CO6",
+        "text": "Identify the psychosocial effect of illness on a client and their family's health",
+        "maps_to": []
+      },
+      {
+        "id": "CO7",
+        "text": "Apply the nursing process to caring for a client in the context of the family",
+        "maps_to": []
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "SRC01",
+      "title": "Nursing Health Promotion, Chapter 4: Family Dynamics",
+      "kind": "authoritative",
+      "license": "CC BY 4.0",
+      "locator": "https://wtcs.pressbooks.pub/healthpromo/ (chapter 4); https://www.ncbi.nlm.nih.gov/books/NBK615335/",
+      "coverage_status": "confirmed",
+      "attribution_statement": "Adapted from Open RN, Nursing Health Promotion, Chapter 4 (Ernstmeyer & Christman, eds., 2025), CC BY 4.0. https://wtcs.pressbooks.pub/healthpromo/",
+      "index_path": "handoff/source/SRC01_openrn_healthpromo_ch4_index.json",
+      "license_exclusions": [
+        "4.9 learning activities and case study (CC BY-NC 4.0)",
+        "H5P cards and question sets (CC BY-NC 4.0)",
+        "ADAPT NGN items (CC BY-NC 4.0)",
+        "figure 4.11 (CC BY-SA 4.0)"
+      ]
+    }
+  ],
+  "taxonomy": {
+    "glossary": [
+      {
+        "term": "family dynamics",
+        "definition": "Roles, relationships, communication patterns, and factors shaping how family members interact.",
+        "source_ref": "SRC01"
+      },
+      {
+        "term": "family dysfunction",
+        "definition": "Failure of the five family functions; usually unintended; transmitted across generations.",
+        "source_ref": "SRC01"
+      },
+      {
+        "term": "adverse childhood experiences (ACE)",
+        "definition": "Neglect, abuse, divorce, incarceration of a family member, witnessing substance abuse, mental illness, or violence against a parent.",
+        "source_ref": "SRC01"
+      },
+      {
+        "term": "caregiver role strain",
+        "definition": "Difficulty performing the family caregiver role.",
+        "source_ref": "SRC01"
+      },
+      {
+        "term": "family-centered care",
+        "definition": "Client-centered approach emphasizing family involvement and collaboration in care and decisions.",
+        "source_ref": "SRC01"
+      },
+      {
+        "term": "cultural humility",
+        "definition": "With inclusiveness, the ANA standard of respectful and equitable practice.",
+        "source_ref": "SRC01"
+      }
+    ],
+    "concept_tags": [
+      "family",
+      "family dynamics",
+      "adverse childhood experiences",
+      "parenting",
+      "caregiver role strain",
+      "family-centered care",
+      "cultural humility"
+    ],
+    "outcome_tags": [
+      "assessment of family",
+      "anticipatory guidance",
+      "referral",
+      "mandated reporting"
+    ],
+    "nclex_client_needs": [
+      "Psychosocial Integrity",
+      "Management of Care",
+      "Health Promotion and Maintenance"
+    ],
+    "cjm_functions": [
+      "recognize cues",
+      "analyze cues",
+      "prioritize hypotheses",
+      "generate solutions",
+      "take action",
+      "evaluate outcomes"
+    ],
+    "proposed_new_tags": [],
+    "frameworks": [
+      {
+        "framework_id": "NCSBN-CJMM",
+        "title": "NCSBN Clinical Judgment Measurement Model",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "CA-BRN-ART3",
+        "title": "California BRN regulations, 16 CCR Article 3 (Airtable: Requirements (Article 3), ref = req_id)",
+        "text_policy": "public-domain"
+      },
+      {
+        "framework_id": "CCNE-2018",
+        "title": "CCNE Standards for Accreditation of Baccalaureate and Graduate Nursing Programs",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "AACN-2021",
+        "title": "AACN Essentials 2021",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "QSEN",
+        "title": "QSEN competencies",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "PEARSON-CF",
+        "title": "Pearson Concept Framework (Airtable: Pearson Concept Framework Loader, ref = Concept Key)",
+        "text_policy": "identifier-only"
+      }
+    ]
+  },
+  "governance": {
+    "promotion_state": "faculty_review",
+    "approvals": {
+      "source_approved": false,
+      "taxonomy_approved": false,
+      "objectives_approved": false,
+      "outline_approved": false,
+      "script_approved": false,
+      "faculty_approved": false,
+      "release_approved": false
+    },
+    "taxonomy_lock": {
+      "status": "unlocked",
+      "approved_by": "",
+      "approval_date": ""
+    },
+    "administrative_metadata": {
+      "lesson_id": "LESSON-NHP-CH4-FAMILY-DYNAMICS",
+      "version": "0.1.0",
+      "content_owner": "R. Harrity",
+      "faculty_reviewer": "R. Harrity",
+      "created_date": "2026-09-06"
+    }
+  },
+  "slides": [
+    {
+      "slide_id": "S01",
+      "slide_number": 1,
+      "slide_title": "Family Dynamics: the family is part of the assessment",
+      "slide_archetype": "title",
+      "lesson_section": "opening",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "",
+      "on_slide_text": [
+        "See the whole map: structure, dynamics, risk, strain, action",
+        "Notice what the family is doing to health",
+        "Decide what the nurse does first"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Title slide.",
+      "tts_text": "",
+      "target_duration_sec": 30,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "title",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S02",
+      "slide_number": 2,
+      "slide_title": "Opening case: an 8-year-old with abdominal pain",
+      "slide_archetype": "opening_case",
+      "lesson_section": "opening",
+      "concept_lane": "dynamics",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues"
+      ],
+      "nursing_action_category": "assess",
+      "learning_objective": "Recognize the family cues that belong in a pediatric abdominal pain assessment.",
+      "on_slide_text": [
+        "Living situation and household",
+        "How family members interact",
+        "What the child believes about the divorce",
+        "Strengths, stressors, supports"
+      ],
+      "activity_prompt": "List three things you still need to know before you can plan care.",
+      "answer_key": [
+        "Living situation and household members",
+        "How family members interact and communicate",
+        "The child's feelings about the divorce and any sense of responsibility for it",
+        "Family strengths, stressors, and available supports"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Start with the client in front of you. An eight-year-old is admitted with abdominal pain. The mother is at the bedside. During the interview you learn the parents are divorcing. Before we teach a single definition, decide what you already know and what you still need. You know the pain complaint and that one parent is present. You do not yet know the living situation, how the family interacts, what the child believes about the divorce, or what supports exist. Hold this case; we return to it at the end and you will write the nursing response yourself.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "opening_case",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "presentation": "An 8-year-old is admitted with abdominal pain. The mother is present. During the history the nurse learns the parents are divorcing.",
+            "cues": [
+              "Abdominal pain: onset, location, duration, character, what makes it better or worse",
+              "One parent at the bedside",
+              "Parents divorcing"
+            ],
+            "prompt": "What do you still need to know before you can plan care?"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "dynamics",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO7",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S03",
+      "slide_number": 3,
+      "slide_title": "The organizing question",
+      "slide_archetype": "clinical_question",
+      "lesson_section": "map",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "State the question every slide in this lesson answers.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Every concept in this chapter serves one question: when one person is the client, how does the nurse recognize whether the family is helping or harming that person's health, and what does the nurse do first? Five lanes carry the answer, from foundation to bedside: structure, dynamics, risk, strain, and action.",
+      "tts_text": "",
+      "target_duration_sec": 60,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "clinical_question",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "lane": "structure",
+            "nodes": [
+              "who counts as family",
+              "roles",
+              "five functions"
+            ]
+          },
+          {
+            "lane": "dynamics",
+            "nodes": [
+              "healthy vs unhealthy patterns",
+              "resources"
+            ]
+          },
+          {
+            "lane": "risk",
+            "nodes": [
+              "ACEs",
+              "risk and protective factors",
+              "parenting"
+            ]
+          },
+          {
+            "lane": "strain",
+            "nodes": [
+              "illness hits the whole family",
+              "caregiver role strain"
+            ]
+          },
+          {
+            "lane": "action",
+            "nodes": [
+              "assess",
+              "diagnose",
+              "outcomes",
+              "intervene",
+              "evaluate"
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S04",
+      "slide_number": 4,
+      "slide_title": "Chapter map: structure to action",
+      "slide_archetype": "chapter_map",
+      "lesson_section": "map",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "Use the map to locate where a family cue belongs.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Foundation on the left, bedside action on the right.",
+      "speaker_script": "Map first. Foundation on the left, bedside on the right.",
+      "tts_text": "",
+      "target_duration_sec": 60,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "chapter_map",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "lane": "structure",
+            "nodes": [
+              "family defined",
+              "orientation vs procreation",
+              "roles",
+              "five functions"
+            ]
+          },
+          {
+            "lane": "dynamics",
+            "nodes": [
+              "security vs stress",
+              "high- vs low-resource",
+              "dysfunction transmits"
+            ]
+          },
+          {
+            "lane": "risk",
+            "nodes": [
+              "ACE dose-response",
+              "risk factors",
+              "protective factors",
+              "parenting styles"
+            ]
+          },
+          {
+            "lane": "strain",
+            "nodes": [
+              "one illness, whole family",
+              "caregiver role strain",
+              "family-centered care"
+            ]
+          },
+          {
+            "lane": "action",
+            "nodes": [
+              "recognize cues",
+              "analyze cues",
+              "outcomes",
+              "take action",
+              "evaluate"
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S05",
+      "slide_number": 5,
+      "slide_title": "Structure: who is family, and what does a family do?",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: structure",
+      "concept_lane": "structure",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Identify family structure, roles, and the five family functions.",
+      "on_slide_text": [
+        "Family: two or more people related by birth, marriage, or adoption, living together",
+        "Family of orientation vs family of procreation",
+        "Roles are recurrent behavior patterns; illness can impair them"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Table 4.2 (modern family structures) not retrievable at build; faculty may add examples.",
+      "speaker_script": "The chapter opens with a working definition from the U.S. Census: two or more people, one the householder, related by birth, marriage, or adoption, living together. Nursing needs two more ideas. Family of orientation is the family you grew up in; family of procreation is the one you form as an adult. Roles are recurrent behavior patterns that fulfil family functions, and they change across the life span and can be impaired by chronic illness. The chapter names five functions. Read the five cards. When you assess a family, you are asking whether each function is being met for the client.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Economic support",
+            "body": "Meeting members' material needs.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Emotional support",
+            "body": "Intimacy: mutually shared trust that buffers outside stress.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Socialization",
+            "body": "First teacher of norms, values, and how emotions are shown. Can also pass on unhealthy behavior.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Control of sexuality and reproduction",
+            "body": "Family norms around partnership and reproduction.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Ascribed social status",
+            "body": "Status at birth versus achieved status by effort; family support shapes achievement.",
+            "cjm": "analyze cues"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "structure",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S06",
+      "slide_number": 6,
+      "slide_title": "Structure: roles, culture, and the nurse's own bias",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: structure",
+      "concept_lane": "structure",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Recognize informal and unhealthy family roles and the nurse's obligation to cultural humility.",
+      "on_slide_text": [
+        "Informal roles: decision-maker, peace-maker, tradition-holder",
+        "Decision-maker is culturally determined and may vary by decision",
+        "ANA: respectful and equitable practice = cultural humility + inclusiveness",
+        "Implicit bias is unconscious and can affect care"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Two role families matter at the bedside. Informal roles include the decision-maker, the peace-maker, and the tradition-holder. The decision-maker is culturally determined and may change with the type of decision, so ask rather than assume. In family dysfunction the chapter lists roles such as the hero, the mascot, the identified patient or scapegoat, the lost child, the enabler, and the parentified child. Those are cues, not labels to put in a chart. The last card is about you: the ANA standard of respectful and equitable practice combines cultural humility with inclusiveness, and implicit bias, an unconscious attitude shaped by experience, can change the care you give without your noticing.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Informal roles",
+            "body": "Decision-maker, peace-maker, tradition-holder.",
+            "cjm": "recognize cues"
+          },
+          {
+            "heading": "Roles seen in dysfunction",
+            "body": "Hero, mascot, identified patient or scapegoat, invisible or lost child, enabler or caretaker, parentified child.",
+            "cjm": "recognize cues"
+          },
+          {
+            "heading": "Culture",
+            "body": "Shared values, norms, symbols, language, and way of life passed between generations.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "The nurse's lens",
+            "body": "Cultural humility plus inclusiveness; watch for implicit bias.",
+            "cjm": "analyze cues"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "structure",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO5",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S07",
+      "slide_number": 7,
+      "slide_title": "Dynamics: healthy or unhealthy?",
+      "slide_archetype": "compare",
+      "lesson_section": "lane: dynamics",
+      "concept_lane": "dynamics",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Distinguish healthy from unhealthy family dynamics using observable cues.",
+      "on_slide_text": [
+        "A family can be functional in some ways and dysfunctional in others",
+        "Dysfunction: the five functions fail; usually unintended; passed across generations"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Table 4.3 not retrievable at build; columns are built from the section body.",
+      "speaker_script": "Family dynamics are the roles, relationships, and communication patterns that shape how members interact. The chapter gives a simple test. Healthy relationships produce security and comfort. Unhealthy ones produce stress: arguments, intrusion, criticism. The same family can be healthy in some characteristics and unhealthy in others at the same time, so avoid a single verdict. High-resource families combine resiliency with resources: money, extended family, friends, a faith community. Low-resource families do not effectively meet members' needs. Dysfunction is a failure of the five functions, usually unintended, and it is transmitted across generations, which is why caregiver trauma reaches into a child's sense of self.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "compare",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "columns": [
+              {
+                "title": "healthy: security and comfort",
+                "items": [
+                  "mutual respect",
+                  "trust",
+                  "caring communication",
+                  "needs met, or help sought",
+                  "resiliency plus resources"
+                ]
+              },
+              {
+                "title": "unhealthy: stress",
+                "items": [
+                  "arguments, intrusion, criticism",
+                  "unfriendly, disrespectful, hostile interaction",
+                  "needs not effectively met",
+                  "caregiver trauma reaching the child"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "dynamics",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S08",
+      "slide_number": 8,
+      "slide_title": "Risk: adverse childhood experiences are dose-dependent",
+      "slide_archetype": "risk_engine",
+      "lesson_section": "lane: risk",
+      "concept_lane": "risk",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues",
+        "prioritize hypotheses"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Explain why ACE count, not any single event, predicts later health risk.",
+      "on_slide_text": [
+        "ACE Study: more ACEs, more adolescent risk behavior and adult chronic illness",
+        "Highest ACE exposure: about 20 years lower life expectancy"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Adverse childhood experiences include neglect, abuse, divorce, a family member in prison, and witnessing substance abuse, mental illness, or violence against a parent. The ACE Study followed more than seventeen thousand people and found a dose-response relationship: the more ACEs, the more adolescent risk behavior and the more adult chronic illness, including alcoholism, COPD, depression, and liver disease. The highest exposure group lost about twenty years of life expectancy. The engine around the centre lists what raises the risk. Notice that most of these are things a nurse can screen for.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "risk_engine",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "center": "how many ACEs, not which one",
+            "factors": [
+              {
+                "title": "caregiver history",
+                "body": "abused as a child; young caregivers; limited understanding of child development"
+              },
+              {
+                "title": "household strain",
+                "body": "single parent, low income or education, financial stress, special-needs caregiving"
+              },
+              {
+                "title": "discipline and supervision",
+                "body": "inconsistent discipline or spanking, low supervision"
+              },
+              {
+                "title": "family climate",
+                "body": "isolation, high conflict, attitudes that accept violence"
+              },
+              {
+                "title": "community",
+                "body": "violence, poverty, food insecurity, drug and alcohol access, unstable housing"
+              },
+              {
+                "title": "opportunity",
+                "body": "few youth activities, low involvement, limited opportunity"
+              }
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "risk",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S09",
+      "slide_number": 9,
+      "slide_title": "Risk: protective factors the nurse can build",
+      "slide_archetype": "teaching_point",
+      "lesson_section": "lane: risk",
+      "concept_lane": "risk",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "generate solutions",
+        "take action"
+      ],
+      "nursing_action_category": "educate",
+      "learning_objective": "Name protective factors and the divorce guidance a nurse can teach a parent.",
+      "on_slide_text": [
+        "Divorce is an ACE; its effect depends on how the parents treat each other",
+        "Keep routine, friends, school; consistent rules across households; keep promises"
+      ],
+      "activity_prompt": "Write two sentences of anticipatory guidance for the divorcing parents in the opening case.",
+      "answer_key": [
+        "Never force the child to take sides; no arguments or criticism of the other parent in front of the child",
+        "Talk early and often, be honest in simple terms, tell the child it is not their fault, reassure them they are loved",
+        "Keep routine, friends, school, and environment; keep rules consistent across both households; keep promises",
+        "Inform teachers and counselors so problems at school are reported"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Protective factors are the other half of the risk engine and they are teachable. In the family: basic needs met, stable and nurturing relationships, social support, positive shared activities, school valued, peaceful conflict resolution, outside mentors, caregiver education and employment, effective supervision. In the community: parenting education, financial assistance, health and mental health services, safe housing and childcare, quality preschool, after-school programs, family-friendly employment. Divorce is itself an ACE, and the chapter is specific: the effect is moderated by how the parents treat each other before, during, and after. That gives you a teaching script for the opening case.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "teaching_point",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "cards": [
+              {
+                "title": "in the family",
+                "body": "needs met; stable nurturing relationships; social support; shared activities; school valued; peaceful conflict resolution; mentors"
+              },
+              {
+                "title": "in the community",
+                "body": "parenting education; financial help; health and mental health services; safe housing and childcare; preschool and after-school programs"
+              },
+              {
+                "title": "when parents divorce",
+                "body": "no sides, no arguments in front of the child; talk early and often; not the child's fault; keep routine and promises"
+              }
+            ],
+            "warning": "Anticipatory guidance is a nursing action. Give it in plain terms and check what the parent heard."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "risk",
+        "cjm_function": "generate solutions",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S10",
+      "slide_number": 10,
+      "slide_title": "Risk: four parenting styles on two axes",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: risk",
+      "concept_lane": "risk",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Compare parenting styles by responsiveness and demandingness and their outcomes.",
+      "on_slide_text": [
+        "Two axes: responsiveness (warmth) and demandingness (behavioral control)",
+        "Third dimension: psychological control such as guilt or love withdrawal",
+        "Authoritative explains the rationale; authoritarian expects compliance"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Tables 4.5a/4.5b not retrievable at build; cards are from the section body.",
+      "speaker_script": "The chapter places parenting on two axes: responsiveness, meaning warmth and support, and demandingness, meaning behavioral control. Crossing them gives four styles. Uninvolved is low on both and produces poor outcomes in every domain. Permissive is high warmth and low control: more behavior problems and lower academics, but higher self-esteem and social skills. Authoritarian is low warmth and high control: moderate academics, poorer social skills, lower self-esteem, more depression. Authoritative is high on both and does best across domains, including the lowest risk of underage drinking. A third dimension, psychological control through guilt, shaming, or withdrawing love, separates authoritarian from authoritative: one expects unquestioned compliance, the other explains the reason.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Uninvolved",
+            "body": "Low warmth, low control. Poor outcomes in all domains.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Permissive",
+            "body": "High warmth, low control. Behavior problems, lower academics; higher self-esteem and social skills.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Authoritarian",
+            "body": "Low warmth, high control. Moderate academics; poorer social skills, lower self-esteem, more depression.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Authoritative",
+            "body": "High warmth, high control, explains rationale. Best outcomes; lowest underage drinking risk.",
+            "cjm": "analyze cues"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "risk",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO4",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S11",
+      "slide_number": 11,
+      "slide_title": "Risk: what positive discipline looks like",
+      "slide_archetype": "script_template",
+      "lesson_section": "lane: risk",
+      "concept_lane": "risk",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "generate solutions",
+        "take action"
+      ],
+      "nursing_action_category": "educate",
+      "learning_objective": "Teach a caregiver a consequence sequence that guides rather than punishes.",
+      "on_slide_text": [
+        "Discipline is guidance, not punishment; make it age-appropriate",
+        "Spanking is not effective; it teaches hitting to get what you want",
+        "Time-out: one minute per year of age, then a hug and positive words"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Discipline in this chapter means guidance, not punishment. The consequence steps are a script you can hand to a parent: clear guidelines and a warning; a specific if-then consequence that fits the behavior; immediate follow-through; positive reinforcement afterward. For a young child, time-out runs one minute per year of age and ends with a hug and positive words. For an older child, remove a privilege briefly, then restate the rule and give positive attention. Behaviorism adds a rule: attend to the behavior you want and, if the child is safe, ignore the tantrum, then name the emotion afterward and teach an acceptable way to show it. Spanking is not effective and teaches that hitting gets what you want. Rewards beat consequences.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "script_template",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "steps": [
+              {
+                "title": "set the guideline",
+                "body": "clear rule plus a warning"
+              },
+              {
+                "title": "name the consequence",
+                "body": "specific if-then that fits the behavior"
+              },
+              {
+                "title": "follow through",
+                "body": "immediately, calmly"
+              },
+              {
+                "title": "reinforce",
+                "body": "positive attention for the behavior you want"
+              },
+              {
+                "title": "teach the feeling",
+                "body": "after a tantrum, name the emotion and show an acceptable way to express it"
+              }
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "risk",
+        "cjm_function": "generate solutions",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO4",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S12",
+      "slide_number": 12,
+      "slide_title": "Strain: one member's illness reaches the whole family",
+      "slide_archetype": "control_room",
+      "lesson_section": "lane: strain",
+      "concept_lane": "strain",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Identify how a client's illness changes roles for parents, siblings, and caregivers.",
+      "on_slide_text": [
+        "Parents manage regimens, appointments, finances",
+        "Siblings may feel unvalued and slip into the lost-child role",
+        "Substance use disorder in the family: enabling, ignoring, financial drain"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "When one member is ill the family reorganises around the illness. Parents take on regimens, appointments, and the cost. Siblings can feel unvalued and adopt the lost-child role. A substance use disorder in the family produces enabling, ignoring, and financial drain. Family caregivers provide regular care for chronic illness or disability: activities of daily living, bills, shopping, transport, emotional support, and the strain rises as the needs rise. Caregiver role strain is the chapter's name for difficulty performing that role. Caregiving can enhance quality of life, and it can impair work, social life, and physical and mental health at the same time.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "control_room",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "center": "one member's illness",
+            "nodes": [
+              {
+                "title": "parents",
+                "body": "regimens, appointments, finances"
+              },
+              {
+                "title": "siblings",
+                "body": "feel unvalued; lost-child role"
+              },
+              {
+                "title": "family caregivers",
+                "body": "ADLs, bills, shopping, transport, emotional support; strain rises with need"
+              },
+              {
+                "title": "family with SUD",
+                "body": "enabling, ignoring, financial drain"
+              }
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "strain",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO6",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S13",
+      "slide_number": 13,
+      "slide_title": "Strain: caregiver role strain and what the nurse offers",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: strain",
+      "concept_lane": "strain",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues",
+        "generate solutions"
+      ],
+      "nursing_action_category": "educate",
+      "learning_objective": "Recognize caregiver stress signs and match them to resources and self-care teaching.",
+      "on_slide_text": [
+        "US: 22% of adults gave care in the past 30 days; 10% for dementia",
+        "Family-centered care: respect and dignity, collaboration, empowerment, information sharing"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Watch the caregiver as closely as the client. The chapter's stress signs: anger or frustration, social withdrawal, anxiety about the future, depression or reduced coping, exhaustion, sleeplessness, irritability and poor concentration, and new health problems in the caregiver. Resources to offer: child or adult day care, respite care at home or in a facility, residential care, palliative care, and support groups such as Al-Anon, Nar-Anon, and Sibshops for siblings of children with disabilities. Self-care teaching covers provider visits, nutrition, exercise, rest, and relaxation techniques, framed as 'taking care of yourself helps you be a better caregiver.' Family-centered care ties it together with four principles.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Stress signs",
+            "body": "anger, withdrawal, anxiety about the future, depression, exhaustion, sleeplessness, irritability, new health problems",
+            "cjm": "recognize cues"
+          },
+          {
+            "heading": "Resources",
+            "body": "day care, respite, residential and palliative care; Al-Anon, Nar-Anon, Sibshop; family therapy referral",
+            "cjm": "generate solutions"
+          },
+          {
+            "heading": "Self-care teaching",
+            "body": "provider visits, nutrition, exercise, rest; breathing, progressive muscle relaxation, visualization, meditation",
+            "cjm": "generate solutions"
+          },
+          {
+            "heading": "Family-centered care",
+            "body": "respect and dignity; collaboration; empowerment; information sharing. Better outcomes, less family stress.",
+            "cjm": "generate solutions"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "strain",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO6",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S14",
+      "slide_number": 14,
+      "slide_title": "Action: the nursing process is the clinical judgment model",
+      "slide_archetype": "process_map",
+      "lesson_section": "lane: action",
+      "concept_lane": "action",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues",
+        "generate solutions",
+        "take action",
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Map each nursing process step to its NCSBN clinical judgment function for a family assessment.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Table 4.7 (NANDA diagnoses) not retrievable at build; faculty to insert program's care-planning resource.",
+      "speaker_script": "Section 4.7 lays the nursing process over the clinical judgment model explicitly, so this map is the chapter's, not ours. Assessment is recognize cues: establish cultural safety and privacy first, identify the decision-maker, and do a general survey of client and family. Diagnosis is analyze cues. Outcome identification is generate solutions with the family, in their values and culture. Implementation is take action, reprioritized against the current condition. Evaluation asks whether the diagnosis was accurate and the goals met, and whether to keep, modify, or delete each part of the plan.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "process_map",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "label": "recognize cues",
+            "body": "cultural safety and privacy first; who decides; general survey of client and family"
+          },
+          {
+            "label": "analyze cues",
+            "body": "nursing diagnoses related to family processes, parenting, caregiving"
+          },
+          {
+            "label": "generate solutions",
+            "body": "collaborative, SMART, in the family's values and culture"
+          },
+          {
+            "label": "take action",
+            "body": "reprioritize; focused assessments; interventions"
+          },
+          {
+            "label": "evaluate outcomes",
+            "body": "diagnosis accurate? goals met? keep, modify, delete"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "action",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO7",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S15",
+      "slide_number": 15,
+      "slide_title": "Action: assess the family without losing the client",
+      "slide_archetype": "mini_case",
+      "lesson_section": "lane: action",
+      "concept_lane": "action",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues",
+        "prioritize hypotheses"
+      ],
+      "nursing_action_category": "assess",
+      "learning_objective": "Sequence a family assessment that protects the client's privacy and autonomy.",
+      "on_slide_text": [
+        "Ask the client privately who they want present; the nurse asks others to leave",
+        "General survey of client and family: hygiene, affect, communication, nutrition",
+        "Unfriendly, disrespectful, hostile interaction is a cue to act on"
+      ],
+      "activity_prompt": "Which single step must happen before any family member is interviewed?",
+      "answer_key": [
+        "Establish cultural safety and privacy, and ask the client privately who they want present"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Here is the assessment sequence for the opening case. First, establish cultural safety and privacy: one open-ended cultural question, then find out who the decision-maker is, which for a child under eighteen is the parent or guardian, while still advocating for the client's autonomy. Ask the client privately who they want present; the nurse does the asking because the client may not feel empowered to. Then the general survey of client and family: hygiene, affect, communication, nutrition, fluid status, for signs of neglect, abuse, or substance misuse, and observe roles and interaction. Then the family-effect questions: what the family knows about the illness, how they respond, and what supports they know of.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "mini_case",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "presentation": "The 8-year-old from the opening case. Mother present. Parents divorcing. The nurse is about to take the family history.",
+            "cues": [
+              "Client is a minor: parent or guardian is the decision-maker, autonomy still advocated",
+              "Observe hygiene, affect, communication, nutrition, and how mother and child interact",
+              "Ask what the family knows about the illness and how they are responding",
+              "Ask about supports: respite, community resources, other family"
+            ],
+            "prompt": "Put the steps in order and say which one protects the client."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "action",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO7",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S16",
+      "slide_number": 16,
+      "slide_title": "Action: sort the cues by what the nurse does next",
+      "slide_archetype": "urgency_sort",
+      "lesson_section": "lane: action",
+      "concept_lane": "action",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "prioritize hypotheses",
+        "take action"
+      ],
+      "nursing_action_category": "escalate",
+      "learning_objective": "Prioritize family cues by required nursing action, from mandated reporting to teaching.",
+      "on_slide_text": [],
+      "activity_prompt": "Order the four cues from most to least urgent nursing action.",
+      "answer_key": [
+        "1 bruises in different stages of healing with an inconsistent explanation: mandated report per state law and policy",
+        "2 mother speaks to the child with hostility and contempt during the survey: notify provider; social work referral",
+        "3 mother reports sleeplessness, irritability, and dread about the future: caregiver strain; resources and self-care",
+        "4 mother asks whether spanking is acceptable: teaching moment; positive discipline sequence"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Not every family cue carries the same weight. The chapter gives three response levels. Suspected abuse or neglect triggers state mandated reporting and agency policy; that outranks everything. Unfriendly, disrespectful, or hostile interaction means notify the provider and refer to social work or case management per policy. Caregiver stress signs call for resources and self-care teaching. A parent asking about discipline is a teaching moment. Sort these four cues in the order the nurse acts.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "urgency_sort",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "items": [
+              "mother asks whether spanking is acceptable",
+              "bruises in different stages of healing with an inconsistent explanation",
+              "mother reports sleeplessness, irritability, and dread about the future",
+              "mother speaks to the child with hostility and contempt during the survey"
+            ],
+            "correct_order": [
+              1,
+              3,
+              2,
+              0
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "action",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO7",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S17",
+      "slide_number": 17,
+      "slide_title": "Checkpoint: the caregiver in the waiting room",
+      "slide_archetype": "checkpoint_mcq",
+      "lesson_section": "lane: strain",
+      "concept_lane": "strain",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues",
+        "generate solutions"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Select the priority nursing response to caregiver role strain.",
+      "on_slide_text": [],
+      "activity_prompt": "Select one.",
+      "answer_key": [
+        "C"
+      ],
+      "visual_notes": "",
+      "speaker_script": "A checkpoint on the strain lane. Read the stem, choose one, and be ready to say why the other three are weaker. The correct answer is the one that names the cue as caregiver role strain and responds with a resource, not reassurance alone.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "checkpoint_mcq",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "stem": "An adult daughter caring for her father with dementia says she has not slept properly in weeks, snaps at him, and 'cannot see how this ends.' What is the nurse's best response?",
+            "options": [
+              "A. Reassure her that all caregivers feel this way and it will pass",
+              "B. Suggest she try harder to keep a routine at home",
+              "C. Identify caregiver role strain and offer respite care and support-group information",
+              "D. Tell her that her father would be safer in a residential facility"
+            ],
+            "correct": "C",
+            "rationale": "Sleeplessness, irritability, and anxiety about the future are the chapter's caregiver stress signs. The nursing response is to recognize role strain and mobilize resources such as respite care and support groups. A minimizes, B adds demand without support, D imposes a decision the family has not made."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "strain",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO6",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S18",
+      "slide_number": 18,
+      "slide_title": "Capstone: the abdominal pain case, resolved",
+      "slide_archetype": "capstone_mcq",
+      "lesson_section": "lane: action",
+      "concept_lane": "action",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "prioritize hypotheses",
+        "take action"
+      ],
+      "nursing_action_category": "escalate",
+      "learning_objective": "Choose the priority nursing action when a family cue and a clinical complaint arrive together.",
+      "on_slide_text": [
+        "Pain assessment complete; provider notified",
+        "Then the family history produces a new cue"
+      ],
+      "activity_prompt": "Select one.",
+      "answer_key": [
+        "B"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Back to the child from the opening case. The abdominal pain assessment is complete and the provider has been notified. During the family history the mother says, in front of the child, that the pain started when the father left and that it is the child's fault for upsetting everyone. Pick the priority nursing action. Think about which cue this is and which response level the chapter assigns to it.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "capstone_mcq",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "scenario": "During the family history the mother says, in front of the child, that the pain started when his father left and that it is his fault for upsetting everyone.",
+            "stem": "What is the nurse's priority action?",
+            "options": [
+              "A. Correct the mother immediately in front of the child so the child hears it is not their fault",
+              "B. Speak with the child privately, then address the parent's statement and involve social work per policy",
+              "C. Document the statement and continue the physical assessment",
+              "D. File a mandated report for emotional abuse before doing anything else"
+            ],
+            "correct": "B",
+            "rationale": "The chapter's sequence protects the client first: privacy and the client's own account, then the family cue. Blaming the child in front of them is an unhealthy interaction cue that warrants provider notification and a social work referral per policy, not silence (C). A confrontation in front of the child escalates the interaction. A single blaming statement does not by itself meet the mandated-reporting threshold (D); the nurse assesses further."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "action",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO7",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S19",
+      "slide_number": 19,
+      "slide_title": "Rapid retrieval: five-item exit check",
+      "slide_archetype": "retrieval_check",
+      "lesson_section": "close",
+      "concept_lane": "cross-lane",
+      "source_refs": [
+        "SRC01"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Retrieve one fact per lane without notes.",
+      "on_slide_text": [
+        "Name the five family functions",
+        "State the one test that separates healthy from unhealthy dynamics",
+        "Why does the number of ACEs matter more than which one?",
+        "Name three caregiver stress signs",
+        "What must the nurse do before interviewing any family member?"
+      ],
+      "activity_prompt": "Answer all five.",
+      "answer_key": [
+        "economic support, emotional support, socialization, control of sexuality and reproduction, ascribed social status",
+        "healthy produces security and comfort; unhealthy produces stress",
+        "the ACE Study found a dose-response relationship: more ACEs, more risk behavior and chronic illness",
+        "any three of: anger, withdrawal, anxiety about the future, depression, exhaustion, sleeplessness, irritability, new health problems",
+        "establish cultural safety and privacy, and ask the client who they want present"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Close the loop. Five questions, one per lane, answered aloud or on paper. The answers are on the slides you just saw and in the facilitator guide. If a lane produces silence, that is the lane to remediate next session.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "retrieval_check",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "evaluate outcomes",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO7",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S20",
+      "slide_number": 20,
+      "slide_title": "Takeaway: what the nurse notices, and what the nurse does first",
+      "slide_archetype": "takeaway",
+      "lesson_section": "close",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "A safe nurse assesses the family as part of the client, sorts cues by required action, and teaches what protects.",
+      "on_slide_text": [
+        "Notice: roles, functions, interaction, strain",
+        "Sort: report, refer, resource, teach",
+        "Protect: privacy first, client's voice first",
+        "Teach: guidance, not punishment"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Closing frame.",
+      "tts_text": "",
+      "target_duration_sec": 45,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "takeaway",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "title": "notice",
+            "body": "roles, functions, interaction patterns, caregiver strain"
+          },
+          {
+            "title": "sort",
+            "body": "mandated report, provider and social work referral, resources, teaching"
+          },
+          {
+            "title": "protect",
+            "body": "privacy first; ask the client who they want present"
+          },
+          {
+            "title": "teach",
+            "body": "protective factors, positive discipline, caregiver self-care"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    }
+  ],
+  "assessment_items": [
+    {
+      "item_id": "Q01",
+      "slide_id": "S05",
+      "item_type": "mcq",
+      "learning_objective": "Identify family roles, structure, and functions",
+      "concept_lane": "structure",
+      "cjm_function": "analyze cues",
+      "stem": "A school nurse notes that a 10-year-old regularly cooks dinner for younger siblings and reminds a parent to take medication. Which family role best describes this cue?",
+      "options": [
+        "A. Tradition-holder",
+        "B. Parentified child",
+        "C. Mascot",
+        "D. Decision-maker"
+      ],
+      "answer": "B",
+      "rationale": "The parentified child takes on adult caregiving responsibilities; the chapter lists it among roles seen in family dysfunction. The others are informal or dysfunction roles that do not fit the cue.",
+      "remediation_target_slide": "S06",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "course_objective_id": "CO1",
+      "source_section": "SRC01.4.2",
+      "origin": "original item written for this lesson; not derived from Open RN CC BY-NC activities"
+    },
+    {
+      "item_id": "Q02",
+      "slide_id": "S07",
+      "item_type": "sata",
+      "learning_objective": "Examine family dynamics",
+      "concept_lane": "dynamics",
+      "cjm_function": "recognize cues",
+      "stem": "During a home visit the nurse observes a family. Which findings are cues of healthy family dynamics? Select all that apply.",
+      "options": [
+        "A. Members speak to each other with respect",
+        "B. A member's needs are unmet and no help has been sought",
+        "C. Members describe trusting each other",
+        "D. Frequent criticism and intrusion into each other's decisions",
+        "E. The family names friends and a faith community it can call on"
+      ],
+      "answer": "A, C, E",
+      "rationale": "Mutual respect, trust, and caring communication are healthy cues; resources such as friends and a faith community mark a high-resource family. Unmet needs without seeking help and criticism or intrusion are unhealthy cues.",
+      "remediation_target_slide": "S07",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "course_objective_id": "CO2",
+      "source_section": "SRC01.4.3",
+      "origin": "original item written for this lesson; not derived from Open RN CC BY-NC activities"
+    },
+    {
+      "item_id": "Q03",
+      "slide_id": "S08",
+      "item_type": "mcq",
+      "learning_objective": "Identify various factors that can lead to actual and potential family health problems",
+      "concept_lane": "risk",
+      "cjm_function": "analyze cues",
+      "stem": "A parent asks why the clinic screens for several kinds of childhood adversity instead of 'the serious ones.' Which explanation is most accurate?",
+      "options": [
+        "A. Only abuse predicts adult illness; the other questions are for research",
+        "B. Risk rises with the number of adverse experiences, not with any single one",
+        "C. Divorce is not considered an adverse experience",
+        "D. Screening identifies which parent caused the harm"
+      ],
+      "answer": "B",
+      "rationale": "The ACE Study demonstrated a dose-response relationship between the number of ACEs and later risk behavior and chronic illness. Divorce is an ACE. Screening is not about assigning blame.",
+      "remediation_target_slide": "S08",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "course_objective_id": "CO3",
+      "source_section": "SRC01.4.4",
+      "origin": "original item written for this lesson; not derived from Open RN CC BY-NC activities"
+    },
+    {
+      "item_id": "Q04",
+      "slide_id": "S09",
+      "item_type": "mcq",
+      "learning_objective": "Identify various factors that can lead to actual and potential family health problems",
+      "concept_lane": "risk",
+      "cjm_function": "generate solutions",
+      "stem": "Parents who are separating ask the nurse what will protect their 7-year-old. Which teaching is consistent with the chapter?",
+      "options": [
+        "A. Wait until the child asks before discussing the separation",
+        "B. Let the child choose which parent is right",
+        "C. Keep the child's routine, school, and friends, and keep rules consistent in both homes",
+        "D. Avoid mentioning the other parent so the child forgets the conflict"
+      ],
+      "answer": "C",
+      "rationale": "The chapter's divorce guidance: talk early and often, never force sides, keep routine, friends, school and environment, keep rules consistent across households, and keep promises.",
+      "remediation_target_slide": "S09",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "course_objective_id": "CO3",
+      "source_section": "SRC01.4.4",
+      "origin": "original item written for this lesson; not derived from Open RN CC BY-NC activities"
+    },
+    {
+      "item_id": "Q05",
+      "slide_id": "S10",
+      "item_type": "matching",
+      "learning_objective": "Compare and contrast parenting styles and behaviors",
+      "concept_lane": "risk",
+      "cjm_function": "analyze cues",
+      "stem": "Match each parent description to the parenting style. 1: warm, sets firm limits, explains the reasons. 2: warm, few limits. 3: strict, expects compliance without explanation. 4: neither warm nor demanding.",
+      "options": [
+        "A. authoritative",
+        "B. permissive",
+        "C. authoritarian",
+        "D. uninvolved"
+      ],
+      "answer": "1-A, 2-B, 3-C, 4-D",
+      "rationale": "Styles are defined by responsiveness (warmth) crossed with demandingness (control); authoritative parents explain rationale where authoritarian parents expect unquestioned compliance.",
+      "remediation_target_slide": "S10",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "course_objective_id": "CO4",
+      "source_section": "SRC01.4.5",
+      "origin": "original item written for this lesson; not derived from Open RN CC BY-NC activities"
+    },
+    {
+      "item_id": "Q06",
+      "slide_id": "S11",
+      "item_type": "ordering",
+      "learning_objective": "Compare and contrast parenting styles and behaviors",
+      "concept_lane": "risk",
+      "cjm_function": "take action",
+      "stem": "A parent asks how to respond to a 4-year-old who throws food at dinner. Place the nurse's teaching in order: (a) follow through immediately, (b) state the rule and give a warning, (c) give positive attention when the child eats appropriately, (d) state the specific if-then consequence.",
+      "options": [
+        "b, d, a, c"
+      ],
+      "answer": "b, d, a, c",
+      "rationale": "The chapter's consequence sequence: clear guideline plus warning, a specific if-then consequence that fits the behavior, immediate follow-through, then positive reinforcement.",
+      "remediation_target_slide": "S11",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "course_objective_id": "CO4",
+      "source_section": "SRC01.4.5",
+      "origin": "original item written for this lesson; not derived from Open RN CC BY-NC activities"
+    },
+    {
+      "item_id": "Q07",
+      "slide_id": "S13",
+      "item_type": "mcq",
+      "learning_objective": "Identify the psychosocial effect of illness on a client and their family's health",
+      "concept_lane": "strain",
+      "cjm_function": "recognize cues",
+      "stem": "Which statement by a family caregiver most clearly indicates caregiver role strain?",
+      "options": [
+        "A. 'I have learned a lot about his medications.'",
+        "B. 'I stopped seeing my friends and I cannot concentrate at work.'",
+        "C. 'We go to his appointments together.'",
+        "D. 'The home health aide comes twice a week.'"
+      ],
+      "answer": "B",
+      "rationale": "Social withdrawal and poor concentration are among the chapter's caregiver stress signs. The other statements describe coping or resources in use.",
+      "remediation_target_slide": "S13",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "course_objective_id": "CO6",
+      "source_section": "SRC01.4.6",
+      "origin": "original item written for this lesson; not derived from Open RN CC BY-NC activities"
+    },
+    {
+      "item_id": "Q08",
+      "slide_id": "S15",
+      "item_type": "mcq",
+      "learning_objective": "Apply the nursing process to caring for a client in the context of the family",
+      "concept_lane": "action",
+      "cjm_function": "prioritize hypotheses",
+      "stem": "An adult client's spouse answers every question during the admission interview. What should the nurse do first?",
+      "options": [
+        "A. Ask the spouse to leave the room",
+        "B. Continue; the spouse is the decision-maker",
+        "C. Ask the client privately who they would like present during the interview",
+        "D. Document that the client is unable to participate"
+      ],
+      "answer": "C",
+      "rationale": "The chapter directs the nurse to ask the client privately who they want present and to do the asking for them, because the client may not feel empowered to. Decision-maker status is determined, not assumed (B), and A acts before the client's preference is known.",
+      "remediation_target_slide": "S15",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "course_objective_id": "CO7",
+      "source_section": "SRC01.4.7",
+      "origin": "original item written for this lesson; not derived from Open RN CC BY-NC activities"
+    },
+    {
+      "item_id": "Q09",
+      "slide_id": "S16",
+      "item_type": "mcq",
+      "learning_objective": "Apply the nursing process to caring for a client in the context of the family",
+      "concept_lane": "action",
+      "cjm_function": "take action",
+      "stem": "During the general survey the nurse observes a parent speaking to the child with hostility and contempt. Which action does the chapter direct?",
+      "options": [
+        "A. Ignore it; interaction style is a family's private matter",
+        "B. Notify the provider and refer to social work or case management per policy",
+        "C. Immediately file a mandated report",
+        "D. Teach the parent positive communication before completing the assessment"
+      ],
+      "answer": "B",
+      "rationale": "Unfriendly, disrespectful, or hostile interaction is a cue to notify the provider and refer per policy. Mandated reporting applies to suspected abuse; teaching comes after the assessment and the referral.",
+      "remediation_target_slide": "S16",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "course_objective_id": "CO7",
+      "source_section": "SRC01.4.7",
+      "origin": "original item written for this lesson; not derived from Open RN CC BY-NC activities"
+    },
+    {
+      "item_id": "Q10",
+      "slide_id": "S14",
+      "item_type": "mcq",
+      "learning_objective": "Apply the nursing process to caring for a client in the context of the family",
+      "concept_lane": "action",
+      "cjm_function": "evaluate outcomes",
+      "stem": "After a teaching session the outcome was 'the parent will describe three home safety risks.' At evaluation the parent names one. What is the nurse's next step?",
+      "options": [
+        "A. Record the outcome as met",
+        "B. Delete the outcome because it was unrealistic",
+        "C. Determine whether the goal is progressing and modify the plan or gather more data",
+        "D. Repeat the identical teaching session"
+      ],
+      "answer": "C",
+      "rationale": "Evaluation asks whether goals were met or are progressing and whether to keep, modify, or delete diagnoses, goals, outcomes, and interventions, and whether more data are needed.",
+      "remediation_target_slide": "S14",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "course_objective_id": "CO7",
+      "source_section": "SRC01.4.7",
+      "origin": "original item written for this lesson; not derived from Open RN CC BY-NC activities"
+    }
+  ],
+  "remediation_map": [
+    {
+      "miss_pattern": "learner reassures instead of referring when interaction is hostile",
+      "failed_operation": "take action",
+      "map_location": "S16",
+      "concept_lane": "action",
+      "likely_misconception": "family conflict is private and outside the nurse's role",
+      "one_slide_fix": "S16 urgency sort with the three response levels",
+      "active_learning_task": "re-sort the four cues",
+      "retrieval_item": "Q09",
+      "improvement_evidence": ""
+    },
+    {
+      "miss_pattern": "learner reads a single ACE as the risk rather than the count",
+      "failed_operation": "analyze cues",
+      "map_location": "S08",
+      "concept_lane": "risk",
+      "likely_misconception": "only abuse counts",
+      "one_slide_fix": "S08 risk engine",
+      "active_learning_task": "explain dose-response to a parent in two sentences",
+      "retrieval_item": "Q03",
+      "improvement_evidence": ""
+    }
+  ],
+  "qa": {
+    "release_status": "faculty-review-needed",
+    "gates_passed": [
+      "runtime",
+      "source",
+      "taxonomy",
+      "blueprint",
+      "cjm_coverage",
+      "outline",
+      "script"
+    ],
+    "defects": [
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[source gap] Tables 4.2, 4.3, 4.5a, 4.5b, 4.7 not retrievable at build (pressbooks.pub and ncbi.nlm.nih.gov blocked by egress proxy). S05, S07, S10, S14 are written from section-body facts; faculty to verify against the live chapter before promoting any slide to source-grounded."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[evidence] All clinical slides are source-aligned (paraphrase of indexed facts), not source-grounded; promotion to source-grounded requires verification against the chapter text by the faculty reviewer."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "S16",
+        "note": "[clinical judgment] The urgency-sort cue about bruising is an instructor-written illustration of the chapter's mandated-reporting rule, not a chapter example; confirm wording against agency policy."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[standards] frameworks registered; standards_refs left empty per MVP scope."
+      }
+    ],
+    "cjm_coverage_rationale": ""
+  },
+  "revision_log": [],
+  "outcomes": {},
+  "improvement_log": []
+}

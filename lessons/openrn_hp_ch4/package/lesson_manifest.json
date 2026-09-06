@@ -1,0 +1,1090 @@
+{
+  "schema_version": "1.2",
+  "adapter_version": "1.2.0",
+  "generated_at_iso": "2026-09-06T03:37:25",
+  "demo": false,
+  "runtime_config": {
+    "runtime": {
+      "run_date_yyyymmdd": "20260906",
+      "package_id": "HP-CH4-FAMILY-DYNAMICS-R1",
+      "build_mode": "full_production",
+      "deployment_mode": "hybrid",
+      "rebuild_scope": "full",
+      "output_root": "."
+    },
+    "outputs": {
+      "filename_pattern": "{{runtime.run_date_yyyymmdd}}_{{lesson.course_code}}_{{lesson.chapter_title}}_Part_{{deck.part_number}}.pptx"
+    },
+    "media": {
+      "wpm_target": 140
+    }
+  },
+  "lesson": {
+    "course_code": "NHP",
+    "program_level": "prelicensure RN",
+    "audience": "prelicensure nursing students",
+    "unit_title": "Health Promotion Across the Lifespan",
+    "chapter_id": "4",
+    "chapter_title": "Family Dynamics",
+    "lesson_title": "Family Dynamics: assessing and acting on the family as part of the client",
+    "concept": "family dynamics",
+    "exemplars": [
+      "adverse childhood experiences",
+      "parenting styles",
+      "caregiver role strain",
+      "family-centered care"
+    ],
+    "clinical_domain": "health promotion / psychosocial integrity",
+    "source_family": "Open RN Nursing Health Promotion",
+    "source_anchor": "Chapter 4, sections 4.1-4.8",
+    "page_range": "n/a (web text)",
+    "organizing_clinical_question": "When one person is the client, how does the nurse recognize whether the family is helping or harming that person's health, and what does the nurse do first?",
+    "opening_patient_question": "My son's stomach hurts. Is it because of the divorce?",
+    "concept_lanes": [
+      "structure",
+      "dynamics",
+      "risk",
+      "strain",
+      "action"
+    ],
+    "target_duration_minutes": 50,
+    "program_outcomes": [],
+    "course_objectives": [
+      {
+        "id": "CO1",
+        "text": "Identify family roles, structure, and functions",
+        "maps_to": []
+      },
+      {
+        "id": "CO2",
+        "text": "Examine family dynamics",
+        "maps_to": []
+      },
+      {
+        "id": "CO3",
+        "text": "Identify various factors that can lead to actual and potential family health problems",
+        "maps_to": []
+      },
+      {
+        "id": "CO4",
+        "text": "Compare and contrast parenting styles and behaviors",
+        "maps_to": []
+      },
+      {
+        "id": "CO5",
+        "text": "Consider the influence of family cultural practices related to health",
+        "maps_to": []
+      },
+      {
+        "id": "CO6",
+        "text": "Identify the psychosocial effect of illness on a client and their family's health",
+        "maps_to": []
+      },
+      {
+        "id": "CO7",
+        "text": "Apply the nursing process to caring for a client in the context of the family",
+        "maps_to": []
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "SRC01",
+      "title": "Nursing Health Promotion, Chapter 4: Family Dynamics",
+      "kind": "authoritative",
+      "license": "CC BY 4.0",
+      "locator": "https://wtcs.pressbooks.pub/healthpromo/ (chapter 4); https://www.ncbi.nlm.nih.gov/books/NBK615335/",
+      "coverage_status": "confirmed",
+      "attribution_statement": "Adapted from Open RN, Nursing Health Promotion, Chapter 4 (Ernstmeyer & Christman, eds., 2025), CC BY 4.0. https://wtcs.pressbooks.pub/healthpromo/",
+      "index_path": "handoff/source/SRC01_openrn_healthpromo_ch4_index.json",
+      "license_exclusions": [
+        "4.9 learning activities and case study (CC BY-NC 4.0)",
+        "H5P cards and question sets (CC BY-NC 4.0)",
+        "ADAPT NGN items (CC BY-NC 4.0)",
+        "figure 4.11 (CC BY-SA 4.0)"
+      ]
+    }
+  ],
+  "taxonomy": {
+    "glossary": [
+      {
+        "term": "family dynamics",
+        "definition": "Roles, relationships, communication patterns, and factors shaping how family members interact.",
+        "source_ref": "SRC01"
+      },
+      {
+        "term": "family dysfunction",
+        "definition": "Failure of the five family functions; usually unintended; transmitted across generations.",
+        "source_ref": "SRC01"
+      },
+      {
+        "term": "adverse childhood experiences (ACE)",
+        "definition": "Neglect, abuse, divorce, incarceration of a family member, witnessing substance abuse, mental illness, or violence against a parent.",
+        "source_ref": "SRC01"
+      },
+      {
+        "term": "caregiver role strain",
+        "definition": "Difficulty performing the family caregiver role.",
+        "source_ref": "SRC01"
+      },
+      {
+        "term": "family-centered care",
+        "definition": "Client-centered approach emphasizing family involvement and collaboration in care and decisions.",
+        "source_ref": "SRC01"
+      },
+      {
+        "term": "cultural humility",
+        "definition": "With inclusiveness, the ANA standard of respectful and equitable practice.",
+        "source_ref": "SRC01"
+      }
+    ],
+    "concept_tags": [
+      "family",
+      "family dynamics",
+      "adverse childhood experiences",
+      "parenting",
+      "caregiver role strain",
+      "family-centered care",
+      "cultural humility"
+    ],
+    "outcome_tags": [
+      "assessment of family",
+      "anticipatory guidance",
+      "referral",
+      "mandated reporting"
+    ],
+    "nclex_client_needs": [
+      "Psychosocial Integrity",
+      "Management of Care",
+      "Health Promotion and Maintenance"
+    ],
+    "cjm_functions": [
+      "recognize cues",
+      "analyze cues",
+      "prioritize hypotheses",
+      "generate solutions",
+      "take action",
+      "evaluate outcomes"
+    ],
+    "proposed_new_tags": [],
+    "frameworks": [
+      {
+        "framework_id": "NCSBN-CJMM",
+        "title": "NCSBN Clinical Judgment Measurement Model",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "CA-BRN-ART3",
+        "title": "California BRN regulations, 16 CCR Article 3 (Airtable: Requirements (Article 3), ref = req_id)",
+        "text_policy": "public-domain"
+      },
+      {
+        "framework_id": "CCNE-2018",
+        "title": "CCNE Standards for Accreditation of Baccalaureate and Graduate Nursing Programs",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "AACN-2021",
+        "title": "AACN Essentials 2021",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "QSEN",
+        "title": "QSEN competencies",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "PEARSON-CF",
+        "title": "Pearson Concept Framework (Airtable: Pearson Concept Framework Loader, ref = Concept Key)",
+        "text_policy": "identifier-only"
+      }
+    ]
+  },
+  "governance": {
+    "envelope": "master-lesson-1.0.0",
+    "promotion_state": "faculty_review",
+    "approvals": {
+      "source_approved": false,
+      "taxonomy_approved": false,
+      "objectives_approved": false,
+      "outline_approved": false,
+      "script_approved": false,
+      "faculty_approved": false,
+      "release_approved": false
+    },
+    "taxonomy_lock": {
+      "status": "unlocked",
+      "approved_by": "",
+      "approval_date": ""
+    },
+    "administrative_metadata": {
+      "lesson_id": "LESSON-NHP-CH4-FAMILY-DYNAMICS",
+      "version": "0.1.0",
+      "content_owner": "R. Harrity",
+      "faculty_reviewer": "R. Harrity",
+      "created_date": "2026-09-06"
+    }
+  },
+  "slides": [
+    {
+      "slide_id": "S01",
+      "slide_number": 1,
+      "slide_title": "Family Dynamics: the family is part of the assessment",
+      "slide_archetype": "title",
+      "concept_lane": "cross-lane",
+      "evidence_status": "instructor-added",
+      "source_refs": [],
+      "cjm_functions": [],
+      "target_duration_sec": 30,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S02",
+      "slide_number": 2,
+      "slide_title": "Opening case: an 8-year-old with abdominal pain",
+      "slide_archetype": "opening_case",
+      "concept_lane": "dynamics",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "recognize cues"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S03",
+      "slide_number": 3,
+      "slide_title": "The organizing question",
+      "slide_archetype": "clinical_question",
+      "concept_lane": "cross-lane",
+      "evidence_status": "instructor-added",
+      "source_refs": [],
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "target_duration_sec": 60,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S04",
+      "slide_number": 4,
+      "slide_title": "Chapter map: structure to action",
+      "slide_archetype": "chapter_map",
+      "concept_lane": "cross-lane",
+      "evidence_status": "instructor-added",
+      "source_refs": [],
+      "cjm_functions": [],
+      "target_duration_sec": 60,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S05",
+      "slide_number": 5,
+      "slide_title": "Structure: who is family, and what does a family do?",
+      "slide_archetype": "concept_cards",
+      "concept_lane": "structure",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S06",
+      "slide_number": 6,
+      "slide_title": "Structure: roles, culture, and the nurse's own bias",
+      "slide_archetype": "concept_cards",
+      "concept_lane": "structure",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S07",
+      "slide_number": 7,
+      "slide_title": "Dynamics: healthy or unhealthy?",
+      "slide_archetype": "compare",
+      "concept_lane": "dynamics",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S08",
+      "slide_number": 8,
+      "slide_title": "Risk: adverse childhood experiences are dose-dependent",
+      "slide_archetype": "risk_engine",
+      "concept_lane": "risk",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "analyze cues",
+        "prioritize hypotheses"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S09",
+      "slide_number": 9,
+      "slide_title": "Risk: protective factors the nurse can build",
+      "slide_archetype": "teaching_point",
+      "concept_lane": "risk",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "generate solutions",
+        "take action"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S10",
+      "slide_number": 10,
+      "slide_title": "Risk: four parenting styles on two axes",
+      "slide_archetype": "concept_cards",
+      "concept_lane": "risk",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S11",
+      "slide_number": 11,
+      "slide_title": "Risk: what positive discipline looks like",
+      "slide_archetype": "script_template",
+      "concept_lane": "risk",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "generate solutions",
+        "take action"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S12",
+      "slide_number": 12,
+      "slide_title": "Strain: one member's illness reaches the whole family",
+      "slide_archetype": "control_room",
+      "concept_lane": "strain",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S13",
+      "slide_number": 13,
+      "slide_title": "Strain: caregiver role strain and what the nurse offers",
+      "slide_archetype": "concept_cards",
+      "concept_lane": "strain",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "recognize cues",
+        "generate solutions"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S14",
+      "slide_number": 14,
+      "slide_title": "Action: the nursing process is the clinical judgment model",
+      "slide_archetype": "process_map",
+      "concept_lane": "action",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues",
+        "generate solutions",
+        "take action",
+        "evaluate outcomes"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S15",
+      "slide_number": 15,
+      "slide_title": "Action: assess the family without losing the client",
+      "slide_archetype": "mini_case",
+      "concept_lane": "action",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "recognize cues",
+        "prioritize hypotheses"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S16",
+      "slide_number": 16,
+      "slide_title": "Action: sort the cues by what the nurse does next",
+      "slide_archetype": "urgency_sort",
+      "concept_lane": "action",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "prioritize hypotheses",
+        "take action"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S17",
+      "slide_number": 17,
+      "slide_title": "Checkpoint: the caregiver in the waiting room",
+      "slide_archetype": "checkpoint_mcq",
+      "concept_lane": "strain",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "analyze cues",
+        "generate solutions"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S18",
+      "slide_number": 18,
+      "slide_title": "Capstone: the abdominal pain case, resolved",
+      "slide_archetype": "capstone_mcq",
+      "concept_lane": "action",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "prioritize hypotheses",
+        "take action"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S19",
+      "slide_number": 19,
+      "slide_title": "Rapid retrieval: five-item exit check",
+      "slide_archetype": "retrieval_check",
+      "concept_lane": "cross-lane",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "cjm_functions": [
+        "evaluate outcomes"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S20",
+      "slide_number": 20,
+      "slide_title": "Takeaway: what the nurse notices, and what the nurse does first",
+      "slide_archetype": "takeaway",
+      "concept_lane": "cross-lane",
+      "evidence_status": "instructor-added",
+      "source_refs": [],
+      "cjm_functions": [],
+      "target_duration_sec": 45,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    }
+  ],
+  "assessment_items": [
+    {
+      "item_id": "Q01",
+      "slide_id": "S05",
+      "item_type": "mcq",
+      "concept_lane": "structure",
+      "cjm_function": "analyze cues",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "remediation_target_slide": "S06"
+    },
+    {
+      "item_id": "Q02",
+      "slide_id": "S07",
+      "item_type": "sata",
+      "concept_lane": "dynamics",
+      "cjm_function": "recognize cues",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "remediation_target_slide": "S07"
+    },
+    {
+      "item_id": "Q03",
+      "slide_id": "S08",
+      "item_type": "mcq",
+      "concept_lane": "risk",
+      "cjm_function": "analyze cues",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "remediation_target_slide": "S08"
+    },
+    {
+      "item_id": "Q04",
+      "slide_id": "S09",
+      "item_type": "mcq",
+      "concept_lane": "risk",
+      "cjm_function": "generate solutions",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "remediation_target_slide": "S09"
+    },
+    {
+      "item_id": "Q05",
+      "slide_id": "S10",
+      "item_type": "matching",
+      "concept_lane": "risk",
+      "cjm_function": "analyze cues",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "remediation_target_slide": "S10"
+    },
+    {
+      "item_id": "Q06",
+      "slide_id": "S11",
+      "item_type": "ordering",
+      "concept_lane": "risk",
+      "cjm_function": "take action",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "remediation_target_slide": "S11"
+    },
+    {
+      "item_id": "Q07",
+      "slide_id": "S13",
+      "item_type": "mcq",
+      "concept_lane": "strain",
+      "cjm_function": "recognize cues",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "remediation_target_slide": "S13"
+    },
+    {
+      "item_id": "Q08",
+      "slide_id": "S15",
+      "item_type": "mcq",
+      "concept_lane": "action",
+      "cjm_function": "prioritize hypotheses",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "remediation_target_slide": "S15"
+    },
+    {
+      "item_id": "Q09",
+      "slide_id": "S16",
+      "item_type": "mcq",
+      "concept_lane": "action",
+      "cjm_function": "take action",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "remediation_target_slide": "S16"
+    },
+    {
+      "item_id": "Q10",
+      "slide_id": "S14",
+      "item_type": "mcq",
+      "concept_lane": "action",
+      "cjm_function": "evaluate outcomes",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC01"
+      ],
+      "remediation_target_slide": "S14"
+    }
+  ],
+  "cjm_coverage": {
+    "recognize cues": [
+      "S02",
+      "S03",
+      "S06",
+      "S12",
+      "S13",
+      "S14",
+      "S15"
+    ],
+    "analyze cues": [
+      "S03",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S10",
+      "S12",
+      "S14",
+      "S17"
+    ],
+    "prioritize hypotheses": [
+      "S08",
+      "S15",
+      "S16",
+      "S18"
+    ],
+    "generate solutions": [
+      "S09",
+      "S11",
+      "S13",
+      "S14",
+      "S17"
+    ],
+    "take action": [
+      "S09",
+      "S11",
+      "S14",
+      "S16",
+      "S18"
+    ],
+    "evaluate outcomes": [
+      "S14",
+      "S19"
+    ]
+  },
+  "cjm_coverage_rationale": "",
+  "qa": {
+    "release_status": "faculty-review-needed",
+    "gates_passed": [
+      "runtime",
+      "source",
+      "taxonomy",
+      "blueprint",
+      "cjm_coverage",
+      "outline",
+      "script",
+      "deck_render",
+      "package_manifest"
+    ],
+    "defect_counts": {
+      "blocker": 0,
+      "major": 0,
+      "minor": 12
+    }
+  },
+  "files": [
+    "20260906_NHP_Family_Dynamics_Part_1.pptx",
+    "facilitator_guide.md",
+    "learner_handout.md",
+    "assessment_map.csv",
+    "traceability_matrix.csv",
+    "lesson_manifest.json",
+    "qa_log.md"
+  ],
+  "revision_log": [],
+  "traceability": {
+    "frameworks": [
+      {
+        "framework_id": "NCSBN-CJMM",
+        "title": "NCSBN Clinical Judgment Measurement Model",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "CA-BRN-ART3",
+        "title": "California BRN regulations, 16 CCR Article 3 (Airtable: Requirements (Article 3), ref = req_id)",
+        "text_policy": "public-domain"
+      },
+      {
+        "framework_id": "CCNE-2018",
+        "title": "CCNE Standards for Accreditation of Baccalaureate and Graduate Nursing Programs",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "AACN-2021",
+        "title": "AACN Essentials 2021",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "QSEN",
+        "title": "QSEN competencies",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "PEARSON-CF",
+        "title": "Pearson Concept Framework (Airtable: Pearson Concept Framework Loader, ref = Concept Key)",
+        "text_policy": "identifier-only"
+      }
+    ],
+    "program_outcomes": [],
+    "course_objectives": [
+      {
+        "id": "CO1",
+        "text": "Identify family roles, structure, and functions",
+        "maps_to": []
+      },
+      {
+        "id": "CO2",
+        "text": "Examine family dynamics",
+        "maps_to": []
+      },
+      {
+        "id": "CO3",
+        "text": "Identify various factors that can lead to actual and potential family health problems",
+        "maps_to": []
+      },
+      {
+        "id": "CO4",
+        "text": "Compare and contrast parenting styles and behaviors",
+        "maps_to": []
+      },
+      {
+        "id": "CO5",
+        "text": "Consider the influence of family cultural practices related to health",
+        "maps_to": []
+      },
+      {
+        "id": "CO6",
+        "text": "Identify the psychosocial effect of illness on a client and their family's health",
+        "maps_to": []
+      },
+      {
+        "id": "CO7",
+        "text": "Apply the nursing process to caring for a client in the context of the family",
+        "maps_to": []
+      }
+    ],
+    "matrix": [
+      {
+        "slide_id": "S01",
+        "learning_objective": "",
+        "course_objective_id": "",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "",
+        "assessment_item_ids": "",
+        "evidence_status": "instructor-added"
+      },
+      {
+        "slide_id": "S02",
+        "learning_objective": "Recognize the family cues that belong in a pediatric abdominal pain assessment.",
+        "course_objective_id": "CO7",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "recognize cues",
+        "assessment_item_ids": "",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S03",
+        "learning_objective": "State the question every slide in this lesson answers.",
+        "course_objective_id": "",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "recognize cues;analyze cues",
+        "assessment_item_ids": "",
+        "evidence_status": "instructor-added"
+      },
+      {
+        "slide_id": "S04",
+        "learning_objective": "Use the map to locate where a family cue belongs.",
+        "course_objective_id": "",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "",
+        "assessment_item_ids": "",
+        "evidence_status": "instructor-added"
+      },
+      {
+        "slide_id": "S05",
+        "learning_objective": "Identify family structure, roles, and the five family functions.",
+        "course_objective_id": "CO1",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "analyze cues",
+        "assessment_item_ids": "Q01",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S06",
+        "learning_objective": "Recognize informal and unhealthy family roles and the nurse's obligation to cultural humility.",
+        "course_objective_id": "CO5",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "recognize cues;analyze cues",
+        "assessment_item_ids": "",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S07",
+        "learning_objective": "Distinguish healthy from unhealthy family dynamics using observable cues.",
+        "course_objective_id": "CO2",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "analyze cues",
+        "assessment_item_ids": "Q02",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S08",
+        "learning_objective": "Explain why ACE count, not any single event, predicts later health risk.",
+        "course_objective_id": "CO3",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "analyze cues;prioritize hypotheses",
+        "assessment_item_ids": "Q03",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S09",
+        "learning_objective": "Name protective factors and the divorce guidance a nurse can teach a parent.",
+        "course_objective_id": "CO3",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "generate solutions;take action",
+        "assessment_item_ids": "Q04",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S10",
+        "learning_objective": "Compare parenting styles by responsiveness and demandingness and their outcomes.",
+        "course_objective_id": "CO4",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "analyze cues",
+        "assessment_item_ids": "Q05",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S11",
+        "learning_objective": "Teach a caregiver a consequence sequence that guides rather than punishes.",
+        "course_objective_id": "CO4",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "generate solutions;take action",
+        "assessment_item_ids": "Q06",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S12",
+        "learning_objective": "Identify how a client's illness changes roles for parents, siblings, and caregivers.",
+        "course_objective_id": "CO6",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "recognize cues;analyze cues",
+        "assessment_item_ids": "",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S13",
+        "learning_objective": "Recognize caregiver stress signs and match them to resources and self-care teaching.",
+        "course_objective_id": "CO6",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "recognize cues;generate solutions",
+        "assessment_item_ids": "Q07",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S14",
+        "learning_objective": "Map each nursing process step to its NCSBN clinical judgment function for a family assessment.",
+        "course_objective_id": "CO7",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "recognize cues;analyze cues;generate solutions;take action;evaluate outcomes",
+        "assessment_item_ids": "Q10",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S15",
+        "learning_objective": "Sequence a family assessment that protects the client's privacy and autonomy.",
+        "course_objective_id": "CO7",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "recognize cues;prioritize hypotheses",
+        "assessment_item_ids": "Q08",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S16",
+        "learning_objective": "Prioritize family cues by required nursing action, from mandated reporting to teaching.",
+        "course_objective_id": "CO7",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "prioritize hypotheses;take action",
+        "assessment_item_ids": "Q09",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S17",
+        "learning_objective": "Select the priority nursing response to caregiver role strain.",
+        "course_objective_id": "CO6",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "analyze cues;generate solutions",
+        "assessment_item_ids": "",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S18",
+        "learning_objective": "Choose the priority nursing action when a family cue and a clinical complaint arrive together.",
+        "course_objective_id": "CO7",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "prioritize hypotheses;take action",
+        "assessment_item_ids": "",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S19",
+        "learning_objective": "Retrieve one fact per lane without notes.",
+        "course_objective_id": "CO7",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "evaluate outcomes",
+        "assessment_item_ids": "",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S20",
+        "learning_objective": "A safe nurse assesses the family as part of the client, sorts cues by required action, and teaches what protects.",
+        "course_objective_id": "",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "",
+        "assessment_item_ids": "",
+        "evidence_status": "instructor-added"
+      }
+    ],
+    "unmapped_counts": {
+      "no_course_objective": 4,
+      "no_standards_ref": 20,
+      "no_assessment_item": 7
+    }
+  },
+  "outcomes": {},
+  "improvement_log": []
+}

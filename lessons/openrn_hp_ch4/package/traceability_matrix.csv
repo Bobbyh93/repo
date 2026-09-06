@@ -1,0 +1,21 @@
+slide_id,learning_objective,course_objective_id,program_outcome_ids,standards_refs,cjm_functions,assessment_item_ids,evidence_status
+S01,,,,,,,instructor-added
+S02,Recognize the family cues that belong in a pediatric abdominal pain assessment.,CO7,,,recognize cues,,source-aligned
+S03,State the question every slide in this lesson answers.,,,,recognize cues;analyze cues,,instructor-added
+S04,Use the map to locate where a family cue belongs.,,,,,,instructor-added
+S05,"Identify family structure, roles, and the five family functions.",CO1,,,analyze cues,Q01,source-aligned
+S06,Recognize informal and unhealthy family roles and the nurse's obligation to cultural humility.,CO5,,,recognize cues;analyze cues,,source-aligned
+S07,Distinguish healthy from unhealthy family dynamics using observable cues.,CO2,,,analyze cues,Q02,source-aligned
+S08,"Explain why ACE count, not any single event, predicts later health risk.",CO3,,,analyze cues;prioritize hypotheses,Q03,source-aligned
+S09,Name protective factors and the divorce guidance a nurse can teach a parent.,CO3,,,generate solutions;take action,Q04,source-aligned
+S10,Compare parenting styles by responsiveness and demandingness and their outcomes.,CO4,,,analyze cues,Q05,source-aligned
+S11,Teach a caregiver a consequence sequence that guides rather than punishes.,CO4,,,generate solutions;take action,Q06,source-aligned
+S12,"Identify how a client's illness changes roles for parents, siblings, and caregivers.",CO6,,,recognize cues;analyze cues,,source-aligned
+S13,Recognize caregiver stress signs and match them to resources and self-care teaching.,CO6,,,recognize cues;generate solutions,Q07,source-aligned
+S14,Map each nursing process step to its NCSBN clinical judgment function for a family assessment.,CO7,,,recognize cues;analyze cues;generate solutions;take action;evaluate outcomes,Q10,source-aligned
+S15,Sequence a family assessment that protects the client's privacy and autonomy.,CO7,,,recognize cues;prioritize hypotheses,Q08,source-aligned
+S16,"Prioritize family cues by required nursing action, from mandated reporting to teaching.",CO7,,,prioritize hypotheses;take action,Q09,source-aligned
+S17,Select the priority nursing response to caregiver role strain.,CO6,,,analyze cues;generate solutions,,source-aligned
+S18,Choose the priority nursing action when a family cue and a clinical complaint arrive together.,CO7,,,prioritize hypotheses;take action,,source-aligned
+S19,Retrieve one fact per lane without notes.,CO7,,,evaluate outcomes,,source-aligned
+S20,"A safe nurse assesses the family as part of the client, sorts cues by required action, and teaches what protects.",,,,,,instructor-added
