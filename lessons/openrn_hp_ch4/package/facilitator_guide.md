@@ -1,4 +1,4 @@
-# Facilitator Guide — Family Dynamics: assessing and acting on the family as part of the client
+# Facilitator Guide — Family Dynamics at the Bedside
 
 
 **Course:** NHP  ·  **Unit:** Health Promotion Across the Lifespan  ·  **Chapter:** Family Dynamics

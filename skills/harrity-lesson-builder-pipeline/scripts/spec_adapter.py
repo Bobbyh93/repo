@@ -230,8 +230,11 @@ def _derive_content(slide: Dict[str, Any], rtype: str, lesson: Dict[str, Any],
             cards = _bullets_as_cards(bullets)
             notes.append(f"{sid}: {rtype} without card_data; bullets rendered as untitled cards")
         out["cards"] = cards
+        # the renderer's default callout is generic pipeline text; prefer the slide's own words
         if prompt:
             out["callout"] = prompt
+        elif slide.get("learning_objective"):
+            out["callout"] = slide["learning_objective"]
         if rtype == "teaching_point" and slide.get("answer_key"):
             out["warning"] = "; ".join(str(a) for a in slide["answer_key"])
 

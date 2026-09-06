@@ -73,7 +73,7 @@ OCQ = ("When one person is the client, how does the nurse recognize whether the 
 
 SLIDES = [
     slide("S01", 1, "Family Dynamics: the family is part of the assessment", "title", "opening", "cross-lane",
-          "", ["See the whole map: structure, dynamics, risk, strain, action",
+          "", ["See the whole map first: five lanes",
                "Notice what the family is doing to health",
                "Decide what the nurse does first"],
           "Title slide.", ev="instructor-added", refs=[], dur=30),
@@ -135,7 +135,7 @@ SLIDES = [
           card=[{"heading": "Economic support", "body": "Meeting members' material needs.", "cjm": "analyze cues"},
                 {"heading": "Emotional support", "body": "Intimacy: mutually shared trust that buffers outside stress.", "cjm": "analyze cues"},
                 {"heading": "Socialization", "body": "First teacher of norms, values, and how emotions are shown. Can also pass on unhealthy behavior.", "cjm": "analyze cues"},
-                {"heading": "Control of sexuality and reproduction", "body": "Family norms around partnership and reproduction.", "cjm": "analyze cues"},
+                {"heading": "Sexuality and reproduction", "body": "Family norms around partnership and reproduction.", "cjm": "analyze cues"},
                 {"heading": "Ascribed social status", "body": "Status at birth versus achieved status by effort; family support shapes achievement.", "cjm": "analyze cues"}],
           co="CO1", visual="Table 4.2 (modern family structures) not retrievable at build; faculty may add examples."),
 
@@ -153,7 +153,7 @@ SLIDES = [
           "shaped by experience, can change the care you give without your noticing.",
           cjm=["recognize cues", "analyze cues"],
           card=[{"heading": "Informal roles", "body": "Decision-maker, peace-maker, tradition-holder.", "cjm": "recognize cues"},
-                {"heading": "Roles seen in dysfunction", "body": "Hero, mascot, identified patient or scapegoat, invisible or lost child, enabler or caretaker, parentified child.", "cjm": "recognize cues"},
+                {"heading": "Dysfunction roles", "body": "Hero, mascot, scapegoat, lost child, enabler, parentified child.", "cjm": "recognize cues"},
                 {"heading": "Culture", "body": "Shared values, norms, symbols, language, and way of life passed between generations.", "cjm": "analyze cues"},
                 {"heading": "The nurse's lens", "body": "Cultural humility plus inclusiveness; watch for implicit bias.", "cjm": "analyze cues"}],
           co="CO5"),
@@ -283,10 +283,10 @@ SLIDES = [
           "disabilities. Self-care teaching covers provider visits, nutrition, exercise, rest, and relaxation techniques, framed as "
           "'taking care of yourself helps you be a better caregiver.' Family-centered care ties it together with four principles.",
           cjm=["recognize cues", "generate solutions"],
-          card=[{"heading": "Stress signs", "body": "anger, withdrawal, anxiety about the future, depression, exhaustion, sleeplessness, irritability, new health problems", "cjm": "recognize cues"},
-                {"heading": "Resources", "body": "day care, respite, residential and palliative care; Al-Anon, Nar-Anon, Sibshop; family therapy referral", "cjm": "generate solutions"},
-                {"heading": "Self-care teaching", "body": "provider visits, nutrition, exercise, rest; breathing, progressive muscle relaxation, visualization, meditation", "cjm": "generate solutions"},
-                {"heading": "Family-centered care", "body": "respect and dignity; collaboration; empowerment; information sharing. Better outcomes, less family stress.", "cjm": "generate solutions"}],
+          card=[{"heading": "Stress signs", "body": "anger, withdrawal, anxiety, depression, exhaustion, sleeplessness, irritability, new illness", "cjm": "recognize cues"},
+                {"heading": "Resources", "body": "day care, respite, residential or palliative care; Al-Anon, Nar-Anon, Sibshop; family therapy", "cjm": "generate solutions"},
+                {"heading": "Self-care teaching", "body": "provider visits, nutrition, exercise, rest; relaxation breathing, visualization, meditation", "cjm": "generate solutions"},
+                {"heading": "Family-centered care", "body": "respect and dignity; collaboration; empowerment; information sharing", "cjm": "generate solutions"}],
           co="CO6", nac="educate"),
 
     slide("S14", 14, "Action: the nursing process is the clinical judgment model", "process_map", "lane: action", "action",
@@ -306,9 +306,9 @@ SLIDES = [
 
     slide("S15", 15, "Action: assess the family without losing the client", "mini_case", "lane: action", "action",
           "Sequence a family assessment that protects the client's privacy and autonomy.",
-          ["Ask the client privately who they want present; the nurse asks others to leave",
-           "General survey of client and family: hygiene, affect, communication, nutrition",
-           "Unfriendly, disrespectful, hostile interaction is a cue to act on"],
+          ["Ask the client privately who they want present",
+           "General survey of client and family",
+           "Hostile or disrespectful interaction is a cue to act on"],
           "Here is the assessment sequence for the opening case. First, establish cultural safety and privacy: one open-ended cultural "
           "question, then find out who the decision-maker is, which for a child under eighteen is the parent or guardian, while still "
           "advocating for the client's autonomy. Ask the client privately who they want present; the nurse does the asking because the "
@@ -319,10 +319,10 @@ SLIDES = [
           activity="Which single step must happen before any family member is interviewed?",
           answers=["Establish cultural safety and privacy, and ask the client privately who they want present"],
           card=[{"presentation": "The 8-year-old from the opening case. Mother present. Parents divorcing. The nurse is about to take the family history.",
-                 "cues": ["Client is a minor: parent or guardian is the decision-maker, autonomy still advocated",
-                          "Observe hygiene, affect, communication, nutrition, and how mother and child interact",
-                          "Ask what the family knows about the illness and how they are responding",
-                          "Ask about supports: respite, community resources, other family"],
+                 "cues": ["Minor: parent decides; autonomy still advocated",
+                          "Survey hygiene, affect, communication, nutrition",
+                          "What does the family know, and how do they respond?",
+                          "Supports: respite, community, other family"],
                  "prompt": "Put the steps in order and say which one protects the client."}],
           co="CO7", nac="assess"),
 
@@ -343,7 +343,12 @@ SLIDES = [
                            "bruises in different stages of healing with an inconsistent explanation",
                            "mother reports sleeplessness, irritability, and dread about the future",
                            "mother speaks to the child with hostility and contempt during the survey"],
-                 "correct_order": [1, 3, 2, 0]}],
+                 "correct_order": [1, 3, 2, 0],
+                 "categories": [
+                     {"title": "cues to sort", "items": ["asks whether spanking is acceptable", "bruises in different stages of healing, inconsistent explanation",
+                                                          "sleeplessness, irritability, dread about the future", "hostility and contempt toward the child during the survey"]},
+                     {"title": "response ladder: most to least urgent", "items": ["mandated report per state law and agency policy", "notify provider; social work or case management referral",
+                                                                                   "caregiver role strain: resources and self-care teaching", "teaching moment: positive discipline"]}]}],
           co="CO7", nac="escalate"),
 
     slide("S17", 17, "Checkpoint: the caregiver in the waiting room", "checkpoint_mcq", "lane: strain", "strain",
@@ -503,7 +508,7 @@ def build() -> dict:
         "lesson": {
             "course_code": "NHP", "program_level": "prelicensure RN", "audience": "prelicensure nursing students",
             "unit_title": "Health Promotion Across the Lifespan", "chapter_id": "4", "chapter_title": "Family Dynamics",
-            "lesson_title": "Family Dynamics: assessing and acting on the family as part of the client",
+            "lesson_title": "Family Dynamics at the Bedside",
             "concept": "family dynamics", "exemplars": ["adverse childhood experiences", "parenting styles", "caregiver role strain", "family-centered care"],
             "clinical_domain": "health promotion / psychosocial integrity", "source_family": "Open RN Nursing Health Promotion",
             "source_anchor": "Chapter 4, sections 4.1-4.8", "page_range": "n/a (web text)",

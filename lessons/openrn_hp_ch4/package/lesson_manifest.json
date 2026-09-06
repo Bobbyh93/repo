@@ -1,7 +1,7 @@
 {
   "schema_version": "1.2",
   "adapter_version": "1.2.0",
-  "generated_at_iso": "2026-09-06T04:11:46",
+  "generated_at_iso": "2026-09-06T07:02:29",
   "demo": false,
   "runtime_config": {
     "runtime": {
@@ -26,7 +26,7 @@
     "unit_title": "Health Promotion Across the Lifespan",
     "chapter_id": "4",
     "chapter_title": "Family Dynamics",
-    "lesson_title": "Family Dynamics: assessing and acting on the family as part of the client",
+    "lesson_title": "Family Dynamics at the Bedside",
     "concept": "family dynamics",
     "exemplars": [
       "adverse childhood experiences",
@@ -799,13 +799,14 @@
       "cjm_coverage",
       "outline",
       "script",
+      "visual_qa_ai",
       "deck_render",
       "package_manifest"
     ],
     "defect_counts": {
       "blocker": 0,
       "major": 0,
-      "minor": 13
+      "minor": 12
     }
   },
   "files": [
@@ -818,7 +819,8 @@
     "qa_log.md",
     "web/index.html",
     "web/learner_handout.html",
-    "20260906_NHP_Family_Dynamics_Part_1.imscc"
+    "20260906_NHP_Family_Dynamics_Part_1.imscc",
+    "20260906_NHP_Family_Dynamics_Part_1.pdf"
   ],
   "exports": {
     "cartridge": "IMS Common Cartridge 1.1",
@@ -831,9 +833,24 @@
     "item_count": 10,
     "structural_validation": "pass",
     "errors": [],
-    "pdf": null
+    "pdf": "20260906_NHP_Family_Dynamics_Part_1.pdf"
   },
-  "revision_log": [],
+  "revision_log": [
+    {
+      "revision_id": "R01",
+      "date": "2026-09-06",
+      "by": "Claude (AI review, session 018WYJEj6WzWNax18qsnk9NL)",
+      "changed_ids": [
+        "qa.gates_passed"
+      ],
+      "previous_summary": "",
+      "new_summary": "gate visual_qa_ai passed",
+      "reason": "20 slides rendered via LibreOffice+PyMuPDF; 6 layout defects found and fixed in build_spec (title length, 2 card headings, S13/S15 card overflow, S16 single-card sort); human visual_qa gate still open",
+      "downstream_effects": [
+        "package regenerated"
+      ]
+    }
+  ],
   "traceability": {
     "frameworks": [
       {
