@@ -78,6 +78,8 @@ Optional package files:
 - `binding_manifest.json`: slide-to-audio timing, captions, and auto-advance metadata.
 - `video_export_plan.md`: production checklist for video export.
 - `qa_log.md`: blocker, major, and minor defect log.
+- `traceability_matrix.csv`: slide → objective → standards → item chain (v1.1).
+- `web/index.html`, `web/learner_handout.html`, `<deck>.imscc`: LMS-neutral export (Common Cartridge 1.1 + QTI 1.2), emitted by the gate (v1.2).
 
 ## Unified workflow
 
@@ -439,6 +441,7 @@ Do not label inferred content as source-grounded.
 - `scripts/validate_and_gate.py`: gate + package writer; the one command for Stage 9.
 - `scripts/spec_adapter.py`: lesson_spec ⇄ renderer slide dict.
 - `scripts/generate_lesson_package.py`: canonical PPTX renderer (26 archetypes).
+- `scripts/export_lms.py`: HTML bundle, Common Cartridge 1.1 + QTI 1.2, best-effort PDF; called by the gate.
 - `scripts/validate_unified_package.py`: post-build package directory check.
 - `assets/reference_montage.png`: visual reference for the map-first slide style.
 

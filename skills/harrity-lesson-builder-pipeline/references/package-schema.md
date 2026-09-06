@@ -300,6 +300,9 @@ Outputs to `OUTDIR` (names fixed; `filename_pattern` from runtime_config is appl
 | `assessment_map.csv` | `assessment_items[]`, falling back to slides with non-empty `activity_prompt` |
 | `lesson_manifest.json` | metadata, runtime_config, source table, slide list with status fields, CJM coverage matrix, QA status, revision log |
 | `qa_log.md` | `qa.defects` + generator-detected defects |
+| `web/index.html`, `web/learner_handout.html` | learner-facing HTML (no scripts, no answer keys) — v1.2 |
+| `<deck stem>.imscc` | IMS Common Cartridge 1.1 with the HTML pages and a QTI 1.2 assessment from `assessment_items[]`; carries the `_DRAFT` stamp; structurally validated (`exports.structural_validation`) — v1.2 |
+| `<deck stem>.pdf` | deck PDF when LibreOffice is available; otherwise a minor defect — v1.2 |
 
 Generator-detected defects (all logged, never silently fixed):
 

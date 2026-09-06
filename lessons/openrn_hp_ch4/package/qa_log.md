@@ -11,7 +11,7 @@
 ## Major (0)
 
 
-## Minor (12)
+## Minor (13)
 
 - `-` [source gap] Tables 4.2, 4.3, 4.5a, 4.5b, 4.7 not retrievable at build (pressbooks.pub and ncbi.nlm.nih.gov blocked by egress proxy). S05, S07, S10, S14 are written from section-body facts; faculty to verify against the live chapter before promoting any slide to source-grounded.
 - `-` [evidence] All clinical slides are source-aligned (paraphrase of indexed facts), not source-grounded; promotion to source-grounded requires verification against the chapter text by the faculty reviewer.
@@ -25,6 +25,7 @@
 - `S16` adapter: urgency_sort v1.1 items rendered as one unsorted list; correct_order in notes
 - `S17` adapter: pass-through keys ['options', 'rationale']
 - `S18` adapter: pass-through keys ['options', 'rationale', 'scenario']
+- `-` export: pdf export unavailable in this environment (LibreOffice missing or failed); deck PDF not produced
 
 ## CJM coverage
 

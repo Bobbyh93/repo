@@ -33,6 +33,7 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import export_lms  # noqa: E402  Common Cartridge / QTI 1.2 / HTML / PDF
 import generate_lesson_package as renderer  # noqa: E402  canonical renderer
 import spec_adapter  # noqa: E402
 
@@ -395,7 +396,8 @@ def resolve_release_status(spec, all_defects: List[Dict[str, str]], demo: bool) 
     return status
 
 
-def write_manifest_and_qa(spec, out: Path, defects: Defects, files: List[str], demo: bool) -> str:
+def write_manifest_and_qa(spec, out: Path, defects: Defects, files: List[str], demo: bool,
+                          exports: Dict[str, Any] | None = None) -> str:
     slides = [s for s in spec["slides"]]
     coverage = {fn: [s["slide_id"] for s in slides if not s.get("retired") and fn in (s.get("cjm_functions") or [])] for fn in CJM}
     all_defects = list(spec["qa"].get("defects") or []) + defects.items
@@ -428,6 +430,7 @@ def write_manifest_and_qa(spec, out: Path, defects: Defects, files: List[str], d
         "qa": {"release_status": status, "gates_passed": (spec["qa"].get("gates_passed") or []) + ["deck_render", "package_manifest"],
                "defect_counts": {sev: sum(1 for d in all_defects if d["severity"] == sev) for sev in ("blocker", "major", "minor")}},
         "files": files,
+        "exports": exports or {},
         "revision_log": spec.get("revision_log") or [],
         "traceability": write_traceability(spec, out),
         "outcomes": spec.get("outcomes") or {},
@@ -552,7 +555,11 @@ def run(spec: Dict[str, Any], outdir: Path, demo: bool) -> Dict[str, Any]:
     n_items = write_assessment_map(spec, outdir)
     files = [name, "facilitator_guide.md", "learner_handout.md", "assessment_map.csv", "traceability_matrix.csv",
              "lesson_manifest.json", "qa_log.md"]
-    status = write_manifest_and_qa(spec, outdir, defects, files, demo)
+    export_files, exports, export_warnings = export_lms.export(spec, outdir, name, demo)
+    files.extend(export_files)
+    for w in export_warnings:
+        defects.add("major" if w.startswith("cartridge:") else "minor", "-", f"export: {w}")
+    status = write_manifest_and_qa(spec, outdir, defects, files, demo, exports)
     return {"status": status, "deck": str(outdir / name), "assessment_rows": n_items, "defects": defects.items,
             "blocked": blocked, "exit": 1 if blocked else 0}
 

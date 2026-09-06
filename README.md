@@ -9,8 +9,9 @@ lesson_spec.json (schema 1.2)
    │            traceability, governance envelope (master-lesson 1.0.0)
    ├─ adapt:    spec_adapter.py  → renderer slide dict
    ├─ render:   generate_lesson_package.py (canonical renderer, 26 archetypes)
-   └─ write:    guides, assessment_map.csv, traceability_matrix.csv,
-                lesson_manifest.json, qa_log.md   (_DRAFT stamped on any blocker)
+   ├─ write:    guides, assessment_map.csv, traceability_matrix.csv, qa_log.md
+   ├─ export:   export_lms.py → web/*.html, <deck>.imscc (CC 1.1 + QTI 1.2), PDF if LibreOffice
+   └─ manifest: lesson_manifest.json       (_DRAFT stamped on any blocker)
 ```
 
 ## Run
@@ -34,8 +35,9 @@ Exit codes: `0` clean, `1` rendered with blockers (deck is `_DRAFT`), `2` spec u
 | `skills/…/references/renderer-spec.md` | renderer's native format (adapter target; legacy migration source) |
 | `skills/…/references/master_lesson/` | master-lesson 1.0.0 schema + template (governance envelope source) |
 | `fixtures/` | migrated legacy Ch.1 spec; renderer's own demo in legacy format |
-| `tests/test_merge.py` | WP-1 exit criteria as tests |
-| `docs/` | WP-0 inventory, WP-1 merge log, WP-4 web-app review |
+| `lessons/openrn_hp_ch4/` | WP-2 reference lesson: `build_spec.py` → `lesson_spec.json` → `package/` |
+| `tests/` | WP-1 and WP-3 exit criteria as tests |
+| `docs/` | WP-0 inventory, WP-1 merge log, WP-3 export log, WP-4 web-app review |
 | `handoff/` | 2026-09-05 handoff materials (read-only history) |
 
 ## Constraints carried in the gate
@@ -49,5 +51,5 @@ No learner identifiers in any artifact. No CC BY-NC content in packages. Identif
 | WP-0 inventory | done — `docs/WP0_REPO_INVENTORY.md` |
 | WP-1 merge | done, awaiting review — `docs/WP1_MERGE_LOG.md` |
 | WP-4 web app review | done — `docs/WP4_WEB_APP_REVIEW.md` |
-| WP-2 reference lesson (Open RN Health Promotion Ch.4) | queued |
-| WP-3 LMS-neutral export (`.imscc` + QTI) | queued; scope note in WP-0 (existing exporter is QTI 2.1) |
+| WP-2 reference lesson (Open RN Health Promotion Ch.4) | done, faculty-review-needed — `lessons/openrn_hp_ch4/` |
+| WP-3 LMS-neutral export (`.imscc` CC 1.1 + QTI 1.2) | done; live LMS import is a manual step — `docs/WP3_EXPORT_LOG.md` |

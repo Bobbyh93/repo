@@ -1,7 +1,7 @@
 {
   "schema_version": "1.2",
   "adapter_version": "1.2.0",
-  "generated_at_iso": "2026-09-06T03:37:25",
+  "generated_at_iso": "2026-09-06T03:40:15",
   "demo": false,
   "runtime_config": {
     "runtime": {
@@ -793,7 +793,7 @@
     "defect_counts": {
       "blocker": 0,
       "major": 0,
-      "minor": 12
+      "minor": 13
     }
   },
   "files": [
@@ -803,8 +803,24 @@
     "assessment_map.csv",
     "traceability_matrix.csv",
     "lesson_manifest.json",
-    "qa_log.md"
+    "qa_log.md",
+    "web/index.html",
+    "web/learner_handout.html",
+    "20260906_NHP_Family_Dynamics_Part_1.imscc"
   ],
+  "exports": {
+    "cartridge": "IMS Common Cartridge 1.1",
+    "assessment": "QTI 1.2 (cc.exam.v0p1)",
+    "resources": [
+      "r_lesson",
+      "r_handout",
+      "r_quiz"
+    ],
+    "item_count": 10,
+    "structural_validation": "pass",
+    "errors": [],
+    "pdf": null
+  },
   "revision_log": [],
   "traceability": {
     "frameworks": [
