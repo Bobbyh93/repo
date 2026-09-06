@@ -6,3 +6,5 @@ build/
 *.zip
 .env
 .env.*
+**/qa_visual/
+lessons/*/verification/

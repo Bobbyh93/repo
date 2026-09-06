@@ -443,6 +443,7 @@ Do not label inferred content as source-grounded.
 - `scripts/generate_lesson_package.py`: canonical PPTX renderer (26 archetypes).
 - `scripts/export_lms.py`: HTML bundle, Common Cartridge 1.1 + QTI 1.2, best-effort PDF; called by the gate.
 - `scripts/validate_unified_package.py`: post-build package directory check.
+- `scripts/qa_visual.py`, `scripts/verify_sources.py`, `scripts/record_gate.py`: review-and-release tools used by the project skill `lesson-release` (thumbnails + structural QA + optional Canvas import; source term-overlap verification; signed approvals/promotions with regate).
 - `assets/reference_montage.png`: visual reference for the map-first slide style.
 
 ## Final response pattern
