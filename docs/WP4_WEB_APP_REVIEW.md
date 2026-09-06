@@ -52,3 +52,57 @@ Reasoning in one line each:
 ## Not verified
 
 Live behaviour of the Render service; whether the app builds cleanly today; the OpenStax license contradiction (manifest says CC BY 4.0, audit says CC BY-NC-SA).
+
+---
+
+## Status update — 2026-09-06, after work in `Codex_Repo_2026`
+
+Written from a session working directly in that repo. Three PRs merged to its `main`; the notes below correct or close items above.
+
+### Closes "Not verified: whether the app builds cleanly today"
+
+It does. On `Codex_Repo_2026@main`: `npm run build` passes, `npm run check` reports **0** TypeScript errors, `npm test` is **84 passed across 5 files**, and `npm run check:launch` (what `live-launch-check.yml` actually runs) passes.
+
+Two caveats on that, because the numbers moved during the work:
+
+- `npm run check` reported **337** errors when first measured. PR #7 (`fix/typescript-errors`, 50 files) cleared all of them. Both figures are real; they are a week apart.
+- That script uses incremental builds (`tsBuildInfoFile`). A stale cache reported 337 as 293 at one point. Clear `node_modules/typescript/tsbuildinfo` before trusting a count.
+
+Still not verified: live behaviour of the Render service, and the OpenStax license contradiction.
+
+### `/health` was shadowed — this review did not catch it
+
+`server/index.ts` registered a static `/health` returning `{status:'ok'}` **before** `registerHealthEndpoints(app)`. Express matches in registration order, so the real dependency check in `server/health.ts` was dead code. Render's `healthCheckPath` is `/health`, so an instance that could not reach Postgres still reported healthy — a deploy with a bad `DATABASE_URL` went green while proving nothing.
+
+Fixed in **#8** (`51989e7`), which also corrected the memory check: it compared `heapUsed` against `heapTotal`, V8's *committed* heap rather than its ceiling. A booted server measured 66 MB / 69 MB = **95.7%**, past the 90% `error` threshold, so removing the static route alone would have traded a false green for a false 503. It now measures against `heap_size_limit`.
+
+**#9** (`533dd36`) then bounded the probe. The pool set no statement timeout, so a database that completed the TCP handshake but never answered left `/health` open indefinitely — measured against a black-hole listener, it never responded at all (curl gave up at 45 s). It now returns 503 in 5.01 s.
+
+Note for anyone repeating that test: the Neon serverless driver dials **port 443**, not the port in `DATABASE_URL`. A black-hole listener on the URL's port is never contacted.
+
+### Resolves "`replit.md` documents default admin credentials"
+
+The hash question was beside the point. `server/routes.ts:2352` declared a **second** `POST /api/admin/login` that string-compared `admin@nurseprep.com` / `admin123` and returned an unsigned `admin-token-<timestamp>` — no hash consulted at all.
+
+It was **not** a live bypass. `registerAdminRoutes(app)` runs at `routes.ts:759`, so the audited session-auth handler in `admin-routes.ts` always won and the hardcoded one never matched a request. Removed in **#11** (`7f75f85`) because it was one reordering away from becoming live.
+
+This is the same defect shape as the `/health` bug, with the winner reversed:
+
+| Path | Registered first (wins) | Shadowed (dead) |
+|---|---|---|
+| `/health` | static stub — **wrong one won** | real dependency check |
+| `/api/admin/login` | audited session auth — **right one won** | hardcoded credentials |
+
+Two instances in one codebase. A lint rule for duplicate route registration is worth more than either fix; a third occurrence will not necessarily land on the safe side.
+
+### Qualifies "No committed secrets found by pattern scan"
+
+True as stated, and that is the limitation. The scan looked for `sk-`, `AKIA`, `ghp_`, `SG.` — vendor-prefixed key formats. `admin123` has no prefix, so it passed a clean scan while sitting in `replit.md`, in a copy-pasteable `curl` in `ADMIN_OWNER_PATHWAY_TEST_REPORT.md`, and as `|| "admin123"` fallbacks in three ops scripts pointed at the live service. #11 unpublished all of those. Pattern scans do not catch plaintext credentials.
+
+**Still open, and not closed by any PR:** the repo is public and the pair is in git history permanently. `admin@nurseprep.com` / `admin123` must be rotated or confirmed invalid in every environment, Render included. Deleting the text does not invalidate the credential.
+
+### Unchanged and still open
+
+The student-report PDFs (`Cohort 5 exit exam_*.pdf`, `assessments_individual_report (1|2|3)_*.pdf`) are still tracked in the public repo, deliberately unopened. If they hold real learner records this outranks the credential issue and needs a decision, not a commit.
+
+One correction: `test_export.csv`, listed alongside them above, is **not** student data — it begins `<!DOCTYPE html>`, so it is a saved HTML page (140 lines) with a misleading extension.
