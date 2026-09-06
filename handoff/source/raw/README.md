@@ -29,3 +29,22 @@ The Routine records the resulting source index with
 `license_verified.method = "human attestation"` and names `fetched_by` — it never
 claims to have verified a license it could not fetch. Nothing in this directory
 is ever copied verbatim into a lesson; the index stores paraphrased facts.
+
+## Supplying chapters via Google Drive (the practical route)
+
+The build environment's egress proxy blocks NCBI, Pressbooks, LibreTexts, OpenStax and
+the Wayback Machine (verified 2026-09-06 with curl and WebFetch: policy 403). Google Drive
+is the only channel in, and its connector enforces a **10 MB per-file download cap** — the
+whole-book PDF (`Bookshelf_NBK615319.pdf`, 77.6 MB) cannot be pulled, and its text
+extraction returns empty.
+
+What works: **per-chapter PDFs**. On each chapter page at
+`https://www.ncbi.nlm.nih.gov/books/NBK615319/` NCBI offers a "PDF" link (top right);
+those files are typically under 1 MB. Drop them in the Drive `sources` folder
+(`1hFywSA2NleioUVUY25Ll9B4bQ3lVvzKP`). A Claude session with the Drive connector then
+runs `pdftotext -layout`, writes `handoff/source/raw/ch<N>/chapter.md` and a `SOURCE.json`
+naming the person who downloaded it as `fetched_by`, and commits — after which the daily
+Routine's fallback path (Path B) builds the lesson with no further input.
+
+`www.googleapis.com` is reachable from the container but `drive.google.com` is not; a
+direct REST download would need an OAuth token or API key the session does not hold.
