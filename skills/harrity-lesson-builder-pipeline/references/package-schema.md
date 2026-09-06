@@ -336,6 +336,8 @@ Accreditors and boards audit the chain, not the slides:
 
 The schema carries every link as an identifier. The generator does not author any of them; it validates that referenced IDs resolve and emits the rolled-up matrix.
 
+**Package-level standards refs (v1.2).** `lesson.standards_refs[]` uses the same `{framework_id, ref}` shape plus an optional `basis` string and states what the whole package is offered as evidence for (for `CA-BRN-ART3`, `ref` is the base's `req_id`, validated against `references/frameworks/ca_brn_article3_requirements.json`). `scripts/compliance_sync.py` turns these into Evidence Registry records once the package is `release-ready`. Slide-level `standards_refs` remain the fine-grained mapping.
+
 **Generator outputs added in v1.1**
 
 | File | Content |

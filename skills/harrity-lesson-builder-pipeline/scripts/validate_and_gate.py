@@ -171,6 +171,17 @@ def validate_spec(spec: Dict[str, Any], defects: Defects) -> None:
                 defects.add("minor", sid, f"standards_ref framework '{fid}' not in taxonomy.frameworks")
             elif fws[fid].get("text_policy") == "identifier-only" and len(str(ref.get("ref", ""))) > 24:
                 defects.add("major", sid, f"standards_ref for identifier-only framework '{fid}' looks like pasted text")
+    # package-level standards refs (what the whole package evidences) — same rules as slide-level
+    for ref in lesson.get("standards_refs") or []:
+        fid = ref.get("framework_id")
+        if fid not in fws:
+            defects.add("minor", "-", f"lesson.standards_ref framework '{fid}' not in taxonomy.frameworks")
+        elif fws[fid].get("text_policy") == "identifier-only" and len(str(ref.get("ref", ""))) > 24:
+            defects.add("major", "-", f"lesson.standards_ref for identifier-only framework '{fid}' looks like pasted text")
+        if fid == "CA-BRN-ART3":
+            fw_file = Path(__file__).resolve().parent.parent / "references" / "frameworks" / "ca_brn_article3_requirements.json"
+            if fw_file.exists() and ref.get("ref") not in json.loads(fw_file.read_text(encoding="utf-8"))["requirements"]:
+                defects.add("minor", "-", f"lesson.standards_ref '{ref.get('ref')}' not a known CA-BRN-ART3 req_id")
     for it in spec.get("assessment_items") or []:
         iid = it.get("item_id", "?")
         if it.get("slide_id") and it["slide_id"] not in seen:
@@ -378,7 +389,8 @@ def write_traceability(spec, out: Path) -> Dict[str, Any]:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()) if rows else ["slide_id"])
         w.writeheader(); w.writerows(rows)
     return {"frameworks": spec["taxonomy"].get("frameworks") or [], "program_outcomes": L.get("program_outcomes") or [],
-            "course_objectives": L.get("course_objectives") or [], "matrix": rows, "unmapped_counts": unmapped}
+            "course_objectives": L.get("course_objectives") or [], "package_standards_refs": L.get("standards_refs") or [],
+            "matrix": rows, "unmapped_counts": unmapped}
 
 
 def resolve_release_status(spec, all_defects: List[Dict[str, str]], demo: bool) -> str:

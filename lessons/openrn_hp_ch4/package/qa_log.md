@@ -16,7 +16,7 @@
 - `-` [source gap] Tables 4.2, 4.3, 4.5a, 4.5b, 4.7 not retrievable at build (pressbooks.pub and ncbi.nlm.nih.gov blocked by egress proxy). S05, S07, S10, S14 are written from section-body facts; faculty to verify against the live chapter before promoting any slide to source-grounded.
 - `-` [evidence] All clinical slides are source-aligned (paraphrase of indexed facts), not source-grounded; promotion to source-grounded requires verification against the chapter text by the faculty reviewer.
 - `S16` [clinical judgment] The urgency-sort cue about bruising is an instructor-written illustration of the chapter's mandated-reporting rule, not a chapter example; confirm wording against agency policy.
-- `-` [standards] frameworks registered; standards_refs left empty per MVP scope.
+- `-` [standards] slide-level standards_refs left empty per MVP scope. Package-level CA-BRN-ART3 refs BRN-14 and BRN-17 are proposed by the builder; faculty to confirm, and to decide whether BRN-16 (1426(d) integrated content: cultural diversity) also applies, before compliance_sync --apply.
 - `S07` adapter: pass-through keys ['columns']
 - `S08` adapter: pass-through keys ['center', 'factors']
 - `S09` adapter: pass-through keys ['cards', 'warning']

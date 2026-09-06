@@ -38,7 +38,7 @@ Exit codes: `0` clean, `1` rendered with blockers (deck is `_DRAFT`), `2` spec u
 | `lessons/openrn_hp_ch4/` | WP-2 reference lesson: `build_spec.py` → `lesson_spec.json` → `package/` |
 | `tests/` | WP-1, WP-3 and release-tool exit criteria as tests |
 | `.claude/skills/lesson-release/` | project skill: QA the package, verify slides against the source, record approvals; backed by `qa_visual.py`, `verify_sources.py`, `record_gate.py` |
-| `docs/` | WP-0 inventory, WP-1 merge log, WP-3 export log, WP-4 web-app review |
+| `docs/` | WP-0 inventory, WP-1 merge log, WP-3 export log, WP-4 web-app review, WP-5 compliance loop |
 | `handoff/` | 2026-09-05 handoff materials (read-only history) |
 
 ## Review and release (skill `lesson-release`)
@@ -49,6 +49,7 @@ python $S/qa_visual.py $L/package [--canvas-course-id ID]          # thumbnails,
 python $S/verify_sources.py $L/lesson_spec.json --out $L/verification --fetch   # term overlap per slide/item vs cited source
 python $S/record_gate.py $L/lesson_spec.json status                 # where the lesson is
 python $S/record_gate.py $L/lesson_spec.json approve faculty_approved --by "Name"   # signed decisions, then regate
+python $S/compliance_sync.py $L/lesson_spec.json [--apply]                         # release-ready package → BRN Evidence Registry
 ```
 
 Human sign-off stays terminal: every write needs `--by`, and the gate recomputes the release status from recorded approvals.
@@ -66,3 +67,4 @@ No learner identifiers in any artifact. No CC BY-NC content in packages. Identif
 | WP-4 web app review | done — `docs/WP4_WEB_APP_REVIEW.md` |
 | WP-2 reference lesson (Open RN Health Promotion Ch.4) | done, faculty-review-needed — `lessons/openrn_hp_ch4/` |
 | WP-3 LMS-neutral export (`.imscc` CC 1.1 + QTI 1.2) | done; live LMS import is a manual step — `docs/WP3_EXPORT_LOG.md` |
+| WP-5 compliance loop (package → BRN Evidence Registry) | built, dry-run only until a lesson is release-ready — `docs/WP5_COMPLIANCE_LOOP.md` |

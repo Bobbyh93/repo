@@ -8,3 +8,4 @@ build/
 .env.*
 **/qa_visual/
 lessons/*/verification/
+**/compliance_payload.json

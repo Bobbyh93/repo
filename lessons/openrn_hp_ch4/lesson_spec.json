@@ -82,6 +82,18 @@
         "text": "Apply the nursing process to caring for a client in the context of the family",
         "maps_to": []
       }
+    ],
+    "standards_refs": [
+      {
+        "framework_id": "CA-BRN-ART3",
+        "ref": "BRN-14",
+        "basis": "1426(b): nursing process and clinical judgment model integrated explicitly (S14 process map, CJM coverage matrix)"
+      },
+      {
+        "framework_id": "CA-BRN-ART3",
+        "ref": "BRN-17",
+        "basis": "1426(f): assessment items and traceability matrix link evaluation to course objectives"
+      }
     ]
   },
   "sources": [
@@ -2028,7 +2040,7 @@
       {
         "severity": "minor",
         "slide_id": "-",
-        "note": "[standards] frameworks registered; standards_refs left empty per MVP scope."
+        "note": "[standards] slide-level standards_refs left empty per MVP scope. Package-level CA-BRN-ART3 refs BRN-14 and BRN-17 are proposed by the builder; faculty to confirm, and to decide whether BRN-16 (1426(d) integrated content: cultural diversity) also applies, before compliance_sync --apply."
       }
     ],
     "cjm_coverage_rationale": ""

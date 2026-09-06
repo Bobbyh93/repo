@@ -512,6 +512,12 @@ def build() -> dict:
             "concept_lanes": LANES, "target_duration_minutes": 50,
             "program_outcomes": [],
             "course_objectives": [{"id": k, "text": v, "maps_to": []} for k, v in COURSE_OBJECTIVES.items()],
+            # Package-level: which CA BRN Article 3 requirements this lesson is offered as evidence for.
+            # Proposed by the builder; the faculty reviewer confirms before release (see qa.defects).
+            "standards_refs": [
+                {"framework_id": "CA-BRN-ART3", "ref": "BRN-14", "basis": "1426(b): nursing process and clinical judgment model integrated explicitly (S14 process map, CJM coverage matrix)"},
+                {"framework_id": "CA-BRN-ART3", "ref": "BRN-17", "basis": "1426(f): assessment items and traceability matrix link evaluation to course objectives"},
+            ],
         },
         "sources": [{
             "source_id": SRC, "title": "Nursing Health Promotion, Chapter 4: Family Dynamics", "kind": "authoritative",
@@ -570,7 +576,7 @@ def build() -> dict:
                 {"severity": "minor", "slide_id": "-", "note": "[source gap] Tables 4.2, 4.3, 4.5a, 4.5b, 4.7 not retrievable at build (pressbooks.pub and ncbi.nlm.nih.gov blocked by egress proxy). S05, S07, S10, S14 are written from section-body facts; faculty to verify against the live chapter before promoting any slide to source-grounded."},
                 {"severity": "minor", "slide_id": "-", "note": "[evidence] All clinical slides are source-aligned (paraphrase of indexed facts), not source-grounded; promotion to source-grounded requires verification against the chapter text by the faculty reviewer."},
                 {"severity": "minor", "slide_id": "S16", "note": "[clinical judgment] The urgency-sort cue about bruising is an instructor-written illustration of the chapter's mandated-reporting rule, not a chapter example; confirm wording against agency policy."},
-                {"severity": "minor", "slide_id": "-", "note": "[standards] frameworks registered; standards_refs left empty per MVP scope."},
+                {"severity": "minor", "slide_id": "-", "note": "[standards] slide-level standards_refs left empty per MVP scope. Package-level CA-BRN-ART3 refs BRN-14 and BRN-17 are proposed by the builder; faculty to confirm, and to decide whether BRN-16 (1426(d) integrated content: cultural diversity) also applies, before compliance_sync --apply."},
             ],
             "cjm_coverage_rationale": "",
         },

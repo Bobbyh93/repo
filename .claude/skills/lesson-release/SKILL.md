@@ -1,11 +1,11 @@
 ---
 name: lesson-release
-description: Drive a gated Harrity lesson package from faculty-review-needed to release-ready. Use this whenever the user wants to QA a lesson deck or package, check slides visually, validate or import the Common Cartridge (.imscc) into Canvas or another LMS, verify slides against their cited source, promote evidence status (source-aligned to source-grounded), record faculty or release approvals, lock the taxonomy, or asks "is this lesson ready", "sign off", "approve", "release", "check the deck", "verify against Open RN" — even if they don't name the skill. Also use it after any change to a lesson_spec.json so the package is regenerated and the status recomputed.
+description: Drive a gated Harrity lesson package from faculty-review-needed to release-ready. Use this whenever the user wants to QA a lesson deck or package, check slides visually, validate or import the Common Cartridge (.imscc) into Canvas or another LMS, verify slides against their cited source, promote evidence status (source-aligned to source-grounded), record faculty or release approvals, lock the taxonomy, file a released lesson as accreditation evidence in the BRN Airtable base (Evidence Registry), or asks "is this lesson ready", "sign off", "approve", "release", "check the deck", "verify against Open RN" — even if they don't name the skill. Also use it after any change to a lesson_spec.json so the package is regenerated and the status recomputed.
 ---
 
 # Lesson release
 
-Three phases, each a script in `skills/harrity-lesson-builder-pipeline/scripts/`. The scripts do the mechanical work and write reports; you read the reports and the artifacts and make the judgment calls; the human signs the decisions. That split is deliberate: the gate can only lower a release status, and nothing in this skill can raise one without a named reviewer.
+Four phases, each a script in `skills/harrity-lesson-builder-pipeline/scripts/`. The scripts do the mechanical work and write reports; you read the reports and the artifacts and make the judgment calls; the human signs the decisions. That split is deliberate: the gate can only lower a release status, and nothing in this skill can raise one without a named reviewer.
 
 Paths below assume the repository root. A lesson lives at `lessons/<name>/lesson_spec.json` with its package in `lessons/<name>/package/`.
 
@@ -66,9 +66,20 @@ Every command re-runs the gate and prints `release_status_computed`. The compute
 
 `status` with no write is the right first move when the user asks "where is this lesson at".
 
+## 4. File the evidence (`compliance`)
+
+Once the computed status is `release-ready`, the package is accreditation evidence for the CA BRN requirements named in `lesson.standards_refs` (framework `CA-BRN-ART3`, `req_id` values from the base). The builder proposes those refs; confirm with the reviewer which apply before filing, because an Evidence Registry record is a claim to an auditor.
+
+```bash
+python skills/harrity-lesson-builder-pipeline/scripts/compliance_sync.py lessons/<name>/lesson_spec.json            # dry run, always first
+AIRTABLE_TOKEN=… python skills/harrity-lesson-builder-pipeline/scripts/compliance_sync.py lessons/<name>/lesson_spec.json --apply
+```
+
+Read `package/compliance_payload.json` from the dry run and show the reviewer the evidence descriptions before `--apply`. Apply refuses unreleased packages and missing tokens; it updates existing records on re-release rather than duplicating them. Details in `docs/WP5_COMPLIANCE_LOOP.md`.
+
 ## Reporting back
 
-Lead with the computed release status and what changed it. Then, in one short list: gates recorded, promotions made (slide, from, to, evidence), approvals recorded (key, by), and anything still open with who has to act. Point to `package/qa_log.md` and `verification/verification_report.md` rather than restating them.
+Lead with the computed release status and what changed it. Then, in one short list: gates recorded, promotions made (slide, from, to, evidence), approvals recorded (key, by), evidence filed (evidence_ids, or dry-run only), and anything still open with who has to act. Point to `package/qa_log.md` and `verification/verification_report.md` rather than restating them.
 
 ## Why the spec is edited in place
 
