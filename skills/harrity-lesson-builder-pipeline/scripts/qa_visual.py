@@ -72,8 +72,13 @@ def structural(pkg: Path, report: Dict[str, Any]) -> None:
 def render(pkg: Path, out: Path, dpi: int, report: Dict[str, Any]) -> None:
     soffice = shutil.which("soffice") or shutil.which("libreoffice")
     pdftoppm = shutil.which("pdftoppm")
-    if not soffice or not pdftoppm:
-        report["render"] = {"ran": False, "reason": f"missing tool: soffice={bool(soffice)} pdftoppm={bool(pdftoppm)}"}
+    try:
+        import pymupdf  # noqa: F401  fallback rasterizer when poppler is absent
+        have_mupdf = True
+    except ImportError:
+        have_mupdf = False
+    if not soffice or not (pdftoppm or have_mupdf):
+        report["render"] = {"ran": False, "reason": f"missing tool: soffice={bool(soffice)} pdftoppm={bool(pdftoppm)} pymupdf={have_mupdf}"}
         return
     deck = next(pkg.glob("*.pptx"))
     with tempfile.TemporaryDirectory() as tmp:
@@ -89,7 +94,15 @@ def render(pkg: Path, out: Path, dpi: int, report: Dict[str, Any]) -> None:
             report["render"] = {"ran": False, "reason": "soffice produced no PDF (file could not be loaded)"}
             return
         shutil.copy(pdfs[0], out / "deck.pdf")
-        subprocess.run([pdftoppm, "-r", str(dpi), "-png", str(pdfs[0]), str(out / "slide")], check=False, capture_output=True)
+        for old_png in out.glob("slide-*.png"):
+            old_png.unlink()
+        if pdftoppm:
+            subprocess.run([pdftoppm, "-r", str(dpi), "-png", str(pdfs[0]), str(out / "slide")], check=False, capture_output=True)
+        else:
+            import pymupdf
+            doc = pymupdf.open(str(pdfs[0]))
+            for i, page in enumerate(doc, 1):
+                page.get_pixmap(dpi=dpi).save(str(out / f"slide-{i:02d}.png"))
     pngs = sorted(out.glob("slide-*.png"))
     report["render"] = {"ran": True, "thumbnails": [p.name for p in pngs], "pdf": "deck.pdf"}
     try:

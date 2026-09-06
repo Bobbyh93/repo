@@ -1,4 +1,4 @@
-# Family Dynamics: assessing and acting on the family as part of the client — Learner Handout
+# Family Dynamics at the Bedside — Learner Handout
 
 
 **Clinical question:** When one person is the client, how does the nurse recognize whether the family is helping or harming that person's health, and what does the nurse do first?
@@ -68,9 +68,9 @@ structure → dynamics → risk → strain → action
 ### Action: the nursing process is the clinical judgment model
 
 ### Action: assess the family without losing the client
-- Ask the client privately who they want present; the nurse asks others to leave
-- General survey of client and family: hygiene, affect, communication, nutrition
-- Unfriendly, disrespectful, hostile interaction is a cue to act on
+- Ask the client privately who they want present
+- General survey of client and family
+- Hostile or disrespectful interaction is a cue to act on
 
 **Try it:** Which single step must happen before any family member is interviewed?
 

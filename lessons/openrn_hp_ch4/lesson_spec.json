@@ -23,7 +23,7 @@
     "unit_title": "Health Promotion Across the Lifespan",
     "chapter_id": "4",
     "chapter_title": "Family Dynamics",
-    "lesson_title": "Family Dynamics: assessing and acting on the family as part of the client",
+    "lesson_title": "Family Dynamics at the Bedside",
     "concept": "family dynamics",
     "exemplars": [
       "adverse childhood experiences",
@@ -247,7 +247,7 @@
       "nursing_action_category": "",
       "learning_objective": "",
       "on_slide_text": [
-        "See the whole map: structure, dynamics, risk, strain, action",
+        "See the whole map first: five lanes",
         "Notice what the family is doing to health",
         "Decide what the nurse does first"
       ],
@@ -596,7 +596,7 @@
             "cjm": "analyze cues"
           },
           {
-            "heading": "Control of sexuality and reproduction",
+            "heading": "Sexuality and reproduction",
             "body": "Family norms around partnership and reproduction.",
             "cjm": "analyze cues"
           },
@@ -669,8 +669,8 @@
             "cjm": "recognize cues"
           },
           {
-            "heading": "Roles seen in dysfunction",
-            "body": "Hero, mascot, identified patient or scapegoat, invisible or lost child, enabler or caretaker, parentified child.",
+            "heading": "Dysfunction roles",
+            "body": "Hero, mascot, scapegoat, lost child, enabler, parentified child.",
             "cjm": "recognize cues"
           },
           {
@@ -1217,22 +1217,22 @@
         "card_data": [
           {
             "heading": "Stress signs",
-            "body": "anger, withdrawal, anxiety about the future, depression, exhaustion, sleeplessness, irritability, new health problems",
+            "body": "anger, withdrawal, anxiety, depression, exhaustion, sleeplessness, irritability, new illness",
             "cjm": "recognize cues"
           },
           {
             "heading": "Resources",
-            "body": "day care, respite, residential and palliative care; Al-Anon, Nar-Anon, Sibshop; family therapy referral",
+            "body": "day care, respite, residential or palliative care; Al-Anon, Nar-Anon, Sibshop; family therapy",
             "cjm": "generate solutions"
           },
           {
             "heading": "Self-care teaching",
-            "body": "provider visits, nutrition, exercise, rest; breathing, progressive muscle relaxation, visualization, meditation",
+            "body": "provider visits, nutrition, exercise, rest; relaxation breathing, visualization, meditation",
             "cjm": "generate solutions"
           },
           {
             "heading": "Family-centered care",
-            "body": "respect and dignity; collaboration; empowerment; information sharing. Better outcomes, less family stress.",
+            "body": "respect and dignity; collaboration; empowerment; information sharing",
             "cjm": "generate solutions"
           }
         ]
@@ -1344,9 +1344,9 @@
       "nursing_action_category": "assess",
       "learning_objective": "Sequence a family assessment that protects the client's privacy and autonomy.",
       "on_slide_text": [
-        "Ask the client privately who they want present; the nurse asks others to leave",
-        "General survey of client and family: hygiene, affect, communication, nutrition",
-        "Unfriendly, disrespectful, hostile interaction is a cue to act on"
+        "Ask the client privately who they want present",
+        "General survey of client and family",
+        "Hostile or disrespectful interaction is a cue to act on"
       ],
       "activity_prompt": "Which single step must happen before any family member is interviewed?",
       "answer_key": [
@@ -1373,10 +1373,10 @@
           {
             "presentation": "The 8-year-old from the opening case. Mother present. Parents divorcing. The nurse is about to take the family history.",
             "cues": [
-              "Client is a minor: parent or guardian is the decision-maker, autonomy still advocated",
-              "Observe hygiene, affect, communication, nutrition, and how mother and child interact",
-              "Ask what the family knows about the illness and how they are responding",
-              "Ask about supports: respite, community resources, other family"
+              "Minor: parent decides; autonomy still advocated",
+              "Survey hygiene, affect, communication, nutrition",
+              "What does the family know, and how do they respond?",
+              "Supports: respite, community, other family"
             ],
             "prompt": "Put the steps in order and say which one protects the client."
           }
@@ -1450,6 +1450,26 @@
               3,
               2,
               0
+            ],
+            "categories": [
+              {
+                "title": "cues to sort",
+                "items": [
+                  "asks whether spanking is acceptable",
+                  "bruises in different stages of healing, inconsistent explanation",
+                  "sleeplessness, irritability, dread about the future",
+                  "hostility and contempt toward the child during the survey"
+                ]
+              },
+              {
+                "title": "response ladder: most to least urgent",
+                "items": [
+                  "mandated report per state law and agency policy",
+                  "notify provider; social work or case management referral",
+                  "caregiver role strain: resources and self-care teaching",
+                  "teaching moment: positive discipline"
+                ]
+              }
             ]
           }
         ]
@@ -2019,7 +2039,8 @@
       "blueprint",
       "cjm_coverage",
       "outline",
-      "script"
+      "script",
+      "visual_qa_ai"
     ],
     "defects": [
       {
@@ -2043,9 +2064,32 @@
         "note": "[standards] slide-level standards_refs left empty per MVP scope. Package-level CA-BRN-ART3 refs BRN-14 and BRN-17 are proposed by the builder; faculty to confirm, and to decide whether BRN-16 (1426(d) integrated content: cultural diversity) also applies, before compliance_sync --apply."
       }
     ],
-    "cjm_coverage_rationale": ""
+    "cjm_coverage_rationale": "",
+    "gate_log": [
+      {
+        "gate": "visual_qa_ai",
+        "by": "Claude (AI review, session 018WYJEj6WzWNax18qsnk9NL)",
+        "date": "2026-09-06",
+        "note": "20 slides rendered via LibreOffice+PyMuPDF; 6 layout defects found and fixed in build_spec (title length, 2 card headings, S13/S15 card overflow, S16 single-card sort); human visual_qa gate still open"
+      }
+    ]
   },
-  "revision_log": [],
+  "revision_log": [
+    {
+      "revision_id": "R01",
+      "date": "2026-09-06",
+      "by": "Claude (AI review, session 018WYJEj6WzWNax18qsnk9NL)",
+      "changed_ids": [
+        "qa.gates_passed"
+      ],
+      "previous_summary": "",
+      "new_summary": "gate visual_qa_ai passed",
+      "reason": "20 slides rendered via LibreOffice+PyMuPDF; 6 layout defects found and fixed in build_spec (title length, 2 card headings, S13/S15 card overflow, S16 single-card sort); human visual_qa gate still open",
+      "downstream_effects": [
+        "package regenerated"
+      ]
+    }
+  ],
   "outcomes": {},
   "improvement_log": []
 }
