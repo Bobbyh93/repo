@@ -68,14 +68,17 @@ Every command re-runs the gate and prints `release_status_computed`. The compute
 
 ## 4. File the evidence (`compliance`)
 
-Once the computed status is `release-ready`, the package is accreditation evidence for the CA BRN requirements named in `lesson.standards_refs` (framework `CA-BRN-ART3`, `req_id` values from the base). The builder proposes those refs; confirm with the reviewer which apply before filing, because an Evidence Registry record is a claim to an auditor.
+Once the computed status is `release-ready`, the package is evidence for the CA BRN requirements named in `lesson.standards_refs`. The BRN base models this its own way, and the script follows it: the `Evidence Registry` holds one stable pack per requirement (`EV-BRN-14`), and package files become `Attachments` records linked to those packs. **The script never creates a pack**; if one is missing it names it and refuses, because inventing a requirement record pollutes an accreditation registry.
 
 ```bash
-python skills/harrity-lesson-builder-pipeline/scripts/compliance_sync.py lessons/<name>/lesson_spec.json            # dry run, always first
-AIRTABLE_TOKEN=… python skills/harrity-lesson-builder-pipeline/scripts/compliance_sync.py lessons/<name>/lesson_spec.json --apply
+S=skills/harrity-lesson-builder-pipeline/scripts
+python $S/compliance_sync.py lessons/<name>/lesson_spec.json --drive-url "<package folder>"   # dry run, always first
+AIRTABLE_TOKEN=… python $S/compliance_sync.py lessons/<name>/lesson_spec.json --drive-url "…" --apply
 ```
 
-Read `package/compliance_payload.json` from the dry run and show the reviewer the evidence descriptions before `--apply`. Apply refuses unreleased packages and missing tokens; it updates existing records on re-release rather than duplicating them. Details in `docs/WP5_COMPLIANCE_LOOP.md`.
+Read `package/compliance_payload.json` from the dry run and show the reviewer which packs will be touched and what the attachment notes say, before `--apply`. Re-running updates in place rather than duplicating.
+
+`--mark-received` also flips those packs from Missing to Received. Only pass it when the reviewer has said this lesson is sufficient evidence for the requirement, not merely relevant to it; that is their judgement, not yours. Details and the live-base verification in `docs/WP5_COMPLIANCE_LOOP.md`.
 
 ## Reporting back
 

@@ -53,7 +53,9 @@ def test_release_ready_requires_all_approvals_and_lock(tmp_path):
     data = json.loads(spec.read_text())
     assert len(data["governance"]["approval_log"]) == 7
     assert all(e["by"] == "Tester" for e in data["governance"]["approval_log"])
-    assert len(data["revision_log"]) == 9
+    # 7 approvals + set-release + lock, on top of whatever the lesson already had
+    before = len(json.loads((REF / "lesson_spec.json").read_text()).get("revision_log") or [])
+    assert len(data["revision_log"]) == before + 9
     deck = Path(out["deck"])
     assert deck.exists() and "_DRAFT" not in deck.name
 
@@ -115,3 +117,39 @@ def test_qa_visual_structural_report(tmp_path):
     assert rep["slide_count"] == 20 and rep["cartridge"]["pass"]
     assert rep["canvas_import"]["ran"] is False
     assert "ran" in rep["render"]
+
+
+def test_render_with_no_images_does_not_open_the_visual_gate(tmp_path, monkeypatch):
+    """A PDF that rasterises to nothing must not report a passed visual gate."""
+    sys.path.insert(0, str(SCRIPTS))
+    import qa_visual
+    out = tmp_path / "qa"; out.mkdir()
+    monkeypatch.setattr(qa_visual.shutil, "which", lambda n: "/usr/bin/soffice")
+    monkeypatch.setattr(qa_visual.subprocess, "run", lambda *a, **k: None)
+
+    def fake_glob(self, pat):
+        if pat == "*.pptx":
+            return iter([tmp_path / "deck.pptx"])
+        return iter([])
+    monkeypatch.setattr(Path, "glob", fake_glob)
+    report = {}
+    qa_visual.render(tmp_path, out, 50, report)
+    assert report["render"]["ran"] is False
+
+
+def test_canvas_failure_path_does_not_write_upload_credentials(tmp_path, monkeypatch):
+    """The Canvas pre-upload response carries signed upload params; only its
+    shape may reach report.json, never its contents."""
+    sys.path.insert(0, str(SCRIPTS))
+    import qa_visual
+    pkg = tmp_path / "package"; pkg.mkdir()
+    (pkg / "x.imscc").write_bytes(b"zip")
+    monkeypatch.setenv("CANVAS_BASE_URL", "https://canvas.example")
+    monkeypatch.setenv("CANVAS_TOKEN", "tok")
+    secret = {"id": 1, "pre_attachment": {"upload_params": {"Signature": "SIGNED-SECRET"}}}
+    monkeypatch.setattr(qa_visual, "_canvas", lambda *a, **k: secret)
+    report = {}
+    qa_visual.canvas_import(pkg, "123", report)
+    assert report["canvas_import"]["ran"] is False
+    assert "SIGNED-SECRET" not in json.dumps(report)
+    assert report["canvas_import"]["response_keys"] == ["id", "pre_attachment"]

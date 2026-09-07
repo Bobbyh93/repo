@@ -28,6 +28,7 @@ This module has no dependency beyond the standard library.
 """
 from __future__ import annotations
 
+import hashlib
 import html
 import re
 import shutil
@@ -50,8 +51,22 @@ def _e(s: Any) -> str:
     return html.escape(str(s if s is not None else ""), quote=True)
 
 
+def _e2(s: Any) -> str:
+    """Escape twice, for text that sits inside an HTML fragment which is
+    itself escaped into XML (QTI `mattext texttype="text/html"`). The XML
+    parser decodes once, so a single escape would hand raw `<` or `&` to the
+    HTML renderer — "SpO2 < 90%" would truncate the question at the `<`."""
+    return html.escape(html.escape(str(s if s is not None else ""), quote=True), quote=True)
+
+
 def _ident(prefix: str, s: str) -> str:
-    return prefix + re.sub(r"[^A-Za-z0-9_\-]", "_", s)
+    """QTI/CC identifiers must be unique and start with a letter. Collapsing
+    punctuation alone would map `Q-1` and `Q.1` onto one ident and silently
+    drop a question, so a short digest of the original disambiguates."""
+    cleaned = re.sub(r"[^A-Za-z0-9_\-]", "_", str(s))
+    digest = hashlib.sha1(str(s).encode("utf-8")).hexdigest()[:6]
+    out = f"{prefix}{cleaned}_{digest}"
+    return out if out[:1].isalpha() or out.startswith("_") else f"i{out}"
 
 
 # --------------------------------------------------------------------------
@@ -156,8 +171,8 @@ def _qti_item(it: Dict[str, Any]) -> str:
     iid = _ident("", str(it.get("item_id", "Q")))
     title = _e(f"{it.get('item_id', '')} · {it.get('concept_lane', '')} · {it.get('cjm_function', '')}")
     itype = str(it.get("item_type", "mcq")).lower()
-    stem = _e(it.get("stem", ""))
-    rationale = _e(it.get("rationale", ""))
+    stem = _e2(it.get("stem", ""))
+    rationale = _e2(it.get("rationale", ""))
     opts = _split_options(it.get("options") or [])
     answer = str(it.get("answer", ""))
     parts = [f'<item ident="{iid}" title="{title}">']
@@ -191,13 +206,13 @@ def _qti_item(it: Dict[str, Any]) -> str:
         parts.append('<itemmetadata><qtimetadata><qtimetadatafield><fieldlabel>cc_profile</fieldlabel><fieldentry>cc.essay.v0p1</fieldentry></qtimetadatafield></qtimetadata></itemmetadata>')
         body = stem
         if opts:
-            body += " " + _e(" ".join(f"({l}) {t}" for l, t in opts))
+            body += " " + _e2(" ".join(f"({l}) {t}" for l, t in opts))
         parts.append(f'<presentation><material><mattext texttype="text/html">&lt;p&gt;{body}&lt;/p&gt;</mattext></material>')
         parts.append('<response_str ident="response1" rcardinality="Single"><render_fib><response_label ident="answer" rshuffle="No"/></render_fib></response_str></presentation>')
         parts.append('<resprocessing><outcomes><decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/></outcomes>'
                      '<respcondition continue="No"><conditionvar><other/></conditionvar>'
                      '<displayfeedback feedbacktype="Response" linkrefid="general_fb"/></respcondition></resprocessing>')
-        rationale = _e(f"Expected answer: {answer}. ") + rationale
+        rationale = _e2(f"Expected answer: {answer}. ") + rationale
     parts.append(f'<itemfeedback ident="general_fb"><flow_mat><material><mattext texttype="text/html">&lt;p&gt;{rationale}&lt;/p&gt;</mattext></material></flow_mat></itemfeedback>')
     parts.append("</item>")
     return "".join(parts)
@@ -304,10 +319,10 @@ def validate_cartridge(path: Path, expected_items: Optional[int] = None) -> List
     if not root.findall("cp:organizations/cp:organization", ns):
         errors.append("no organization")
     quiz = [r for r in res_ids.values() if r.get("type") == CC_ASSESSMENT_TYPE]
-    if expected_items:
-        if not quiz:
+    if expected_items is not None:
+        if expected_items and not quiz:
             errors.append("no CC assessment resource although assessment items exist")
-        else:
+        elif quiz:
             href = quiz[0].get("href")
             try:
                 q = ET.fromstring(z.read(href))

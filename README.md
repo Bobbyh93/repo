@@ -49,7 +49,7 @@ python $S/qa_visual.py $L/package [--canvas-course-id ID]          # thumbnails,
 python $S/verify_sources.py $L/lesson_spec.json --out $L/verification --fetch   # term overlap per slide/item vs cited source
 python $S/record_gate.py $L/lesson_spec.json status                 # where the lesson is
 python $S/record_gate.py $L/lesson_spec.json approve faculty_approved --by "Name"   # signed decisions, then regate
-python $S/compliance_sync.py $L/lesson_spec.json [--apply]                         # release-ready package → BRN Evidence Registry
+python $S/compliance_sync.py $L/lesson_spec.json --drive-url URL [--apply]         # released package → Attachments linked to BRN evidence packs
 ```
 
 Human sign-off stays terminal: every write needs `--by`, and the gate recomputes the release status from recorded approvals.
