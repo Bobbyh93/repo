@@ -10,7 +10,7 @@
     "lesson_title": "REQUIRED",
     "version": "0.1.0",
     "content_owner": "REQUIRED",
-    "faculty_reviewer": "REQUIRED",
+    "human_reviewer": "REQUIRED",
     "created_date": "2026-07-19",
     "target_release_date": "REQUIRED"
   },
@@ -142,7 +142,7 @@
     "objectives_approved": false,
     "outline_approved": false,
     "script_approved": false,
-    "faculty_approved": false,
+    "reviewer_approved": false,
     "release_approved": false
   },
   "release_metadata": {

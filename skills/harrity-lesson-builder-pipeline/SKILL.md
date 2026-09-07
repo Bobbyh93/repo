@@ -340,7 +340,7 @@ Video fields:
 Set package status:
 
 - `release-ready`: no blockers or major defects.
-- `faculty-review-needed`: no blockers, but source or clinical review remains.
+- `review-needed`: no blockers, but source or clinical review remains.
 - `draft-only`: source, taxonomy, or clinical verification gaps remain.
 - `blocked`: unsafe issue, export failure, source insufficiency, or schema failure.
 
@@ -367,7 +367,7 @@ If a slide is split, preserve the original as retired parent and create child ID
 Never collapse these channels:
 
 1. `slide.on_slide_text`: concise learner-facing text.
-2. `narration.speaker_script`: complete faculty script.
+2. `narration.speaker_script`: complete reviewer script.
 3. `speech.tts_text`: TTS-safe narration.
 4. `layout.layout_spec`: regions, density budget, archetype, overlap rule.
 5. `media.binding`: audio, captions, duration, auto-advance, and video export metadata.

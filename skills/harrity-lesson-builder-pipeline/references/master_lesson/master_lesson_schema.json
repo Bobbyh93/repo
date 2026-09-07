@@ -23,11 +23,11 @@
     "schema_version": {"const": "1.0.0"},
     "package_type": {"const": "harrity_master_lesson"},
     "promotion_state": {
-      "enum": ["template", "intake_complete", "faculty_review", "production_ready", "release_ready", "released"]
+      "enum": ["template", "intake_complete", "human_review", "production_ready", "release_ready", "released"]
     },
     "administrative_metadata": {
       "type": "object",
-      "required": ["lesson_id", "course_id", "course_name", "program_level", "lesson_title", "version", "content_owner", "faculty_reviewer", "created_date", "target_release_date"],
+      "required": ["lesson_id", "course_id", "course_name", "program_level", "lesson_title", "version", "content_owner", "human_reviewer", "created_date", "target_release_date"],
       "properties": {
         "lesson_id": {"type": "string", "pattern": "^LESSON-[A-Z0-9-]+$"},
         "course_id": {"type": "string", "minLength": 1},
@@ -36,7 +36,7 @@
         "lesson_title": {"type": "string", "minLength": 1},
         "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
         "content_owner": {"type": "string", "minLength": 1},
-        "faculty_reviewer": {"type": "string", "minLength": 1},
+        "human_reviewer": {"type": "string", "minLength": 1},
         "created_date": {"type": "string", "format": "date"},
         "target_release_date": {"type": "string", "minLength": 1}
       }

@@ -112,7 +112,7 @@ def test_governance_downgrades_unapproved_release_ready(tmp_path):
     spec = gate.demo_spec()
     spec["qa"]["release_status"] = "release-ready"
     result = gate.run(spec, tmp_path / "gov", demo=False)
-    assert result["status"] == "faculty-review-needed"
+    assert result["status"] == "review-needed"
     assert any("release-ready claimed without approvals" in d["note"] for d in result["defects"])
 
 
@@ -121,7 +121,7 @@ def test_governance_release_ready_with_full_approvals(tmp_path):
     spec["qa"]["release_status"] = "release-ready"
     spec["governance"] = {"promotion_state": "release_ready",
                           "approvals": {k: True for k in gate.APPROVAL_KEYS},
-                          "taxonomy_lock": {"status": "locked", "approved_by": "faculty", "approval_date": "2026-09-06"}}
+                          "taxonomy_lock": {"status": "locked", "approved_by": "Reviewer", "approval_date": "2026-09-06"}}
     result = gate.run(spec, tmp_path / "gov2", demo=False)
     assert result["status"] == "release-ready", result["defects"]
 

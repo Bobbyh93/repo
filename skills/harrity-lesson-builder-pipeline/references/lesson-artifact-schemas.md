@@ -8,7 +8,7 @@ Use these canonical shapes for automation mode, Codex handoff, or saved JSON pac
 - `mode`: `interactive` | `automation`
 - `evidence_status`: `source-grounded` | `source-aligned` | `inferred` | `illustrative-example` | `instructor-added` | `provisional` | `unresolved` | `needs-verification`
 - `qa_status`: `pass` | `pass_with_warnings` | `fail`
-- `package_status`: `release-ready` | `faculty-review-needed` | `draft-only` | `blocked`
+- `package_status`: `release-ready` | `review-needed` | `draft-only` | `blocked`
 - `cjm_function`: `recognize cues` | `analyze cues` | `prioritize hypotheses` | `generate solutions` | `take action` | `evaluate outcomes`
 
 ## Slide identity rule

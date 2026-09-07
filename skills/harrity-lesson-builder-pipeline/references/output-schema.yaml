@@ -100,7 +100,7 @@ assessment_map_row:
 lesson_manifest:
   package_id: string
   runtime_config: object
-  package_status: release-ready | faculty-review-needed | draft-only | blocked
+  package_status: release-ready | review-needed | draft-only | blocked
   source_status: string
   assumptions: array
   unresolved_variables: array

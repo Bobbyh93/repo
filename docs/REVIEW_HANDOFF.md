@@ -1,6 +1,6 @@
 # Review handoff — Family Dynamics at the Bedside (HP-CH4 R1)
 
-Date: 2026-09-06 · Status: `faculty-review-needed` · Revision R01 (AI visual review recorded)
+Date: 2026-09-06 · Status: `review-needed` · Revision R01 (AI visual review recorded)
 
 ## Where things are
 

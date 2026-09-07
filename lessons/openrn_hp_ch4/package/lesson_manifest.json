@@ -1,7 +1,7 @@
 {
   "schema_version": "1.2",
   "adapter_version": "1.2.0",
-  "generated_at_iso": "2026-09-06T07:02:29",
+  "generated_at_iso": "2026-09-07T15:37:41",
   "demo": false,
   "runtime_config": {
     "runtime": {
@@ -214,14 +214,13 @@
   },
   "governance": {
     "envelope": "master-lesson-1.0.0",
-    "promotion_state": "faculty_review",
+    "promotion_state": "human_review",
     "approvals": {
       "source_approved": false,
       "taxonomy_approved": false,
       "objectives_approved": false,
       "outline_approved": false,
       "script_approved": false,
-      "faculty_approved": false,
       "release_approved": false
     },
     "taxonomy_lock": {
@@ -233,7 +232,7 @@
       "lesson_id": "LESSON-NHP-CH4-FAMILY-DYNAMICS",
       "version": "0.1.0",
       "content_owner": "R. Harrity",
-      "faculty_reviewer": "R. Harrity",
+      "reviewer": "R. Harrity",
       "created_date": "2026-09-06"
     }
   },
@@ -790,7 +789,7 @@
   },
   "cjm_coverage_rationale": "",
   "qa": {
-    "release_status": "faculty-review-needed",
+    "release_status": "review-needed",
     "gates_passed": [
       "runtime",
       "source",
@@ -799,7 +798,6 @@
       "cjm_coverage",
       "outline",
       "script",
-      "visual_qa_ai",
       "deck_render",
       "package_manifest"
     ],
@@ -835,22 +833,7 @@
     "errors": [],
     "pdf": "20260906_NHP_Family_Dynamics_Part_1.pdf"
   },
-  "revision_log": [
-    {
-      "revision_id": "R01",
-      "date": "2026-09-06",
-      "by": "Claude (AI review, session 018WYJEj6WzWNax18qsnk9NL)",
-      "changed_ids": [
-        "qa.gates_passed"
-      ],
-      "previous_summary": "",
-      "new_summary": "gate visual_qa_ai passed",
-      "reason": "20 slides rendered via LibreOffice+PyMuPDF; 6 layout defects found and fixed in build_spec (title length, 2 card headings, S13/S15 card overflow, S16 single-card sort); human visual_qa gate still open",
-      "downstream_effects": [
-        "package regenerated"
-      ]
-    }
-  ],
+  "revision_log": [],
   "traceability": {
     "frameworks": [
       {

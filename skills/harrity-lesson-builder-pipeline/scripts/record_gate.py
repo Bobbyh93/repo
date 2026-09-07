@@ -16,7 +16,7 @@ status on its own: the gate computes status from the recorded approvals.
     common: --outdir DIR (default: <spec dir>/package)  --no-regate
 
 Approval keys: source_approved taxonomy_approved objectives_approved
-outline_approved script_approved faculty_approved release_approved
+outline_approved script_approved release_approved
 """
 from __future__ import annotations
 

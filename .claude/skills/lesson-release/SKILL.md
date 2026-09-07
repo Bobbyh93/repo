@@ -1,6 +1,6 @@
 ---
 name: lesson-release
-description: Drive a gated Harrity lesson package from faculty-review-needed to release-ready. Use this whenever the user wants to QA a lesson deck or package, check slides visually, validate or import the Common Cartridge (.imscc) into Canvas or another LMS, verify slides against their cited source, promote evidence status (source-aligned to source-grounded), record faculty or release approvals, lock the taxonomy, file a released lesson as accreditation evidence in the BRN Airtable base (Evidence Registry), or asks "is this lesson ready", "sign off", "approve", "release", "check the deck", "verify against Open RN" — even if they don't name the skill. Also use it after any change to a lesson_spec.json so the package is regenerated and the status recomputed.
+description: Drive a gated Harrity lesson package from review-needed to release-ready. Use this whenever the user wants to QA a lesson deck or package, check slides visually, validate or import the Common Cartridge (.imscc) into Canvas or another LMS, verify slides against their cited source, promote evidence status (source-aligned to source-grounded), record review or release approvals, lock the taxonomy, file a released lesson as accreditation evidence in the BRN Airtable base (Evidence Registry), or asks "is this lesson ready", "sign off", "approve", "release", "check the deck", "verify against Open RN" — even if they don't name the skill. Also use it after any change to a lesson_spec.json so the package is regenerated and the status recomputed.
 ---
 
 # Lesson release
@@ -52,7 +52,7 @@ python .../record_gate.py lessons/<name>/lesson_spec.json promote S05 --to sourc
 
 ## 3. Record approvals and release (`approve`)
 
-The master-lesson envelope has seven approvals in sequence: `source_approved`, `taxonomy_approved`, `objectives_approved`, `outline_approved`, `script_approved`, `faculty_approved`, `release_approved`, plus the taxonomy lock. Record each one only when the named person has actually signed off on it in the conversation; never infer an approval from silence or from a passing test.
+The master-lesson envelope has six approvals in sequence: `source_approved`, `taxonomy_approved`, `objectives_approved`, `outline_approved`, `script_approved`, `release_approved`, plus the taxonomy lock. There is no separate reviewer role: one named reviewer signs all six. Record each one only when the named person has actually signed off on it in the conversation; never infer an approval from silence or from a passing test.
 
 ```bash
 python .../record_gate.py lessons/<name>/lesson_spec.json approve source_approved --by "Name" --note "SRC01 CC BY 4.0 verified 2026-09-05"
@@ -62,7 +62,7 @@ python .../record_gate.py lessons/<name>/lesson_spec.json set-release release-re
 python .../record_gate.py lessons/<name>/lesson_spec.json status
 ```
 
-Every command re-runs the gate and prints `release_status_computed`. The computed status is the truth: if it says `faculty-review-needed` after you set `release-ready`, the gate found a missing approval or a major defect, and the QA log says which. Fix the cause; do not re-issue the command.
+Every command re-runs the gate and prints `release_status_computed`. The computed status is the truth: if it says `review-needed` after you set `release-ready`, the gate found a missing approval or a major defect, and the QA log says which. Fix the cause; do not re-issue the command.
 
 `status` with no write is the right first move when the user asks "where is this lesson at".
 

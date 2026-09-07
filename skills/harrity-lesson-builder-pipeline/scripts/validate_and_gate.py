@@ -60,13 +60,32 @@ REQUIRED_SLIDE_KEYS = ["slide_id", "slide_number", "slide_title", "slide_archety
                        "activity_prompt", "answer_key", "visual_notes", "speaker_script", "tts_text",
                        "target_duration_sec", "audio_duration_sec", "auto_advance", "layout_spec",
                        "allow_overlap", "qa_status", "qa_notes", "remediation_target", "audio_filename"]
-RELEASE_STATES = {"release-ready", "faculty-review-needed", "draft-only", "blocked"}
+RELEASE_STATES = {"release-ready", "review-needed", "draft-only", "blocked"}
+# Values used before the faculty role was removed; read, normalised, never written.
+LEGACY_RELEASE_STATES = {"faculty-review-needed": "review-needed"}
+LEGACY_PROMOTION_STATES = {"faculty_review": "human_review"}
+LEGACY_APPROVAL_KEYS = {"faculty_approved"}
 # master-lesson 1.0.0 envelope (references/master_lesson/master_lesson_schema.json)
-PROMOTION_STATES = ["template", "intake_complete", "faculty_review", "production_ready", "release_ready", "released"]
+PROMOTION_STATES = ["template", "intake_complete", "human_review", "production_ready", "release_ready", "released"]
+# One reviewer signs all of these; there is no separate faculty role.
 APPROVAL_KEYS = ["source_approved", "taxonomy_approved", "objectives_approved", "outline_approved",
-                 "script_approved", "faculty_approved", "release_approved"]
+                 "script_approved", "release_approved"]
 PRODUCTION_APPROVALS = APPROVAL_KEYS[:5]
 RELEASE_APPROVALS = APPROVAL_KEYS[5:]
+
+
+def normalise_governance(spec: Dict[str, Any]) -> None:
+    """Rewrite pre-removal faculty values in place so old specs still validate."""
+    gov = spec.get("governance") or {}
+    state = gov.get("promotion_state")
+    if state in LEGACY_PROMOTION_STATES:
+        gov["promotion_state"] = LEGACY_PROMOTION_STATES[state]
+    for key in LEGACY_APPROVAL_KEYS:
+        (gov.get("approvals") or {}).pop(key, None)
+    qa = spec.get("qa") or {}
+    rs = qa.get("release_status")
+    if rs in LEGACY_RELEASE_STATES:
+        qa["release_status"] = LEGACY_RELEASE_STATES[rs]
 
 
 # --------------------------------------------------------------------------
@@ -199,7 +218,7 @@ def validate_governance(spec: Dict[str, Any], defects: Defects) -> None:
 
     v1.2 slot. Absent block = MVP default (`intake_complete`, nothing approved).
     Only the consistency between qa.release_status and the approvals is
-    enforced; a claimed `release-ready` without faculty + release approval is
+    enforced; a claimed `release-ready` without every approval is
     downgraded by the manifest writer and logged as major here.
     """
     gov = spec.get("governance") or {}
@@ -221,7 +240,7 @@ def validate_governance(spec: Dict[str, Any], defects: Defects) -> None:
     if rs == "release-ready":
         missing = [k for k in PRODUCTION_APPROVALS + RELEASE_APPROVALS if approvals.get(k) is not True]
         if missing:
-            defects.add("major", "-", f"release-ready claimed without approvals: {', '.join(missing)}; downgraded to faculty-review-needed")
+            defects.add("major", "-", f"release-ready claimed without approvals: {', '.join(missing)}; downgraded to review-needed")
         if lock.get("status") != "locked":
             defects.add("major", "-", "release-ready claimed with taxonomy_lock.status != locked")
     if state in {"release_ready", "released"} and rs != "release-ready":
@@ -394,6 +413,7 @@ def write_traceability(spec, out: Path) -> Dict[str, Any]:
 
 
 def resolve_release_status(spec, all_defects: List[Dict[str, str]], demo: bool) -> str:
+    normalise_governance(spec)
     status = spec["qa"].get("release_status", "draft-only")
     approvals = (spec.get("governance") or {}).get("approvals") or {}
     lock = ((spec.get("governance") or {}).get("taxonomy_lock") or {}).get("status")
@@ -402,7 +422,7 @@ def resolve_release_status(spec, all_defects: List[Dict[str, str]], demo: bool) 
     elif status == "release-ready":
         approved = all(approvals.get(k) is True for k in PRODUCTION_APPROVALS + RELEASE_APPROVALS) and lock == "locked"
         if any(d["severity"] == "major" for d in all_defects) or not approved:
-            status = "faculty-review-needed"
+            status = "review-needed"
     if demo:
         status = "draft-only" if status != "blocked" else status
     return status
@@ -557,6 +577,7 @@ def demo_spec() -> Dict[str, Any]:
 def run(spec: Dict[str, Any], outdir: Path, demo: bool) -> Dict[str, Any]:
     outdir.mkdir(parents=True, exist_ok=True)
     defects = Defects()
+    normalise_governance(spec)  # before validation: pre-removal faculty values are not defects
     validate_spec(spec, defects)
     if defects.has("blocker") and any(d["slide_id"] == "-" and d["note"].startswith("missing top-level") for d in defects.items):
         return {"status": "invalid", "defects": defects.items, "exit": 2}

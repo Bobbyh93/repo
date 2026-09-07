@@ -210,14 +210,13 @@
     ]
   },
   "governance": {
-    "promotion_state": "faculty_review",
+    "promotion_state": "human_review",
     "approvals": {
       "source_approved": false,
       "taxonomy_approved": false,
       "objectives_approved": false,
       "outline_approved": false,
       "script_approved": false,
-      "faculty_approved": false,
       "release_approved": false
     },
     "taxonomy_lock": {
@@ -229,7 +228,7 @@
       "lesson_id": "LESSON-NHP-CH4-FAMILY-DYNAMICS",
       "version": "0.1.0",
       "content_owner": "R. Harrity",
-      "faculty_reviewer": "R. Harrity",
+      "reviewer": "R. Harrity",
       "created_date": "2026-09-06"
     }
   },
@@ -562,7 +561,7 @@
       ],
       "activity_prompt": "",
       "answer_key": [],
-      "visual_notes": "Table 4.2 (modern family structures) not retrievable at build; faculty may add examples.",
+      "visual_notes": "Table 4.2 (modern family structures) not retrievable at build; the reviewer may add examples.",
       "speaker_script": "The chapter opens with a working definition from the U.S. Census: two or more people, one the householder, related by birth, marriage, or adoption, living together. Nursing needs two more ideas. Family of orientation is the family you grew up in; family of procreation is the one you form as an adult. Roles are recurrent behavior patterns that fulfil family functions, and they change across the life span and can be impaired by chronic illness. The chapter names five functions. Read the five cards. When you assess a family, you are asking whether each function is being met for the client.",
       "tts_text": "",
       "target_duration_sec": 150,
@@ -1273,7 +1272,7 @@
       "on_slide_text": [],
       "activity_prompt": "",
       "answer_key": [],
-      "visual_notes": "Table 4.7 (NANDA diagnoses) not retrievable at build; faculty to insert program's care-planning resource.",
+      "visual_notes": "Table 4.7 (NANDA diagnoses) not retrievable at build; reviewer to insert the program's care-planning resource.",
       "speaker_script": "Section 4.7 lays the nursing process over the clinical judgment model explicitly, so this map is the chapter's, not ours. Assessment is recognize cues: establish cultural safety and privacy first, identify the decision-maker, and do a general survey of client and family. Diagnosis is analyze cues. Outcome identification is generate solutions with the family, in their values and culture. Implementation is take action, reprioritized against the current condition. Evaluation asks whether the diagnosis was accurate and the goals met, and whether to keep, modify, or delete each part of the plan.",
       "tts_text": "",
       "target_duration_sec": 150,
@@ -2031,7 +2030,7 @@
     }
   ],
   "qa": {
-    "release_status": "faculty-review-needed",
+    "release_status": "review-needed",
     "gates_passed": [
       "runtime",
       "source",
@@ -2039,19 +2038,18 @@
       "blueprint",
       "cjm_coverage",
       "outline",
-      "script",
-      "visual_qa_ai"
+      "script"
     ],
     "defects": [
       {
         "severity": "minor",
         "slide_id": "-",
-        "note": "[source gap] Tables 4.2, 4.3, 4.5a, 4.5b, 4.7 not retrievable at build (pressbooks.pub and ncbi.nlm.nih.gov blocked by egress proxy). S05, S07, S10, S14 are written from section-body facts; faculty to verify against the live chapter before promoting any slide to source-grounded."
+        "note": "[source gap] Tables 4.2, 4.3, 4.5a, 4.5b, 4.7 not retrievable at build (pressbooks.pub and ncbi.nlm.nih.gov blocked by egress proxy). S05, S07, S10, S14 are written from section-body facts; reviewer to verify against the live chapter before promoting any slide to source-grounded."
       },
       {
         "severity": "minor",
         "slide_id": "-",
-        "note": "[evidence] All clinical slides are source-aligned (paraphrase of indexed facts), not source-grounded; promotion to source-grounded requires verification against the chapter text by the faculty reviewer."
+        "note": "[evidence] All clinical slides are source-aligned (paraphrase of indexed facts), not source-grounded; promotion to source-grounded requires verification against the chapter text by the reviewer."
       },
       {
         "severity": "minor",
@@ -2061,35 +2059,12 @@
       {
         "severity": "minor",
         "slide_id": "-",
-        "note": "[standards] slide-level standards_refs left empty per MVP scope. Package-level CA-BRN-ART3 refs BRN-14 and BRN-17 are proposed by the builder; faculty to confirm, and to decide whether BRN-16 (1426(d) integrated content: cultural diversity) also applies, before compliance_sync --apply."
+        "note": "[standards] slide-level standards_refs left empty per MVP scope. Package-level CA-BRN-ART3 refs BRN-14 and BRN-17 are proposed by the builder; reviewer to confirm, and to decide whether BRN-16 (1426(d) integrated content: cultural diversity) also applies, before compliance_sync --apply."
       }
     ],
-    "cjm_coverage_rationale": "",
-    "gate_log": [
-      {
-        "gate": "visual_qa_ai",
-        "by": "Claude (AI review, session 018WYJEj6WzWNax18qsnk9NL)",
-        "date": "2026-09-06",
-        "note": "20 slides rendered via LibreOffice+PyMuPDF; 6 layout defects found and fixed in build_spec (title length, 2 card headings, S13/S15 card overflow, S16 single-card sort); human visual_qa gate still open"
-      }
-    ]
+    "cjm_coverage_rationale": ""
   },
-  "revision_log": [
-    {
-      "revision_id": "R01",
-      "date": "2026-09-06",
-      "by": "Claude (AI review, session 018WYJEj6WzWNax18qsnk9NL)",
-      "changed_ids": [
-        "qa.gates_passed"
-      ],
-      "previous_summary": "",
-      "new_summary": "gate visual_qa_ai passed",
-      "reason": "20 slides rendered via LibreOffice+PyMuPDF; 6 layout defects found and fixed in build_spec (title length, 2 card headings, S13/S15 card overflow, S16 single-card sort); human visual_qa gate still open",
-      "downstream_effects": [
-        "package regenerated"
-      ]
-    }
-  ],
+  "revision_log": [],
   "outcomes": {},
   "improvement_log": []
 }

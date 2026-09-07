@@ -144,7 +144,7 @@ Every slide carries every key below. Empty arrays and empty strings are permitte
 | `activity_prompt` | string | no | Empty string when the archetype has no learner task. |
 | `answer_key` | string[] | conditional | Required non-empty when `activity_prompt` is non-empty. |
 | `visual_notes` | string | no | Instruction to the renderer/designer. Not rendered on slide. |
-| `speaker_script` | string | yes | Verbatim faculty script. Goes to speaker notes. Never an outline. |
+| `speaker_script` | string | yes | Verbatim reviewer script. Goes to speaker notes. Never an outline. |
 | `tts_text` | string | no | TTS-safe narration. May be empty when audio not requested. Never merged with `on_slide_text`. |
 | `target_duration_sec` | integer | yes | Estimated at `media.wpm_target`. |
 | `audio_duration_sec` | number \| null | no | Filled by Stage 11. |
@@ -253,7 +253,7 @@ Feeds `assessment_map.csv` columns: `objective, concept_lane, slide, activity, c
 
 ```json
 {
-  "release_status": "release-ready | faculty-review-needed | draft-only | blocked",
+  "release_status": "release-ready | review-needed | draft-only | blocked",
   "gates_passed": ["runtime", "source", "taxonomy", "blueprint", "cjm_coverage", "outline", "script", "timing", "layout"],
   "defects": [{"severity": "blocker | major | minor", "slide_id": "S03", "note": "string"}],
   "cjm_coverage_rationale": "string"
@@ -383,7 +383,7 @@ Aggregate only. No learner-level records, no names, no IDs that resolve to a per
 {
   "action_id": "IA01",
   "date": "YYYY-MM-DD",
-  "trigger": "outcome-data | learner-question | faculty-review | accreditation-finding | source-update",
+  "trigger": "outcome-data | learner-question | reviewer-review | accreditation-finding | source-update",
   "finding": "string — what the data showed",
   "failed_operation": "one of six cjm_functions, or null",
   "affected_ids": ["S05", "Q01", "CO2"],
@@ -415,14 +415,14 @@ Adopted from `references/master_lesson/master_lesson_schema.json` (master-lesson
 
 ```json
 {
-  "promotion_state": "template | intake_complete | faculty_review | production_ready | release_ready | released",
+  "promotion_state": "template | intake_complete | human_review | production_ready | release_ready | released",
   "approvals": {
     "source_approved": false, "taxonomy_approved": false, "objectives_approved": false,
     "outline_approved": false, "script_approved": false,
-    "faculty_approved": false, "release_approved": false
+    "reviewer_approved": false, "release_approved": false
   },
   "taxonomy_lock": {"status": "unlocked | locked", "approved_by": "string", "approval_date": "YYYY-MM-DD"},
-  "administrative_metadata": {"lesson_id": "LESSON-…", "version": "0.1.0", "content_owner": "string", "faculty_reviewer": "string"}
+  "administrative_metadata": {"lesson_id": "LESSON-…", "version": "0.1.0", "content_owner": "string", "human_reviewer": "string"}
 }
 ```
 
@@ -430,7 +430,7 @@ Rules enforced by the gate:
 
 | Check | Severity / effect |
 |---|---|
-| `qa.release_status: release-ready` without all seven approvals `true` | major; manifest status downgraded to `faculty-review-needed` |
+| `qa.release_status: release-ready` without all seven approvals `true` | major; manifest status downgraded to `review-needed` |
 | `release-ready` with `taxonomy_lock.status != locked` | major; same downgrade |
 | `promotion_state` in {`release_ready`, `released`} while `qa.release_status` ≠ `release-ready` | major |
 | unknown `promotion_state` | major |

@@ -23,7 +23,7 @@ Fix before final release.
 - Map does not connect to bedside nursing action.
 - Source status is omitted from manifest.
 - Glossary or taxonomy drift occurs after lock.
-- Notes are outlines instead of verbatim faculty scripts.
+- Notes are outlines instead of verbatim reviewer scripts.
 - TTS text is collapsed with learner-facing slide text.
 - Layout archetype or visual density budget is missing.
 - Assessment map lacks concept lane, CJM function, learner task, or remediation target.
@@ -44,6 +44,6 @@ Acceptable for draft or polish pass.
 ## Release status decision
 
 - `release-ready`: no blockers or major defects.
-- `faculty-review-needed`: no blockers, but clinical/source review remains.
+- `review-needed`: no blockers, but clinical/source review remains.
 - `draft-only`: source, taxonomy, or verification gaps remain.
 - `blocked`: unsafe issue, export failure, source insufficiency, schema failure, or missing required files.

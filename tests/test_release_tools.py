@@ -35,25 +35,25 @@ def test_status_is_read_only(tmp_path):
     spec = _copy_lesson(tmp_path)
     before = spec.read_text()
     out = _rg(spec, "--no-regate", "status")
-    assert out["release_status_declared"] == "faculty-review-needed"
-    assert len(out["approvals_missing"]) == 7
+    assert out["release_status_declared"] == "review-needed"
+    assert len(out["approvals_missing"]) == 6
     assert spec.read_text() == before
 
 
 def test_release_ready_requires_all_approvals_and_lock(tmp_path):
     spec = _copy_lesson(tmp_path)
     out = _rg(spec, "set-release", "release-ready", "--by", "Tester")
-    assert out["release_status_computed"] == "faculty-review-needed"
+    assert out["release_status_computed"] == "review-needed"
     for key in gate.APPROVAL_KEYS:
         out = _rg(spec, "approve", key, "--by", "Tester", "--date", "2026-09-06")
-    assert out["release_status_computed"] == "faculty-review-needed"  # lock still missing
+    assert out["release_status_computed"] == "review-needed"  # lock still missing
     out = _rg(spec, "lock-taxonomy", "--by", "Tester")
     assert out["release_status_computed"] == "release-ready"
     assert out["approvals_missing"] == []
     data = json.loads(spec.read_text())
-    assert len(data["governance"]["approval_log"]) == 7
+    assert len(data["governance"]["approval_log"]) == 6
     assert all(e["by"] == "Tester" for e in data["governance"]["approval_log"])
-    assert len(data["revision_log"]) == 9
+    assert len(data["revision_log"]) == 8
     deck = Path(out["deck"])
     assert deck.exists() and "_DRAFT" not in deck.name
 
@@ -115,3 +115,25 @@ def test_qa_visual_structural_report(tmp_path):
     assert rep["slide_count"] == 20 and rep["cartridge"]["pass"]
     assert rep["canvas_import"]["ran"] is False
     assert "ran" in rep["render"]
+
+
+def test_pre_removal_faculty_vocabulary_is_normalised_not_flagged(tmp_path):
+    """A spec written before the faculty role was removed still gates cleanly.
+
+    Regression: normalise_governance() originally ran inside resolve_release_status(),
+    i.e. after validate_spec(), so legacy values produced two MAJOR defects and an
+    unknown-key MINOR even though the status resolved correctly.
+    """
+    spec_path = _copy_lesson(tmp_path)
+    spec = json.loads(spec_path.read_text())
+    spec["governance"]["promotion_state"] = "faculty_review"
+    spec["governance"]["approvals"]["faculty_approved"] = False
+    spec["qa"]["release_status"] = "faculty-review-needed"
+    spec_path.write_text(json.dumps(spec, indent=2))
+
+    result = gate.run(json.loads(spec_path.read_text()), tmp_path / "pkg", demo=False)
+
+    assert result["status"] == "review-needed"
+    notes = [d["note"] for d in result["defects"] if d["severity"] in {"major", "blocker"}]
+    assert not any("promotion_state" in n or "release_status" in n for n in notes), notes
+    assert not any("faculty_approved" in d["note"] for d in result["defects"])

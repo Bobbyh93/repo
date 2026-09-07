@@ -137,7 +137,7 @@ SLIDES = [
                 {"heading": "Socialization", "body": "First teacher of norms, values, and how emotions are shown. Can also pass on unhealthy behavior.", "cjm": "analyze cues"},
                 {"heading": "Sexuality and reproduction", "body": "Family norms around partnership and reproduction.", "cjm": "analyze cues"},
                 {"heading": "Ascribed social status", "body": "Status at birth versus achieved status by effort; family support shapes achievement.", "cjm": "analyze cues"}],
-          co="CO1", visual="Table 4.2 (modern family structures) not retrievable at build; faculty may add examples."),
+          co="CO1", visual="Table 4.2 (modern family structures) not retrievable at build; the reviewer may add examples."),
 
     slide("S06", 6, "Structure: roles, culture, and the nurse's own bias", "concept_cards", "lane: structure", "structure",
           "Recognize informal and unhealthy family roles and the nurse's obligation to cultural humility.",
@@ -302,7 +302,7 @@ SLIDES = [
                 {"label": "generate solutions", "body": "collaborative, SMART, in the family's values and culture"},
                 {"label": "take action", "body": "reprioritize; focused assessments; interventions"},
                 {"label": "evaluate outcomes", "body": "diagnosis accurate? goals met? keep, modify, delete"}],
-          co="CO7", visual="Table 4.7 (NANDA diagnoses) not retrievable at build; faculty to insert program's care-planning resource."),
+          co="CO7", visual="Table 4.7 (NANDA diagnoses) not retrievable at build; reviewer to insert the program's care-planning resource."),
 
     slide("S15", 15, "Action: assess the family without losing the client", "mini_case", "lane: action", "action",
           "Sequence a family assessment that protects the client's privacy and autonomy.",
@@ -518,7 +518,7 @@ def build() -> dict:
             "program_outcomes": [],
             "course_objectives": [{"id": k, "text": v, "maps_to": []} for k, v in COURSE_OBJECTIVES.items()],
             # Package-level: which CA BRN Article 3 requirements this lesson is offered as evidence for.
-            # Proposed by the builder; the faculty reviewer confirms before release (see qa.defects).
+            # Proposed by the builder; the reviewer confirms before release (see qa.defects).
             "standards_refs": [
                 {"framework_id": "CA-BRN-ART3", "ref": "BRN-14", "basis": "1426(b): nursing process and clinical judgment model integrated explicitly (S14 process map, CJM coverage matrix)"},
                 {"framework_id": "CA-BRN-ART3", "ref": "BRN-17", "basis": "1426(f): assessment items and traceability matrix link evaluation to course objectives"},
@@ -557,12 +557,12 @@ def build() -> dict:
             ],
         },
         "governance": {
-            "promotion_state": "faculty_review",
+            "promotion_state": "human_review",
             "approvals": {k: False for k in ["source_approved", "taxonomy_approved", "objectives_approved", "outline_approved",
-                                             "script_approved", "faculty_approved", "release_approved"]},
+                                             "script_approved", "release_approved"]},
             "taxonomy_lock": {"status": "unlocked", "approved_by": "", "approval_date": ""},
             "administrative_metadata": {"lesson_id": "LESSON-NHP-CH4-FAMILY-DYNAMICS", "version": "0.1.0",
-                                        "content_owner": "R. Harrity", "faculty_reviewer": "R. Harrity", "created_date": "2026-09-06"},
+                                        "content_owner": "R. Harrity", "reviewer": "R. Harrity", "created_date": "2026-09-06"},
         },
         "slides": SLIDES,
         "assessment_items": ITEMS,
@@ -575,13 +575,13 @@ def build() -> dict:
              "active_learning_task": "explain dose-response to a parent in two sentences", "retrieval_item": "Q03", "improvement_evidence": ""},
         ],
         "qa": {
-            "release_status": "faculty-review-needed",
+            "release_status": "review-needed",
             "gates_passed": ["runtime", "source", "taxonomy", "blueprint", "cjm_coverage", "outline", "script"],
             "defects": [
-                {"severity": "minor", "slide_id": "-", "note": "[source gap] Tables 4.2, 4.3, 4.5a, 4.5b, 4.7 not retrievable at build (pressbooks.pub and ncbi.nlm.nih.gov blocked by egress proxy). S05, S07, S10, S14 are written from section-body facts; faculty to verify against the live chapter before promoting any slide to source-grounded."},
-                {"severity": "minor", "slide_id": "-", "note": "[evidence] All clinical slides are source-aligned (paraphrase of indexed facts), not source-grounded; promotion to source-grounded requires verification against the chapter text by the faculty reviewer."},
+                {"severity": "minor", "slide_id": "-", "note": "[source gap] Tables 4.2, 4.3, 4.5a, 4.5b, 4.7 not retrievable at build (pressbooks.pub and ncbi.nlm.nih.gov blocked by egress proxy). S05, S07, S10, S14 are written from section-body facts; reviewer to verify against the live chapter before promoting any slide to source-grounded."},
+                {"severity": "minor", "slide_id": "-", "note": "[evidence] All clinical slides are source-aligned (paraphrase of indexed facts), not source-grounded; promotion to source-grounded requires verification against the chapter text by the reviewer."},
                 {"severity": "minor", "slide_id": "S16", "note": "[clinical judgment] The urgency-sort cue about bruising is an instructor-written illustration of the chapter's mandated-reporting rule, not a chapter example; confirm wording against agency policy."},
-                {"severity": "minor", "slide_id": "-", "note": "[standards] slide-level standards_refs left empty per MVP scope. Package-level CA-BRN-ART3 refs BRN-14 and BRN-17 are proposed by the builder; faculty to confirm, and to decide whether BRN-16 (1426(d) integrated content: cultural diversity) also applies, before compliance_sync --apply."},
+                {"severity": "minor", "slide_id": "-", "note": "[standards] slide-level standards_refs left empty per MVP scope. Package-level CA-BRN-ART3 refs BRN-14 and BRN-17 are proposed by the builder; reviewer to confirm, and to decide whether BRN-16 (1426(d) integrated content: cultural diversity) also applies, before compliance_sync --apply."},
             ],
             "cjm_coverage_rationale": "",
         },

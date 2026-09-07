@@ -234,7 +234,7 @@ def add_footer(slide, slide_def: Dict[str, Any], idx: int):
         add_textbox(slide, "CJM: " + cjm_text, 0.35, 7.12, 4.4, 0.14, 5.7, False, MUTED)
     add_textbox(slide, "Harrity Lesson Builder", 5.2, 7.12, 3.0, 0.14, 5.7, False, MUTED, PP_ALIGN.CENTER)
     # WP-1 merge: stable slide id and evidence status travel with the slide
-    # so faculty reviewers can see provenance without opening the manifest.
+    # so reviewers can see provenance without opening the manifest.
     sid = get_slide_value(slide_def, "slide_id", "")
     ev = get_slide_value(slide_def, "evidence_status", "") or get_slide_value(slide_def, "source_status", "")
     tag = "  ·  ".join(str(x) for x in (sid, ev) if x)

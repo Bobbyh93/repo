@@ -60,7 +60,7 @@
     "max_slides_per_deck": 45,
     "target_slide_count": "{{outputs.target_slide_count}}",
     "include_learner_deck": true,
-    "include_faculty_deck": true,
+    "include_reviewer_deck": true,
     "include_speaker_notes": true,
     "include_tts_text": false,
     "include_audio_package": false,
@@ -124,7 +124,7 @@
     ],
     "release_status_allowed": [
       "release-ready",
-      "faculty-review-needed",
+      "review-needed",
       "draft-only",
       "blocked"
     ]

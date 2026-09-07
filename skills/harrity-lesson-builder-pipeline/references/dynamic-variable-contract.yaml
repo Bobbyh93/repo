@@ -83,7 +83,7 @@ qa_status_values:
   - blocker
 release_status_values:
   - release-ready
-  - faculty-review-needed
+  - review-needed
   - draft-only
   - blocked
 required_cjm_functions:

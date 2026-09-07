@@ -48,7 +48,7 @@ S=skills/harrity-lesson-builder-pipeline/scripts; L=lessons/openrn_hp_ch4
 python $S/qa_visual.py $L/package [--canvas-course-id ID]          # thumbnails, structural checks, optional Canvas import
 python $S/verify_sources.py $L/lesson_spec.json --out $L/verification --fetch   # term overlap per slide/item vs cited source
 python $S/record_gate.py $L/lesson_spec.json status                 # where the lesson is
-python $S/record_gate.py $L/lesson_spec.json approve faculty_approved --by "Name"   # signed decisions, then regate
+python $S/record_gate.py $L/lesson_spec.json approve reviewer_approved --by "Name"   # signed decisions, then regate
 python $S/compliance_sync.py $L/lesson_spec.json [--apply]                         # release-ready package → BRN Evidence Registry
 ```
 
@@ -65,6 +65,6 @@ No learner identifiers in any artifact. No CC BY-NC content in packages. Identif
 | WP-0 inventory | done — `docs/WP0_REPO_INVENTORY.md` |
 | WP-1 merge | done, awaiting review — `docs/WP1_MERGE_LOG.md` |
 | WP-4 web app review | done, plus a 2026-09-06 status update after three fixes merged in `Codex_Repo_2026` — `docs/WP4_WEB_APP_REVIEW.md` |
-| WP-2 reference lesson (Open RN Health Promotion Ch.4) | done, faculty-review-needed — `lessons/openrn_hp_ch4/` |
+| WP-2 reference lesson (Open RN Health Promotion Ch.4) | done, review-needed — `lessons/openrn_hp_ch4/` |
 | WP-3 LMS-neutral export (`.imscc` CC 1.1 + QTI 1.2) | done; live LMS import is a manual step — `docs/WP3_EXPORT_LOG.md` |
 | WP-5 compliance loop (package → BRN Evidence Registry) | built, dry-run only until a lesson is release-ready — `docs/WP5_COMPLIANCE_LOOP.md` |
