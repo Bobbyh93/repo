@@ -61,6 +61,14 @@ REQUIRED_SLIDE_KEYS = ["slide_id", "slide_number", "slide_title", "slide_archety
                        "target_duration_sec", "audio_duration_sec", "auto_advance", "layout_spec",
                        "allow_overlap", "qa_status", "qa_notes", "remediation_target", "audio_filename"]
 RELEASE_STATES = {"release-ready", "faculty-review-needed", "draft-only", "blocked"}
+# Gate vocabulary. A recorded gate outside this set is almost always a typo, and a
+# typo silently satisfies nothing while the operator believes QA is on record.
+KNOWN_GATES = {"runtime", "source", "taxonomy", "blueprint", "cjm_coverage", "outline", "script",
+               "timing", "layout", "deck_render", "package_manifest",
+               "visual_qa", "visual_qa_ai", "lms_import", "source_verification"}
+# A release-ready claim must be backed by a human having looked at the rendered deck.
+# A lesson may require more (e.g. lms_import) via qa.required_gates.
+DEFAULT_REQUIRED_GATES = ["visual_qa"]
 # master-lesson 1.0.0 envelope (references/master_lesson/master_lesson_schema.json)
 PROMOTION_STATES = ["template", "intake_complete", "faculty_review", "production_ready", "release_ready", "released"]
 APPROVAL_KEYS = ["source_approved", "taxonomy_approved", "objectives_approved", "outline_approved",
@@ -189,8 +197,17 @@ def validate_spec(spec: Dict[str, Any], defects: Defects) -> None:
         if it.get("evidence_status") in {"source-grounded", "source-aligned"} and not it.get("source_refs"):
             defects.add("major", "-", f"assessment_item {iid} is {it['evidence_status']} with empty source_refs")
     missing = [fn for fn in CJM if fn not in covered]
-    if missing and not spec["qa"].get("cjm_coverage_rationale"):
-        defects.add("blocker", "-", f"CJM functions never covered, no rationale: {', '.join(missing)}")
+    rationale = str(spec["qa"].get("cjm_coverage_rationale") or "")
+    if not covered:
+        # No slide maps to any clinical-judgment function. That is not a coverage
+        # gap a sentence can excuse; the lesson simply is not mapped to the model.
+        defects.add("blocker", "-", "no slide maps to any CJM function; a coverage rationale "
+                                    "cannot stand in for the mapping itself")
+    elif missing:
+        unexplained = [fn for fn in missing if fn.lower() not in rationale.lower()]
+        if unexplained:
+            defects.add("blocker", "-", f"CJM functions never covered and not named in "
+                                        f"qa.cjm_coverage_rationale: {', '.join(unexplained)}")
     validate_governance(spec, defects)
 
 
@@ -218,6 +235,22 @@ def validate_governance(spec: Dict[str, Any], defects: Defects) -> None:
     rs = spec["qa"].get("release_status", "draft-only")
     if rs not in RELEASE_STATES:
         defects.add("major", "-", f"qa.release_status '{rs}' not in {sorted(RELEASE_STATES)}")
+    # Recorded gates are only meaningful if their names mean something.
+    passed = [str(x) for x in (spec["qa"].get("gates_passed") or [])]
+    for name in passed:
+        if name not in KNOWN_GATES:
+            defects.add("minor", "-", f"qa.gates_passed has unknown gate '{name}' "
+                                      f"(typo? known gates: {sorted(KNOWN_GATES)})")
+    # D1: a release-ready claim has to be backed by the QA gates the lesson requires.
+    if rs == "release-ready":
+        required = spec["qa"].get("required_gates")
+        if required is None:
+            required = DEFAULT_REQUIRED_GATES
+        absent = [gname for gname in required if gname not in passed]
+        if absent:
+            defects.add("major", "-", f"release-ready claimed without required QA gate(s): "
+                                      f"{', '.join(absent)}; record them with record_gate.py gate-pass "
+                                      f"(set qa.required_gates to change what this lesson requires)")
     if rs == "release-ready":
         missing = [k for k in PRODUCTION_APPROVALS + RELEASE_APPROVALS if approvals.get(k) is not True]
         if missing:

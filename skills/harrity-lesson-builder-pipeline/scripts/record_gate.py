@@ -76,6 +76,11 @@ def cmd_lock(spec, a) -> str:
 
 
 def cmd_gate_pass(spec, a) -> str:
+    # Fail at the boundary: a typo'd gate name records something no check will ever
+    # match, while the operator believes the QA is on file.
+    if a.gate not in gate.KNOWN_GATES and not a.new_gate:
+        raise SystemExit(f"unknown gate '{a.gate}'. Known gates: {sorted(gate.KNOWN_GATES)}. "
+                         f"If this really is a new gate, pass --new-gate.")
     qa = spec.setdefault("qa", {})
     passed = qa.setdefault("gates_passed", [])
     if a.gate not in passed:
@@ -133,8 +138,8 @@ def status_summary(spec: Dict[str, Any], result: Dict[str, Any] | None = None) -
         "evidence_status_counts": ev,
         "revisions": len(spec.get("revision_log") or []),
     }
+    out["release_status_computed"] = result["status"] if result else "not recomputed (no package directory)"
     if result:
-        out["release_status_computed"] = result["status"]
         out["blocked"] = result.get("blocked", False)
         out["defects"] = {sev: sum(1 for d in result["defects"] if d["severity"] == sev) for sev in ("blocker", "major", "minor")}
         out["deck"] = result.get("deck")
@@ -155,7 +160,9 @@ def main(argv: List[str]) -> int:
 
     p = sub.add_parser("approve"); p.add_argument("key"); common(p)
     p = sub.add_parser("lock-taxonomy"); common(p)
-    p = sub.add_parser("gate-pass"); p.add_argument("gate"); common(p)
+    p = sub.add_parser("gate-pass"); p.add_argument("gate")
+    p.add_argument("--new-gate", action="store_true", help="accept a gate name outside the known set")
+    common(p)
     p = sub.add_parser("promote"); p.add_argument("slide"); p.add_argument("--to", required=True); p.add_argument("--evidence", required=True); common(p)
     p = sub.add_parser("set-state"); p.add_argument("state"); common(p)
     p = sub.add_parser("set-release"); p.add_argument("status"); common(p)
@@ -171,7 +178,14 @@ def main(argv: List[str]) -> int:
         save(a.spec, spec)
         print(f"recorded {rid}: {a.cmd} by {a.by} on {a.date}")
     result = None
-    if not a.no_regate and (a.cmd != "status" or outdir.exists()):
+    if a.no_regate:
+        pass
+    elif a.cmd == "status" and not outdir.exists():
+        # Never let `status` imply it recomputed when it could not. The declared
+        # status is whatever was last written; only a gate run establishes the truth.
+        print(f"[note] no package at {outdir}; showing the declared status only. "
+              f"Run the gate, or pass --outdir, for release_status_computed.", file=sys.stderr)
+    else:
         result = gate.run(spec, outdir, demo=False)
     print(json.dumps(status_summary(spec, result), indent=2))
     return 0

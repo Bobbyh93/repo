@@ -116,14 +116,42 @@ def test_governance_downgrades_unapproved_release_ready(tmp_path):
     assert any("release-ready claimed without approvals" in d["note"] for d in result["defects"])
 
 
-def test_governance_release_ready_with_full_approvals(tmp_path):
+def _fully_approved_demo():
     spec = gate.demo_spec()
     spec["qa"]["release_status"] = "release-ready"
     spec["governance"] = {"promotion_state": "release_ready",
                           "approvals": {k: True for k in gate.APPROVAL_KEYS},
                           "taxonomy_lock": {"status": "locked", "approved_by": "faculty", "approval_date": "2026-09-06"}}
+    return spec
+
+
+def test_governance_release_ready_with_full_approvals(tmp_path):
+    spec = _fully_approved_demo()
+    spec["qa"]["gates_passed"] = ["visual_qa"]
     result = gate.run(spec, tmp_path / "gov2", demo=False)
     assert result["status"] == "release-ready", result["defects"]
+
+
+def test_d1_signoffs_alone_do_not_substitute_for_the_visual_gate(tmp_path):
+    """D1: seven approvals and the taxonomy lock are human sign-offs; none of
+    them is evidence the deck was looked at. Before the fix, release-ready
+    stood on approvals alone and `qa.gates_passed` was never consulted, so a
+    package no one had rendered could certify as released."""
+    spec = _fully_approved_demo()                    # no gates_passed at all
+    result = gate.run(spec, tmp_path / "d1a", demo=False)
+    assert result["status"] == "faculty-review-needed"
+    assert any("required QA gate" in d["note"] for d in result["defects"])
+
+
+def test_d1_misspelled_gate_name_does_not_satisfy_the_requirement(tmp_path):
+    """D1/D3: the requirement is satisfied by the gate that ran, not by any
+    string sitting in gates_passed. A typo must leave the gate unmet."""
+    spec = _fully_approved_demo()
+    spec["qa"]["gates_passed"] = ["visaul_qa", "totally_made_up_gate"]
+    result = gate.run(spec, tmp_path / "d1b", demo=False)
+    assert result["status"] == "faculty-review-needed"
+    assert any("required QA gate" in d["note"] for d in result["defects"])
+    assert any("unknown gate 'visaul_qa'" in d["note"] for d in result["defects"])
 
 
 def test_evidence_gate_blocks_unsourced_claim(tmp_path):
@@ -140,3 +168,72 @@ def test_renderer_own_demo_still_runs(tmp_path):
     files = renderer.generate_package(renderer.make_demo_spec(), out)
     prs = Presentation(files["deck"])
     assert len(prs.slides) == 26
+
+
+# --- D2: the package validator must not pass on an absent subject -----------
+# The suite varied the lesson and always handed the validator a real package.
+# It never handed it a manifest that described nothing, which is the state a
+# half-written or truncated build actually leaves on disk.
+
+def _validator_output(outdir: Path) -> tuple[int, str]:
+    r = subprocess.run([sys.executable, str(SCRIPTS / "validate_unified_package.py"), str(outdir)],
+                       capture_output=True, text=True)
+    return r.returncode, r.stdout
+
+
+def test_d2_zero_slide_manifest_cannot_certify_a_deck(tmp_path):
+    """D2: `if slides:` made the deck/manifest comparison vacuous. A manifest
+    listing no slides passed against a 20-slide deck — the validator's central
+    check tested nothing and said so to no one."""
+    out = tmp_path / "d2a"
+    gate.run(gate.demo_spec(), out, demo=False)
+    m = json.loads((out / "lesson_manifest.json").read_text(encoding="utf-8"))
+    assert len(m["slides"]) > 0                       # the deck really has slides
+    m["slides"] = []
+    (out / "lesson_manifest.json").write_text(json.dumps(m), encoding="utf-8")
+    code, stdout = _validator_output(out)
+    assert code == 1, stdout
+    assert "manifest lists no slides" in stdout
+
+
+def test_d2_empty_files_list_cannot_certify_a_package(tmp_path):
+    """D2: an empty files[] made the existence loop vacuous, so a package
+    missing every artifact it claimed passed the artifact check."""
+    out = tmp_path / "d2b"
+    gate.run(gate.demo_spec(), out, demo=False)
+    m = json.loads((out / "lesson_manifest.json").read_text(encoding="utf-8"))
+    m["files"] = []
+    (out / "lesson_manifest.json").write_text(json.dumps(m), encoding="utf-8")
+    code, stdout = _validator_output(out)
+    assert code == 1, stdout
+    assert "claims to contain nothing" in stdout
+
+
+def test_d4_cjm_rationale_cannot_stand_in_for_the_mapping(tmp_path):
+    """D4: any non-empty qa.cjm_coverage_rationale used to excuse every missing
+    CJM function at once, including all six. Prose about coverage is not
+    coverage; the rationale may only excuse the functions it actually names."""
+    spec = gate.demo_spec()
+    for s in spec["slides"]:
+        s["cjm_functions"] = []
+    spec.setdefault("qa", {})["cjm_coverage_rationale"] = "Short package; coverage addressed in the unit exam."
+    result = gate.run(spec, tmp_path / "d4a", demo=False)
+    assert result["blocked"]
+    assert any("no slide maps to any CJM function" in d["note"] for d in result["defects"])
+
+
+def test_d4_rationale_excuses_only_the_functions_it_names(tmp_path):
+    spec = gate.demo_spec()
+    named = "evaluate outcomes"
+    covered = [f for f in gate.CJM if f != named]
+    for i, s in enumerate(spec["slides"]):
+        s["cjm_functions"] = [covered[i % len(covered)]]
+    qa = spec.setdefault("qa", {})
+    qa["cjm_coverage_rationale"] = "Evaluate Outcomes is assessed in the following simulation, not in this lesson."
+    ok = gate.run(spec, tmp_path / "d4b", demo=False)
+    assert not any("CJM functions never covered" in d["note"] for d in ok["defects"]), ok["defects"]
+    # the same rationale must not cover a different gap
+    qa["cjm_coverage_rationale"] = "Analyze Cues is assessed in the following simulation."
+    bad = gate.run(spec, tmp_path / "d4c", demo=False)
+    assert any(named.lower() in d["note"].lower() for d in bad["defects"]
+               if "CJM functions never covered" in d["note"])

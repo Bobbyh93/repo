@@ -116,7 +116,12 @@ def main(argv: List[str]) -> int:
         except json.JSONDecodeError as exc:
             errors.append(f"lesson_manifest.json is invalid JSON: {exc}")
 
-    for f in manifest.get("files", []) if isinstance(manifest, dict) else []:
+    listed = manifest.get("files", []) if isinstance(manifest, dict) else []
+    if isinstance(manifest, dict) and not listed:
+        # An empty files[] made the existence loop below vacuous: a package missing
+        # every artifact passed because there was nothing to look for.
+        errors.append("manifest files[] is empty; the package claims to contain nothing")
+    for f in listed:
         if not (root / f).exists():
             errors.append(f"manifest files[] entry missing on disk: {f}")
 
@@ -132,14 +137,17 @@ def main(argv: List[str]) -> int:
         if duplicate_ids:
             errors.append(f"duplicate slide ids in manifest: {duplicate_ids}")
     else:
-        warnings.append("manifest has no slides array; relying on assessment_map.csv for coverage")
+        # A manifest that describes no slides cannot certify a deck. Treating this as
+        # a warning made the deck/manifest comparison below vacuous: a 20-slide deck
+        # passed against a 0-slide manifest.
+        errors.append("manifest lists no slides; nothing can be checked against the deck")
 
     if decks:
         try:
             from pptx import Presentation  # type: ignore
             prs = Presentation(str(decks[0]))
             n = len(prs.slides)
-            if active and n != len(active):
+            if n != len(active):
                 errors.append(f"deck has {n} slides but manifest lists {len(active)} active slides")
             missing_notes = [i for i, s in enumerate(prs.slides, start=1)
                              if not (s.has_notes_slide and s.notes_slide.notes_text_frame.text.strip())]

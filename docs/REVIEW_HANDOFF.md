@@ -30,3 +30,16 @@ Every source host is refused by the egress proxy: wtcs.pressbooks.pub, ncbi.nlm.
 4. Canvas sandbox import; record `lms_import`.
 5. Seven approvals + taxonomy lock + set-state/set-release.
 6. `compliance_sync.py --apply` with `AIRTABLE_TOKEN`.
+
+Step 1 is no longer optional in practice. After the 2026-09-11 silent-pass audit
+(`SILENT_PASS_AUDIT_2026-09-11.md`), the gate refuses `release-ready` until
+`visual_qa` is recorded — step 5 alone will leave the lesson at
+`faculty-review-needed`, and step 6 will keep refusing to apply. Two other
+behaviours changed and will be visible at the prompt:
+
+- `record_gate.py gate-pass` now rejects a gate name it does not know, rather
+  than recording the typo. Pass `--new-gate` if you genuinely mean a new one.
+- `verify_sources.py --fetch` reports `[PARTIAL: n/m sections]` whenever some
+  source URLs fail. Slides scoring low against a partial chapter now read
+  `cannot verify: source text incomplete` — do **not** treat those as content
+  findings against the lesson. Re-run once the fetch is complete.

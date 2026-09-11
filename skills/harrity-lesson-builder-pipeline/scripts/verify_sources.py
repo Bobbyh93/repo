@@ -99,42 +99,85 @@ def sections(text: str) -> List[Tuple[str, str]]:
     return out
 
 
+def _write_cache(cache: Path, tcache: Path, pcache: Path, text: str, tables: List[Dict[str, Any]],
+                 prov: Dict[str, Any]) -> None:
+    """A cache without its provenance is a source of unknown completeness on the
+    next run. The three files are written together or the cache is not written."""
+    cache.parent.mkdir(parents=True, exist_ok=True)
+    cache.write_text(text, encoding="utf-8")
+    tcache.write_text(json.dumps(tables, indent=1), encoding="utf-8")
+    pcache.write_text(json.dumps(prov, indent=1), encoding="utf-8")
+
+
 def load_source_text(src: Dict[str, Any], outdir: Path, overrides: Dict[str, Path], text_overrides: Dict[str, Path],
-                     do_fetch: bool, spec_dir: Path) -> Tuple[str, List[Dict[str, Any]], str]:
+                     do_fetch: bool, spec_dir: Path) -> Tuple[str, List[Dict[str, Any]], str, Dict[str, Any]]:
+    """Return (text, tables, how, provenance).
+
+    `provenance["complete"]` is False whenever the text on hand is known to be
+    less than the source the spec cites. Callers must not report a content
+    finding computed against an incomplete source.
+    """
     sid = src["source_id"]
     cache = outdir / "sources" / f"{sid}.txt"
     tcache = outdir / "sources" / f"{sid}.tables.json"
+    pcache = outdir / "sources" / f"{sid}.provenance.json"
     if sid in text_overrides:
-        return text_overrides[sid].read_text(encoding="utf-8"), [], f"text file {text_overrides[sid]}"
+        return (text_overrides[sid].read_text(encoding="utf-8"), [], f"text file {text_overrides[sid]}",
+                {"origin": "text_override", "complete": True, "path": str(text_overrides[sid])})
     if sid in overrides:
         text, tables = html_to_text(overrides[sid].read_text(encoding="utf-8", errors="replace"))
-        cache.parent.mkdir(parents=True, exist_ok=True)
-        cache.write_text(text, encoding="utf-8"); tcache.write_text(json.dumps(tables, indent=1), encoding="utf-8")
-        return text, tables, f"html file {overrides[sid]}"
+        prov = {"origin": "html_override", "complete": True, "path": str(overrides[sid])}
+        _write_cache(cache, tcache, pcache, text, tables, prov)
+        return text, tables, f"html file {overrides[sid]}", prov
+
+    cached_prov: Dict[str, Any] = {}
     if cache.exists():
-        tables = json.loads(tcache.read_text(encoding="utf-8")) if tcache.exists() else []
-        return cache.read_text(encoding="utf-8"), tables, f"cache {cache}"
+        if pcache.exists():
+            try:
+                cached_prov = json.loads(pcache.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                cached_prov = {}
+        # A cache written before provenance was recorded, or with its sidecar
+        # lost, has unknown completeness. Unknown is not complete.
+        cached_prov = cached_prov or {"origin": "cache", "complete": False,
+                                      "reason": "no provenance sidecar; completeness unknown"}
+        missing = [u for u in cached_prov.get("urls_failed") or [] if u]
+        if not (do_fetch and (missing or not cached_prov.get("complete", False))):
+            tables = json.loads(tcache.read_text(encoding="utf-8")) if tcache.exists() else []
+            how = f"cache {cache}"
+            if not cached_prov.get("complete", False):
+                how += (f" [PARTIAL: {len(cached_prov.get('urls_ok') or [])}/"
+                        f"{cached_prov.get('urls_attempted', '?')} sections; re-run with --fetch]")
+            return cache.read_text(encoding="utf-8"), tables, how, cached_prov
+        # --fetch over a partial cache re-attempts what was missing rather than
+        # silently reusing the short read.
+
     if not do_fetch:
-        return "", [], "no source text (no --fetch, no file, no cache)"
+        return "", [], "no source text (no --fetch, no file, no cache)", {"origin": "none", "complete": False}
     urls: List[str] = []
     idx = src.get("index_path")
     if idx and (spec_dir / idx).exists():
         index = json.loads((spec_dir / idx).read_text(encoding="utf-8"))
         urls += [s.get("pressbooks") for s in index.get("sections", []) if s.get("pressbooks")]
     urls += [u.strip() for u in re.split(r"[;\s]+", src.get("locator", "")) if u.strip().startswith("http")]
-    texts, tables, errors = [], [], []
+    texts, tables, errors, ok, failed = [], [], [], [], []
     for u in urls:
         try:
             t, tb = html_to_text(fetch(u))
-            texts.append(f"## {u}\n{t}"); tables += tb
+            texts.append(f"## {u}\n{t}"); tables += tb; ok.append(u)
         except Exception as exc:  # network / proxy / 404
-            errors.append(f"{u}: {exc}")
+            errors.append(f"{u}: {exc}"); failed.append(u)
+    prov = {"origin": "fetch", "urls_attempted": len(urls), "urls_ok": ok, "urls_failed": failed,
+            "errors": errors[:20], "complete": bool(urls) and not failed}
     if not texts:
-        return "", [], "fetch failed: " + "; ".join(errors)[:500]
+        prov["complete"] = False
+        return "", [], "fetch failed: " + "; ".join(errors)[:500], prov
     text = "\n".join(texts)
-    cache.parent.mkdir(parents=True, exist_ok=True)
-    cache.write_text(text, encoding="utf-8"); tcache.write_text(json.dumps(tables, indent=1), encoding="utf-8")
-    return text, tables, f"fetched {len(texts)}/{len(urls)} urls" + (f"; errors: {'; '.join(errors)[:300]}" if errors else "")
+    _write_cache(cache, tcache, pcache, text, tables, prov)
+    how = f"fetched {len(ok)}/{len(urls)} urls"
+    if failed:
+        how += f" [PARTIAL]; errors: {'; '.join(errors)[:300]}"
+    return text, tables, how, prov
 
 
 def assess(content: str, src_text: str, src_terms: set, secs: List[Tuple[str, set]]) -> Dict[str, Any]:
@@ -151,9 +194,15 @@ def assess(content: str, src_text: str, src_terms: set, secs: List[Tuple[str, se
             "missing": sorted(t - found)[:25], "best_section": best}
 
 
-def suggestion(ev: str, share: float, has_text: bool) -> str:
+def suggestion(ev: str, share: float, has_text: bool, complete: bool = True) -> str:
     if not has_text:
         return "flag: source text unavailable"
+    if not complete and share < 0.85:
+        # D6: against a partially-loaded source, "the terms are not in the source"
+        # and "the section that holds them did not download" are the same number.
+        # Only the high-overlap direction is safe to report, because those terms
+        # were positively found in text that did load.
+        return "cannot verify: source text incomplete"
     if ev == "source-grounded":
         return "keep-as-is" if share >= 0.85 else "review: grounded claim with missing terms"
     if ev in {"source-aligned", "needs-verification", "provisional", "inferred"}:
@@ -181,9 +230,10 @@ def main(argv: List[str]) -> int:
 
     sources: Dict[str, Dict[str, Any]] = {}
     for src in spec.get("sources") or []:
-        text, tables, how = load_source_text(src, a.out, overrides, text_overrides, a.fetch, repo_root)
+        text, tables, how, prov = load_source_text(src, a.out, overrides, text_overrides, a.fetch, repo_root)
         secs = [(name, terms(body)) for name, body in sections(text)]
-        sources[src["source_id"]] = {"text": text, "terms": terms(text), "sections": secs, "tables": tables, "how": how}
+        sources[src["source_id"]] = {"text": text, "terms": terms(text), "sections": secs, "tables": tables,
+                                     "how": how, "provenance": prov, "complete": bool(prov.get("complete"))}
 
     results = []
     for s in spec["slides"]:
@@ -194,7 +244,8 @@ def main(argv: List[str]) -> int:
             has = bool(src and src["text"])
             r = assess(slide_text(s), src["text"] if has else "", src["terms"] if has else set(), src["sections"] if has else [])
             r.update({"kind": "slide", "id": s["slide_id"], "title": s.get("slide_title", ""), "source": ref,
-                      "evidence_status": s.get("evidence_status"), "suggestion": suggestion(s.get("evidence_status", ""), r["share"], has)})
+                      "evidence_status": s.get("evidence_status"), "suggestion": suggestion(s.get("evidence_status", ""), r["share"], has,
+                                                              bool(src and src["complete"]))})
             results.append(r)
     for it in spec.get("assessment_items") or []:
         for ref in it.get("source_refs") or []:
@@ -202,10 +253,12 @@ def main(argv: List[str]) -> int:
             has = bool(src and src["text"])
             r = assess(item_text(it), src["text"] if has else "", src["terms"] if has else set(), src["sections"] if has else [])
             r.update({"kind": "item", "id": it["item_id"], "title": it.get("stem", "")[:60], "source": ref,
-                      "evidence_status": it.get("evidence_status"), "suggestion": suggestion(it.get("evidence_status", ""), r["share"], has)})
+                      "evidence_status": it.get("evidence_status"), "suggestion": suggestion(it.get("evidence_status", ""), r["share"], has,
+                                                              bool(src and src["complete"]))})
             results.append(r)
 
     summary = {"sources": {k: {"how": v["how"], "chars": len(v["text"]), "tables": len(v["tables"]),
+                               "complete": v["complete"], "provenance": v["provenance"],
                                "table_captions": [t["caption"] for t in v["tables"]][:20]} for k, v in sources.items()},
                "counts": {}}
     for r in results:
