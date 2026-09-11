@@ -1,0 +1,6 @@
+objective,concept_lane,slide,activity,cjm_function,item_type,remediation_target
+Recognize findings associated with a possible transfusion reaction.,recognize,S06,The patient develops chills and dyspnea shortly after a transfusion begins. What should the nurse do?,recognize cues,mcq,S06
+Recognize findings associated with a possible transfusion reaction.,recognize,S07,The transfusion has been stopped for a suspected reaction. What should the nurse do?,analyze cues,mcq,S07
+Sequence immediate nursing actions.,stop and assess,S08,The patient's blood pressure is falling during the reaction. What should the nurse do?,prioritize hypotheses,mcq,S08
+Sequence immediate nursing actions.,stop and assess,S09,Symptoms improve after the unit is stopped. What should the nurse do?,generate solutions,mcq,S09
+Complete required notification and specimen/product handling.,notify and investigate,S10,A possible reaction has been stabilized. What should the nurse do?,take action,mcq,S10

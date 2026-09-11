@@ -1,0 +1,1492 @@
+{
+  "schema_version": "1.2",
+  "runtime_config": {
+    "runtime": {
+      "run_date_yyyymmdd": "20260911",
+      "package_id": "NCLEX-SIC-STANDARD-PRECAUTIONS-R1",
+      "build_mode": "full_production",
+      "deployment_mode": "hybrid",
+      "rebuild_scope": "full",
+      "output_root": "."
+    },
+    "outputs": {
+      "filename_pattern": "{{runtime.run_date_yyyymmdd}}_{{lesson.course_code}}_{{lesson.chapter_title}}_Part_{{deck.part_number}}.pptx"
+    },
+    "media": {
+      "wpm_target": 140
+    }
+  },
+  "lesson": {
+    "course_code": "NCLEX",
+    "program_level": "prelicensure RN",
+    "audience": "prelicensure nursing students",
+    "unit_title": "Safety and Infection Prevention and Control",
+    "chapter_id": "sic-standard-precautions",
+    "chapter_title": "Standard_Precautions_and_Exposure_Preven",
+    "lesson_title": "Standard Precautions and Exposure Prevention",
+    "concept": "Infection Prevention",
+    "exemplars": [
+      "Anticipate exposure",
+      "Hand hygiene",
+      "Exposure response"
+    ],
+    "clinical_domain": "Safety and Infection Prevention and Control",
+    "source_family": "Harrity NCLEX-RN 2026 exemplar topics",
+    "source_anchor": "shared/nclex-rn-2026.ts, EXEMPLAR_TOPICS[sic-standard-precautions]",
+    "page_range": "n/a (source module)",
+    "organizing_clinical_question": "Select hand hygiene and protective equipment from the anticipated exposure, then remove equipment without contaminating clean areas.",
+    "opening_patient_question": "A procedure may splash body fluid toward the face.",
+    "concept_lanes": [
+      "anticipate exposure",
+      "hand hygiene",
+      "exposure response",
+      "apply",
+      "evaluate"
+    ],
+    "target_duration_minutes": 45,
+    "program_outcomes": [],
+    "course_objectives": [
+      {
+        "id": "CO1",
+        "text": "Apply standard precautions to every patient encounter.",
+        "maps_to": []
+      },
+      {
+        "id": "CO2",
+        "text": "Select PPE from the anticipated exposure.",
+        "maps_to": []
+      },
+      {
+        "id": "CO3",
+        "text": "Respond safely to a sharps or body-fluid exposure.",
+        "maps_to": []
+      }
+    ],
+    "standards_refs": []
+  },
+  "sources": [
+    {
+      "source_id": "SRC02",
+      "title": "Harrity NCLEX-RN 2026 exemplar topics, sic-standard-precautions",
+      "kind": "authored",
+      "license": "author's own work (R. Harrity)",
+      "locator": "Bobbyh93/Codex_Repo_2026 shared/nclex-rn-2026.ts, EXEMPLAR_TOPICS[sic-standard-precautions]",
+      "coverage_status": "confirmed",
+      "attribution_statement": "Built from the author's own NCLEX-RN 2026 curriculum module (R. Harrity), exemplar topic sic-standard-precautions.",
+      "index_path": "handoff/source/SRC02_harrity_nclex_rn_2026_index.json",
+      "license_exclusions": [
+        "No OpenStax text is reproduced. The module's own sources[] cites OpenStax Clinical Nursing Skills, 'Infection control and personal protective equipment' (not used), which this repository excludes pending the license contradiction check in docs/REVIEW_HANDOFF.md."
+      ]
+    }
+  ],
+  "taxonomy": {
+    "glossary": [
+      {
+        "term": "Anticipate exposure",
+        "definition": "Standard precautions apply to every patient. Add gloves, gown, mask, and eye protection according to likely contact with blood, body fluids, mucous membranes, nonintact skin, or contaminated equipment.",
+        "source_ref": "SRC02"
+      },
+      {
+        "term": "Hand hygiene",
+        "definition": "Perform hand hygiene at indicated moments and after glove removal. Gloves do not replace hand hygiene.",
+        "source_ref": "SRC02"
+      },
+      {
+        "term": "Exposure response",
+        "definition": "Immediately wash or flush the exposed area, report the event, and follow the organization's exposure evaluation process.",
+        "source_ref": "SRC02"
+      }
+    ],
+    "concept_tags": [
+      "Infection Prevention",
+      "Anticipate exposure",
+      "Hand hygiene",
+      "Exposure response"
+    ],
+    "outcome_tags": [
+      "Apply standard precautions to every patient encounter",
+      "Select PPE from the anticipated exposure",
+      "Respond safely to a sharps or body-fluid exposure"
+    ],
+    "nclex_client_needs": [
+      "Safety and Infection Prevention and Control"
+    ],
+    "cjm_functions": [
+      "recognize cues",
+      "analyze cues",
+      "prioritize hypotheses",
+      "generate solutions",
+      "take action",
+      "evaluate outcomes"
+    ],
+    "proposed_new_tags": [],
+    "frameworks": [
+      {
+        "framework_id": "NCSBN-CJMM",
+        "title": "NCSBN Clinical Judgment Measurement Model",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "NCLEX-RN-2026",
+        "title": "Harrity NCLEX-RN 2026 framework (shared/nclex-rn-2026.ts)",
+        "text_policy": "author's own"
+      }
+    ]
+  },
+  "governance": {
+    "promotion_state": "human_review",
+    "administrative_metadata": {
+      "lesson_id": "LESSON-NCLEX-SIC-STANDARD-PRECAUTIONS",
+      "version": "0.1.0",
+      "content_owner": "R. Harrity",
+      "reviewer": "R. Harrity",
+      "created_date": "2026-09-11"
+    }
+  },
+  "slides": [
+    {
+      "slide_id": "S01",
+      "slide_number": 1,
+      "slide_title": "Standard Precautions and Exposure Prevention",
+      "slide_archetype": "title",
+      "lesson_section": "open",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "Orient to the lesson's promise.",
+      "on_slide_text": [
+        "Standard Precautions and Exposure Prevention",
+        "Prelicensure RN · Safety and Infection Prevention and Control · safety risk: high"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Standard Precautions and Exposure Prevention. Select hand hygiene and protective equipment from the anticipated exposure, then remove equipment without contaminating clean areas. Five lanes carry the lesson: anticipate exposure, hand hygiene, exposure response, apply, evaluate.",
+      "tts_text": "",
+      "target_duration_sec": 35,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "title",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S02",
+      "slide_number": 2,
+      "slide_title": "Opening case",
+      "slide_archetype": "opening_case",
+      "lesson_section": "open",
+      "concept_lane": "anticipate exposure",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Enter the lesson through a single patient cue.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Start with one cue. A procedure may splash body fluid toward the face. Decide what you would do before the lesson tells you, and hold on to it; the same cue returns as the first assessment item.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "opening_case",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "presentation": "A procedure may splash body fluid toward the face.",
+            "cues": [
+              "Objective in play: Apply standard precautions to every patient encounter.",
+              "Concept: Infection Prevention"
+            ],
+            "prompt": "Thirty seconds: what is your first action, and why that one first?"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "anticipate exposure",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S03",
+      "slide_number": 3,
+      "slide_title": "The question this lesson answers",
+      "slide_archetype": "clinical_question",
+      "lesson_section": "map",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "State the organizing clinical question.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "One question organizes the lesson: Select hand hygiene and protective equipment from the anticipated exposure, then remove equipment without contaminating clean areas.",
+      "tts_text": "",
+      "target_duration_sec": 55,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "clinical_question",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "lane": "anticipate exposure",
+            "nodes": [
+              "Anticipate exposure"
+            ]
+          },
+          {
+            "lane": "hand hygiene",
+            "nodes": [
+              "Hand hygiene"
+            ]
+          },
+          {
+            "lane": "exposure response",
+            "nodes": [
+              "Exposure response"
+            ]
+          },
+          {
+            "lane": "apply",
+            "nodes": [
+              "case and items"
+            ]
+          },
+          {
+            "lane": "evaluate",
+            "nodes": [
+              "retrieval",
+              "takeaway"
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S04",
+      "slide_number": 4,
+      "slide_title": "Lesson map",
+      "slide_archetype": "chapter_map",
+      "lesson_section": "map",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "Locate any cue on the map before acting on it.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Map first. The three teaching lanes are the topic's own sections; apply and evaluate close the loop.",
+      "tts_text": "",
+      "target_duration_sec": 55,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "chapter_map",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "lane": "anticipate exposure",
+            "nodes": [
+              "Anticipate exposure"
+            ]
+          },
+          {
+            "lane": "hand hygiene",
+            "nodes": [
+              "Hand hygiene"
+            ]
+          },
+          {
+            "lane": "exposure response",
+            "nodes": [
+              "Exposure response"
+            ]
+          },
+          {
+            "lane": "apply",
+            "nodes": [
+              "mini case",
+              "capstone"
+            ]
+          },
+          {
+            "lane": "evaluate",
+            "nodes": [
+              "exit check"
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S05",
+      "slide_number": 5,
+      "slide_title": "Warm-up: put the three moves in order",
+      "slide_archetype": "warmup_sequence",
+      "lesson_section": "activate",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Sequence the lesson's three moves before seeing them taught.",
+      "on_slide_text": [
+        "Anticipate exposure",
+        "Hand hygiene",
+        "Exposure response"
+      ],
+      "activity_prompt": "Order the three.",
+      "answer_key": [
+        "Anticipate exposure",
+        "Hand hygiene",
+        "Exposure response"
+      ],
+      "visual_notes": "",
+      "speaker_script": "One minute, before any of this is taught. These three headings are the whole lesson in order, but they are shuffled on the slide. Put them in the sequence the nurse actually performs them at the bedside, then compare with a neighbour before the reveal. Getting the order wrong here is more useful than getting it right: it shows you which move you would have skipped under pressure.",
+      "tts_text": "",
+      "target_duration_sec": 70,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "warmup_sequence",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S06",
+      "slide_number": 6,
+      "slide_title": "Anticipate exposure",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: anticipate exposure",
+      "concept_lane": "anticipate exposure",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Apply standard precautions to every patient encounter.",
+      "on_slide_text": [
+        "Standard precautions apply to every patient",
+        "Add gloves, gown, mask, and eye protection according to likely contact with blood",
+        "body fluids, mucous membranes, nonintact skin, or contaminated equipment"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Section 1 of 3 from the source topic.",
+      "speaker_script": "Anticipate exposure. Standard precautions apply to every patient. Add gloves, gown, mask, and eye protection according to likely contact with blood, body fluids, mucous membranes, nonintact skin, or contaminated equipment. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 1 of 3, and it answers: Apply standard precautions to every patient encounter.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Anticipate exposure",
+            "body": "Standard precautions apply to every patient. Add gloves, gown, mask, and eye protection according to likely contact with blood, body fluids, mucous membranes, nonintact skin, or contaminated equipment.",
+            "cjm": "recognize cues"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "anticipate exposure",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S07",
+      "slide_number": 7,
+      "slide_title": "Hand hygiene",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: hand hygiene",
+      "concept_lane": "hand hygiene",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "prioritize hypotheses",
+        "generate solutions"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Select PPE from the anticipated exposure.",
+      "on_slide_text": [
+        "Perform hand hygiene at indicated moments and after glove removal",
+        "Gloves do not replace hand hygiene"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Section 2 of 3 from the source topic.",
+      "speaker_script": "Hand hygiene. Perform hand hygiene at indicated moments and after glove removal. Gloves do not replace hand hygiene. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 2 of 3, and it answers: Select PPE from the anticipated exposure.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Hand hygiene",
+            "body": "Perform hand hygiene at indicated moments and after glove removal. Gloves do not replace hand hygiene.",
+            "cjm": "prioritize hypotheses"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "hand hygiene",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S08",
+      "slide_number": 8,
+      "slide_title": "Exposure response",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: exposure response",
+      "concept_lane": "exposure response",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "take action",
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Respond safely to a sharps or body-fluid exposure.",
+      "on_slide_text": [
+        "Immediately wash or flush the exposed area, report the event",
+        "and follow the organization's exposure evaluation process"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Section 3 of 3 from the source topic.",
+      "speaker_script": "Exposure response. Immediately wash or flush the exposed area, report the event, and follow the organization's exposure evaluation process. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 3 of 3, and it answers: Respond safely to a sharps or body-fluid exposure.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Exposure response",
+            "body": "Immediately wash or flush the exposed area, report the event, and follow the organization's exposure evaluation process.",
+            "cjm": "take action"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "exposure response",
+        "cjm_function": "take action",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S09",
+      "slide_number": 9,
+      "slide_title": "Activity: match the cue to the move it calls for",
+      "slide_archetype": "match_activity",
+      "lesson_section": "practice",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Match each cue to the lesson move that answers it.",
+      "on_slide_text": [],
+      "activity_prompt": "Write the four matches and one sentence explaining one of them.",
+      "answer_key": [
+        "A relates to: Anticipate exposure",
+        "B relates to: Hand hygiene",
+        "C relates to: Exposure response",
+        "D relates to: Exposure response"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Work with one partner. Match each cue to the section of the lesson that tells you what to do with it.",
+      "tts_text": "",
+      "target_duration_sec": 170,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "match_activity",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "left": [
+              "A. A procedure may splash body fluid toward the face.",
+              "B. Gloves are removed after contact with contaminated material.",
+              "C. A nurse sustains a needlestick injury.",
+              "D. Clean supplies are placed near used wound-care materials."
+            ],
+            "right": [
+              "1. Anticipate exposure",
+              "2. Hand hygiene",
+              "3. Exposure response",
+              "4. Evaluate the result"
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S10",
+      "slide_number": 10,
+      "slide_title": "Debrief: the reasoning behind each action",
+      "slide_archetype": "debrief",
+      "lesson_section": "practice",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Explain why each keyed action follows from its cue.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Each rationale below is the topic's own. Read them as a set: they describe one habit of mind, not five rules.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "debrief",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Use gloves plus facial and eye protection appropriate to t",
+            "body": "PPE selection is based on the anticipated route and extent of exposure.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Perform hand hygiene immediately after glove removal.",
+            "body": "Gloves can have defects and hands can be contaminated during removal.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Wash the area, report promptly, and begin the exposure pro",
+            "body": "Immediate cleansing and timely evaluation reduce preventable harm and enable indicated prophylaxis.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Separate clean and contaminated fields before continuing c",
+            "body": "Maintaining separation limits indirect transmission.",
+            "cjm": "analyze cues"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S11",
+      "slide_number": 11,
+      "slide_title": "Checkpoint",
+      "slide_archetype": "checkpoint_mcq",
+      "lesson_section": "practice",
+      "concept_lane": "hand hygiene",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Choose the correct action for a single cue.",
+      "on_slide_text": [],
+      "activity_prompt": "Choose the best response.",
+      "answer_key": [
+        "C. Perform hand hygiene immediately after glove removal."
+      ],
+      "visual_notes": "",
+      "speaker_script": "One question, and it targets the middle of the lesson. The cue is: Gloves are removed after contact with contaminated material. Read all four options and commit to one before the reveal, because the value of a checkpoint is in being wrong out loud rather than quietly. The reasoning you are being tested on is this: Gloves can have defects and hands can be contaminated during removal.",
+      "tts_text": "",
+      "target_duration_sec": 120,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "checkpoint_mcq",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "stem": "Gloves are removed after contact with contaminated material. What should the nurse do?",
+            "options": [
+              "A. Delay action until the end of the shift.",
+              "B. Document the finding without reassessment or follow-up.",
+              "C. Perform hand hygiene immediately after glove removal.",
+              "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+            ],
+            "correct": "C",
+            "rationale": "Gloves can have defects and hands can be contaminated during removal."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "hand hygiene",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S12",
+      "slide_number": 12,
+      "slide_title": "Mini case",
+      "slide_archetype": "mini_case",
+      "lesson_section": "apply",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "prioritize hypotheses",
+        "take action"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Respond to a cue using the lesson's frame.",
+      "on_slide_text": [],
+      "activity_prompt": "Two sentences: what you assess, then what you do.",
+      "answer_key": [
+        "Wash the area, report promptly, and begin the exposure protocol.",
+        "Immediate cleansing and timely evaluation reduce preventable harm and enable indicated prophylaxis."
+      ],
+      "visual_notes": "",
+      "speaker_script": "A bedside moment, and this time you write rather than choose. The situation: A nurse sustains a needlestick injury. Write two sentences before the debrief: one naming what you assess, one naming what you do about it. Keep them in that order, because the order is the judgement. The keyed reasoning is: Immediate cleansing and timely evaluation reduce preventable harm and enable indicated prophylaxis.",
+      "tts_text": "",
+      "target_duration_sec": 165,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "mini_case",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "presentation": "A nurse sustains a needlestick injury.",
+            "cues": [
+              "Keyed action: Wash the area, report promptly, and begin the exposure protocol.",
+              "Because: Immediate cleansing and timely evaluation reduce preventable harm and enable indicated prophylaxis."
+            ],
+            "prompt": "Write one assessment sentence and one action sentence."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S13",
+      "slide_number": 13,
+      "slide_title": "Sort by urgency",
+      "slide_archetype": "urgency_sort",
+      "lesson_section": "signal",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "prioritize hypotheses"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Sort cues by whether they require immediate action.",
+      "on_slide_text": [],
+      "activity_prompt": "Place each cue and justify one.",
+      "answer_key": [
+        "Act now: the cues whose keyed action is immediate",
+        "Act in sequence: the cues whose keyed action is verification or planning"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Two columns, and the sorting rule is the point of the slide. Put a cue on the left when delay changes the outcome for the patient, and on the right when the correct action is verification, planning or teaching that a short delay does not worsen. Justify one of your placements aloud. Learners who can sort these reliably are the ones who prioritise well under load.",
+      "tts_text": "",
+      "target_duration_sec": 165,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "urgency_sort",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "categories": [
+              {
+                "title": "Act now",
+                "items": [
+                  "A procedure may splash body fluid toward the face.",
+                  "Gloves are removed after contact with contaminated material.",
+                  "A nurse sustains a needlestick injury."
+                ]
+              },
+              {
+                "title": "Act in sequence",
+                "items": [
+                  "Clean supplies are placed near used wound-care materials.",
+                  "A nurse plans to recap a used needle by hand."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S14",
+      "slide_number": 14,
+      "slide_title": "Documentation frame",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "apply",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "generate solutions"
+      ],
+      "nursing_action_category": "document",
+      "learning_objective": "Record the lesson's decisions in a reusable frame.",
+      "on_slide_text": [
+        "Expected exposure:",
+        "Required PPE:",
+        "Clean-to-dirty sequence:",
+        "Hand-hygiene moment:",
+        "Exposure follow-up:"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "These are the fields the topic asks you to be able to fill in for any patient. If you cannot complete one, that is the part of the assessment still to do.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Expected exposure",
+            "body": "—",
+            "cjm": "generate solutions"
+          },
+          {
+            "heading": "Required PPE",
+            "body": "—",
+            "cjm": "generate solutions"
+          },
+          {
+            "heading": "Clean-to-dirty sequence",
+            "body": "—",
+            "cjm": "generate solutions"
+          },
+          {
+            "heading": "Hand-hygiene moment",
+            "body": "—",
+            "cjm": "generate solutions"
+          },
+          {
+            "heading": "Exposure follow-up",
+            "body": "—",
+            "cjm": "generate solutions"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "generate solutions",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S15",
+      "slide_number": 15,
+      "slide_title": "Capstone: choose the next safe action",
+      "slide_archetype": "capstone_mcq",
+      "lesson_section": "apply",
+      "concept_lane": "evaluate",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "take action",
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Select the priority action in the lesson's hardest cue.",
+      "on_slide_text": [],
+      "activity_prompt": "Choose the priority action.",
+      "answer_key": [
+        "B. Activate the safety device and place the needle directly in an approved sharps container."
+      ],
+      "visual_notes": "",
+      "speaker_script": "The last question, and the hardest cue the topic carries: A nurse plans to recap a used needle by hand. All four options are things a nurse might plausibly do, which is what makes it a capstone rather than a checkpoint. Choose the priority action, not merely a defensible one. The reasoning that separates them: Avoiding manipulation of used sharps reduces percutaneous injury risk.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "capstone_mcq",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "scenario": "A nurse plans to recap a used needle by hand.",
+            "stem": "What is the priority nursing action?",
+            "options": [
+              "A. Delay action until the end of the shift.",
+              "B. Activate the safety device and place the needle directly in an approved sharps container.",
+              "C. Document the finding without reassessment or follow-up.",
+              "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+            ],
+            "correct": "B",
+            "rationale": "Avoiding manipulation of used sharps reduces percutaneous injury risk."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "evaluate",
+        "cjm_function": "take action",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S16",
+      "slide_number": 16,
+      "slide_title": "Rapid retrieval: exit check",
+      "slide_archetype": "retrieval_check",
+      "lesson_section": "close",
+      "concept_lane": "cross-lane",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Retrieve the lesson's key points without notes.",
+      "on_slide_text": [
+        "Standard precautions apply to all patients.",
+        "Match PPE to exposure risk.",
+        "Remove PPE to prevent self-contamination.",
+        "Report occupational exposures immediately.",
+        "Respond safely to a sharps or body-fluid exposure."
+      ],
+      "activity_prompt": "Answer all of them.",
+      "answer_key": [
+        "Standard precautions apply to all patients.",
+        "Match PPE to exposure risk.",
+        "Remove PPE to prevent self-contamination.",
+        "Report occupational exposures immediately."
+      ],
+      "visual_notes": "",
+      "speaker_script": "Close the loop with no notes. Answer each of these aloud or on paper, one per lane of the lesson. The answers are on the slides you have just seen and in the facilitator guide, so this is retrieval rather than assessment. If any one of them produces silence across the room, that is the lane to re-teach before this cohort meets the situation on a real unit.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "retrieval_check",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "evaluate outcomes",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S17",
+      "slide_number": 17,
+      "slide_title": "Takeaway",
+      "slide_archetype": "takeaway",
+      "lesson_section": "close",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "Select hand hygiene and protective equipment from the anticipated exposure, then remove equipment without contaminating clean areas.",
+      "on_slide_text": [
+        "Standard precautions apply to all patients.",
+        "Match PPE to exposure risk.",
+        "Remove PPE to prevent self-contamination.",
+        "Report occupational exposures immediately."
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Closing frame.",
+      "tts_text": "",
+      "target_duration_sec": 45,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "takeaway",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "title": "Standard precautions apply to all patien",
+            "body": "Standard precautions apply to all patients."
+          },
+          {
+            "title": "Match PPE to exposure risk",
+            "body": "Match PPE to exposure risk."
+          },
+          {
+            "title": "Remove PPE to prevent self-contamination",
+            "body": "Remove PPE to prevent self-contamination."
+          },
+          {
+            "title": "Report occupational exposures immediatel",
+            "body": "Report occupational exposures immediately."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    }
+  ],
+  "assessment_items": [
+    {
+      "item_id": "Q01",
+      "slide_id": "S06",
+      "item_type": "mcq",
+      "learning_objective": "Apply standard precautions to every patient encounter.",
+      "concept_lane": "anticipate exposure",
+      "cjm_function": "recognize cues",
+      "stem": "A procedure may splash body fluid toward the face. What should the nurse do?",
+      "options": [
+        "A. Use gloves plus facial and eye protection appropriate to the splash risk.",
+        "B. Delay action until the end of the shift.",
+        "C. Document the finding without reassessment or follow-up.",
+        "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+      ],
+      "answer": "A",
+      "rationale": "PPE selection is based on the anticipated route and extent of exposure.",
+      "remediation_target_slide": "S06",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO1",
+      "source_section": "SRC02.sic-standard-precautions.facts.ppe_selection",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    },
+    {
+      "item_id": "Q02",
+      "slide_id": "S07",
+      "item_type": "mcq",
+      "learning_objective": "Apply standard precautions to every patient encounter.",
+      "concept_lane": "anticipate exposure",
+      "cjm_function": "analyze cues",
+      "stem": "Gloves are removed after contact with contaminated material. What should the nurse do?",
+      "options": [
+        "A. Delay action until the end of the shift.",
+        "B. Perform hand hygiene immediately after glove removal.",
+        "C. Document the finding without reassessment or follow-up.",
+        "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+      ],
+      "answer": "B",
+      "rationale": "Gloves can have defects and hands can be contaminated during removal.",
+      "remediation_target_slide": "S07",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO1",
+      "source_section": "SRC02.sic-standard-precautions.facts.hand_hygiene",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    },
+    {
+      "item_id": "Q03",
+      "slide_id": "S08",
+      "item_type": "mcq",
+      "learning_objective": "Select PPE from the anticipated exposure.",
+      "concept_lane": "hand hygiene",
+      "cjm_function": "prioritize hypotheses",
+      "stem": "A nurse sustains a needlestick injury. What should the nurse do?",
+      "options": [
+        "A. Delay action until the end of the shift.",
+        "B. Document the finding without reassessment or follow-up.",
+        "C. Wash the area, report promptly, and begin the exposure protocol.",
+        "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+      ],
+      "answer": "C",
+      "rationale": "Immediate cleansing and timely evaluation reduce preventable harm and enable indicated prophylaxis.",
+      "remediation_target_slide": "S08",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO2",
+      "source_section": "SRC02.sic-standard-precautions.facts.occupational_exposure",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    },
+    {
+      "item_id": "Q04",
+      "slide_id": "S09",
+      "item_type": "mcq",
+      "learning_objective": "Select PPE from the anticipated exposure.",
+      "concept_lane": "hand hygiene",
+      "cjm_function": "generate solutions",
+      "stem": "Clean supplies are placed near used wound-care materials. What should the nurse do?",
+      "options": [
+        "A. Delay action until the end of the shift.",
+        "B. Document the finding without reassessment or follow-up.",
+        "C. Delegate the clinical judgment decision to unlicensed assistive personnel.",
+        "D. Separate clean and contaminated fields before continuing care."
+      ],
+      "answer": "D",
+      "rationale": "Maintaining separation limits indirect transmission.",
+      "remediation_target_slide": "S09",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO2",
+      "source_section": "SRC02.sic-standard-precautions.facts.aseptic_work_areas",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    },
+    {
+      "item_id": "Q05",
+      "slide_id": "S10",
+      "item_type": "mcq",
+      "learning_objective": "Respond safely to a sharps or body-fluid exposure.",
+      "concept_lane": "exposure response",
+      "cjm_function": "take action",
+      "stem": "A nurse plans to recap a used needle by hand. What should the nurse do?",
+      "options": [
+        "A. Activate the safety device and place the needle directly in an approved sharps container.",
+        "B. Delay action until the end of the shift.",
+        "C. Document the finding without reassessment or follow-up.",
+        "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+      ],
+      "answer": "A",
+      "rationale": "Avoiding manipulation of used sharps reduces percutaneous injury risk.",
+      "remediation_target_slide": "S10",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO3",
+      "source_section": "SRC02.sic-standard-precautions.facts.sharps_safety",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    }
+  ],
+  "remediation_map": [
+    {
+      "miss_pattern": "learner misses: A procedure may splash body fluid toward the face.",
+      "failed_operation": "recognize cues",
+      "map_location": "S06",
+      "concept_lane": "anticipate exposure",
+      "likely_misconception": "",
+      "one_slide_fix": "S06",
+      "active_learning_task": "restate the keyed action and why it is first",
+      "retrieval_item": "Q01",
+      "improvement_evidence": ""
+    },
+    {
+      "miss_pattern": "learner misses: Gloves are removed after contact with contaminated material.",
+      "failed_operation": "analyze cues",
+      "map_location": "S07",
+      "concept_lane": "anticipate exposure",
+      "likely_misconception": "",
+      "one_slide_fix": "S07",
+      "active_learning_task": "restate the keyed action and why it is first",
+      "retrieval_item": "Q02",
+      "improvement_evidence": ""
+    },
+    {
+      "miss_pattern": "learner misses: A nurse sustains a needlestick injury.",
+      "failed_operation": "prioritize hypotheses",
+      "map_location": "S08",
+      "concept_lane": "hand hygiene",
+      "likely_misconception": "",
+      "one_slide_fix": "S08",
+      "active_learning_task": "restate the keyed action and why it is first",
+      "retrieval_item": "Q03",
+      "improvement_evidence": ""
+    }
+  ],
+  "qa": {
+    "release_status": "review-needed",
+    "gates_passed": [
+      "runtime",
+      "source",
+      "taxonomy",
+      "blueprint",
+      "cjm_coverage",
+      "outline"
+    ],
+    "defects": [
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[generated] This package was assembled by lessons/build_from_topic.py from the SRC02 topic's own fields. No clinical content was added. Speaker scripts carry the topic's sentences but are not written in a teaching voice; a prose pass by the author is expected before teaching. lessons/nclex_sepsis_recognition/ is the hand-written comparison."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[clinical specificity] The source topic states its content qualitatively and names no numeric thresholds, scoring tools, drug names or timings. None were added. Programme-specific criteria and local policy must be supplied by the author."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[assessment] Distractors are the module's shared set, identical across every item and all implausible; used unchanged rather than invented. They should be replaced before the items are used for assessment rather than discussion. The keyed action and rationale are the module's."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[evidence] Slides are source-aligned to SRC02 (the author's own module), not source-grounded. No OpenStax text is reproduced."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[standards] No CA-BRN-ART3 standards_refs are proposed for generated packages; the author adds them per lesson if the package is offered as accreditation evidence."
+      }
+    ],
+    "cjm_coverage_rationale": ""
+  },
+  "revision_log": [],
+  "outcomes": {},
+  "improvement_log": []
+}

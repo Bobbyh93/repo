@@ -1,0 +1,6 @@
+objective,concept_lane,slide,activity,cjm_function,item_type,remediation_target
+Identify safeguards for high-alert medications.,before administration,S06,The prescribed dose is inconsistent with the available concentration and usual range. What should the nurse do?,recognize cues,mcq,S06
+Identify safeguards for high-alert medications.,before administration,S07,A required patient-specific laboratory result is unavailable. What should the nurse do?,analyze cues,mcq,S07
+Recognize parameters that require holding and clarification.,during administration,S08,Barcode scanning produces a mismatch alert. What should the nurse do?,prioritize hypotheses,mcq,S08
+Recognize parameters that require holding and clarification.,during administration,S09,Policy requires an independent double check for this medication. What should the nurse do?,generate solutions,mcq,S09
+Monitor for therapeutic and adverse effects.,after administration,S10,The patient develops signs of an acute adverse reaction during administration. What should the nurse do?,take action,mcq,S10

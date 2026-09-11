@@ -1,0 +1,6 @@
+objective,concept_lane,slide,activity,cjm_function,item_type,remediation_target
+Differentiate tasks that require nursing judgment from tasks that may be delegated.,decision frame,S06,A newly admitted patient has changing neurologic findings. What should the nurse do?,recognize cues,mcq,S06
+Differentiate tasks that require nursing judgment from tasks that may be delegated.,decision frame,S07,A stable patient needs routine intake and output recorded. What should the nurse do?,analyze cues,mcq,S07
+"Select an appropriate delegatee using patient stability, task predictability, and local scope.",communication,S08,A patient requires initial teaching for a new diagnosis. What should the nurse do?,prioritize hypotheses,mcq,S08
+"Select an appropriate delegatee using patient stability, task predictability, and local scope.",communication,S09,A delegatee reports a value outside the stated parameters. What should the nurse do?,generate solutions,mcq,S09
+"Provide direction, supervision, and outcome evaluation after delegation.",supervision,S10,The task is permitted by policy but the delegatee has not demonstrated competence. What should the nurse do?,take action,mcq,S10

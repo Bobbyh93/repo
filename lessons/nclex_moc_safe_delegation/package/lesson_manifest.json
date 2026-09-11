@@ -1,0 +1,820 @@
+{
+  "schema_version": "1.2",
+  "adapter_version": "1.2.0",
+  "generated_at_iso": "2026-09-11T10:41:36",
+  "demo": false,
+  "runtime_config": {
+    "runtime": {
+      "run_date_yyyymmdd": "20260911",
+      "package_id": "NCLEX-MOC-SAFE-DELEGATION-R1",
+      "build_mode": "full_production",
+      "deployment_mode": "hybrid",
+      "rebuild_scope": "full",
+      "output_root": "."
+    },
+    "outputs": {
+      "filename_pattern": "{{runtime.run_date_yyyymmdd}}_{{lesson.course_code}}_{{lesson.chapter_title}}_Part_{{deck.part_number}}.pptx"
+    },
+    "media": {
+      "wpm_target": 140
+    }
+  },
+  "lesson": {
+    "course_code": "NCLEX",
+    "program_level": "prelicensure RN",
+    "audience": "prelicensure nursing students",
+    "unit_title": "Management of Care",
+    "chapter_id": "moc-safe-delegation",
+    "chapter_title": "Safe_Delegation_and_Supervision",
+    "lesson_title": "Safe Delegation and Supervision",
+    "concept": "Care Coordination",
+    "exemplars": [
+      "Decision frame",
+      "Communication",
+      "Supervision"
+    ],
+    "clinical_domain": "Management of Care",
+    "source_family": "Harrity NCLEX-RN 2026 exemplar topics",
+    "source_anchor": "shared/nclex-rn-2026.ts, EXEMPLAR_TOPICS[moc-safe-delegation]",
+    "page_range": "n/a (source module)",
+    "organizing_clinical_question": "Match the task to the delegatee, retain nursing judgment, communicate expectations, and evaluate the result.",
+    "opening_patient_question": "A newly admitted patient has changing neurologic findings.",
+    "concept_lanes": [
+      "decision frame",
+      "communication",
+      "supervision",
+      "apply",
+      "evaluate"
+    ],
+    "target_duration_minutes": 45,
+    "program_outcomes": [],
+    "course_objectives": [
+      {
+        "id": "CO1",
+        "text": "Differentiate tasks that require nursing judgment from tasks that may be delegated.",
+        "maps_to": []
+      },
+      {
+        "id": "CO2",
+        "text": "Select an appropriate delegatee using patient stability, task predictability, and local scope.",
+        "maps_to": []
+      },
+      {
+        "id": "CO3",
+        "text": "Provide direction, supervision, and outcome evaluation after delegation.",
+        "maps_to": []
+      }
+    ],
+    "standards_refs": []
+  },
+  "sources": [
+    {
+      "source_id": "SRC02",
+      "title": "Harrity NCLEX-RN 2026 exemplar topics, moc-safe-delegation",
+      "kind": "authored",
+      "license": "author's own work (R. Harrity)",
+      "locator": "Bobbyh93/Codex_Repo_2026 shared/nclex-rn-2026.ts, EXEMPLAR_TOPICS[moc-safe-delegation]",
+      "coverage_status": "confirmed",
+      "attribution_statement": "Built from the author's own NCLEX-RN 2026 curriculum module (R. Harrity), exemplar topic moc-safe-delegation.",
+      "index_path": "handoff/source/SRC02_harrity_nclex_rn_2026_index.json",
+      "license_exclusions": [
+        "No OpenStax text is reproduced. The module's own sources[] cites OpenStax Fundamentals of Nursing, 'Leadership, delegation, and care coordination' (not used), which this repository excludes pending the license contradiction check in docs/REVIEW_HANDOFF.md."
+      ]
+    }
+  ],
+  "taxonomy": {
+    "glossary": [
+      {
+        "term": "Decision frame",
+        "definition": "The nurse assesses the patient and task before delegating. Assessment, teaching, evaluation, and unstable-patient decisions remain with the licensed nurse.",
+        "source_ref": "SRC02"
+      },
+      {
+        "term": "Communication",
+        "definition": "State the task, expected result, reporting parameters, and time frame. Confirm understanding and availability for questions.",
+        "source_ref": "SRC02"
+      },
+      {
+        "term": "Supervision",
+        "definition": "Delegation transfers performance of a task, not accountability for the nursing decision. Reassess the patient and evaluate completion.",
+        "source_ref": "SRC02"
+      }
+    ],
+    "concept_tags": [
+      "Care Coordination",
+      "Decision frame",
+      "Communication",
+      "Supervision"
+    ],
+    "outcome_tags": [
+      "Differentiate tasks that require nursing judgment from tasks that may be delegated",
+      "Select an appropriate delegatee using patient stability, task predictability, and local scope",
+      "Provide direction, supervision, and outcome evaluation after delegation"
+    ],
+    "nclex_client_needs": [
+      "Management of Care"
+    ],
+    "cjm_functions": [
+      "recognize cues",
+      "analyze cues",
+      "prioritize hypotheses",
+      "generate solutions",
+      "take action",
+      "evaluate outcomes"
+    ],
+    "proposed_new_tags": [],
+    "frameworks": [
+      {
+        "framework_id": "NCSBN-CJMM",
+        "title": "NCSBN Clinical Judgment Measurement Model",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "NCLEX-RN-2026",
+        "title": "Harrity NCLEX-RN 2026 framework (shared/nclex-rn-2026.ts)",
+        "text_policy": "author's own"
+      }
+    ]
+  },
+  "governance": {
+    "envelope": "master-lesson-1.0.0",
+    "promotion_state": "human_review",
+    "administrative_metadata": {
+      "lesson_id": "LESSON-NCLEX-MOC-SAFE-DELEGATION",
+      "version": "0.1.0",
+      "content_owner": "R. Harrity",
+      "reviewer": "R. Harrity",
+      "created_date": "2026-09-11"
+    }
+  },
+  "slides": [
+    {
+      "slide_id": "S01",
+      "slide_number": 1,
+      "slide_title": "Safe Delegation and Supervision",
+      "slide_archetype": "title",
+      "concept_lane": "cross-lane",
+      "evidence_status": "instructor-added",
+      "source_refs": [],
+      "cjm_functions": [],
+      "target_duration_sec": 35,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S02",
+      "slide_number": 2,
+      "slide_title": "Opening case",
+      "slide_archetype": "opening_case",
+      "concept_lane": "decision frame",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "cjm_functions": [
+        "recognize cues"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S03",
+      "slide_number": 3,
+      "slide_title": "The question this lesson answers",
+      "slide_archetype": "clinical_question",
+      "concept_lane": "cross-lane",
+      "evidence_status": "instructor-added",
+      "source_refs": [],
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "target_duration_sec": 55,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S04",
+      "slide_number": 4,
+      "slide_title": "Lesson map",
+      "slide_archetype": "chapter_map",
+      "concept_lane": "cross-lane",
+      "evidence_status": "instructor-added",
+      "source_refs": [],
+      "cjm_functions": [],
+      "target_duration_sec": 55,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S05",
+      "slide_number": 5,
+      "slide_title": "Warm-up: put the three moves in order",
+      "slide_archetype": "warmup_sequence",
+      "concept_lane": "cross-lane",
+      "evidence_status": "instructor-added",
+      "source_refs": [],
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "target_duration_sec": 70,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S06",
+      "slide_number": 6,
+      "slide_title": "Decision frame",
+      "slide_archetype": "concept_cards",
+      "concept_lane": "decision frame",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S07",
+      "slide_number": 7,
+      "slide_title": "Communication",
+      "slide_archetype": "concept_cards",
+      "concept_lane": "communication",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "cjm_functions": [
+        "prioritize hypotheses",
+        "generate solutions"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S08",
+      "slide_number": 8,
+      "slide_title": "Supervision",
+      "slide_archetype": "concept_cards",
+      "concept_lane": "supervision",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "cjm_functions": [
+        "take action",
+        "evaluate outcomes"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S09",
+      "slide_number": 9,
+      "slide_title": "Activity: match the cue to the move it calls for",
+      "slide_archetype": "match_activity",
+      "concept_lane": "apply",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "target_duration_sec": 170,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S10",
+      "slide_number": 10,
+      "slide_title": "Debrief: the reasoning behind each action",
+      "slide_archetype": "debrief",
+      "concept_lane": "apply",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S11",
+      "slide_number": 11,
+      "slide_title": "Checkpoint",
+      "slide_archetype": "checkpoint_mcq",
+      "concept_lane": "communication",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "target_duration_sec": 120,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S12",
+      "slide_number": 12,
+      "slide_title": "Mini case",
+      "slide_archetype": "mini_case",
+      "concept_lane": "apply",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "cjm_functions": [
+        "prioritize hypotheses",
+        "take action"
+      ],
+      "target_duration_sec": 165,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S13",
+      "slide_number": 13,
+      "slide_title": "Sort by urgency",
+      "slide_archetype": "urgency_sort",
+      "concept_lane": "apply",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "cjm_functions": [
+        "prioritize hypotheses"
+      ],
+      "target_duration_sec": 165,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S14",
+      "slide_number": 14,
+      "slide_title": "Documentation frame",
+      "slide_archetype": "concept_cards",
+      "concept_lane": "apply",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "cjm_functions": [
+        "generate solutions"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S15",
+      "slide_number": 15,
+      "slide_title": "Capstone: choose the next safe action",
+      "slide_archetype": "capstone_mcq",
+      "concept_lane": "evaluate",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "cjm_functions": [
+        "take action",
+        "evaluate outcomes"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S16",
+      "slide_number": 16,
+      "slide_title": "Rapid retrieval: exit check",
+      "slide_archetype": "retrieval_check",
+      "concept_lane": "cross-lane",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "cjm_functions": [
+        "evaluate outcomes"
+      ],
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    },
+    {
+      "slide_id": "S17",
+      "slide_number": 17,
+      "slide_title": "Takeaway",
+      "slide_archetype": "takeaway",
+      "concept_lane": "cross-lane",
+      "evidence_status": "instructor-added",
+      "source_refs": [],
+      "cjm_functions": [],
+      "target_duration_sec": 45,
+      "audio_duration_sec": null,
+      "audio_filename": "",
+      "qa_status": "unreviewed",
+      "retired": null
+    }
+  ],
+  "assessment_items": [
+    {
+      "item_id": "Q01",
+      "slide_id": "S06",
+      "item_type": "mcq",
+      "concept_lane": "decision frame",
+      "cjm_function": "recognize cues",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "remediation_target_slide": "S06"
+    },
+    {
+      "item_id": "Q02",
+      "slide_id": "S07",
+      "item_type": "mcq",
+      "concept_lane": "decision frame",
+      "cjm_function": "analyze cues",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "remediation_target_slide": "S07"
+    },
+    {
+      "item_id": "Q03",
+      "slide_id": "S08",
+      "item_type": "mcq",
+      "concept_lane": "communication",
+      "cjm_function": "prioritize hypotheses",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "remediation_target_slide": "S08"
+    },
+    {
+      "item_id": "Q04",
+      "slide_id": "S09",
+      "item_type": "mcq",
+      "concept_lane": "communication",
+      "cjm_function": "generate solutions",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "remediation_target_slide": "S09"
+    },
+    {
+      "item_id": "Q05",
+      "slide_id": "S10",
+      "item_type": "mcq",
+      "concept_lane": "supervision",
+      "cjm_function": "take action",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "remediation_target_slide": "S10"
+    }
+  ],
+  "cjm_coverage": {
+    "recognize cues": [
+      "S02",
+      "S03",
+      "S06",
+      "S09"
+    ],
+    "analyze cues": [
+      "S03",
+      "S05",
+      "S06",
+      "S09",
+      "S10",
+      "S11"
+    ],
+    "prioritize hypotheses": [
+      "S07",
+      "S12",
+      "S13"
+    ],
+    "generate solutions": [
+      "S07",
+      "S14"
+    ],
+    "take action": [
+      "S08",
+      "S12",
+      "S15"
+    ],
+    "evaluate outcomes": [
+      "S08",
+      "S15",
+      "S16"
+    ]
+  },
+  "cjm_coverage_rationale": "",
+  "qa": {
+    "release_status": "review-needed",
+    "gates_passed": [
+      "runtime",
+      "source",
+      "taxonomy",
+      "blueprint",
+      "cjm_coverage",
+      "outline",
+      "deck_render",
+      "package_manifest"
+    ],
+    "defect_counts": {
+      "blocker": 0,
+      "major": 0,
+      "minor": 9
+    }
+  },
+  "files": [
+    "20260911_NCLEX_Safe_Delegation_and_Supervision_Part_1.pptx",
+    "facilitator_guide.md",
+    "learner_handout.md",
+    "assessment_map.csv",
+    "traceability_matrix.csv",
+    "lesson_manifest.json",
+    "qa_log.md",
+    "web/index.html",
+    "web/learner_handout.html",
+    "20260911_NCLEX_Safe_Delegation_and_Supervision_Part_1.imscc"
+  ],
+  "exports": {
+    "cartridge": "IMS Common Cartridge 1.1",
+    "assessment": "QTI 1.2 (cc.exam.v0p1)",
+    "resources": [
+      "r_lesson",
+      "r_handout",
+      "r_quiz"
+    ],
+    "item_count": 5,
+    "structural_validation": "pass",
+    "errors": [],
+    "pdf": null
+  },
+  "revision_log": [],
+  "traceability": {
+    "frameworks": [
+      {
+        "framework_id": "NCSBN-CJMM",
+        "title": "NCSBN Clinical Judgment Measurement Model",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "NCLEX-RN-2026",
+        "title": "Harrity NCLEX-RN 2026 framework (shared/nclex-rn-2026.ts)",
+        "text_policy": "author's own"
+      }
+    ],
+    "program_outcomes": [],
+    "course_objectives": [
+      {
+        "id": "CO1",
+        "text": "Differentiate tasks that require nursing judgment from tasks that may be delegated.",
+        "maps_to": []
+      },
+      {
+        "id": "CO2",
+        "text": "Select an appropriate delegatee using patient stability, task predictability, and local scope.",
+        "maps_to": []
+      },
+      {
+        "id": "CO3",
+        "text": "Provide direction, supervision, and outcome evaluation after delegation.",
+        "maps_to": []
+      }
+    ],
+    "package_standards_refs": [],
+    "matrix": [
+      {
+        "slide_id": "S01",
+        "learning_objective": "Orient to the lesson's promise.",
+        "course_objective_id": "",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "",
+        "assessment_item_ids": "",
+        "evidence_status": "instructor-added"
+      },
+      {
+        "slide_id": "S02",
+        "learning_objective": "Enter the lesson through a single patient cue.",
+        "course_objective_id": "CO1",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "recognize cues",
+        "assessment_item_ids": "",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S03",
+        "learning_objective": "State the organizing clinical question.",
+        "course_objective_id": "",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "recognize cues;analyze cues",
+        "assessment_item_ids": "",
+        "evidence_status": "instructor-added"
+      },
+      {
+        "slide_id": "S04",
+        "learning_objective": "Locate any cue on the map before acting on it.",
+        "course_objective_id": "",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "",
+        "assessment_item_ids": "",
+        "evidence_status": "instructor-added"
+      },
+      {
+        "slide_id": "S05",
+        "learning_objective": "Sequence the lesson's three moves before seeing them taught.",
+        "course_objective_id": "",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "analyze cues",
+        "assessment_item_ids": "",
+        "evidence_status": "instructor-added"
+      },
+      {
+        "slide_id": "S06",
+        "learning_objective": "Differentiate tasks that require nursing judgment from tasks that may be delegated.",
+        "course_objective_id": "CO1",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "recognize cues;analyze cues",
+        "assessment_item_ids": "Q01",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S07",
+        "learning_objective": "Select an appropriate delegatee using patient stability, task predictability, and local scope.",
+        "course_objective_id": "CO2",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "prioritize hypotheses;generate solutions",
+        "assessment_item_ids": "Q02",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S08",
+        "learning_objective": "Provide direction, supervision, and outcome evaluation after delegation.",
+        "course_objective_id": "CO3",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "take action;evaluate outcomes",
+        "assessment_item_ids": "Q03",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S09",
+        "learning_objective": "Match each cue to the lesson move that answers it.",
+        "course_objective_id": "CO1",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "recognize cues;analyze cues",
+        "assessment_item_ids": "Q04",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S10",
+        "learning_objective": "Explain why each keyed action follows from its cue.",
+        "course_objective_id": "CO2",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "analyze cues",
+        "assessment_item_ids": "Q05",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S11",
+        "learning_objective": "Choose the correct action for a single cue.",
+        "course_objective_id": "CO2",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "analyze cues",
+        "assessment_item_ids": "",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S12",
+        "learning_objective": "Respond to a cue using the lesson's frame.",
+        "course_objective_id": "CO2",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "prioritize hypotheses;take action",
+        "assessment_item_ids": "",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S13",
+        "learning_objective": "Sort cues by whether they require immediate action.",
+        "course_objective_id": "CO2",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "prioritize hypotheses",
+        "assessment_item_ids": "",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S14",
+        "learning_objective": "Record the lesson's decisions in a reusable frame.",
+        "course_objective_id": "CO3",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "generate solutions",
+        "assessment_item_ids": "",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S15",
+        "learning_objective": "Select the priority action in the lesson's hardest cue.",
+        "course_objective_id": "CO3",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "take action;evaluate outcomes",
+        "assessment_item_ids": "",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S16",
+        "learning_objective": "Retrieve the lesson's key points without notes.",
+        "course_objective_id": "CO3",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "evaluate outcomes",
+        "assessment_item_ids": "",
+        "evidence_status": "source-aligned"
+      },
+      {
+        "slide_id": "S17",
+        "learning_objective": "Match the task to the delegatee, retain nursing judgment, communicate expectations, and evaluate the result.",
+        "course_objective_id": "",
+        "program_outcome_ids": "",
+        "standards_refs": "",
+        "cjm_functions": "",
+        "assessment_item_ids": "",
+        "evidence_status": "instructor-added"
+      }
+    ],
+    "unmapped_counts": {
+      "no_course_objective": 5,
+      "no_standards_ref": 17,
+      "no_assessment_item": 9
+    }
+  },
+  "outcomes": {},
+  "improvement_log": []
+}

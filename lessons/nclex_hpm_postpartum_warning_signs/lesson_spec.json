@@ -1,0 +1,1491 @@
+{
+  "schema_version": "1.2",
+  "runtime_config": {
+    "runtime": {
+      "run_date_yyyymmdd": "20260911",
+      "package_id": "NCLEX-HPM-POSTPARTUM-WARNING-SIGNS-R1",
+      "build_mode": "full_production",
+      "deployment_mode": "hybrid",
+      "rebuild_scope": "full",
+      "output_root": "."
+    },
+    "outputs": {
+      "filename_pattern": "{{runtime.run_date_yyyymmdd}}_{{lesson.course_code}}_{{lesson.chapter_title}}_Part_{{deck.part_number}}.pptx"
+    },
+    "media": {
+      "wpm_target": 140
+    }
+  },
+  "lesson": {
+    "course_code": "NCLEX",
+    "program_level": "prelicensure RN",
+    "audience": "prelicensure nursing students",
+    "unit_title": "Health Promotion and Maintenance",
+    "chapter_id": "hpm-postpartum-warning-signs",
+    "chapter_title": "Postpartum_Discharge_Teaching_and_Warnin",
+    "lesson_title": "Postpartum Discharge Teaching and Warning Signs",
+    "concept": "Maternal Health Promotion",
+    "exemplars": [
+      "Expected recovery",
+      "Escalation",
+      "Teach-back"
+    ],
+    "clinical_domain": "Health Promotion and Maintenance",
+    "source_family": "Harrity NCLEX-RN 2026 exemplar topics",
+    "source_anchor": "shared/nclex-rn-2026.ts, EXEMPLAR_TOPICS[hpm-postpartum-warning-signs]",
+    "page_range": "n/a (source module)",
+    "organizing_clinical_question": "Teach expected recovery, self-care, follow-up, and urgent warning signs using confirmation of understanding.",
+    "opening_patient_question": "The patient reports soaking a pad rapidly with ongoing heavy bleeding.",
+    "concept_lanes": [
+      "expected recovery",
+      "escalation",
+      "teach back",
+      "apply",
+      "evaluate"
+    ],
+    "target_duration_minutes": 45,
+    "program_outcomes": [],
+    "course_objectives": [
+      {
+        "id": "CO1",
+        "text": "Distinguish expected postpartum changes from warning signs.",
+        "maps_to": []
+      },
+      {
+        "id": "CO2",
+        "text": "Prioritize urgent follow-up instructions.",
+        "maps_to": []
+      },
+      {
+        "id": "CO3",
+        "text": "Use teach-back to verify understanding.",
+        "maps_to": []
+      }
+    ],
+    "standards_refs": []
+  },
+  "sources": [
+    {
+      "source_id": "SRC02",
+      "title": "Harrity NCLEX-RN 2026 exemplar topics, hpm-postpartum-warning-signs",
+      "kind": "authored",
+      "license": "author's own work (R. Harrity)",
+      "locator": "Bobbyh93/Codex_Repo_2026 shared/nclex-rn-2026.ts, EXEMPLAR_TOPICS[hpm-postpartum-warning-signs]",
+      "coverage_status": "confirmed",
+      "attribution_statement": "Built from the author's own NCLEX-RN 2026 curriculum module (R. Harrity), exemplar topic hpm-postpartum-warning-signs.",
+      "index_path": "handoff/source/SRC02_harrity_nclex_rn_2026_index.json",
+      "license_exclusions": [
+        "No OpenStax text is reproduced. The module's own sources[] cites OpenStax Maternal-Newborn Nursing, 'Postpartum care and discharge education' (not used), which this repository excludes pending the license contradiction check in docs/REVIEW_HANDOFF.md."
+      ]
+    }
+  ],
+  "taxonomy": {
+    "glossary": [
+      {
+        "term": "Expected recovery",
+        "definition": "Explain the usual progression of lochia, comfort measures, hydration, rest, and follow-up while emphasizing that symptoms must be interpreted with the whole clinical picture.",
+        "source_ref": "SRC02"
+      },
+      {
+        "term": "Escalation",
+        "definition": "Urgent evaluation is needed for heavy bleeding, breathing difficulty, chest pain, seizure, severe headache with concerning features, or thoughts of self-harm or harming the infant.",
+        "source_ref": "SRC02"
+      },
+      {
+        "term": "Teach-back",
+        "definition": "Ask the patient to explain when and how they would obtain help; correct gaps and include the support person when desired.",
+        "source_ref": "SRC02"
+      }
+    ],
+    "concept_tags": [
+      "Maternal Health Promotion",
+      "Expected recovery",
+      "Escalation",
+      "Teach-back"
+    ],
+    "outcome_tags": [
+      "Distinguish expected postpartum changes from warning signs",
+      "Prioritize urgent follow-up instructions",
+      "Use teach-back to verify understanding"
+    ],
+    "nclex_client_needs": [
+      "Health Promotion and Maintenance"
+    ],
+    "cjm_functions": [
+      "recognize cues",
+      "analyze cues",
+      "prioritize hypotheses",
+      "generate solutions",
+      "take action",
+      "evaluate outcomes"
+    ],
+    "proposed_new_tags": [],
+    "frameworks": [
+      {
+        "framework_id": "NCSBN-CJMM",
+        "title": "NCSBN Clinical Judgment Measurement Model",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "NCLEX-RN-2026",
+        "title": "Harrity NCLEX-RN 2026 framework (shared/nclex-rn-2026.ts)",
+        "text_policy": "author's own"
+      }
+    ]
+  },
+  "governance": {
+    "promotion_state": "human_review",
+    "administrative_metadata": {
+      "lesson_id": "LESSON-NCLEX-HPM-POSTPARTUM-WARNING-SIGNS",
+      "version": "0.1.0",
+      "content_owner": "R. Harrity",
+      "reviewer": "R. Harrity",
+      "created_date": "2026-09-11"
+    }
+  },
+  "slides": [
+    {
+      "slide_id": "S01",
+      "slide_number": 1,
+      "slide_title": "Postpartum Discharge Teaching and Warning Signs",
+      "slide_archetype": "title",
+      "lesson_section": "open",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "Orient to the lesson's promise.",
+      "on_slide_text": [
+        "Postpartum Discharge Teaching and Warning Signs",
+        "Prelicensure RN · Health Promotion and Maintenance · safety risk: high"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Postpartum Discharge Teaching and Warning Signs. Teach expected recovery, self-care, follow-up, and urgent warning signs using confirmation of understanding. Five lanes carry the lesson: expected recovery, escalation, teach back, apply, evaluate.",
+      "tts_text": "",
+      "target_duration_sec": 35,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "title",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S02",
+      "slide_number": 2,
+      "slide_title": "Opening case",
+      "slide_archetype": "opening_case",
+      "lesson_section": "open",
+      "concept_lane": "expected recovery",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Enter the lesson through a single patient cue.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Start with one cue. The patient reports soaking a pad rapidly with ongoing heavy bleeding. Decide what you would do before the lesson tells you, and hold on to it; the same cue returns as the first assessment item.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "opening_case",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "presentation": "The patient reports soaking a pad rapidly with ongoing heavy bleeding.",
+            "cues": [
+              "Objective in play: Distinguish expected postpartum changes from warning signs.",
+              "Concept: Maternal Health Promotion"
+            ],
+            "prompt": "Thirty seconds: what is your first action, and why that one first?"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "expected recovery",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S03",
+      "slide_number": 3,
+      "slide_title": "The question this lesson answers",
+      "slide_archetype": "clinical_question",
+      "lesson_section": "map",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "State the organizing clinical question.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "One question organizes the lesson: Teach expected recovery, self-care, follow-up, and urgent warning signs using confirmation of understanding.",
+      "tts_text": "",
+      "target_duration_sec": 55,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "clinical_question",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "lane": "expected recovery",
+            "nodes": [
+              "Expected recovery"
+            ]
+          },
+          {
+            "lane": "escalation",
+            "nodes": [
+              "Escalation"
+            ]
+          },
+          {
+            "lane": "teach back",
+            "nodes": [
+              "Teach-back"
+            ]
+          },
+          {
+            "lane": "apply",
+            "nodes": [
+              "case and items"
+            ]
+          },
+          {
+            "lane": "evaluate",
+            "nodes": [
+              "retrieval",
+              "takeaway"
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S04",
+      "slide_number": 4,
+      "slide_title": "Lesson map",
+      "slide_archetype": "chapter_map",
+      "lesson_section": "map",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "Locate any cue on the map before acting on it.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Map first. The three teaching lanes are the topic's own sections; apply and evaluate close the loop.",
+      "tts_text": "",
+      "target_duration_sec": 55,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "chapter_map",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "lane": "expected recovery",
+            "nodes": [
+              "Expected recovery"
+            ]
+          },
+          {
+            "lane": "escalation",
+            "nodes": [
+              "Escalation"
+            ]
+          },
+          {
+            "lane": "teach back",
+            "nodes": [
+              "Teach-back"
+            ]
+          },
+          {
+            "lane": "apply",
+            "nodes": [
+              "mini case",
+              "capstone"
+            ]
+          },
+          {
+            "lane": "evaluate",
+            "nodes": [
+              "exit check"
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S05",
+      "slide_number": 5,
+      "slide_title": "Warm-up: put the three moves in order",
+      "slide_archetype": "warmup_sequence",
+      "lesson_section": "activate",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Sequence the lesson's three moves before seeing them taught.",
+      "on_slide_text": [
+        "Expected recovery",
+        "Escalation",
+        "Teach-back"
+      ],
+      "activity_prompt": "Order the three.",
+      "answer_key": [
+        "Expected recovery",
+        "Escalation",
+        "Teach-back"
+      ],
+      "visual_notes": "",
+      "speaker_script": "One minute, before any of this is taught. These three headings are the whole lesson in order, but they are shuffled on the slide. Put them in the sequence the nurse actually performs them at the bedside, then compare with a neighbour before the reveal. Getting the order wrong here is more useful than getting it right: it shows you which move you would have skipped under pressure.",
+      "tts_text": "",
+      "target_duration_sec": 70,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "warmup_sequence",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S06",
+      "slide_number": 6,
+      "slide_title": "Expected recovery",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: expected recovery",
+      "concept_lane": "expected recovery",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Distinguish expected postpartum changes from warning signs.",
+      "on_slide_text": [
+        "Explain the usual progression of lochia, comfort measures, hydration, rest",
+        "and follow-up while emphasizing that symptoms must be interpreted with the whole clinical picture"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Section 1 of 3 from the source topic.",
+      "speaker_script": "Expected recovery. Explain the usual progression of lochia, comfort measures, hydration, rest, and follow-up while emphasizing that symptoms must be interpreted with the whole clinical picture. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 1 of 3, and it answers: Distinguish expected postpartum changes from warning signs.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Expected recovery",
+            "body": "Explain the usual progression of lochia, comfort measures, hydration, rest, and follow-up while emphasizing that symptoms must be interpreted with the whole clinical picture.",
+            "cjm": "recognize cues"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "expected recovery",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S07",
+      "slide_number": 7,
+      "slide_title": "Escalation",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: escalation",
+      "concept_lane": "escalation",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "prioritize hypotheses",
+        "generate solutions"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Prioritize urgent follow-up instructions.",
+      "on_slide_text": [
+        "Urgent evaluation is needed for heavy bleeding, breathing difficulty, chest pain, seizure",
+        "severe headache with concerning features, or thoughts of self-harm or harming the infant"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Section 2 of 3 from the source topic.",
+      "speaker_script": "Escalation. Urgent evaluation is needed for heavy bleeding, breathing difficulty, chest pain, seizure, severe headache with concerning features, or thoughts of self-harm or harming the infant. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 2 of 3, and it answers: Prioritize urgent follow-up instructions.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Escalation",
+            "body": "Urgent evaluation is needed for heavy bleeding, breathing difficulty, chest pain, seizure, severe headache with concerning features, or thoughts of self-harm or harming the infant.",
+            "cjm": "prioritize hypotheses"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "escalation",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S08",
+      "slide_number": 8,
+      "slide_title": "Teach-back",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: teach back",
+      "concept_lane": "teach back",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "take action",
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Use teach-back to verify understanding.",
+      "on_slide_text": [
+        "Ask the patient to explain when and how they would obtain help",
+        "correct gaps and include the support person when desired"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Section 3 of 3 from the source topic.",
+      "speaker_script": "Teach-back. Ask the patient to explain when and how they would obtain help; correct gaps and include the support person when desired. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 3 of 3, and it answers: Use teach-back to verify understanding.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Teach-back",
+            "body": "Ask the patient to explain when and how they would obtain help; correct gaps and include the support person when desired.",
+            "cjm": "take action"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "teach back",
+        "cjm_function": "take action",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S09",
+      "slide_number": 9,
+      "slide_title": "Activity: match the cue to the move it calls for",
+      "slide_archetype": "match_activity",
+      "lesson_section": "practice",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Match each cue to the lesson move that answers it.",
+      "on_slide_text": [],
+      "activity_prompt": "Write the four matches and one sentence explaining one of them.",
+      "answer_key": [
+        "A relates to: Expected recovery",
+        "B relates to: Escalation",
+        "C relates to: Teach-back",
+        "D relates to: Teach-back"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Work with one partner. Match each cue to the section of the lesson that tells you what to do with it.",
+      "tts_text": "",
+      "target_duration_sec": 170,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "match_activity",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "left": [
+              "A. The patient reports soaking a pad rapidly with ongoing heavy bleeding.",
+              "B. The patient reports sudden shortness of breath and chest pain.",
+              "C. The patient expresses thoughts of harming themself or the infant.",
+              "D. The patient cannot state whom to contact for worsening symptoms."
+            ],
+            "right": [
+              "1. Expected recovery",
+              "2. Escalation",
+              "3. Teach-back",
+              "4. Evaluate the result"
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S10",
+      "slide_number": 10,
+      "slide_title": "Debrief: the reasoning behind each action",
+      "slide_archetype": "debrief",
+      "lesson_section": "practice",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Explain why each keyed action follows from its cue.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Each rationale below is the topic's own. Read them as a set: they describe one habit of mind, not five rules.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "debrief",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Direct the patient to obtain urgent evaluation for possibl",
+            "body": "Heavy postpartum bleeding can represent a time-sensitive maternal emergency.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Instruct the patient to activate emergency services immedi",
+            "body": "Acute cardiopulmonary symptoms may indicate a life-threatening complication.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Maintain safety and arrange immediate emergency mental-hea",
+            "body": "Thoughts of harm require immediate safety intervention, not routine follow-up.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Repeat the escalation plan and use teach-back before disch",
+            "body": "Teach-back identifies and corrects gaps in actionable discharge knowledge.",
+            "cjm": "analyze cues"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S11",
+      "slide_number": 11,
+      "slide_title": "Checkpoint",
+      "slide_archetype": "checkpoint_mcq",
+      "lesson_section": "practice",
+      "concept_lane": "escalation",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Choose the correct action for a single cue.",
+      "on_slide_text": [],
+      "activity_prompt": "Choose the best response.",
+      "answer_key": [
+        "C. Instruct the patient to activate emergency services immediately."
+      ],
+      "visual_notes": "",
+      "speaker_script": "One question, and it targets the middle of the lesson. The cue is: The patient reports sudden shortness of breath and chest pain. Read all four options and commit to one before the reveal, because the value of a checkpoint is in being wrong out loud rather than quietly. The reasoning you are being tested on is this: Acute cardiopulmonary symptoms may indicate a life-threatening complication.",
+      "tts_text": "",
+      "target_duration_sec": 120,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "checkpoint_mcq",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "stem": "The patient reports sudden shortness of breath and chest pain. What should the nurse do?",
+            "options": [
+              "A. Delay action until the end of the shift.",
+              "B. Document the finding without reassessment or follow-up.",
+              "C. Instruct the patient to activate emergency services immediately.",
+              "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+            ],
+            "correct": "C",
+            "rationale": "Acute cardiopulmonary symptoms may indicate a life-threatening complication."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "escalation",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S12",
+      "slide_number": 12,
+      "slide_title": "Mini case",
+      "slide_archetype": "mini_case",
+      "lesson_section": "apply",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "prioritize hypotheses",
+        "take action"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Respond to a cue using the lesson's frame.",
+      "on_slide_text": [],
+      "activity_prompt": "Two sentences: what you assess, then what you do.",
+      "answer_key": [
+        "Maintain safety and arrange immediate emergency mental-health evaluation.",
+        "Thoughts of harm require immediate safety intervention, not routine follow-up."
+      ],
+      "visual_notes": "",
+      "speaker_script": "A bedside moment, and this time you write rather than choose. The situation: The patient expresses thoughts of harming themself or the infant. Write two sentences before the debrief: one naming what you assess, one naming what you do about it. Keep them in that order, because the order is the judgement. The keyed reasoning is: Thoughts of harm require immediate safety intervention, not routine follow-up.",
+      "tts_text": "",
+      "target_duration_sec": 165,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "mini_case",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "presentation": "The patient expresses thoughts of harming themself or the infant.",
+            "cues": [
+              "Keyed action: Maintain safety and arrange immediate emergency mental-health evaluation.",
+              "Because: Thoughts of harm require immediate safety intervention, not routine follow-up."
+            ],
+            "prompt": "Write one assessment sentence and one action sentence."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S13",
+      "slide_number": 13,
+      "slide_title": "Sort by urgency",
+      "slide_archetype": "urgency_sort",
+      "lesson_section": "signal",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "prioritize hypotheses"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Sort cues by whether they require immediate action.",
+      "on_slide_text": [],
+      "activity_prompt": "Place each cue and justify one.",
+      "answer_key": [
+        "Act now: the cues whose keyed action is immediate",
+        "Act in sequence: the cues whose keyed action is verification or planning"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Two columns, and the sorting rule is the point of the slide. Put a cue on the left when delay changes the outcome for the patient, and on the right when the correct action is verification, planning or teaching that a short delay does not worsen. Justify one of your placements aloud. Learners who can sort these reliably are the ones who prioritise well under load.",
+      "tts_text": "",
+      "target_duration_sec": 165,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "urgency_sort",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "categories": [
+              {
+                "title": "Act now",
+                "items": [
+                  "The patient reports soaking a pad rapidly with ongoing heavy bleeding.",
+                  "The patient reports sudden shortness of breath and chest pain.",
+                  "The patient expresses thoughts of harming themself or the infant."
+                ]
+              },
+              {
+                "title": "Act in sequence",
+                "items": [
+                  "The patient cannot state whom to contact for worsening symptoms.",
+                  "The patient reports unilateral leg swelling and pain."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S14",
+      "slide_number": 14,
+      "slide_title": "Documentation frame",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "apply",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "generate solutions"
+      ],
+      "nursing_action_category": "document",
+      "learning_objective": "Record the lesson's decisions in a reusable frame.",
+      "on_slide_text": [
+        "Expected finding:",
+        "Urgent warning sign:",
+        "Who to call:",
+        "Follow-up appointment:",
+        "Teach-back response:"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "These are the fields the topic asks you to be able to fill in for any patient. If you cannot complete one, that is the part of the assessment still to do.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Expected finding",
+            "body": "—",
+            "cjm": "generate solutions"
+          },
+          {
+            "heading": "Urgent warning sign",
+            "body": "—",
+            "cjm": "generate solutions"
+          },
+          {
+            "heading": "Who to call",
+            "body": "—",
+            "cjm": "generate solutions"
+          },
+          {
+            "heading": "Follow-up appointment",
+            "body": "—",
+            "cjm": "generate solutions"
+          },
+          {
+            "heading": "Teach-back response",
+            "body": "—",
+            "cjm": "generate solutions"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "generate solutions",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S15",
+      "slide_number": 15,
+      "slide_title": "Capstone: choose the next safe action",
+      "slide_archetype": "capstone_mcq",
+      "lesson_section": "apply",
+      "concept_lane": "evaluate",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "take action",
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Select the priority action in the lesson's hardest cue.",
+      "on_slide_text": [],
+      "activity_prompt": "Choose the priority action.",
+      "answer_key": [
+        "B. Arrange prompt evaluation for a possible thromboembolic complication."
+      ],
+      "visual_notes": "",
+      "speaker_script": "The last question, and the hardest cue the topic carries: The patient reports unilateral leg swelling and pain. All four options are things a nurse might plausibly do, which is what makes it a capstone rather than a checkpoint. Choose the priority action, not merely a defensible one. The reasoning that separates them: Unilateral pain and swelling can signal venous thrombosis and require timely assessment.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "capstone_mcq",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "scenario": "The patient reports unilateral leg swelling and pain.",
+            "stem": "What is the priority nursing action?",
+            "options": [
+              "A. Delay action until the end of the shift.",
+              "B. Arrange prompt evaluation for a possible thromboembolic complication.",
+              "C. Document the finding without reassessment or follow-up.",
+              "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+            ],
+            "correct": "B",
+            "rationale": "Unilateral pain and swelling can signal venous thrombosis and require timely assessment."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "evaluate",
+        "cjm_function": "take action",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S16",
+      "slide_number": 16,
+      "slide_title": "Rapid retrieval: exit check",
+      "slide_archetype": "retrieval_check",
+      "lesson_section": "close",
+      "concept_lane": "cross-lane",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Retrieve the lesson's key points without notes.",
+      "on_slide_text": [
+        "Pair self-care with escalation instructions.",
+        "Heavy bleeding and cardiopulmonary symptoms require urgent action.",
+        "Include mental-health safety.",
+        "Verify learning with teach-back.",
+        "Use teach-back to verify understanding."
+      ],
+      "activity_prompt": "Answer all of them.",
+      "answer_key": [
+        "Pair self-care with escalation instructions.",
+        "Heavy bleeding and cardiopulmonary symptoms require urgent action.",
+        "Include mental-health safety.",
+        "Verify learning with teach-back."
+      ],
+      "visual_notes": "",
+      "speaker_script": "Close the loop with no notes. Answer each of these aloud or on paper, one per lane of the lesson. The answers are on the slides you have just seen and in the facilitator guide, so this is retrieval rather than assessment. If any one of them produces silence across the room, that is the lane to re-teach before this cohort meets the situation on a real unit.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "retrieval_check",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "evaluate outcomes",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S17",
+      "slide_number": 17,
+      "slide_title": "Takeaway",
+      "slide_archetype": "takeaway",
+      "lesson_section": "close",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "Teach expected recovery, self-care, follow-up, and urgent warning signs using confirmation of understanding.",
+      "on_slide_text": [
+        "Pair self-care with escalation instructions.",
+        "Heavy bleeding and cardiopulmonary symptoms require urgent action.",
+        "Include mental-health safety.",
+        "Verify learning with teach-back."
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Closing frame.",
+      "tts_text": "",
+      "target_duration_sec": 45,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "takeaway",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "title": "Pair self-care with escalation instructi",
+            "body": "Pair self-care with escalation instructions."
+          },
+          {
+            "title": "Heavy bleeding and cardiopulmonary sympt",
+            "body": "Heavy bleeding and cardiopulmonary symptoms require urgent action."
+          },
+          {
+            "title": "Include mental-health safety",
+            "body": "Include mental-health safety."
+          },
+          {
+            "title": "Verify learning with teach-back",
+            "body": "Verify learning with teach-back."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    }
+  ],
+  "assessment_items": [
+    {
+      "item_id": "Q01",
+      "slide_id": "S06",
+      "item_type": "mcq",
+      "learning_objective": "Distinguish expected postpartum changes from warning signs.",
+      "concept_lane": "expected recovery",
+      "cjm_function": "recognize cues",
+      "stem": "The patient reports soaking a pad rapidly with ongoing heavy bleeding. What should the nurse do?",
+      "options": [
+        "A. Direct the patient to obtain urgent evaluation for possible postpartum hemorrhage.",
+        "B. Delay action until the end of the shift.",
+        "C. Document the finding without reassessment or follow-up.",
+        "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+      ],
+      "answer": "A",
+      "rationale": "Heavy postpartum bleeding can represent a time-sensitive maternal emergency.",
+      "remediation_target_slide": "S06",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO1",
+      "source_section": "SRC02.hpm-postpartum-warning-signs.facts.postpartum_warning_signs",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    },
+    {
+      "item_id": "Q02",
+      "slide_id": "S07",
+      "item_type": "mcq",
+      "learning_objective": "Distinguish expected postpartum changes from warning signs.",
+      "concept_lane": "expected recovery",
+      "cjm_function": "analyze cues",
+      "stem": "The patient reports sudden shortness of breath and chest pain. What should the nurse do?",
+      "options": [
+        "A. Delay action until the end of the shift.",
+        "B. Instruct the patient to activate emergency services immediately.",
+        "C. Document the finding without reassessment or follow-up.",
+        "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+      ],
+      "answer": "B",
+      "rationale": "Acute cardiopulmonary symptoms may indicate a life-threatening complication.",
+      "remediation_target_slide": "S07",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO1",
+      "source_section": "SRC02.hpm-postpartum-warning-signs.facts.emergency_symptoms",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    },
+    {
+      "item_id": "Q03",
+      "slide_id": "S08",
+      "item_type": "mcq",
+      "learning_objective": "Prioritize urgent follow-up instructions.",
+      "concept_lane": "escalation",
+      "cjm_function": "prioritize hypotheses",
+      "stem": "The patient expresses thoughts of harming themself or the infant. What should the nurse do?",
+      "options": [
+        "A. Delay action until the end of the shift.",
+        "B. Document the finding without reassessment or follow-up.",
+        "C. Maintain safety and arrange immediate emergency mental-health evaluation.",
+        "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+      ],
+      "answer": "C",
+      "rationale": "Thoughts of harm require immediate safety intervention, not routine follow-up.",
+      "remediation_target_slide": "S08",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO2",
+      "source_section": "SRC02.hpm-postpartum-warning-signs.facts.postpartum_mental_health_emergency",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    },
+    {
+      "item_id": "Q04",
+      "slide_id": "S09",
+      "item_type": "mcq",
+      "learning_objective": "Prioritize urgent follow-up instructions.",
+      "concept_lane": "escalation",
+      "cjm_function": "generate solutions",
+      "stem": "The patient cannot state whom to contact for worsening symptoms. What should the nurse do?",
+      "options": [
+        "A. Delay action until the end of the shift.",
+        "B. Document the finding without reassessment or follow-up.",
+        "C. Delegate the clinical judgment decision to unlicensed assistive personnel.",
+        "D. Repeat the escalation plan and use teach-back before discharge."
+      ],
+      "answer": "D",
+      "rationale": "Teach-back identifies and corrects gaps in actionable discharge knowledge.",
+      "remediation_target_slide": "S09",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO2",
+      "source_section": "SRC02.hpm-postpartum-warning-signs.facts.discharge_teaching",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    },
+    {
+      "item_id": "Q05",
+      "slide_id": "S10",
+      "item_type": "mcq",
+      "learning_objective": "Use teach-back to verify understanding.",
+      "concept_lane": "teach back",
+      "cjm_function": "take action",
+      "stem": "The patient reports unilateral leg swelling and pain. What should the nurse do?",
+      "options": [
+        "A. Arrange prompt evaluation for a possible thromboembolic complication.",
+        "B. Delay action until the end of the shift.",
+        "C. Document the finding without reassessment or follow-up.",
+        "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+      ],
+      "answer": "A",
+      "rationale": "Unilateral pain and swelling can signal venous thrombosis and require timely assessment.",
+      "remediation_target_slide": "S10",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO3",
+      "source_section": "SRC02.hpm-postpartum-warning-signs.facts.thromboembolic_warning_signs",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    }
+  ],
+  "remediation_map": [
+    {
+      "miss_pattern": "learner misses: The patient reports soaking a pad rapidly with ongoing heavy bleeding.",
+      "failed_operation": "recognize cues",
+      "map_location": "S06",
+      "concept_lane": "expected recovery",
+      "likely_misconception": "",
+      "one_slide_fix": "S06",
+      "active_learning_task": "restate the keyed action and why it is first",
+      "retrieval_item": "Q01",
+      "improvement_evidence": ""
+    },
+    {
+      "miss_pattern": "learner misses: The patient reports sudden shortness of breath and chest pain.",
+      "failed_operation": "analyze cues",
+      "map_location": "S07",
+      "concept_lane": "expected recovery",
+      "likely_misconception": "",
+      "one_slide_fix": "S07",
+      "active_learning_task": "restate the keyed action and why it is first",
+      "retrieval_item": "Q02",
+      "improvement_evidence": ""
+    },
+    {
+      "miss_pattern": "learner misses: The patient expresses thoughts of harming themself or the infant.",
+      "failed_operation": "prioritize hypotheses",
+      "map_location": "S08",
+      "concept_lane": "escalation",
+      "likely_misconception": "",
+      "one_slide_fix": "S08",
+      "active_learning_task": "restate the keyed action and why it is first",
+      "retrieval_item": "Q03",
+      "improvement_evidence": ""
+    }
+  ],
+  "qa": {
+    "release_status": "review-needed",
+    "gates_passed": [
+      "runtime",
+      "source",
+      "taxonomy",
+      "blueprint",
+      "cjm_coverage",
+      "outline"
+    ],
+    "defects": [
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[generated] This package was assembled by lessons/build_from_topic.py from the SRC02 topic's own fields. No clinical content was added. Speaker scripts carry the topic's sentences but are not written in a teaching voice; a prose pass by the author is expected before teaching. lessons/nclex_sepsis_recognition/ is the hand-written comparison."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[clinical specificity] The source topic states its content qualitatively and names no numeric thresholds, scoring tools, drug names or timings. None were added. Programme-specific criteria and local policy must be supplied by the author."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[assessment] Distractors are the module's shared set, identical across every item and all implausible; used unchanged rather than invented. They should be replaced before the items are used for assessment rather than discussion. The keyed action and rationale are the module's."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[evidence] Slides are source-aligned to SRC02 (the author's own module), not source-grounded. No OpenStax text is reproduced."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[standards] No CA-BRN-ART3 standards_refs are proposed for generated packages; the author adds them per lesson if the package is offered as accreditation evidence."
+      }
+    ],
+    "cjm_coverage_rationale": ""
+  },
+  "revision_log": [],
+  "outcomes": {},
+  "improvement_log": []
+}

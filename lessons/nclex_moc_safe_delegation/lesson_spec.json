@@ -1,0 +1,1491 @@
+{
+  "schema_version": "1.2",
+  "runtime_config": {
+    "runtime": {
+      "run_date_yyyymmdd": "20260911",
+      "package_id": "NCLEX-MOC-SAFE-DELEGATION-R1",
+      "build_mode": "full_production",
+      "deployment_mode": "hybrid",
+      "rebuild_scope": "full",
+      "output_root": "."
+    },
+    "outputs": {
+      "filename_pattern": "{{runtime.run_date_yyyymmdd}}_{{lesson.course_code}}_{{lesson.chapter_title}}_Part_{{deck.part_number}}.pptx"
+    },
+    "media": {
+      "wpm_target": 140
+    }
+  },
+  "lesson": {
+    "course_code": "NCLEX",
+    "program_level": "prelicensure RN",
+    "audience": "prelicensure nursing students",
+    "unit_title": "Management of Care",
+    "chapter_id": "moc-safe-delegation",
+    "chapter_title": "Safe_Delegation_and_Supervision",
+    "lesson_title": "Safe Delegation and Supervision",
+    "concept": "Care Coordination",
+    "exemplars": [
+      "Decision frame",
+      "Communication",
+      "Supervision"
+    ],
+    "clinical_domain": "Management of Care",
+    "source_family": "Harrity NCLEX-RN 2026 exemplar topics",
+    "source_anchor": "shared/nclex-rn-2026.ts, EXEMPLAR_TOPICS[moc-safe-delegation]",
+    "page_range": "n/a (source module)",
+    "organizing_clinical_question": "Match the task to the delegatee, retain nursing judgment, communicate expectations, and evaluate the result.",
+    "opening_patient_question": "A newly admitted patient has changing neurologic findings.",
+    "concept_lanes": [
+      "decision frame",
+      "communication",
+      "supervision",
+      "apply",
+      "evaluate"
+    ],
+    "target_duration_minutes": 45,
+    "program_outcomes": [],
+    "course_objectives": [
+      {
+        "id": "CO1",
+        "text": "Differentiate tasks that require nursing judgment from tasks that may be delegated.",
+        "maps_to": []
+      },
+      {
+        "id": "CO2",
+        "text": "Select an appropriate delegatee using patient stability, task predictability, and local scope.",
+        "maps_to": []
+      },
+      {
+        "id": "CO3",
+        "text": "Provide direction, supervision, and outcome evaluation after delegation.",
+        "maps_to": []
+      }
+    ],
+    "standards_refs": []
+  },
+  "sources": [
+    {
+      "source_id": "SRC02",
+      "title": "Harrity NCLEX-RN 2026 exemplar topics, moc-safe-delegation",
+      "kind": "authored",
+      "license": "author's own work (R. Harrity)",
+      "locator": "Bobbyh93/Codex_Repo_2026 shared/nclex-rn-2026.ts, EXEMPLAR_TOPICS[moc-safe-delegation]",
+      "coverage_status": "confirmed",
+      "attribution_statement": "Built from the author's own NCLEX-RN 2026 curriculum module (R. Harrity), exemplar topic moc-safe-delegation.",
+      "index_path": "handoff/source/SRC02_harrity_nclex_rn_2026_index.json",
+      "license_exclusions": [
+        "No OpenStax text is reproduced. The module's own sources[] cites OpenStax Fundamentals of Nursing, 'Leadership, delegation, and care coordination' (not used), which this repository excludes pending the license contradiction check in docs/REVIEW_HANDOFF.md."
+      ]
+    }
+  ],
+  "taxonomy": {
+    "glossary": [
+      {
+        "term": "Decision frame",
+        "definition": "The nurse assesses the patient and task before delegating. Assessment, teaching, evaluation, and unstable-patient decisions remain with the licensed nurse.",
+        "source_ref": "SRC02"
+      },
+      {
+        "term": "Communication",
+        "definition": "State the task, expected result, reporting parameters, and time frame. Confirm understanding and availability for questions.",
+        "source_ref": "SRC02"
+      },
+      {
+        "term": "Supervision",
+        "definition": "Delegation transfers performance of a task, not accountability for the nursing decision. Reassess the patient and evaluate completion.",
+        "source_ref": "SRC02"
+      }
+    ],
+    "concept_tags": [
+      "Care Coordination",
+      "Decision frame",
+      "Communication",
+      "Supervision"
+    ],
+    "outcome_tags": [
+      "Differentiate tasks that require nursing judgment from tasks that may be delegated",
+      "Select an appropriate delegatee using patient stability, task predictability, and local scope",
+      "Provide direction, supervision, and outcome evaluation after delegation"
+    ],
+    "nclex_client_needs": [
+      "Management of Care"
+    ],
+    "cjm_functions": [
+      "recognize cues",
+      "analyze cues",
+      "prioritize hypotheses",
+      "generate solutions",
+      "take action",
+      "evaluate outcomes"
+    ],
+    "proposed_new_tags": [],
+    "frameworks": [
+      {
+        "framework_id": "NCSBN-CJMM",
+        "title": "NCSBN Clinical Judgment Measurement Model",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "NCLEX-RN-2026",
+        "title": "Harrity NCLEX-RN 2026 framework (shared/nclex-rn-2026.ts)",
+        "text_policy": "author's own"
+      }
+    ]
+  },
+  "governance": {
+    "promotion_state": "human_review",
+    "administrative_metadata": {
+      "lesson_id": "LESSON-NCLEX-MOC-SAFE-DELEGATION",
+      "version": "0.1.0",
+      "content_owner": "R. Harrity",
+      "reviewer": "R. Harrity",
+      "created_date": "2026-09-11"
+    }
+  },
+  "slides": [
+    {
+      "slide_id": "S01",
+      "slide_number": 1,
+      "slide_title": "Safe Delegation and Supervision",
+      "slide_archetype": "title",
+      "lesson_section": "open",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "Orient to the lesson's promise.",
+      "on_slide_text": [
+        "Safe Delegation and Supervision",
+        "Prelicensure RN · Management of Care · safety risk: high"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Safe Delegation and Supervision. Match the task to the delegatee, retain nursing judgment, communicate expectations, and evaluate the result. Five lanes carry the lesson: decision frame, communication, supervision, apply, evaluate.",
+      "tts_text": "",
+      "target_duration_sec": 35,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "title",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S02",
+      "slide_number": 2,
+      "slide_title": "Opening case",
+      "slide_archetype": "opening_case",
+      "lesson_section": "open",
+      "concept_lane": "decision frame",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Enter the lesson through a single patient cue.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Start with one cue. A newly admitted patient has changing neurologic findings. Decide what you would do before the lesson tells you, and hold on to it; the same cue returns as the first assessment item.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "opening_case",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "presentation": "A newly admitted patient has changing neurologic findings.",
+            "cues": [
+              "Objective in play: Differentiate tasks that require nursing judgment from tasks that may be delegated.",
+              "Concept: Care Coordination"
+            ],
+            "prompt": "Thirty seconds: what is your first action, and why that one first?"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "decision frame",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S03",
+      "slide_number": 3,
+      "slide_title": "The question this lesson answers",
+      "slide_archetype": "clinical_question",
+      "lesson_section": "map",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "State the organizing clinical question.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "One question organizes the lesson: Match the task to the delegatee, retain nursing judgment, communicate expectations, and evaluate the result.",
+      "tts_text": "",
+      "target_duration_sec": 55,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "clinical_question",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "lane": "decision frame",
+            "nodes": [
+              "Decision frame"
+            ]
+          },
+          {
+            "lane": "communication",
+            "nodes": [
+              "Communication"
+            ]
+          },
+          {
+            "lane": "supervision",
+            "nodes": [
+              "Supervision"
+            ]
+          },
+          {
+            "lane": "apply",
+            "nodes": [
+              "case and items"
+            ]
+          },
+          {
+            "lane": "evaluate",
+            "nodes": [
+              "retrieval",
+              "takeaway"
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S04",
+      "slide_number": 4,
+      "slide_title": "Lesson map",
+      "slide_archetype": "chapter_map",
+      "lesson_section": "map",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "Locate any cue on the map before acting on it.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Map first. The three teaching lanes are the topic's own sections; apply and evaluate close the loop.",
+      "tts_text": "",
+      "target_duration_sec": 55,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "chapter_map",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "lane": "decision frame",
+            "nodes": [
+              "Decision frame"
+            ]
+          },
+          {
+            "lane": "communication",
+            "nodes": [
+              "Communication"
+            ]
+          },
+          {
+            "lane": "supervision",
+            "nodes": [
+              "Supervision"
+            ]
+          },
+          {
+            "lane": "apply",
+            "nodes": [
+              "mini case",
+              "capstone"
+            ]
+          },
+          {
+            "lane": "evaluate",
+            "nodes": [
+              "exit check"
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S05",
+      "slide_number": 5,
+      "slide_title": "Warm-up: put the three moves in order",
+      "slide_archetype": "warmup_sequence",
+      "lesson_section": "activate",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Sequence the lesson's three moves before seeing them taught.",
+      "on_slide_text": [
+        "Decision frame",
+        "Communication",
+        "Supervision"
+      ],
+      "activity_prompt": "Order the three.",
+      "answer_key": [
+        "Decision frame",
+        "Communication",
+        "Supervision"
+      ],
+      "visual_notes": "",
+      "speaker_script": "One minute, before any of this is taught. These three headings are the whole lesson in order, but they are shuffled on the slide. Put them in the sequence the nurse actually performs them at the bedside, then compare with a neighbour before the reveal. Getting the order wrong here is more useful than getting it right: it shows you which move you would have skipped under pressure.",
+      "tts_text": "",
+      "target_duration_sec": 70,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "warmup_sequence",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S06",
+      "slide_number": 6,
+      "slide_title": "Decision frame",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: decision frame",
+      "concept_lane": "decision frame",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Differentiate tasks that require nursing judgment from tasks that may be delegated.",
+      "on_slide_text": [
+        "The nurse assesses the patient and task before delegating",
+        "Assessment, teaching, evaluation, and unstable-patient decisions remain with the licensed nurse"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Section 1 of 3 from the source topic.",
+      "speaker_script": "Decision frame. The nurse assesses the patient and task before delegating. Assessment, teaching, evaluation, and unstable-patient decisions remain with the licensed nurse. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 1 of 3, and it answers: Differentiate tasks that require nursing judgment from tasks that may be delegated.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Decision frame",
+            "body": "The nurse assesses the patient and task before delegating. Assessment, teaching, evaluation, and unstable-patient decisions remain with the licensed nurse.",
+            "cjm": "recognize cues"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "decision frame",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S07",
+      "slide_number": 7,
+      "slide_title": "Communication",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: communication",
+      "concept_lane": "communication",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "prioritize hypotheses",
+        "generate solutions"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Select an appropriate delegatee using patient stability, task predictability, and local scope.",
+      "on_slide_text": [
+        "State the task, expected result, reporting parameters, and time frame",
+        "Confirm understanding and availability for questions"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Section 2 of 3 from the source topic.",
+      "speaker_script": "Communication. State the task, expected result, reporting parameters, and time frame. Confirm understanding and availability for questions. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 2 of 3, and it answers: Select an appropriate delegatee using patient stability, task predictability, and local scope.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Communication",
+            "body": "State the task, expected result, reporting parameters, and time frame. Confirm understanding and availability for questions.",
+            "cjm": "prioritize hypotheses"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "communication",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S08",
+      "slide_number": 8,
+      "slide_title": "Supervision",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: supervision",
+      "concept_lane": "supervision",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "take action",
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Provide direction, supervision, and outcome evaluation after delegation.",
+      "on_slide_text": [
+        "Delegation transfers performance of a task, not accountability for the nursing decision",
+        "Reassess the patient and evaluate completion"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Section 3 of 3 from the source topic.",
+      "speaker_script": "Supervision. Delegation transfers performance of a task, not accountability for the nursing decision. Reassess the patient and evaluate completion. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 3 of 3, and it answers: Provide direction, supervision, and outcome evaluation after delegation.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Supervision",
+            "body": "Delegation transfers performance of a task, not accountability for the nursing decision. Reassess the patient and evaluate completion.",
+            "cjm": "take action"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "supervision",
+        "cjm_function": "take action",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S09",
+      "slide_number": 9,
+      "slide_title": "Activity: match the cue to the move it calls for",
+      "slide_archetype": "match_activity",
+      "lesson_section": "practice",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Match each cue to the lesson move that answers it.",
+      "on_slide_text": [],
+      "activity_prompt": "Write the four matches and one sentence explaining one of them.",
+      "answer_key": [
+        "A relates to: Decision frame",
+        "B relates to: Communication",
+        "C relates to: Supervision",
+        "D relates to: Supervision"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Work with one partner. Match each cue to the section of the lesson that tells you what to do with it.",
+      "tts_text": "",
+      "target_duration_sec": 170,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "match_activity",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "left": [
+              "A. A newly admitted patient has changing neurologic findings.",
+              "B. A stable patient needs routine intake and output recorded.",
+              "C. A patient requires initial teaching for a new diagnosis.",
+              "D. A delegatee reports a value outside the stated parameters."
+            ],
+            "right": [
+              "1. Decision frame",
+              "2. Communication",
+              "3. Supervision",
+              "4. Evaluate the result"
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S10",
+      "slide_number": 10,
+      "slide_title": "Debrief: the reasoning behind each action",
+      "slide_archetype": "debrief",
+      "lesson_section": "practice",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Explain why each keyed action follows from its cue.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Each rationale below is the topic's own. Read them as a set: they describe one habit of mind, not five rules.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "debrief",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "The registered nurse performs the focused assessment and d",
+            "body": "An unstable or changing condition requires licensed nursing assessment and judgment.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Delegate measurement with clear reporting parameters and r",
+            "body": "A predictable task may be delegated when direction and supervision are provided.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "The registered nurse performs and evaluates the initial te",
+            "body": "Initial teaching and evaluation require nursing judgment.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Assess the patient and determine the appropriate nursing r",
+            "body": "The nurse must interpret abnormal findings and act on the patient response.",
+            "cjm": "analyze cues"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S11",
+      "slide_number": 11,
+      "slide_title": "Checkpoint",
+      "slide_archetype": "checkpoint_mcq",
+      "lesson_section": "practice",
+      "concept_lane": "communication",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Choose the correct action for a single cue.",
+      "on_slide_text": [],
+      "activity_prompt": "Choose the best response.",
+      "answer_key": [
+        "C. Delegate measurement with clear reporting parameters and review the result."
+      ],
+      "visual_notes": "",
+      "speaker_script": "One question, and it targets the middle of the lesson. The cue is: A stable patient needs routine intake and output recorded. Read all four options and commit to one before the reveal, because the value of a checkpoint is in being wrong out loud rather than quietly. The reasoning you are being tested on is this: A predictable task may be delegated when direction and supervision are provided.",
+      "tts_text": "",
+      "target_duration_sec": 120,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "checkpoint_mcq",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "stem": "A stable patient needs routine intake and output recorded. What should the nurse do?",
+            "options": [
+              "A. Delay action until the end of the shift.",
+              "B. Document the finding without reassessment or follow-up.",
+              "C. Delegate measurement with clear reporting parameters and review the result.",
+              "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+            ],
+            "correct": "C",
+            "rationale": "A predictable task may be delegated when direction and supervision are provided."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "communication",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S12",
+      "slide_number": 12,
+      "slide_title": "Mini case",
+      "slide_archetype": "mini_case",
+      "lesson_section": "apply",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "prioritize hypotheses",
+        "take action"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Respond to a cue using the lesson's frame.",
+      "on_slide_text": [],
+      "activity_prompt": "Two sentences: what you assess, then what you do.",
+      "answer_key": [
+        "The registered nurse performs and evaluates the initial teaching.",
+        "Initial teaching and evaluation require nursing judgment."
+      ],
+      "visual_notes": "",
+      "speaker_script": "A bedside moment, and this time you write rather than choose. The situation: A patient requires initial teaching for a new diagnosis. Write two sentences before the debrief: one naming what you assess, one naming what you do about it. Keep them in that order, because the order is the judgement. The keyed reasoning is: Initial teaching and evaluation require nursing judgment.",
+      "tts_text": "",
+      "target_duration_sec": 165,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "mini_case",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "presentation": "A patient requires initial teaching for a new diagnosis.",
+            "cues": [
+              "Keyed action: The registered nurse performs and evaluates the initial teaching.",
+              "Because: Initial teaching and evaluation require nursing judgment."
+            ],
+            "prompt": "Write one assessment sentence and one action sentence."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S13",
+      "slide_number": 13,
+      "slide_title": "Sort by urgency",
+      "slide_archetype": "urgency_sort",
+      "lesson_section": "signal",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "prioritize hypotheses"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Sort cues by whether they require immediate action.",
+      "on_slide_text": [],
+      "activity_prompt": "Place each cue and justify one.",
+      "answer_key": [
+        "Act now: the cues whose keyed action is immediate",
+        "Act in sequence: the cues whose keyed action is verification or planning"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Two columns, and the sorting rule is the point of the slide. Put a cue on the left when delay changes the outcome for the patient, and on the right when the correct action is verification, planning or teaching that a short delay does not worsen. Justify one of your placements aloud. Learners who can sort these reliably are the ones who prioritise well under load.",
+      "tts_text": "",
+      "target_duration_sec": 165,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "urgency_sort",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "categories": [
+              {
+                "title": "Act now",
+                "items": [
+                  "A newly admitted patient has changing neurologic findings.",
+                  "A stable patient needs routine intake and output recorded.",
+                  "A patient requires initial teaching for a new diagnosis."
+                ]
+              },
+              {
+                "title": "Act in sequence",
+                "items": [
+                  "A delegatee reports a value outside the stated parameters.",
+                  "The task is permitted by policy but the delegatee has not demonstrated competence."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S14",
+      "slide_number": 14,
+      "slide_title": "Documentation frame",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "apply",
+      "concept_lane": "apply",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "generate solutions"
+      ],
+      "nursing_action_category": "document",
+      "learning_objective": "Record the lesson's decisions in a reusable frame.",
+      "on_slide_text": [
+        "Patient stability:",
+        "Task predictability:",
+        "Required nursing judgment:",
+        "Directions and report-back criteria:",
+        "Evaluation completed:"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "These are the fields the topic asks you to be able to fill in for any patient. If you cannot complete one, that is the part of the assessment still to do.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Patient stability",
+            "body": "—",
+            "cjm": "generate solutions"
+          },
+          {
+            "heading": "Task predictability",
+            "body": "—",
+            "cjm": "generate solutions"
+          },
+          {
+            "heading": "Required nursing judgment",
+            "body": "—",
+            "cjm": "generate solutions"
+          },
+          {
+            "heading": "Directions and report-back criteria",
+            "body": "—",
+            "cjm": "generate solutions"
+          },
+          {
+            "heading": "Evaluation completed",
+            "body": "—",
+            "cjm": "generate solutions"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "apply",
+        "cjm_function": "generate solutions",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S15",
+      "slide_number": 15,
+      "slide_title": "Capstone: choose the next safe action",
+      "slide_archetype": "capstone_mcq",
+      "lesson_section": "apply",
+      "concept_lane": "evaluate",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "take action",
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Select the priority action in the lesson's hardest cue.",
+      "on_slide_text": [],
+      "activity_prompt": "Choose the priority action.",
+      "answer_key": [
+        "B. Assign the task to a competent team member or complete it as the nurse."
+      ],
+      "visual_notes": "",
+      "speaker_script": "The last question, and the hardest cue the topic carries: The task is permitted by policy but the delegatee has not demonstrated competence. All four options are things a nurse might plausibly do, which is what makes it a capstone rather than a checkpoint. Choose the priority action, not merely a defensible one. The reasoning that separates them: Permitted scope does not replace validation of individual competence.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "capstone_mcq",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "scenario": "The task is permitted by policy but the delegatee has not demonstrated competence.",
+            "stem": "What is the priority nursing action?",
+            "options": [
+              "A. Delay action until the end of the shift.",
+              "B. Assign the task to a competent team member or complete it as the nurse.",
+              "C. Document the finding without reassessment or follow-up.",
+              "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+            ],
+            "correct": "B",
+            "rationale": "Permitted scope does not replace validation of individual competence."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "evaluate",
+        "cjm_function": "take action",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S16",
+      "slide_number": 16,
+      "slide_title": "Rapid retrieval: exit check",
+      "slide_archetype": "retrieval_check",
+      "lesson_section": "close",
+      "concept_lane": "cross-lane",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Retrieve the lesson's key points without notes.",
+      "on_slide_text": [
+        "Assess before delegating.",
+        "Do not delegate nursing judgment.",
+        "Give explicit report-back parameters.",
+        "Evaluate the patient outcome.",
+        "Provide direction, supervision, and outcome evaluation after delegation."
+      ],
+      "activity_prompt": "Answer all of them.",
+      "answer_key": [
+        "Assess before delegating.",
+        "Do not delegate nursing judgment.",
+        "Give explicit report-back parameters.",
+        "Evaluate the patient outcome."
+      ],
+      "visual_notes": "",
+      "speaker_script": "Close the loop with no notes. Answer each of these aloud or on paper, one per lane of the lesson. The answers are on the slides you have just seen and in the facilitator guide, so this is retrieval rather than assessment. If any one of them produces silence across the room, that is the lane to re-teach before this cohort meets the situation on a real unit.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "retrieval_check",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "evaluate outcomes",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S17",
+      "slide_number": 17,
+      "slide_title": "Takeaway",
+      "slide_archetype": "takeaway",
+      "lesson_section": "close",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "Match the task to the delegatee, retain nursing judgment, communicate expectations, and evaluate the result.",
+      "on_slide_text": [
+        "Assess before delegating.",
+        "Do not delegate nursing judgment.",
+        "Give explicit report-back parameters.",
+        "Evaluate the patient outcome."
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Closing frame.",
+      "tts_text": "",
+      "target_duration_sec": 45,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "takeaway",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "title": "Assess before delegating",
+            "body": "Assess before delegating."
+          },
+          {
+            "title": "Do not delegate nursing judgment",
+            "body": "Do not delegate nursing judgment."
+          },
+          {
+            "title": "Give explicit report-back parameters",
+            "body": "Give explicit report-back parameters."
+          },
+          {
+            "title": "Evaluate the patient outcome",
+            "body": "Evaluate the patient outcome."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    }
+  ],
+  "assessment_items": [
+    {
+      "item_id": "Q01",
+      "slide_id": "S06",
+      "item_type": "mcq",
+      "learning_objective": "Differentiate tasks that require nursing judgment from tasks that may be delegated.",
+      "concept_lane": "decision frame",
+      "cjm_function": "recognize cues",
+      "stem": "A newly admitted patient has changing neurologic findings. What should the nurse do?",
+      "options": [
+        "A. The registered nurse performs the focused assessment and determines the next intervention.",
+        "B. Delay action until the end of the shift.",
+        "C. Document the finding without reassessment or follow-up.",
+        "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+      ],
+      "answer": "A",
+      "rationale": "An unstable or changing condition requires licensed nursing assessment and judgment.",
+      "remediation_target_slide": "S06",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO1",
+      "source_section": "SRC02.moc-safe-delegation.facts.delegation_and_patient_stability",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    },
+    {
+      "item_id": "Q02",
+      "slide_id": "S07",
+      "item_type": "mcq",
+      "learning_objective": "Differentiate tasks that require nursing judgment from tasks that may be delegated.",
+      "concept_lane": "decision frame",
+      "cjm_function": "analyze cues",
+      "stem": "A stable patient needs routine intake and output recorded. What should the nurse do?",
+      "options": [
+        "A. Delay action until the end of the shift.",
+        "B. Delegate measurement with clear reporting parameters and review the result.",
+        "C. Document the finding without reassessment or follow-up.",
+        "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+      ],
+      "answer": "B",
+      "rationale": "A predictable task may be delegated when direction and supervision are provided.",
+      "remediation_target_slide": "S07",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO1",
+      "source_section": "SRC02.moc-safe-delegation.facts.delegation_communication",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    },
+    {
+      "item_id": "Q03",
+      "slide_id": "S08",
+      "item_type": "mcq",
+      "learning_objective": "Select an appropriate delegatee using patient stability, task predictability, and local scope.",
+      "concept_lane": "communication",
+      "cjm_function": "prioritize hypotheses",
+      "stem": "A patient requires initial teaching for a new diagnosis. What should the nurse do?",
+      "options": [
+        "A. Delay action until the end of the shift.",
+        "B. Document the finding without reassessment or follow-up.",
+        "C. The registered nurse performs and evaluates the initial teaching.",
+        "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+      ],
+      "answer": "C",
+      "rationale": "Initial teaching and evaluation require nursing judgment.",
+      "remediation_target_slide": "S08",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO2",
+      "source_section": "SRC02.moc-safe-delegation.facts.responsibilities_retained_by_the_nurse",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    },
+    {
+      "item_id": "Q04",
+      "slide_id": "S09",
+      "item_type": "mcq",
+      "learning_objective": "Select an appropriate delegatee using patient stability, task predictability, and local scope.",
+      "concept_lane": "communication",
+      "cjm_function": "generate solutions",
+      "stem": "A delegatee reports a value outside the stated parameters. What should the nurse do?",
+      "options": [
+        "A. Delay action until the end of the shift.",
+        "B. Document the finding without reassessment or follow-up.",
+        "C. Delegate the clinical judgment decision to unlicensed assistive personnel.",
+        "D. Assess the patient and determine the appropriate nursing response."
+      ],
+      "answer": "D",
+      "rationale": "The nurse must interpret abnormal findings and act on the patient response.",
+      "remediation_target_slide": "S09",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO2",
+      "source_section": "SRC02.moc-safe-delegation.facts.supervision_and_evaluation",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    },
+    {
+      "item_id": "Q05",
+      "slide_id": "S10",
+      "item_type": "mcq",
+      "learning_objective": "Provide direction, supervision, and outcome evaluation after delegation.",
+      "concept_lane": "supervision",
+      "cjm_function": "take action",
+      "stem": "The task is permitted by policy but the delegatee has not demonstrated competence. What should the nurse do?",
+      "options": [
+        "A. Assign the task to a competent team member or complete it as the nurse.",
+        "B. Delay action until the end of the shift.",
+        "C. Document the finding without reassessment or follow-up.",
+        "D. Delegate the clinical judgment decision to unlicensed assistive personnel."
+      ],
+      "answer": "A",
+      "rationale": "Permitted scope does not replace validation of individual competence.",
+      "remediation_target_slide": "S10",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO3",
+      "source_section": "SRC02.moc-safe-delegation.facts.delegatee_competence",
+      "origin": "cue, keyed action and rationale are the module's; distractors are the module's shared set"
+    }
+  ],
+  "remediation_map": [
+    {
+      "miss_pattern": "learner misses: A newly admitted patient has changing neurologic findings.",
+      "failed_operation": "recognize cues",
+      "map_location": "S06",
+      "concept_lane": "decision frame",
+      "likely_misconception": "",
+      "one_slide_fix": "S06",
+      "active_learning_task": "restate the keyed action and why it is first",
+      "retrieval_item": "Q01",
+      "improvement_evidence": ""
+    },
+    {
+      "miss_pattern": "learner misses: A stable patient needs routine intake and output recorded.",
+      "failed_operation": "analyze cues",
+      "map_location": "S07",
+      "concept_lane": "decision frame",
+      "likely_misconception": "",
+      "one_slide_fix": "S07",
+      "active_learning_task": "restate the keyed action and why it is first",
+      "retrieval_item": "Q02",
+      "improvement_evidence": ""
+    },
+    {
+      "miss_pattern": "learner misses: A patient requires initial teaching for a new diagnosis.",
+      "failed_operation": "prioritize hypotheses",
+      "map_location": "S08",
+      "concept_lane": "communication",
+      "likely_misconception": "",
+      "one_slide_fix": "S08",
+      "active_learning_task": "restate the keyed action and why it is first",
+      "retrieval_item": "Q03",
+      "improvement_evidence": ""
+    }
+  ],
+  "qa": {
+    "release_status": "review-needed",
+    "gates_passed": [
+      "runtime",
+      "source",
+      "taxonomy",
+      "blueprint",
+      "cjm_coverage",
+      "outline"
+    ],
+    "defects": [
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[generated] This package was assembled by lessons/build_from_topic.py from the SRC02 topic's own fields. No clinical content was added. Speaker scripts carry the topic's sentences but are not written in a teaching voice; a prose pass by the author is expected before teaching. lessons/nclex_sepsis_recognition/ is the hand-written comparison."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[clinical specificity] The source topic states its content qualitatively and names no numeric thresholds, scoring tools, drug names or timings. None were added. Programme-specific criteria and local policy must be supplied by the author."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[assessment] Distractors are the module's shared set, identical across every item and all implausible; used unchanged rather than invented. They should be replaced before the items are used for assessment rather than discussion. The keyed action and rationale are the module's."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[evidence] Slides are source-aligned to SRC02 (the author's own module), not source-grounded. No OpenStax text is reproduced."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[standards] No CA-BRN-ART3 standards_refs are proposed for generated packages; the author adds them per lesson if the package is offered as accreditation evidence."
+      }
+    ],
+    "cjm_coverage_rationale": ""
+  },
+  "revision_log": [],
+  "outcomes": {},
+  "improvement_log": []
+}

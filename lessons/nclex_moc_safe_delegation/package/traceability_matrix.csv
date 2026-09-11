@@ -1,0 +1,18 @@
+slide_id,learning_objective,course_objective_id,program_outcome_ids,standards_refs,cjm_functions,assessment_item_ids,evidence_status
+S01,Orient to the lesson's promise.,,,,,,instructor-added
+S02,Enter the lesson through a single patient cue.,CO1,,,recognize cues,,source-aligned
+S03,State the organizing clinical question.,,,,recognize cues;analyze cues,,instructor-added
+S04,Locate any cue on the map before acting on it.,,,,,,instructor-added
+S05,Sequence the lesson's three moves before seeing them taught.,,,,analyze cues,,instructor-added
+S06,Differentiate tasks that require nursing judgment from tasks that may be delegated.,CO1,,,recognize cues;analyze cues,Q01,source-aligned
+S07,"Select an appropriate delegatee using patient stability, task predictability, and local scope.",CO2,,,prioritize hypotheses;generate solutions,Q02,source-aligned
+S08,"Provide direction, supervision, and outcome evaluation after delegation.",CO3,,,take action;evaluate outcomes,Q03,source-aligned
+S09,Match each cue to the lesson move that answers it.,CO1,,,recognize cues;analyze cues,Q04,source-aligned
+S10,Explain why each keyed action follows from its cue.,CO2,,,analyze cues,Q05,source-aligned
+S11,Choose the correct action for a single cue.,CO2,,,analyze cues,,source-aligned
+S12,Respond to a cue using the lesson's frame.,CO2,,,prioritize hypotheses;take action,,source-aligned
+S13,Sort cues by whether they require immediate action.,CO2,,,prioritize hypotheses,,source-aligned
+S14,Record the lesson's decisions in a reusable frame.,CO3,,,generate solutions,,source-aligned
+S15,Select the priority action in the lesson's hardest cue.,CO3,,,take action;evaluate outcomes,,source-aligned
+S16,Retrieve the lesson's key points without notes.,CO3,,,evaluate outcomes,,source-aligned
+S17,"Match the task to the delegatee, retain nursing judgment, communicate expectations, and evaluate the result.",,,,,,instructor-added
