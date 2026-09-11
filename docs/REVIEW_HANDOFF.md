@@ -34,11 +34,17 @@ Every source host is refused by the egress proxy: wtcs.pressbooks.pub, ncbi.nlm.
 Step 1 is no longer optional in practice. After the 2026-09-11 silent-pass audit
 (`SILENT_PASS_AUDIT_2026-09-11.md`), the gate refuses `release-ready` until
 `visual_qa` is recorded — step 5 alone will leave the lesson at
-`faculty-review-needed`, and step 6 will keep refusing to apply. Two other
+`faculty-review-needed`, and step 6 will keep refusing to apply. Four other
 behaviours changed and will be visible at the prompt:
 
 - `record_gate.py gate-pass` now rejects a gate name it does not know, rather
   than recording the typo. Pass `--new-gate` if you genuinely mean a new one.
+- `qa_visual.py` now reports `visual_gate_ready: false` unless it rendered one
+  thumbnail per slide. If it comes back short, the contact sheet does not cover
+  the deck and the visual QA is not yet reviewable — re-run the render rather
+  than recording the gate off a partial sheet.
+- `compliance_sync.py` refuses `--apply` if the manifest lists a file that is
+  not on disk, or lists none at all. Both used to produce a clean dry run.
 - `verify_sources.py --fetch` reports `[PARTIAL: n/m sections]` whenever some
   source URLs fail. Slides scoring low against a partial chapter now read
   `cannot verify: source text incomplete` — do **not** treat those as content

@@ -256,3 +256,62 @@ def test_d6_html_override_writes_its_provenance_sidecar(tmp_path):
                     f"--html=SRC01={chapter}"], capture_output=True, text=True)
     prov = json.loads((out / "sources" / "SRC01.provenance.json").read_text())
     assert prov["complete"] is True and prov["origin"] == "html_override"
+
+
+# --- D9: `visual_gate_ready` must mean the reviewer can see the deck --------
+
+def test_d9_thumbnails_must_cover_every_slide(tmp_path, monkeypatch):
+    """D9: `render.ran` only said the rasteriser produced at least one image.
+    A render yielding 1 thumbnail for a 20-slide deck reported
+    `visual_gate_ready: True` — and post-D1, that flag is what tells the
+    operator the last gate standing between the package and release-ready can
+    be recorded. It must require one thumbnail per slide."""
+    sys.path.insert(0, str(SCRIPTS))
+    import qa_visual
+    report = {"slide_count": 20, "render": {"ran": True, "thumbnails": ["slide-01.png"]}}
+    qa_visual.finalize(report)
+    assert report["thumbnails_cover_deck"] is False
+    assert report["visual_gate_ready"] is False
+    assert "20-slide deck" in report["render"]["reason"]
+
+
+def test_d9_zero_slides_is_not_a_rendered_deck(tmp_path):
+    """Zero thumbnails for zero slides is vacuously equal. An empty deck is not
+    a deck a reviewer has seen."""
+    sys.path.insert(0, str(SCRIPTS))
+    import qa_visual
+    report = {"slide_count": 0, "render": {"ran": True, "thumbnails": ["slide-01.png"]}}
+    qa_visual.finalize(report)
+    assert report["visual_gate_ready"] is False
+    report2 = {"slide_count": 0, "render": {"ran": True, "thumbnails": []}}
+    qa_visual.finalize(report2)
+    assert report2["visual_gate_ready"] is False
+
+
+def test_d9_full_render_still_opens_the_gate(tmp_path):
+    """The inverse guard: a complete render must still report ready."""
+    sys.path.insert(0, str(SCRIPTS))
+    import qa_visual
+    report = {"slide_count": 3, "render": {"ran": True, "thumbnails": ["a.png", "b.png", "c.png"]}}
+    qa_visual.finalize(report)
+    assert report["thumbnails_cover_deck"] is True and report["visual_gate_ready"] is True
+
+
+def test_d9_end_to_end_empty_deck_does_not_open_the_visual_gate(tmp_path):
+    """D9 through the CLI, which is where the defect was reproduced: before the
+    fix this package reported `visual_gate_ready: True` for a deck holding no
+    slides, because LibreOffice emits one blank page and `ran` only counted
+    images. The unit cases above fail on the old code for want of `finalize`;
+    this one fails on the old behaviour."""
+    from pptx import Presentation
+    pkg = tmp_path / "package"
+    shutil.copytree(REF / "package", pkg)
+    Presentation().save(str(next(pkg.glob("*.pptx"))))          # a deck with no slides
+    m = json.loads((pkg / "lesson_manifest.json").read_text(encoding="utf-8"))
+    m["slides"] = []
+    (pkg / "lesson_manifest.json").write_text(json.dumps(m), encoding="utf-8")
+    r = subprocess.run([sys.executable, str(SCRIPTS / "qa_visual.py"), str(pkg)], capture_output=True, text=True)
+    rep = json.loads((pkg / "qa_visual" / "report.json").read_text())
+    assert rep["slide_count"] == 0
+    assert rep["visual_gate_ready"] is False
+    assert r.returncode != 0

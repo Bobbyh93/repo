@@ -205,3 +205,88 @@ def test_http_error_is_reported_not_swallowed(fake):
     payload = cs.build_payload(spec, _released(manifest), REF / "package", fw)
     with pytest.raises(cs.AirtableError):
         cs.apply(payload, fw, "token", False)
+
+
+# --- D7/D8: the payload must not certify an absent artifact -----------------
+# Every case above builds the payload against the real reference package, which
+# is complete on disk. None of them varies the package — so a manifest that
+# lists nothing, or lists a file that is not there, was never exercised.
+
+def test_d7_empty_files_list_is_a_problem_not_a_clean_run(tmp_path):
+    """D7: the attachment loop iterates manifest files[]. Empty, it produced
+    zero attachments, zero problems and exit 0 — a run that filed nothing
+    reported success, and --apply would have accepted it."""
+    spec, manifest = _load()
+    m = _released(manifest)
+    m["files"] = []
+    p = cs.build_payload(spec, m, REF / "package", cs.load_framework(), drive_url="https://d.example/x")
+    assert p["attachments"] == []
+    assert any("files[] is empty" in x for x in p["problems"])
+
+
+def test_d8_file_missing_from_disk_is_a_problem(tmp_path):
+    """D8: nothing in compliance_sync ever asked whether the artifact existed.
+    An Attachments record naming a path that is not there reads, in the BRN
+    Evidence Registry, as evidence on file."""
+    spec, manifest = _load()
+    pkg = tmp_path / "package"
+    shutil.copytree(REF / "package", pkg)
+    m = _released(manifest)
+    victim = m["files"][0]
+    (pkg / victim).unlink()
+    p = cs.build_payload(spec, m, pkg, cs.load_framework(), drive_url="https://d.example/x")
+    assert any(victim in x and "not in" in x for x in p["problems"])
+
+
+def test_d8_missing_file_flag_describes_the_file_not_the_drive_url(tmp_path):
+    """D8: the field is named for whether the artifact is missing and was
+    computed from drive_url alone. With a drive url supplied it read `false`
+    for a file that did not exist — the field's own name convicts it."""
+    spec, manifest = _load()
+    pkg = tmp_path / "package"
+    shutil.copytree(REF / "package", pkg)
+    m = _released(manifest)
+    victim = m["files"][0]
+    (pkg / victim).unlink()
+    p = cs.build_payload(spec, m, pkg, cs.load_framework(), drive_url="https://d.example/x")
+    rec = next(a for a in p["attachments"] if a["match_value"].endswith(victim))
+    assert rec["fields"]["missing_file_flag"] is True
+    assert rec["fields"]["ingest_status"] == "Needs Review"
+    # the inverse: files that are present keep reporting present
+    other = next(a for a in p["attachments"] if not a["match_value"].endswith(victim))
+    assert other["fields"]["missing_file_flag"] is False
+
+
+def test_d8_cli_refuses_apply_when_an_artifact_is_absent(tmp_path):
+    """The control has to reach the boundary: --apply must refuse, so the
+    absent artifact never becomes an Airtable write. No token is set, so a
+    refusal here is the problem check, not a credential failure."""
+    pkg = tmp_path / "package"
+    shutil.copytree(REF / "package", pkg)
+    m = json.loads((pkg / "lesson_manifest.json").read_text(encoding="utf-8"))
+    m["qa"]["release_status"] = "release-ready"
+    victim = m["files"][0]
+    (pkg / victim).unlink()
+    (pkg / "lesson_manifest.json").write_text(json.dumps(m), encoding="utf-8")
+    spec = tmp_path / "lesson_spec.json"
+    shutil.copy(REF / "lesson_spec.json", spec)
+    r = subprocess.run([sys.executable, str(SCRIPTS / "compliance_sync.py"), str(spec),
+                        "--package", str(pkg), "--drive-url", "https://d.example/x", "--apply"],
+                       capture_output=True, text=True)
+    assert r.returncode != 0
+    # Decisive: without the D8 fix this still exits non-zero, but for the
+    # missing token. The refusal must name the absent artifact, and must be
+    # ordered before any credential check so the write is never attempted.
+    assert "refusing --apply: fix the problems above" in r.stderr
+    assert victim in r.stderr and "not in" in r.stderr
+
+
+def test_d7_healthy_package_still_files_cleanly(tmp_path):
+    """The inverse guard: D7/D8 must not block a package that is actually
+    complete. The reference package is, and must stay at zero problems."""
+    spec, manifest = _load()
+    p = cs.build_payload(spec, _released(manifest), REF / "package", cs.load_framework(),
+                         drive_url="https://d.example/x")
+    assert p["problems"] == []
+    assert len(p["attachments"]) == len(manifest["files"])
+    assert all(a["fields"]["missing_file_flag"] is False for a in p["attachments"])

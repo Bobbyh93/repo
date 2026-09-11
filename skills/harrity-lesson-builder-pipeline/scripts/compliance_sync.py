@@ -99,9 +99,22 @@ def build_payload(spec: Dict[str, Any], manifest: Dict[str, Any], package_dir: P
     routing = ", ".join(t["evidence_id"] for t in targets)
     today = date.today().isoformat()
 
+    listed_files = manifest.get("files") or []
+    if not listed_files:
+        # The loop below is the whole of the work. An empty files[] made it
+        # vacuous: a run that filed nothing reported a clean dry run.
+        problems.append("manifest files[] is empty; there is no artifact to file as evidence")
+
     attachments = []
-    for f in manifest.get("files") or []:
+    for f in listed_files:
         p = package_dir / f
+        on_disk = p.is_file()
+        if not on_disk:
+            # An Attachments record names an artifact in the accreditation
+            # record. Filing one for a path that does not exist is worse than
+            # filing nothing, because it reads as evidence on file.
+            problems.append(f"manifest files[] lists '{f}' but it is not in {package_dir}; "
+                            f"regenerate the package before filing it as evidence")
         note = "\n".join([
             f"lesson_package: {pkg_id}",
             f"lesson_title: {L.get('lesson_title', '')}",
@@ -125,8 +138,11 @@ def build_payload(spec: Dict[str, Any], manifest: Dict[str, Any], package_dir: P
                 "source_url": drive_url,
                 "file": f"{pkg_id}/{f}",
                 "notes": note,
-                "ingest_status": ("Linked" if drive_url else "Needs Review"),
-                "missing_file_flag": not bool(drive_url),
+                "ingest_status": ("Linked" if (drive_url and on_disk) else "Needs Review"),
+                # The field is named for whether the artifact is missing, so it
+                # must consult the artifact. It was computed from drive_url
+                # alone, and read `false` for a file that was not on disk.
+                "missing_file_flag": (not on_disk) or (not bool(drive_url)),
             },
         })
 

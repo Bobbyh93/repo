@@ -17,11 +17,11 @@ This audit covers what that section deferred.
 
 | | |
 |---|---|
-| **Subject** | `validate_and_gate.py`, `validate_unified_package.py`, `record_gate.py`, `verify_sources.py` |
+| **Subject** | `validate_and_gate.py`, `validate_unified_package.py`, `record_gate.py`, `verify_sources.py`, `compliance_sync.py`, `qa_visual.py`, `export_lms.py` |
 | **Claim under test** | "No check may report PASS because its input was absent" |
 | **Downstream of a PASS** | `release-ready` in the manifest → faculty sign-off → `compliance_sync` writes an Attachment to the BRN Evidence Registry |
 | **Suite at start** | 33 passed, 0 failed |
-| **Suite at end** | 45 passed, 0 failed (12 new cases plus one amended, each shown to fail on the pre-fix code) |
+| **Suite at end** | 54 passed, 0 failed (20 new cases plus one amended; every reproduction case shown to fail on the pre-fix code) |
 
 **Assumption logged:** that `qa.gates_passed` is intended to be load-bearing
 rather than advisory. The field is written by `record_gate.py gate-pass`, is
@@ -94,13 +94,56 @@ that D1 makes explicit rather than optional:
   partial chapter now read `cannot verify` rather than `flag`, and must not be
   treated as content findings.
 
+## Second pass — the filing path (D7–D9)
+
+The first pass scoped itself to the gate and left out `compliance_sync.py` on
+the grounds that the 2026-09-07 review had covered it. That review covered its
+*credential and API* behaviour. Nobody had asked whether its checks could pass
+on an absent input — and it is the script that writes the accreditation record,
+so it is the last place that omission should have stood.
+
+| ID | Sev | Defect | Failure mode in production | Control |
+|---|---|---|---|---|
+| **D7** | Critical | The attachment loop iterates `manifest["files"]`, and nothing asserted it was non-empty. | A run that filed **nothing** reported a clean dry run and exit 0, and `--apply` would have accepted it, because the refusal is gated on `problems` being empty. The operator sees a successful filing and a BRN Evidence Registry that gained no evidence. Reproduced: <br>`"attachment_records": 0,`<br>`"problems": [],`<br>`exit: 0` | An empty `files[]` is a problem: "there is no artifact to file as evidence". `--apply` refuses. |
+| **D8** | Critical | `compliance_sync.py` contained no `exists()` call anywhere. `p = package_dir / f` was used only for `p.suffix`, and `missing_file_flag` was computed from whether a `--drive-url` was supplied. | An Attachments record naming a path that is not on disk reads, in the accreditation record, as evidence on file. The field's own name convicts it — with the reference deck deleted and a drive URL supplied: <br>`"file": "…/20260906_NHP_Family_Dynamics_Part_1.pptx",`<br>`"ingest_status": "Linked",`<br>`"missing_file_flag": false` <br>The one field named for whether the artifact is missing was the one field that never looked. | Each listed file is checked on disk. A file that is not there is a problem naming it, so `--apply` refuses before any Airtable write. `missing_file_flag` is now `(not on_disk) or (not drive_url)`, and `ingest_status` requires both. |
+| **D9** | High | `visual_gate_ready` was `bool(render.ran)`, and `ran` meant only that the rasteriser produced **at least one** image. Thumbnails were never counted against slides. | This is the partial-read shape (D6's sibling) on the flag that matters most after D1: `visual_gate_ready` is what tells the operator the one remaining gate can be recorded, and recording it is now the last thing between a package and `release-ready`. One thumbnail from a twenty-slide deck read as ready. Reproduced end to end on a deck with **no slides** — LibreOffice emits one blank page — which reported `visual_gate_ready: True`. | `thumbnails_cover_deck` requires a non-zero slide count and one thumbnail per slide; `visual_gate_ready` requires both that and `ran`. A short render records why. The verdict logic moved into `finalize()` so it can be tested without a rasteriser. |
+
+### `export_lms` and `qa_visual`'s structural checks: probed, nothing found
+
+Both were scanned and then read at every verdict-bearing site. Two shapes looked
+like leads and are not:
+
+- `validate_cartridge` compares `len(qitems) != expected_items` whenever a quiz
+  resource exists, so a zero-item QTI against ten expected items is caught. The
+  `expected_items is not None` guard closed on 2026-09-07 is the only thing that
+  could have made it vacuous.
+- `qa_visual`'s `slide_count_matches_manifest` compares unconditionally, unlike
+  `validate_unified_package` before D2 — an empty manifest against a full deck
+  fails correctly. Its one vacuous case, zero slides against zero slides, is
+  caught by `structural_pass`, which now also fails because the D2 fix makes the
+  package validator exit 1 on a slide-less manifest. That is D2's control
+  reaching a second consumer, which is what a boundary fix is supposed to do.
+
+The remaining scanner hits in both files are `.get()` calls on presentation
+content — a slide's optional `activity_prompt` or `learning_objective`. They
+feed rendering, not verdicts, and an absent one means the slide genuinely has no
+such field.
+
 ## Not fixed, and why
 
-- **`export_lms.validate_cartridge` and `qa_visual`** were audited and no new
-  silent-pass defect was found beyond the three closed on 2026-09-07 (items 6–11
-  in the previous register). `validate_cartridge` fails closed on a missing
-  manifest and on unknown resource references; `qa_visual` reports `ran: false`
-  for every stage it could not run.
 - **The renderer** (`generate_lesson_package.py`) produces the artifact rather
   than certifying it. A renderer bug shows up as a visibly wrong slide, which is
   the loud failure mode, not the silent one.
+- **`spec_adapter.py`** was not audited. It translates between schemas and makes
+  no pass/fail claim, so it has no verdict to be vacuously true. Its pass-through
+  keys are already reported as `minor` defects by the gate.
+
+## Honest note on the D9 regression cases
+
+Three of the four D9 cases exercise `finalize()` directly and fail on the
+pre-fix code with `AttributeError`, because that function did not exist — a
+structural failure, not proof of the behaviour. The fourth
+(`test_d9_end_to_end_empty_deck_does_not_open_the_visual_gate`) runs the CLI on
+a slide-less package and fails on the old code with `assert True is False`
+against `visual_gate_ready`. That one is the decisive case; the other three
+guard the logic once the boundary exists.

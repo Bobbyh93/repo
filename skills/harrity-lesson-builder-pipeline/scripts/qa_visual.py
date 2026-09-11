@@ -203,6 +203,35 @@ def main(argv: List[str]) -> int:
     ap.add_argument("--dpi", type=int, default=50)
     ap.add_argument("--canvas-course-id")
     a = ap.parse_args(argv)
+    return _run(a)
+
+
+def finalize(report: Dict[str, Any]) -> Dict[str, Any]:
+    """Compute the report's verdicts from what the stages actually produced.
+
+    Separated from `main` so the verdict can be tested against a report dict
+    without a working rasteriser — the axis the suite could not vary before.
+    """
+    # D9: `render.ran` only says the rasteriser produced at least one image. A
+    # reviewer cannot record `visual_qa` off a thumbnail set that does not cover
+    # the deck, and a deck with no slides is not a rendered deck at any count.
+    r = report.get("render") or {}
+    thumbs = len(r.get("thumbnails") or [])
+    slides = report.get("slide_count") or 0
+    report["thumbnails_cover_deck"] = bool(slides) and thumbs == slides
+    report["visual_gate_ready"] = bool(r.get("ran")) and report["thumbnails_cover_deck"]
+    if r.get("ran") and not report["thumbnails_cover_deck"]:
+        r["reason"] = (f"rendered {thumbs} image(s) for a {slides}-slide deck; "
+                       f"the visual gate needs one per slide")
+    report["structural_pass"] = bool(report.get("validate_unified_package", {}).get("exit") == 0
+                                     and report.get("cartridge", {}).get("pass")
+                                     and report.get("slide_count_matches_manifest"))
+    ci = report.get("canvas_import") or {}
+    report["canvas_pass"] = (not ci.get("ran")) or bool(ci.get("pass"))
+    return report
+
+
+def _run(a) -> int:
     out = a.package / "qa_visual"
     out.mkdir(parents=True, exist_ok=True)
     report: Dict[str, Any] = {"package": str(a.package)}
@@ -212,12 +241,7 @@ def main(argv: List[str]) -> int:
         canvas_import(a.package, a.canvas_course_id, report)
     else:
         report["canvas_import"] = {"ran": False, "reason": "no --canvas-course-id given"}
-    report["visual_gate_ready"] = bool(report.get("render", {}).get("ran"))
-    report["structural_pass"] = (report.get("validate_unified_package", {}).get("exit") == 0
-                                 and report.get("cartridge", {}).get("pass")
-                                 and report.get("slide_count_matches_manifest"))
-    ci = report.get("canvas_import") or {}
-    report["canvas_pass"] = (not ci.get("ran")) or bool(ci.get("pass"))
+    finalize(report)
     (out / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps({k: report[k] for k in ("release_status", "slide_count", "structural_pass", "visual_gate_ready",
                                              "possible_text_overflow", "render", "canvas_import")}, indent=2))
