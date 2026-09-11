@@ -1,0 +1,21 @@
+slide_id,learning_objective,course_objective_id,program_outcome_ids,standards_refs,cjm_functions,assessment_item_ids,evidence_status
+S01,Orient to the lesson's promise.,,,,,,instructor-added
+S02,Enter the lesson through a patient whose only early cue is a change in mentation.,CO1,,,recognize cues,,source-aligned
+S03,State the organizing clinical question.,,,,recognize cues;analyze cues,,instructor-added
+S04,Locate any sepsis cue on the map before acting on it.,,,,,,instructor-added
+S05,Sequence the nurse's actions before seeing the answer.,,,,analyze cues,,instructor-added
+S06,Explain why a perfusion failure shows up in several systems at once.,CO1,,,analyze cues,,source-aligned
+S07,"Name the cue families that, with possible infection, require urgent assessment.",CO1,,,recognize cues,Q01;Q06,source-aligned
+S08,Match each observed cue to the system whose perfusion it reports on.,CO1,,,recognize cues;analyze cues,,source-aligned
+S09,Explain how each match raises or lowers urgency.,CO1,,,analyze cues,,source-aligned
+S10,Justify using the trend rather than one reading.,CO1,,,analyze cues,Q02,source-aligned
+S11,Reject the assumption that a normal temperature excludes sepsis.,CO1,,,analyze cues,Q03,source-aligned
+S12,State the rule that converts a cue into an escalation.,CO2,,,prioritize hypotheses,,source-aligned
+S13,List the four components of escalation named by the module.,CO2,,,generate solutions;take action,Q07,source-aligned
+S14,Reject the sequential reading in which one step waits for another.,CO2,,,take action,Q04,source-aligned
+S15,Compose an escalation message carrying trend and suspected source.,CO2,,,take action,,instructor-added
+S16,Sort findings by whether they require immediate escalation.,CO2,,,prioritize hypotheses,,source-aligned
+S17,Choose the response when the first intervention has not worked.,CO3,,,evaluate outcomes;take action,,source-aligned
+S18,Select the priority response to persistent hypotension after intervention.,CO3,,,take action;evaluate outcomes,Q05,source-aligned
+S19,Retrieve one point per lane without notes.,CO3,,,evaluate outcomes,Q08,source-aligned
+S20,Carry one frame to the bedside.,,,,,,instructor-added

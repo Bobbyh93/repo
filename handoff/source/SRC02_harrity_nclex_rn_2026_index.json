@@ -1,0 +1,137 @@
+{
+  "source_id": "SRC02",
+  "title": "Harrity NCLEX-RN 2026 exemplar topics, pa-sepsis-recognition",
+  "series": "Harrity NCLEX-RN 2026 framework",
+  "authors": "R. Harrity",
+  "publisher": "self (Bobbyh93/Codex_Repo_2026)",
+  "year": 2026,
+  "kind": "authored",
+  "license": "author's own work; no third-party license applies to the text used here",
+  "license_verified": {
+    "date": "2026-09-11",
+    "method": "authorship",
+    "evidence": [
+      "shared/nclex-rn-2026.ts is committed in the author's own repository Bobbyh93/Codex_Repo_2026 and carries no third-party license header.",
+      "governance.administrative_metadata.content_owner for every lesson in this pipeline is R. Harrity."
+    ],
+    "note": "No external fetch was required or performed. This is not a claim about any upstream work the module cites."
+  },
+  "canonical_urls": {
+    "module": "https://github.com/Bobbyh93/Codex_Repo_2026/blob/main/shared/nclex-rn-2026.ts",
+    "topic_id": "pa-sepsis-recognition"
+  },
+  "attribution_statement": "Built from the author's own NCLEX-RN 2026 curriculum module (R. Harrity), exemplar topic pa-sepsis-recognition.",
+  "coverage_status": "confirmed",
+  "gaps": [
+    "The module states cues qualitatively (altered mentation, abnormal perfusion, respiratory change, hypotension, reduced urine output) and names no numeric thresholds, no scoring tool, and no bundle timing. The lesson adds none. Any programme-specific criteria or local pathway must be supplied by the author.",
+    "The module's facts[] share a single set of three distractors, identical across all five facts and all implausible (delay to end of shift / document without follow-up / delegate the judgement). Distractors in this lesson are instructor-written; each keyed action and rationale is the module's.",
+    "The module's own sources[] cites OpenStax Medical-Surgical Nursing ('Systemic infection, sepsis, and shock'). That citation was NOT followed and no OpenStax text is reproduced, because this repository excludes OpenStax pending the license contradiction recorded in docs/REVIEW_HANDOFF.md (repo manifest says CC BY 4.0; audit says CC BY-NC-SA plus an AI clause). Resolving that question is independent of this lesson.",
+    "releaseStage on the source topic is 'clinical_review', not 'approved'. The lesson inherits that status: it is built, not signed off."
+  ],
+  "license_register": [
+    {"component": "topic title, concept, summary, objectives", "license": "author's own work", "usable": true},
+    {"component": "lessonSections bodies (recognize change / escalate / evaluate)", "license": "author's own work", "usable": true},
+    {"component": "guidedNotes, focusedReview", "license": "author's own work", "usable": true},
+    {"component": "facts[] cue / action / rationale", "license": "author's own work", "usable": true},
+    {"component": "facts[] shared distractors", "license": "author's own work", "usable": "not used; see gaps"},
+    {"component": "upstream OpenStax citation in sources[]", "license": "disputed (CC BY 4.0 vs CC BY-NC-SA + AI clause)", "usable": false}
+  ],
+  "topic_objectives": [
+    "Recognize clinical deterioration consistent with possible sepsis.",
+    "Prioritize immediate assessment and escalation.",
+    "Evaluate response to time-sensitive interventions."
+  ],
+  "sections": [
+    {
+      "chunk_id": "SRC02.lessonSections.recognize_change",
+      "title": "Recognize change",
+      "anchor": "EXEMPLAR_TOPICS[pa-sepsis-recognition].lessonSections[0]",
+      "facts": [
+        "Possible infection combined with any new organ dysfunction requires urgent assessment.",
+        "The named cue families are altered mentation, abnormal perfusion, respiratory change, hypotension, and reduced urine output.",
+        "The list is explicitly open: other new organ dysfunction also counts."
+      ]
+    },
+    {
+      "chunk_id": "SRC02.lessonSections.escalate",
+      "title": "Escalate",
+      "anchor": "EXEMPLAR_TOPICS[pa-sepsis-recognition].lessonSections[1]",
+      "facts": [
+        "Activate the organisation's sepsis or rapid-response pathway; the pathway itself is local and unnamed in the source.",
+        "Communicate the trend and the suspected source rather than a single value.",
+        "Obtain ordered diagnostics promptly.",
+        "Begin stabilization."
+      ]
+    },
+    {
+      "chunk_id": "SRC02.lessonSections.evaluate",
+      "title": "Evaluate",
+      "anchor": "EXEMPLAR_TOPICS[pa-sepsis-recognition].lessonSections[2]",
+      "facts": [
+        "Trend mental status, perfusion, blood pressure, oxygenation, urine output, laboratory results, and response to treatment.",
+        "Escalate persistent deterioration."
+      ]
+    },
+    {
+      "chunk_id": "SRC02.focusedReview",
+      "title": "Focused review points",
+      "anchor": "EXEMPLAR_TOPICS[pa-sepsis-recognition].focusedReview",
+      "facts": [
+        "Trend changes rather than relying on one value.",
+        "New organ dysfunction raises urgency.",
+        "Escalation and stabilization occur together.",
+        "Reassess response continuously."
+      ]
+    },
+    {
+      "chunk_id": "SRC02.facts.recognition",
+      "title": "Fact: new confusion with hypotension",
+      "anchor": "EXEMPLAR_TOPICS[pa-sepsis-recognition].facts[0]",
+      "facts": [
+        "Cue: a patient with suspected infection develops new confusion and hypotension.",
+        "Action: activate urgent sepsis evaluation and assess airway, breathing, circulation, and perfusion.",
+        "Rationale: possible infection with new organ dysfunction and hypotension requires immediate escalation."
+      ]
+    },
+    {
+      "chunk_id": "SRC02.facts.perfusion",
+      "title": "Fact: falling urine output with rising rates",
+      "anchor": "EXEMPLAR_TOPICS[pa-sepsis-recognition].facts[1]",
+      "facts": [
+        "Cue: urine output falling while heart rate and respiratory rate rise.",
+        "Action: report the deterioration promptly and reassess perfusion and the full vital-sign trend.",
+        "Rationale: the combined trend can signal worsening organ perfusion."
+      ]
+    },
+    {
+      "chunk_id": "SRC02.facts.variable_presentation",
+      "title": "Fact: normal temperature does not exclude sepsis",
+      "anchor": "EXEMPLAR_TOPICS[pa-sepsis-recognition].facts[2]",
+      "facts": [
+        "Cue: the patient has a possible infection but a normal temperature.",
+        "Action: continue evaluating for sepsis using the complete clinical picture and organ-function findings.",
+        "Rationale: a normal temperature does not exclude serious infection or sepsis."
+      ]
+    },
+    {
+      "chunk_id": "SRC02.facts.time_sensitive",
+      "title": "Fact: diagnostics and treatment run in parallel",
+      "anchor": "EXEMPLAR_TOPICS[pa-sepsis-recognition].facts[3]",
+      "facts": [
+        "Cue: ordered cultures and treatment are pending while the patient deteriorates.",
+        "Action: coordinate time-sensitive diagnostics and treatment while continuing stabilization and escalation.",
+        "Rationale: deterioration requires parallel action rather than waiting passively for one step to finish."
+      ]
+    },
+    {
+      "chunk_id": "SRC02.facts.reassessment",
+      "title": "Fact: persistent hypotension after intervention",
+      "anchor": "EXEMPLAR_TOPICS[pa-sepsis-recognition].facts[4]",
+      "facts": [
+        "Cue: blood pressure remains low after initial interventions.",
+        "Action: escalate immediately and continue reassessing perfusion and treatment response.",
+        "Rationale: persistent hypotension indicates ongoing instability and need for higher-level support."
+      ]
+    }
+  ]
+}

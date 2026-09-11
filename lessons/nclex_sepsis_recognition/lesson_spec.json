@@ -1,0 +1,1879 @@
+{
+  "schema_version": "1.2",
+  "runtime_config": {
+    "runtime": {
+      "run_date_yyyymmdd": "20260911",
+      "package_id": "NCLEX-PA-SEPSIS-RECOGNITION-R1",
+      "build_mode": "full_production",
+      "deployment_mode": "hybrid",
+      "rebuild_scope": "full",
+      "output_root": "."
+    },
+    "outputs": {
+      "filename_pattern": "{{runtime.run_date_yyyymmdd}}_{{lesson.course_code}}_{{lesson.chapter_title}}_Part_{{deck.part_number}}.pptx"
+    },
+    "media": {
+      "wpm_target": 140
+    }
+  },
+  "lesson": {
+    "course_code": "NCLEX",
+    "program_level": "prelicensure RN",
+    "audience": "prelicensure nursing students",
+    "unit_title": "Physiological Adaptation",
+    "chapter_id": "pa-sepsis-recognition",
+    "chapter_title": "Sepsis Recognition",
+    "lesson_title": "Early Recognition and Escalation of Sepsis",
+    "concept": "Perfusion and Infection",
+    "exemplars": [
+      "altered mentation",
+      "reduced urine output",
+      "persistent hypotension",
+      "parallel escalation"
+    ],
+    "clinical_domain": "physiological adaptation / reduction of risk potential",
+    "source_family": "Harrity NCLEX-RN 2026 exemplar topics",
+    "source_anchor": "shared/nclex-rn-2026.ts, EXEMPLAR_TOPICS[pa-sepsis-recognition]",
+    "page_range": "n/a (source module)",
+    "organizing_clinical_question": "A patient who might have an infection is changing. Which changes mean the body is failing to perfuse, and what does the nurse do before anything else?",
+    "opening_patient_question": "He was fine this morning. Why does he seem confused now?",
+    "concept_lanes": [
+      "baseline",
+      "cues",
+      "meaning",
+      "escalate",
+      "evaluate"
+    ],
+    "target_duration_minutes": 50,
+    "program_outcomes": [],
+    "course_objectives": [
+      {
+        "id": "CO1",
+        "text": "Recognize clinical deterioration consistent with possible sepsis.",
+        "maps_to": []
+      },
+      {
+        "id": "CO2",
+        "text": "Prioritize immediate assessment and escalation.",
+        "maps_to": []
+      },
+      {
+        "id": "CO3",
+        "text": "Evaluate response to time-sensitive interventions.",
+        "maps_to": []
+      }
+    ],
+    "standards_refs": [
+      {
+        "framework_id": "CA-BRN-ART3",
+        "ref": "BRN-14",
+        "basis": "1426(b): nursing process and clinical judgment integrated explicitly (S08-S09 cue-to-meaning reasoning, full CJM coverage matrix)"
+      },
+      {
+        "framework_id": "CA-BRN-ART3",
+        "ref": "BRN-17",
+        "basis": "1426(f): assessment items and traceability matrix link evaluation to the three course objectives"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "SRC02",
+      "title": "Harrity NCLEX-RN 2026 exemplar topics, pa-sepsis-recognition",
+      "kind": "authored",
+      "license": "author's own work (R. Harrity)",
+      "locator": "Bobbyh93/Codex_Repo_2026 shared/nclex-rn-2026.ts, EXEMPLAR_TOPICS[pa-sepsis-recognition]",
+      "coverage_status": "confirmed",
+      "attribution_statement": "Built from the author's own NCLEX-RN 2026 curriculum module (R. Harrity), exemplar topic pa-sepsis-recognition.",
+      "index_path": "handoff/source/SRC02_harrity_nclex_rn_2026_index.json",
+      "license_exclusions": [
+        "No OpenStax text is reproduced. The module's own sources[] entry cites OpenStax Medical-Surgical Nursing, which this repository excludes pending the license contradiction check recorded in docs/REVIEW_HANDOFF.md."
+      ]
+    }
+  ],
+  "taxonomy": {
+    "glossary": [
+      {
+        "term": "perfusion",
+        "definition": "Delivery of oxygenated blood to tissue; its failure is reported by several organ systems at once.",
+        "source_ref": "SRC02"
+      },
+      {
+        "term": "altered mentation",
+        "definition": "New confusion or reduced responsiveness compared with the patient's earlier state.",
+        "source_ref": "SRC02"
+      },
+      {
+        "term": "new organ dysfunction",
+        "definition": "A perfusion-related change in an organ system that differs from this patient's own baseline.",
+        "source_ref": "SRC02"
+      },
+      {
+        "term": "escalation",
+        "definition": "Activating the organisation's sepsis or rapid-response pathway, communicating trend and suspected source, obtaining ordered diagnostics, and beginning stabilization.",
+        "source_ref": "SRC02"
+      },
+      {
+        "term": "parallel action",
+        "definition": "Coordinating diagnostics, treatment and stabilization together rather than waiting for one step to finish.",
+        "source_ref": "SRC02"
+      }
+    ],
+    "concept_tags": [
+      "perfusion",
+      "infection",
+      "organ dysfunction",
+      "escalation",
+      "trend",
+      "clinical deterioration"
+    ],
+    "outcome_tags": [
+      "recognition of deterioration",
+      "escalation and communication",
+      "reassessment"
+    ],
+    "nclex_client_needs": [
+      "Physiological Adaptation",
+      "Reduction of Risk Potential",
+      "Management of Care"
+    ],
+    "cjm_functions": [
+      "recognize cues",
+      "analyze cues",
+      "prioritize hypotheses",
+      "generate solutions",
+      "take action",
+      "evaluate outcomes"
+    ],
+    "proposed_new_tags": [],
+    "frameworks": [
+      {
+        "framework_id": "NCSBN-CJMM",
+        "title": "NCSBN Clinical Judgment Measurement Model",
+        "text_policy": "identifier-only"
+      },
+      {
+        "framework_id": "CA-BRN-ART3",
+        "title": "California BRN regulations, 16 CCR Article 3",
+        "text_policy": "public-domain"
+      },
+      {
+        "framework_id": "NCLEX-RN-2026",
+        "title": "Harrity NCLEX-RN 2026 framework (shared/nclex-rn-2026.ts)",
+        "text_policy": "author's own"
+      }
+    ]
+  },
+  "governance": {
+    "promotion_state": "human_review",
+    "administrative_metadata": {
+      "lesson_id": "LESSON-NCLEX-PA-SEPSIS-RECOGNITION",
+      "version": "0.1.0",
+      "content_owner": "R. Harrity",
+      "reviewer": "R. Harrity",
+      "created_date": "2026-09-11"
+    }
+  },
+  "slides": [
+    {
+      "slide_id": "S01",
+      "slide_number": 1,
+      "slide_title": "From suspicion to escalation",
+      "slide_archetype": "title",
+      "lesson_section": "open",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "Orient to the lesson's promise.",
+      "on_slide_text": [
+        "Early recognition and escalation of sepsis",
+        "Prelicensure RN · Physiological Adaptation · high safety risk"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "This lesson is about a patient who might have an infection and is beginning to change. By the end you can name the changes that mean the body is failing to perfuse, say what the nurse does first, and describe how to tell whether it worked. This is a high-risk topic: the cost of noticing late is measured in organs.",
+      "tts_text": "",
+      "target_duration_sec": 35,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "title",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S02",
+      "slide_number": 2,
+      "slide_title": "Opening case: the patient who got quiet",
+      "slide_archetype": "opening_case",
+      "lesson_section": "open",
+      "concept_lane": "cues",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Enter the lesson through a patient whose only early cue is a change in mentation.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Case card left, cues centre, task right.",
+      "speaker_script": "Here is your patient. Treated for an infection, stable this morning, and now different. The nurse who walks in says the patient seems confused, and the blood pressure is lower than it has been. Nothing here is dramatic. There is no alarm. Notice what you already want to do with this information, and hold on to it: we will come back to this patient at the end and see whether your first instinct was the safe one.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "opening_case",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "presentation": "Treated for a suspected infection. Stable this morning. The nurse reports that the patient now seems confused, and the blood pressure is below the patient's trend for the shift.",
+            "cues": [
+              "Suspected infection",
+              "New confusion in a previously oriented patient",
+              "Blood pressure below this patient's own trend",
+              "Not yet known: source, urine output, perfusion elsewhere"
+            ],
+            "prompt": "Thirty seconds: is this a call-now change or a watch-and-recheck change?"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cues",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S03",
+      "slide_number": 3,
+      "slide_title": "The question this lesson answers",
+      "slide_archetype": "clinical_question",
+      "lesson_section": "map",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "State the organizing clinical question.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "One question organizes everything that follows. A patient who might have an infection is changing: which changes mean the body is failing to perfuse, and what does the nurse do before anything else? Five lanes carry the answer, from what normal looks like through to whether your action worked.",
+      "tts_text": "",
+      "target_duration_sec": 55,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "clinical_question",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "lane": "baseline",
+            "nodes": [
+              "what perfusion does",
+              "this patient's own trend"
+            ]
+          },
+          {
+            "lane": "cues",
+            "nodes": [
+              "mentation",
+              "perfusion",
+              "breathing",
+              "pressure",
+              "urine output"
+            ]
+          },
+          {
+            "lane": "meaning",
+            "nodes": [
+              "new organ dysfunction",
+              "trend beats single value"
+            ]
+          },
+          {
+            "lane": "escalate",
+            "nodes": [
+              "activate the pathway",
+              "communicate",
+              "stabilize"
+            ]
+          },
+          {
+            "lane": "evaluate",
+            "nodes": [
+              "reassess",
+              "escalate again if needed"
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S04",
+      "slide_number": 4,
+      "slide_title": "Lesson map: normal, changed, meaning, act, check",
+      "slide_archetype": "chapter_map",
+      "lesson_section": "map",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "Locate any sepsis cue on the map before acting on it.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Horizontal route, foundation left to evaluation right.",
+      "speaker_script": "Map first. Normal on the left, the check on the right. Every cue you meet today belongs somewhere on this line, and knowing where it sits tells you what to do with it.",
+      "tts_text": "",
+      "target_duration_sec": 55,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "chapter_map",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "lane": "baseline",
+            "nodes": [
+              "perfusion delivers oxygen",
+              "the patient's own baseline"
+            ]
+          },
+          {
+            "lane": "cues",
+            "nodes": [
+              "altered mentation",
+              "abnormal perfusion",
+              "respiratory change",
+              "hypotension",
+              "reduced urine output"
+            ]
+          },
+          {
+            "lane": "meaning",
+            "nodes": [
+              "possible infection + new organ dysfunction",
+              "urgency rises"
+            ]
+          },
+          {
+            "lane": "escalate",
+            "nodes": [
+              "sepsis or rapid-response pathway",
+              "trend and suspected source",
+              "diagnostics",
+              "stabilization"
+            ]
+          },
+          {
+            "lane": "evaluate",
+            "nodes": [
+              "trend the same findings",
+              "persistent deterioration escalates again"
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S05",
+      "slide_number": 5,
+      "slide_title": "Warm-up: what has to happen first?",
+      "slide_archetype": "warmup_sequence",
+      "lesson_section": "activate",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Sequence the nurse's actions before seeing the answer.",
+      "on_slide_text": [
+        "Reassess and trend the response",
+        "Notice a change in a patient who might have an infection",
+        "Activate the pathway and begin stabilization",
+        "Ask whether the change indicates organ dysfunction"
+      ],
+      "activity_prompt": "Place the four actions in order.",
+      "answer_key": [
+        "notice the change",
+        "ask whether it indicates organ dysfunction",
+        "activate the pathway and begin stabilization",
+        "reassess and trend the response"
+      ],
+      "visual_notes": "",
+      "speaker_script": "One minute. Put these four in the order the nurse actually performs them. Do not overthink it, and do not look ahead. Compare with a neighbour before the reveal. The order matters more than the words.",
+      "tts_text": "",
+      "target_duration_sec": 70,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "warmup_sequence",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S06",
+      "slide_number": 6,
+      "slide_title": "Baseline: what perfusion is for",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: baseline",
+      "concept_lane": "baseline",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Explain why a perfusion failure shows up in several systems at once.",
+      "on_slide_text": [
+        "Perfusion delivers oxygen to tissue",
+        "Organs announce failure in their own language",
+        "Compare against this patient's own trend, not a textbook number"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Four organ cards, one cue each.",
+      "speaker_script": "Before cues make sense, hold on to why they cluster. Perfusion is the delivery of oxygen to tissue. When delivery falls, every organ that depends on it starts to complain, and each one complains in its own language: the brain becomes confused, the kidney makes less urine, the lungs work harder. That is why sepsis is recognised as a pattern across systems rather than as one abnormal number. And the comparison that matters is with this patient's own earlier readings, not with a population normal.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Brain",
+            "body": "Altered mentation: new confusion, less responsive than earlier.",
+            "cjm": "recognize cues"
+          },
+          {
+            "heading": "Kidney",
+            "body": "Reduced urine output.",
+            "cjm": "recognize cues"
+          },
+          {
+            "heading": "Lungs",
+            "body": "Respiratory change.",
+            "cjm": "recognize cues"
+          },
+          {
+            "heading": "Circulation",
+            "body": "Abnormal perfusion; hypotension.",
+            "cjm": "recognize cues"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "baseline",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S07",
+      "slide_number": 7,
+      "slide_title": "Cues: the five the module names",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: cues",
+      "concept_lane": "cues",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Name the cue families that, with possible infection, require urgent assessment.",
+      "on_slide_text": [
+        "Possible infection PLUS any new organ dysfunction",
+        "Altered mentation · abnormal perfusion · respiratory change",
+        "Hypotension · reduced urine output",
+        "Any other new organ dysfunction counts"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Here is the recognition rule in full. Possible infection, plus altered mentation, abnormal perfusion, respiratory change, hypotension, reduced urine output, or other new organ dysfunction, requires urgent assessment. Read the word 'or' carefully. You are not waiting to collect the set. One new organ dysfunction in a patient who might be infected is the trigger.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Altered mentation",
+            "body": "New confusion or reduced responsiveness."
+          },
+          {
+            "heading": "Abnormal perfusion",
+            "body": "Skin and circulatory findings that differ from this patient's earlier state."
+          },
+          {
+            "heading": "Respiratory change",
+            "body": "A new change in the work or rate of breathing."
+          },
+          {
+            "heading": "Hypotension",
+            "body": "Blood pressure below this patient's trend."
+          },
+          {
+            "heading": "Reduced urine output",
+            "body": "Less urine than earlier in the shift."
+          },
+          {
+            "heading": "Other new organ dysfunction",
+            "body": "The list is not a closed set."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cues",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S08",
+      "slide_number": 8,
+      "slide_title": "Activity: match the cue to the organ it speaks for",
+      "slide_archetype": "match_activity",
+      "lesson_section": "practice",
+      "concept_lane": "meaning",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "recognize cues",
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Match each observed cue to the system whose perfusion it reports on.",
+      "on_slide_text": [],
+      "activity_prompt": "Write A-? B-? C-? D-? and one sentence saying what the match tells you about perfusion.",
+      "answer_key": [
+        "A-2 new confusion reports on cerebral perfusion",
+        "B-3 falling urine output reports on renal perfusion",
+        "C-1 rising respiratory rate reports on the lungs and on compensation",
+        "D-4 hypotension reports on circulatory failure to maintain pressure"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Work with one partner. Match each cue on the left to the system it reports on. This is not trivia: naming the system is what turns a number into a statement about perfusion, and that is the step that makes you escalate.",
+      "tts_text": "",
+      "target_duration_sec": 170,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "match_activity",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "left": [
+              "A. New confusion in a previously oriented patient",
+              "B. Urine output falling across the shift",
+              "C. Respiratory rate rising",
+              "D. Blood pressure below the patient's trend"
+            ],
+            "right": [
+              "1. Lungs and compensation",
+              "2. Brain",
+              "3. Kidney",
+              "4. Circulation"
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "meaning",
+        "cjm_function": "recognize cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S09",
+      "slide_number": 9,
+      "slide_title": "Debrief: why naming the system changes what you do",
+      "slide_archetype": "debrief",
+      "lesson_section": "practice",
+      "concept_lane": "meaning",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Explain how each match raises or lowers urgency.",
+      "on_slide_text": [],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Here is the reasoning behind each match. Notice that in every row the cue is only meaningful because it is new. A patient with long-standing renal impairment and a low urine output is telling you something different from the patient whose output fell this afternoon. New is the word that carries the urgency.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "debrief",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "A to 2 · brain",
+            "body": "New confusion in possible infection is organ dysfunction, not just an anxious patient.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "B to 3 · kidney",
+            "body": "Falling output suggests the kidney is not being perfused.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "C to 1 · lungs",
+            "body": "A rising rate is often the earliest visible compensation.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "D to 4 · circulation",
+            "body": "Hypotension means compensation is no longer keeping up.",
+            "cjm": "analyze cues"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "meaning",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S10",
+      "slide_number": 10,
+      "slide_title": "Trend beats any single value",
+      "slide_archetype": "timeline",
+      "lesson_section": "lane: meaning",
+      "concept_lane": "meaning",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Justify using the trend rather than one reading.",
+      "on_slide_text": [
+        "One value is a snapshot; the trend is the story",
+        "Combined movement in several systems raises urgency",
+        "A value inside the normal range can still be a change"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Left-to-right progression, urgency rising.",
+      "speaker_script": "This is the discipline the module keeps returning to: trend changes rather than relying on one value. A single reading tells you where the patient is. Two readings tell you where the patient is going, and direction is what decides urgency. Two findings moving together, such as urine output falling while heart rate and respiratory rate rise, are a stronger signal than any one of them alone.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "timeline",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "label": "single value",
+            "event": "a snapshot; may sit inside the normal range"
+          },
+          {
+            "label": "two values",
+            "event": "direction becomes visible"
+          },
+          {
+            "label": "several systems",
+            "event": "combined movement suggests worsening perfusion"
+          },
+          {
+            "label": "urgency",
+            "event": "direction, not the number, decides"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "meaning",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S11",
+      "slide_number": 11,
+      "slide_title": "Checkpoint: the patient with a normal temperature",
+      "slide_archetype": "checkpoint_mcq",
+      "lesson_section": "practice",
+      "concept_lane": "cues",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "analyze cues"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Reject the assumption that a normal temperature excludes sepsis.",
+      "on_slide_text": [],
+      "activity_prompt": "Choose the best response.",
+      "answer_key": [
+        "C. Continue evaluating for sepsis using the complete clinical picture and organ-function findings."
+      ],
+      "visual_notes": "",
+      "speaker_script": "One question, and it targets the most common misconception in this topic. Read the options and commit before the reveal.",
+      "tts_text": "",
+      "target_duration_sec": 120,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "checkpoint_mcq",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "stem": "A patient has a possible infection but a temperature within the normal range. What is the best nursing response?",
+            "options": [
+              "A. Document the normal temperature and recheck at the next scheduled vitals.",
+              "B. Rule out sepsis, since fever is required for the diagnosis.",
+              "C. Continue evaluating for sepsis using the complete clinical picture and organ-function findings.",
+              "D. Wait for the culture result before assessing further."
+            ],
+            "correct": "C",
+            "rationale": "A normal temperature does not exclude serious infection or sepsis. The evaluation rests on the whole picture and on organ-function findings, not on one vital sign."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cues",
+        "cjm_function": "analyze cues",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO1",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S12",
+      "slide_number": 12,
+      "slide_title": "Meaning: new organ dysfunction raises urgency",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: meaning",
+      "concept_lane": "meaning",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "prioritize hypotheses"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "State the rule that converts a cue into an escalation.",
+      "on_slide_text": [
+        "Possible infection + new organ dysfunction = urgent",
+        "The dysfunction does not have to be severe, only new",
+        "Absence of fever does not lower the urgency"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "The conversion rule is short. Possible infection plus new organ dysfunction requires urgent assessment. Two words carry the weight. 'New' rules out the chronic finding you already knew about. 'Organ dysfunction' rules in the brain, the kidney, the lungs and the circulation, whichever of them is speaking. Nothing in that rule mentions temperature.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "New",
+            "body": "Different from this patient's own earlier state.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Organ dysfunction",
+            "body": "Any system reporting a perfusion failure.",
+            "cjm": "analyze cues"
+          },
+          {
+            "heading": "Together",
+            "body": "With possible infection, the two together mean urgent assessment now.",
+            "cjm": "prioritize hypotheses"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "meaning",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S13",
+      "slide_number": 13,
+      "slide_title": "Escalate: what the nurse actually does",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: escalate",
+      "concept_lane": "escalate",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "generate solutions",
+        "take action"
+      ],
+      "nursing_action_category": "escalate",
+      "learning_objective": "List the four components of escalation named by the module.",
+      "on_slide_text": [
+        "Activate the organisation's sepsis or rapid-response pathway",
+        "Communicate the trend and the suspected source",
+        "Obtain ordered diagnostics promptly",
+        "Begin stabilization"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "Four cards, equal weight, no arrows: these are concurrent.",
+      "speaker_script": "Escalation is four things, and the module lists them as one movement rather than a sequence. Activate your organisation's sepsis or rapid-response pathway. Communicate the trend and the suspected source, not just the latest number. Obtain the ordered diagnostics promptly. And begin stabilization. Notice that the pathway is your organisation's: this lesson does not tell you which one, because that is local.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Activate",
+            "body": "The organisation's sepsis or rapid-response pathway."
+          },
+          {
+            "heading": "Communicate",
+            "body": "The trend and the suspected source."
+          },
+          {
+            "heading": "Obtain",
+            "body": "Ordered diagnostics, promptly."
+          },
+          {
+            "heading": "Begin",
+            "body": "Stabilization."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "escalate",
+        "cjm_function": "generate solutions",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S14",
+      "slide_number": 14,
+      "slide_title": "Escalation and stabilization happen together",
+      "slide_archetype": "timeline",
+      "lesson_section": "lane: escalate",
+      "concept_lane": "escalate",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "take action"
+      ],
+      "nursing_action_category": "escalate",
+      "learning_objective": "Reject the sequential reading in which one step waits for another.",
+      "on_slide_text": [
+        "Deterioration requires parallel action",
+        "Do not wait passively for one step to finish",
+        "Diagnostics and treatment are coordinated, not queued"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "This is the slide that most often changes practice. When cultures and treatment are pending and the patient is deteriorating, the nurse coordinates time-sensitive diagnostics and treatment while continuing stabilization and escalation. Deterioration requires parallel action rather than waiting passively for one step to finish. The sequential habit -- order it, wait for it, then act -- is the one to unlearn here.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "timeline",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "label": "recognise",
+            "event": "possible infection plus new organ dysfunction"
+          },
+          {
+            "label": "activate + communicate",
+            "event": "pathway and trend, together"
+          },
+          {
+            "label": "diagnostics + stabilization",
+            "event": "coordinated, not queued"
+          },
+          {
+            "label": "reassess",
+            "event": "continuous, not at the next scheduled check"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "escalate",
+        "cjm_function": "take action",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S15",
+      "slide_number": 15,
+      "slide_title": "What you hand over when you escalate",
+      "slide_archetype": "concept_cards",
+      "lesson_section": "lane: escalate",
+      "concept_lane": "escalate",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [
+        "take action"
+      ],
+      "nursing_action_category": "communicate",
+      "learning_objective": "Compose an escalation message carrying trend and suspected source.",
+      "on_slide_text": [
+        "The trend, not only the latest value",
+        "The suspected source of infection",
+        "Which organ systems are involved",
+        "What you have already begun"
+      ],
+      "activity_prompt": "Say it aloud in two sentences: trend, then suspected source.",
+      "answer_key": [
+        "Sentence one names what has changed and in which direction, across which systems.",
+        "Sentence two names the suspected source and what has already been started."
+      ],
+      "visual_notes": "Four cards; the first two are the module's, the last two are instructor additions.",
+      "speaker_script": "When you make the call, the content matters. The module asks for the trend and the suspected source. That means the receiving clinician hears where the patient is going and why you think there is an infection, rather than a single number out of context. Add which systems are involved and what you have already started, so no one repeats your work.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "concept_cards",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "heading": "Trend",
+            "body": "What has changed, in which direction, over what period."
+          },
+          {
+            "heading": "Suspected source",
+            "body": "Why infection is suspected."
+          },
+          {
+            "heading": "Systems",
+            "body": "Which organs are reporting dysfunction."
+          },
+          {
+            "heading": "Already begun",
+            "body": "Diagnostics obtained, stabilization started."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "escalate",
+        "cjm_function": "take action",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S16",
+      "slide_number": 16,
+      "slide_title": "Sort by urgency: which of these calls now?",
+      "slide_archetype": "urgency_sort",
+      "lesson_section": "signal",
+      "concept_lane": "meaning",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "prioritize hypotheses"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Sort findings by whether they require immediate escalation.",
+      "on_slide_text": [],
+      "activity_prompt": "Place each finding in a column and justify one of them.",
+      "answer_key": [
+        "Escalate now: new confusion with possible infection; hypotension below the patient's trend; falling urine output with rising heart and respiratory rate",
+        "Assess and keep trending: a single reading at the edge of normal with no change from baseline; a long-standing finding that has not changed"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Drag these mentally into two columns. The left column is escalate now. The right is assess and keep trending. The test for the left column is the rule from slide twelve: possible infection plus something new.",
+      "tts_text": "",
+      "target_duration_sec": 165,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "urgency_sort",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "categories": [
+              {
+                "title": "Escalate now",
+                "items": [
+                  "New confusion in possible infection",
+                  "Hypotension below this patient's trend",
+                  "Urine output falling while heart and respiratory rates rise"
+                ]
+              },
+              {
+                "title": "Assess and keep trending",
+                "items": [
+                  "One value at the edge of normal, unchanged from baseline",
+                  "A chronic finding that has not moved"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "meaning",
+        "cjm_function": "prioritize hypotheses",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO2",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S17",
+      "slide_number": 17,
+      "slide_title": "Mini case: the patient who does not improve",
+      "slide_archetype": "mini_case",
+      "lesson_section": "apply",
+      "concept_lane": "evaluate",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "evaluate outcomes",
+        "take action"
+      ],
+      "nursing_action_category": "escalate",
+      "learning_objective": "Choose the response when the first intervention has not worked.",
+      "on_slide_text": [],
+      "activity_prompt": "Write two sentences: one assessment sentence, one escalation sentence.",
+      "answer_key": [
+        "Assessment names perfusion and the trend since the intervention.",
+        "Escalation states that hypotension persists and requests higher-level support."
+      ],
+      "visual_notes": "",
+      "speaker_script": "Back to a bedside. Initial interventions are done and the blood pressure has not come up. Three columns: what you assess, what you say, and the error to avoid. Write a two-sentence response before the debrief.",
+      "tts_text": "",
+      "target_duration_sec": 165,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "mini_case",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "presentation": "Blood pressure remains low after initial interventions for suspected sepsis.",
+            "cues": [
+              "Assess: perfusion, mentation, urine output, and the full trend since the intervention",
+              "Escalate: report immediately that hypotension persists; keep reassessing response",
+              "Avoid: reading a completed intervention as a resolved problem"
+            ],
+            "prompt": "Write two sentences: one assessment sentence, one escalation sentence."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "evaluate",
+        "cjm_function": "evaluate outcomes",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S18",
+      "slide_number": 18,
+      "slide_title": "Capstone: choose the next safe action",
+      "slide_archetype": "capstone_mcq",
+      "lesson_section": "apply",
+      "concept_lane": "evaluate",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "take action",
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Select the priority response to persistent hypotension after intervention.",
+      "on_slide_text": [],
+      "activity_prompt": "Choose the priority action.",
+      "answer_key": [
+        "B. Escalate immediately and continue reassessing perfusion and treatment response."
+      ],
+      "visual_notes": "",
+      "speaker_script": "One question. It is the same patient from the mini case, and the options are all things a nurse might plausibly do.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "capstone_mcq",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "scenario": "Blood pressure remains low after initial interventions. The patient is more difficult to rouse than an hour ago.",
+            "stem": "What is the priority nursing action?",
+            "options": [
+              "A. Recheck the blood pressure in thirty minutes to confirm the trend before calling.",
+              "B. Escalate immediately and continue reassessing perfusion and treatment response.",
+              "C. Document that interventions were completed as ordered and continue the current plan.",
+              "D. Reposition the patient and repeat the reading in the other arm before escalating."
+            ],
+            "correct": "B",
+            "rationale": "Persistent hypotension indicates ongoing instability and the need for higher-level support. A, C and D all delay escalation while the patient continues to deteriorate; the added difficulty rousing the patient is a second organ system reporting."
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "evaluate",
+        "cjm_function": "take action",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S19",
+      "slide_number": 19,
+      "slide_title": "Rapid retrieval: five-item exit check",
+      "slide_archetype": "retrieval_check",
+      "lesson_section": "close",
+      "concept_lane": "cross-lane",
+      "source_refs": [
+        "SRC02"
+      ],
+      "evidence_status": "source-aligned",
+      "cjm_functions": [
+        "evaluate outcomes"
+      ],
+      "nursing_action_category": "",
+      "learning_objective": "Retrieve one point per lane without notes.",
+      "on_slide_text": [
+        "Name three of the cue families that pair with possible infection",
+        "Which single word makes a finding count as organ dysfunction?",
+        "Does a normal temperature reduce your concern? Why not?",
+        "Name the four components of escalation",
+        "What does persistent hypotension after intervention tell you?"
+      ],
+      "activity_prompt": "Answer all five.",
+      "answer_key": [
+        "any three of: altered mentation, abnormal perfusion, respiratory change, hypotension, reduced urine output, other new organ dysfunction",
+        "'new' -- different from this patient's own earlier state",
+        "no; a normal temperature does not exclude serious infection or sepsis",
+        "activate the pathway, communicate trend and suspected source, obtain ordered diagnostics, begin stabilization",
+        "ongoing instability and the need for higher-level support; escalate and keep reassessing"
+      ],
+      "visual_notes": "",
+      "speaker_script": "Five questions, one per lane, answered aloud or on paper. If a lane produces silence, that is the lane to remediate before this cohort meets a real one.",
+      "tts_text": "",
+      "target_duration_sec": 150,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "retrieval_check",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": []
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "evaluate outcomes",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "CO3",
+      "standards_refs": []
+    },
+    {
+      "slide_id": "S20",
+      "slide_number": 20,
+      "slide_title": "Takeaway: notice, name, act together, check again",
+      "slide_archetype": "takeaway",
+      "lesson_section": "close",
+      "concept_lane": "cross-lane",
+      "source_refs": [],
+      "evidence_status": "instructor-added",
+      "cjm_functions": [],
+      "nursing_action_category": "",
+      "learning_objective": "Carry one frame to the bedside.",
+      "on_slide_text": [
+        "Notice: any new organ dysfunction in possible infection",
+        "Name: which system, and in which direction",
+        "Act together: escalate and stabilize in parallel",
+        "Check again: reassess, and escalate again if it persists"
+      ],
+      "activity_prompt": "",
+      "answer_key": [],
+      "visual_notes": "",
+      "speaker_script": "Closing frame. The patient from the opening case had one cue and no alarm. That is what this looks like in real life.",
+      "tts_text": "",
+      "target_duration_sec": 45,
+      "audio_duration_sec": null,
+      "auto_advance": false,
+      "layout_spec": {
+        "archetype": "takeaway",
+        "density_budget": {
+          "max_bullets": 6,
+          "max_words_per_bullet": 14
+        },
+        "regions": [
+          "header",
+          "body",
+          "footer"
+        ],
+        "card_data": [
+          {
+            "title": "notice",
+            "body": "possible infection plus anything new"
+          },
+          {
+            "title": "name",
+            "body": "which system is reporting, and which way it is moving"
+          },
+          {
+            "title": "act together",
+            "body": "pathway, communication, diagnostics and stabilization, in parallel"
+          },
+          {
+            "title": "check again",
+            "body": "trend the response; persistent deterioration escalates again"
+          }
+        ]
+      },
+      "allow_overlap": false,
+      "qa_status": "unreviewed",
+      "qa_notes": "",
+      "remediation_target": {
+        "concept_lane": "cross-lane",
+        "cjm_function": "",
+        "misconception": "",
+        "fix_type": ""
+      },
+      "audio_filename": "",
+      "course_objective_id": "",
+      "standards_refs": []
+    }
+  ],
+  "assessment_items": [
+    {
+      "item_id": "Q01",
+      "slide_id": "S07",
+      "item_type": "mcq",
+      "learning_objective": "Recognize clinical deterioration consistent with possible sepsis.",
+      "concept_lane": "cues",
+      "cjm_function": "recognize cues",
+      "stem": "A patient being treated for a suspected infection develops new confusion, and the blood pressure is below the patient's trend for the shift. Which action should the nurse take first?",
+      "options": [
+        "A. Activate urgent sepsis evaluation and assess airway, breathing, circulation, and perfusion.",
+        "B. Reorient the patient and recheck the blood pressure at the next scheduled vitals.",
+        "C. Request a sedation review, since new confusion is most often medication-related.",
+        "D. Obtain a repeat blood pressure in the opposite arm before taking further action."
+      ],
+      "answer": "A",
+      "rationale": "Possible infection with new organ dysfunction and hypotension requires immediate escalation. B and D delay recognition of a time-sensitive change; C attributes a perfusion cue to a cause not supported by the picture.",
+      "remediation_target_slide": "S12",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO1",
+      "source_section": "SRC02.facts.recognition",
+      "origin": "keyed action and rationale from the SRC02 topic's facts[]; distractors instructor-written (the module's shared distractors repeat across all items)"
+    },
+    {
+      "item_id": "Q02",
+      "slide_id": "S10",
+      "item_type": "mcq",
+      "learning_objective": "Recognize clinical deterioration consistent with possible sepsis.",
+      "concept_lane": "meaning",
+      "cjm_function": "analyze cues",
+      "stem": "Over one shift a patient's urine output falls while the heart rate and respiratory rate rise. How should the nurse interpret this combination?",
+      "options": [
+        "A. The findings are unrelated and should be charted separately.",
+        "B. The combined trend can signal worsening organ perfusion and should be reported promptly.",
+        "C. The rising respiratory rate is the only finding that requires action.",
+        "D. The findings are expected after a period of reduced oral intake and require no escalation."
+      ],
+      "answer": "B",
+      "rationale": "The combined trend can signal worsening organ perfusion; the nurse reports the deterioration promptly and reassesses perfusion and the full vital-sign trend. Reading the findings separately, or attributing them to intake, loses the pattern that carries the urgency.",
+      "remediation_target_slide": "S10",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO1",
+      "source_section": "SRC02.facts.perfusion",
+      "origin": "keyed action and rationale from the SRC02 topic's facts[]; distractors instructor-written (the module's shared distractors repeat across all items)"
+    },
+    {
+      "item_id": "Q03",
+      "slide_id": "S11",
+      "item_type": "mcq",
+      "learning_objective": "Recognize clinical deterioration consistent with possible sepsis.",
+      "concept_lane": "cues",
+      "cjm_function": "analyze cues",
+      "stem": "A patient has a possible infection but a temperature within the normal range. What should the nurse do?",
+      "options": [
+        "A. Rule out sepsis, since fever is required for the diagnosis.",
+        "B. Continue evaluating for sepsis using the complete clinical picture and organ-function findings.",
+        "C. Defer further assessment until a fever develops.",
+        "D. Treat the normal temperature as evidence that the infection is resolving."
+      ],
+      "answer": "B",
+      "rationale": "A normal temperature does not exclude serious infection or sepsis. Evaluation continues on the complete clinical picture and the organ-function findings.",
+      "remediation_target_slide": "S12",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO1",
+      "source_section": "SRC02.facts.variable_presentation",
+      "origin": "keyed action and rationale from the SRC02 topic's facts[]; distractors instructor-written (the module's shared distractors repeat across all items)"
+    },
+    {
+      "item_id": "Q04",
+      "slide_id": "S14",
+      "item_type": "mcq",
+      "learning_objective": "Prioritize immediate assessment and escalation.",
+      "concept_lane": "escalate",
+      "cjm_function": "take action",
+      "stem": "Ordered cultures and treatment are pending while a patient with suspected sepsis continues to deteriorate. Which action best reflects safe practice?",
+      "options": [
+        "A. Wait for the culture result before beginning any further intervention.",
+        "B. Complete the diagnostics first, then begin stabilization once results return.",
+        "C. Coordinate time-sensitive diagnostics and treatment while continuing stabilization and escalation.",
+        "D. Hold escalation until the full set of ordered tests has been collected."
+      ],
+      "answer": "C",
+      "rationale": "Deterioration requires parallel action rather than waiting passively for one step to finish. A, B and D all treat the steps as a queue, which delays both diagnosis and treatment in a time-sensitive presentation.",
+      "remediation_target_slide": "S14",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO2",
+      "source_section": "SRC02.facts.time_sensitive",
+      "origin": "keyed action and rationale from the SRC02 topic's facts[]; distractors instructor-written (the module's shared distractors repeat across all items)"
+    },
+    {
+      "item_id": "Q05",
+      "slide_id": "S18",
+      "item_type": "mcq",
+      "learning_objective": "Evaluate response to time-sensitive interventions.",
+      "concept_lane": "evaluate",
+      "cjm_function": "evaluate outcomes",
+      "stem": "Blood pressure remains low after initial interventions for suspected sepsis. What does this finding indicate, and what should the nurse do?",
+      "options": [
+        "A. The interventions need more time; continue the current plan and recheck at the next scheduled vitals.",
+        "B. Persistent hypotension indicates ongoing instability; escalate immediately and continue reassessing perfusion and response.",
+        "C. The reading is likely inaccurate; repeat it before reporting anything.",
+        "D. Document that the ordered interventions were completed and hand over at the end of the shift."
+      ],
+      "answer": "B",
+      "rationale": "Persistent hypotension indicates ongoing instability and the need for higher-level support. The other options all delay escalation while the patient remains under-perfused.",
+      "remediation_target_slide": "S17",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO3",
+      "source_section": "SRC02.facts.reassessment",
+      "origin": "keyed action and rationale from the SRC02 topic's facts[]; distractors instructor-written (the module's shared distractors repeat across all items)"
+    },
+    {
+      "item_id": "Q06",
+      "slide_id": "S07",
+      "item_type": "sata",
+      "learning_objective": "Recognize clinical deterioration consistent with possible sepsis.",
+      "concept_lane": "cues",
+      "cjm_function": "recognize cues",
+      "stem": "A patient is being treated for a possible infection. Which new findings should prompt urgent assessment for sepsis? Select all that apply.",
+      "options": [
+        "A. New confusion in a previously oriented patient",
+        "B. Reduced urine output compared with earlier in the shift",
+        "C. A long-standing finding that has not changed",
+        "D. A new respiratory change",
+        "E. Blood pressure below this patient's own trend"
+      ],
+      "answer": "A, B, D, E",
+      "rationale": "Altered mentation, reduced urine output, respiratory change and hypotension are all named cue families, and each counts when it is new. C fails the test that makes a finding count: it is not new.",
+      "remediation_target_slide": "S07",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO1",
+      "source_section": "SRC02.lessonSections.recognize_change",
+      "origin": "keyed action and rationale from the SRC02 topic's facts[]; distractors instructor-written (the module's shared distractors repeat across all items)"
+    },
+    {
+      "item_id": "Q07",
+      "slide_id": "S13",
+      "item_type": "sata",
+      "learning_objective": "Prioritize immediate assessment and escalation.",
+      "concept_lane": "escalate",
+      "cjm_function": "generate solutions",
+      "stem": "A nurse is escalating a patient with suspected sepsis. Which actions belong to escalation as described in this lesson? Select all that apply.",
+      "options": [
+        "A. Activate the organisation's sepsis or rapid-response pathway",
+        "B. Communicate the trend and the suspected source",
+        "C. Obtain the ordered diagnostics promptly",
+        "D. Begin stabilization",
+        "E. Wait for the rapid-response team before starting anything"
+      ],
+      "answer": "A, B, C, D",
+      "rationale": "The module names activation, communication of trend and suspected source, prompt diagnostics, and beginning stabilization. E contradicts the parallel-action principle.",
+      "remediation_target_slide": "S13",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO2",
+      "source_section": "SRC02.lessonSections.escalate",
+      "origin": "keyed action and rationale from the SRC02 topic's facts[]; distractors instructor-written (the module's shared distractors repeat across all items)"
+    },
+    {
+      "item_id": "Q08",
+      "slide_id": "S19",
+      "item_type": "mcq",
+      "learning_objective": "Evaluate response to time-sensitive interventions.",
+      "concept_lane": "evaluate",
+      "cjm_function": "evaluate outcomes",
+      "stem": "Which set of findings should the nurse trend when evaluating a patient's response to treatment for suspected sepsis?",
+      "options": [
+        "A. Temperature alone, since it reflects the infection most directly.",
+        "B. Mental status, perfusion, blood pressure, oxygenation, urine output, laboratory results, and response to treatment.",
+        "C. Blood pressure alone, since hypotension drove the escalation.",
+        "D. Whatever was abnormal at the time of escalation, and nothing further."
+      ],
+      "answer": "B",
+      "rationale": "Evaluation trends mental status, perfusion, blood pressure, oxygenation, urine output, laboratory results and response to treatment, and escalates persistent deterioration. Narrowing to one value repeats the single-value error the lesson warns against.",
+      "remediation_target_slide": "S19",
+      "evidence_status": "source-aligned",
+      "source_refs": [
+        "SRC02"
+      ],
+      "course_objective_id": "CO3",
+      "source_section": "SRC02.lessonSections.evaluate",
+      "origin": "keyed action and rationale from the SRC02 topic's facts[]; distractors instructor-written (the module's shared distractors repeat across all items)"
+    }
+  ],
+  "remediation_map": [
+    {
+      "miss_pattern": "learner waits for fever before evaluating for sepsis",
+      "failed_operation": "analyze cues",
+      "map_location": "S11",
+      "concept_lane": "cues",
+      "likely_misconception": "fever is required for sepsis",
+      "one_slide_fix": "S11 checkpoint on the normal-temperature patient",
+      "active_learning_task": "state the recognition rule without using the word temperature",
+      "retrieval_item": "Q03",
+      "improvement_evidence": ""
+    },
+    {
+      "miss_pattern": "learner queues diagnostics and treatment instead of running them together",
+      "failed_operation": "take action",
+      "map_location": "S14",
+      "concept_lane": "escalate",
+      "likely_misconception": "each step must complete before the next begins",
+      "one_slide_fix": "S14 parallel-action timeline",
+      "active_learning_task": "re-order the four escalation components as concurrent, not sequential",
+      "retrieval_item": "Q04",
+      "improvement_evidence": ""
+    },
+    {
+      "miss_pattern": "learner reads a completed intervention as a resolved problem",
+      "failed_operation": "evaluate outcomes",
+      "map_location": "S17",
+      "concept_lane": "evaluate",
+      "likely_misconception": "doing the intervention is the endpoint",
+      "one_slide_fix": "S17 mini case on persistent hypotension",
+      "active_learning_task": "name the finding that proves an intervention has not yet worked",
+      "retrieval_item": "Q05",
+      "improvement_evidence": ""
+    }
+  ],
+  "qa": {
+    "release_status": "review-needed",
+    "gates_passed": [
+      "runtime",
+      "source",
+      "taxonomy",
+      "blueprint",
+      "cjm_coverage",
+      "outline",
+      "script"
+    ],
+    "defects": [
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[clinical specificity] SRC02 states cues qualitatively and names no numeric thresholds, no scoring tool, and no bundle timing. This lesson deliberately adds none. If the programme teaches specific criteria or a local pathway, the author adds them; they are not inferable from the source and were not invented here."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[assessment] SRC02's facts[] share one set of three distractors, identical across all five facts and all implausible. Reused as written they would teach test-taking rather than clinical judgement, so distractors here are instructor-written; each keyed action and rationale is the module's. Author to review the replacements."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[evidence] All clinical slides are source-aligned to SRC02 (the author's own module), not source-grounded. No OpenStax text is reproduced; the module's upstream OpenStax citation remains excluded pending the license contradiction check."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "S15",
+        "note": "[instructor-added] The 'systems' and 'already begun' handover cards extend the module's two named elements (trend, suspected source). Confirm against local handover convention."
+      },
+      {
+        "severity": "minor",
+        "slide_id": "-",
+        "note": "[standards] Package-level CA-BRN-ART3 refs BRN-14 and BRN-17 are proposed by the builder; author to confirm before any compliance filing. Slide-level standards_refs left empty."
+      }
+    ],
+    "cjm_coverage_rationale": ""
+  },
+  "revision_log": [],
+  "outcomes": {},
+  "improvement_log": []
+}

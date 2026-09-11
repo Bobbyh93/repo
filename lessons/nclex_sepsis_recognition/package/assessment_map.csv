@@ -1,0 +1,9 @@
+objective,concept_lane,slide,activity,cjm_function,item_type,remediation_target
+Recognize clinical deterioration consistent with possible sepsis.,cues,S07,"A patient being treated for a suspected infection develops new confusion, and the blood pressure is below the patient's trend for the shift. Which action should the nurse take first?",recognize cues,mcq,S12
+Recognize clinical deterioration consistent with possible sepsis.,meaning,S10,Over one shift a patient's urine output falls while the heart rate and respiratory rate rise. How should the nurse interpret this combination?,analyze cues,mcq,S10
+Recognize clinical deterioration consistent with possible sepsis.,cues,S11,A patient has a possible infection but a temperature within the normal range. What should the nurse do?,analyze cues,mcq,S12
+Prioritize immediate assessment and escalation.,escalate,S14,Ordered cultures and treatment are pending while a patient with suspected sepsis continues to deteriorate. Which action best reflects safe practice?,take action,mcq,S14
+Evaluate response to time-sensitive interventions.,evaluate,S18,"Blood pressure remains low after initial interventions for suspected sepsis. What does this finding indicate, and what should the nurse do?",evaluate outcomes,mcq,S17
+Recognize clinical deterioration consistent with possible sepsis.,cues,S07,A patient is being treated for a possible infection. Which new findings should prompt urgent assessment for sepsis? Select all that apply.,recognize cues,sata,S07
+Prioritize immediate assessment and escalation.,escalate,S13,A nurse is escalating a patient with suspected sepsis. Which actions belong to escalation as described in this lesson? Select all that apply.,generate solutions,sata,S13
+Evaluate response to time-sensitive interventions.,evaluate,S19,Which set of findings should the nurse trend when evaluating a patient's response to treatment for suspected sepsis?,evaluate outcomes,mcq,S19
