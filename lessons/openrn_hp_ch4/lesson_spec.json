@@ -211,19 +211,6 @@
   },
   "governance": {
     "promotion_state": "human_review",
-    "approvals": {
-      "source_approved": false,
-      "taxonomy_approved": false,
-      "objectives_approved": false,
-      "outline_approved": false,
-      "script_approved": false,
-      "release_approved": false
-    },
-    "taxonomy_lock": {
-      "status": "unlocked",
-      "approved_by": "",
-      "approval_date": ""
-    },
     "administrative_metadata": {
       "lesson_id": "LESSON-NHP-CH4-FAMILY-DYNAMICS",
       "version": "0.1.0",

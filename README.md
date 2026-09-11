@@ -48,15 +48,23 @@ S=skills/harrity-lesson-builder-pipeline/scripts; L=lessons/openrn_hp_ch4
 python $S/qa_visual.py $L/package [--canvas-course-id ID]          # thumbnails, structural checks, optional Canvas import
 python $S/verify_sources.py $L/lesson_spec.json --out $L/verification --fetch   # term overlap per slide/item vs cited source
 python $S/record_gate.py $L/lesson_spec.json status                 # where the lesson is
-python $S/record_gate.py $L/lesson_spec.json approve reviewer_approved --by "Name"   # signed decisions, then regate
+python $S/record_gate.py $L/lesson_spec.json set-release release-ready              # ship it, then regate
 python $S/compliance_sync.py $L/lesson_spec.json [--apply]                         # release-ready package → BRN Evidence Registry
 ```
 
-Human sign-off stays terminal: every write needs `--by`, and the gate recomputes the release status from recorded approvals.
+No sign-off workflow: no approval keys, no taxonomy lock, no signature required to
+reach release-ready. Defects are the only thing that hold a package back — a blocker
+blocks, a major downgrades a declared `release-ready` to `review-needed` until it is
+fixed, and minors are advisory. `promote` is the one command that still takes `--by`
+and `--evidence`, because raising a slide to `source-grounded` asserts that someone
+checked it against the cited source; the spec records who and on what basis.
 
 ## Constraints carried in the gate
 
-No learner identifiers in any artifact. No CC BY-NC content in packages. Identifier-only for AACN/QSEN text (`text_policy`). Human approval is the terminal gate: the generator can lower a release status, never raise it. Outputs are never Canvas-only.
+No learner identifiers in any artifact. No CC BY-NC content in packages. Identifier-only
+for AACN/QSEN text (`text_policy`). The generator never claims provenance it does not
+have: `source-grounded`/`source-aligned` with empty `source_refs` is a blocker, and a
+blocked package is stamped `_DRAFT`. Outputs are never Canvas-only.
 
 ## Work packages
 

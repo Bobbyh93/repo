@@ -1,6 +1,6 @@
 ---
 name: lesson-release
-description: Drive a gated Harrity lesson package from review-needed to release-ready. Use this whenever the user wants to QA a lesson deck or package, check slides visually, validate or import the Common Cartridge (.imscc) into Canvas or another LMS, verify slides against their cited source, promote evidence status (source-aligned to source-grounded), record review or release approvals, lock the taxonomy, file a released lesson as accreditation evidence in the BRN Airtable base (Evidence Registry), or asks "is this lesson ready", "sign off", "approve", "release", "check the deck", "verify against Open RN" — even if they don't name the skill. Also use it after any change to a lesson_spec.json so the package is regenerated and the status recomputed.
+description: Drive a Harrity lesson package from review-needed to release-ready. Use this whenever the user wants to QA a lesson deck or package, check slides visually, validate or import the Common Cartridge (.imscc) into Canvas or another LMS, verify slides against their cited source, promote evidence status (source-aligned to source-grounded), release a lesson, file a released lesson as accreditation evidence in the BRN Airtable base (Evidence Registry), or asks "is this lesson ready", "ship it", "release", "check the deck", "verify against Open RN" — even if they don't name the skill. Also use it after any change to a lesson_spec.json so the package is regenerated and the status recomputed. There is no approval workflow: defects alone decide status.
 ---
 
 # Lesson release
@@ -50,19 +50,17 @@ python .../record_gate.py lessons/<name>/lesson_spec.json promote S05 --to sourc
 
 `flag` rows with "source text unavailable" mean the fetch failed; report that and stop, do not guess. A `flag: low overlap` on a `source-aligned` slide is a real finding: either the slide drifted from the source or it cites the wrong section.
 
-## 3. Record approvals and release (`approve`)
+## 3. Release (`set-release`)
 
-The master-lesson envelope has six approvals in sequence: `source_approved`, `taxonomy_approved`, `objectives_approved`, `outline_approved`, `script_approved`, `release_approved`, plus the taxonomy lock. There is no separate reviewer role: one named reviewer signs all six. Record each one only when the named person has actually signed off on it in the conversation; never infer an approval from silence or from a passing test.
+There is no sign-off workflow: no approval keys, no taxonomy lock, no signature. If the package is clean, declaring it release-ready is enough.
 
 ```bash
-python .../record_gate.py lessons/<name>/lesson_spec.json approve source_approved --by "Name" --note "SRC01 CC BY 4.0 verified 2026-09-05"
-python .../record_gate.py lessons/<name>/lesson_spec.json lock-taxonomy --by "Name"
-python .../record_gate.py lessons/<name>/lesson_spec.json set-state release_ready --by "Name"
-python .../record_gate.py lessons/<name>/lesson_spec.json set-release release-ready --by "Name"
+python .../record_gate.py lessons/<name>/lesson_spec.json set-state release_ready
+python .../record_gate.py lessons/<name>/lesson_spec.json set-release release-ready
 python .../record_gate.py lessons/<name>/lesson_spec.json status
 ```
 
-Every command re-runs the gate and prints `release_status_computed`. The computed status is the truth: if it says `review-needed` after you set `release-ready`, the gate found a missing approval or a major defect, and the QA log says which. Fix the cause; do not re-issue the command.
+Every command re-runs the gate and prints `release_status_computed`. The computed status is the truth: if it says `review-needed` after you set `release-ready`, the gate found a **major defect** — that is the only thing that can hold a package back now — and the QA log says which. Fix the cause; do not re-issue the command.
 
 `status` with no write is the right first move when the user asks "where is this lesson at".
 
@@ -79,8 +77,8 @@ Read `package/compliance_payload.json` from the dry run and show the reviewer th
 
 ## Reporting back
 
-Lead with the computed release status and what changed it. Then, in one short list: gates recorded, promotions made (slide, from, to, evidence), approvals recorded (key, by), evidence filed (evidence_ids, or dry-run only), and anything still open with who has to act. Point to `package/qa_log.md` and `verification/verification_report.md` rather than restating them.
+Lead with the computed release status and what changed it. Then, in one short list: gates recorded, promotions made (slide, from, to, evidence), evidence filed (evidence_ids, or dry-run only), and anything still open with who has to act. Point to `package/qa_log.md` and `verification/verification_report.md` rather than restating them.
 
 ## Why the spec is edited in place
 
-`build_spec.py` authors the first version. Once review starts, `lesson_spec.json` is the record: `record_gate.py` appends to `revision_log` with stable IDs and reruns the gate, which is the Stage 13 lock the pipeline expects. Re-running `build_spec.py` after review would erase recorded approvals, so do not, unless the user asks to restart authoring.
+`build_spec.py` authors the first version. Once review starts, `lesson_spec.json` is the record: `record_gate.py` appends to `revision_log` with stable IDs and reruns the gate, which is the Stage 13 lock the pipeline expects. Re-running `build_spec.py` after review would erase the revision log and any recorded evidence promotions, so do not, unless the user asks to restart authoring.

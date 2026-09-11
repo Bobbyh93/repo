@@ -108,22 +108,25 @@ def test_case3_original_demo_through_gate(tmp_path):
     assert _unified_validator(out) == 0
 
 
-def test_governance_downgrades_unapproved_release_ready(tmp_path):
+def test_release_ready_needs_no_approvals(tmp_path):
+    """No sign-off workflow: a clean spec declaring release-ready is release-ready."""
     spec = gate.demo_spec()
     spec["qa"]["release_status"] = "release-ready"
     result = gate.run(spec, tmp_path / "gov", demo=False)
-    assert result["status"] == "review-needed"
-    assert any("release-ready claimed without approvals" in d["note"] for d in result["defects"])
+    assert result["status"] == "release-ready", result["defects"]
+    assert not any("approval" in d["note"].lower() for d in result["defects"])
 
 
-def test_governance_release_ready_with_full_approvals(tmp_path):
+def test_legacy_approval_block_is_ignored_not_enforced(tmp_path):
+    """A spec still carrying the retired approvals/lock block is unaffected by it."""
     spec = gate.demo_spec()
     spec["qa"]["release_status"] = "release-ready"
     spec["governance"] = {"promotion_state": "release_ready",
-                          "approvals": {k: True for k in gate.APPROVAL_KEYS},
-                          "taxonomy_lock": {"status": "locked", "approved_by": "Reviewer", "approval_date": "2026-09-06"}}
+                          "approvals": {"source_approved": False, "faculty_approved": False},
+                          "taxonomy_lock": {"status": "unlocked"}}
     result = gate.run(spec, tmp_path / "gov2", demo=False)
     assert result["status"] == "release-ready", result["defects"]
+    assert not any("approval" in d["note"].lower() or "taxonomy_lock" in d["note"] for d in result["defects"])
 
 
 def test_evidence_gate_blocks_unsourced_claim(tmp_path):

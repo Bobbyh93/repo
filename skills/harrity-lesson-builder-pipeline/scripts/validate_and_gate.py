@@ -61,27 +61,19 @@ REQUIRED_SLIDE_KEYS = ["slide_id", "slide_number", "slide_title", "slide_archety
                        "target_duration_sec", "audio_duration_sec", "auto_advance", "layout_spec",
                        "allow_overlap", "qa_status", "qa_notes", "remediation_target", "audio_filename"]
 RELEASE_STATES = {"release-ready", "review-needed", "draft-only", "blocked"}
-# Values used before the faculty role was removed; read, normalised, never written.
+# Vocabulary from the retired sign-off workflow; read, normalised, never written.
 LEGACY_RELEASE_STATES = {"faculty-review-needed": "review-needed"}
 LEGACY_PROMOTION_STATES = {"faculty_review": "human_review"}
-LEGACY_APPROVAL_KEYS = {"faculty_approved"}
 # master-lesson 1.0.0 envelope (references/master_lesson/master_lesson_schema.json)
 PROMOTION_STATES = ["template", "intake_complete", "human_review", "production_ready", "release_ready", "released"]
-# One reviewer signs all of these; there is no separate faculty role.
-APPROVAL_KEYS = ["source_approved", "taxonomy_approved", "objectives_approved", "outline_approved",
-                 "script_approved", "release_approved"]
-PRODUCTION_APPROVALS = APPROVAL_KEYS[:5]
-RELEASE_APPROVALS = APPROVAL_KEYS[5:]
 
 
 def normalise_governance(spec: Dict[str, Any]) -> None:
-    """Rewrite pre-removal faculty values in place so old specs still validate."""
+    """Rewrite retired sign-off vocabulary in place so older specs still validate."""
     gov = spec.get("governance") or {}
     state = gov.get("promotion_state")
     if state in LEGACY_PROMOTION_STATES:
         gov["promotion_state"] = LEGACY_PROMOTION_STATES[state]
-    for key in LEGACY_APPROVAL_KEYS:
-        (gov.get("approvals") or {}).pop(key, None)
     qa = spec.get("qa") or {}
     rs = qa.get("release_status")
     if rs in LEGACY_RELEASE_STATES:
@@ -214,37 +206,16 @@ def validate_spec(spec: Dict[str, Any], defects: Defects) -> None:
 
 
 def validate_governance(spec: Dict[str, Any], defects: Defects) -> None:
-    """master-lesson 1.0.0 envelope: promotion_state, approvals, taxonomy_lock.
+    """Check only that qa.release_status is a value the tooling understands.
 
-    v1.2 slot. Absent block = MVP default (`intake_complete`, nothing approved).
-    Only the consistency between qa.release_status and the approvals is
-    enforced; a claimed `release-ready` without every approval is
-    downgraded by the manifest writer and logged as major here.
+    There is no sign-off workflow: no approval keys, no taxonomy lock, no
+    signature required to reach release-ready. Status is decided by defects
+    alone (see resolve_release_status). Any `governance` block left in a spec
+    is carried through untouched and never gates anything.
     """
-    gov = spec.get("governance") or {}
-    state = gov.get("promotion_state", "intake_complete")
-    if state not in PROMOTION_STATES:
-        defects.add("major", "-", f"governance.promotion_state '{state}' not in {PROMOTION_STATES}")
-    approvals = gov.get("approvals") or {}
-    for k, v in approvals.items():
-        if k not in APPROVAL_KEYS:
-            defects.add("minor", "-", f"governance.approvals has unknown key '{k}'")
-        elif not isinstance(v, bool):
-            defects.add("minor", "-", f"governance.approvals.{k} must be boolean")
-    lock = gov.get("taxonomy_lock") or {}
-    if lock.get("status") not in (None, "unlocked", "locked"):
-        defects.add("minor", "-", f"governance.taxonomy_lock.status '{lock.get('status')}' invalid")
     rs = spec["qa"].get("release_status", "draft-only")
     if rs not in RELEASE_STATES:
         defects.add("major", "-", f"qa.release_status '{rs}' not in {sorted(RELEASE_STATES)}")
-    if rs == "release-ready":
-        missing = [k for k in PRODUCTION_APPROVALS + RELEASE_APPROVALS if approvals.get(k) is not True]
-        if missing:
-            defects.add("major", "-", f"release-ready claimed without approvals: {', '.join(missing)}; downgraded to review-needed")
-        if lock.get("status") != "locked":
-            defects.add("major", "-", "release-ready claimed with taxonomy_lock.status != locked")
-    if state in {"release_ready", "released"} and rs != "release-ready":
-        defects.add("major", "-", f"governance.promotion_state '{state}' inconsistent with qa.release_status '{rs}'")
 
 
 # --------------------------------------------------------------------------
@@ -413,16 +384,18 @@ def write_traceability(spec, out: Path) -> Dict[str, Any]:
 
 
 def resolve_release_status(spec, all_defects: List[Dict[str, str]], demo: bool) -> str:
+    """Defects decide the status; nothing else does.
+
+    A blocker blocks. A major means something is actually wrong and the
+    declared release-ready is downgraded until it is fixed. Otherwise the
+    author's declared status stands — release-ready needs no sign-off.
+    """
     normalise_governance(spec)
     status = spec["qa"].get("release_status", "draft-only")
-    approvals = (spec.get("governance") or {}).get("approvals") or {}
-    lock = ((spec.get("governance") or {}).get("taxonomy_lock") or {}).get("status")
     if any(d["severity"] == "blocker" for d in all_defects):
         status = "blocked"
-    elif status == "release-ready":
-        approved = all(approvals.get(k) is True for k in PRODUCTION_APPROVALS + RELEASE_APPROVALS) and lock == "locked"
-        if any(d["severity"] == "major" for d in all_defects) or not approved:
-            status = "review-needed"
+    elif status == "release-ready" and any(d["severity"] == "major" for d in all_defects):
+        status = "review-needed"
     if demo:
         status = "draft-only" if status != "blocked" else status
     return status
@@ -447,8 +420,6 @@ def write_manifest_and_qa(spec, out: Path, defects: Defects, files: List[str], d
         "governance": {
             "envelope": "master-lesson-1.0.0",
             "promotion_state": gov.get("promotion_state", "intake_complete"),
-            "approvals": {k: bool((gov.get("approvals") or {}).get(k, False)) for k in APPROVAL_KEYS},
-            "taxonomy_lock": gov.get("taxonomy_lock") or {"status": "unlocked"},
             "administrative_metadata": gov.get("administrative_metadata") or {},
         },
         "slides": [{k: s.get(k) for k in ["slide_id", "slide_number", "slide_title", "slide_archetype", "concept_lane",
@@ -522,7 +493,7 @@ def demo_spec() -> Dict[str, Any]:
                      "locator": "n/a", "coverage_status": "absent"}],
         "taxonomy": {"glossary": [], "concept_tags": [], "outcome_tags": [], "nclex_client_needs": [],
                      "cjm_functions": CJM, "proposed_new_tags": [], "frameworks": []},
-        "governance": {"promotion_state": "intake_complete", "approvals": {}, "taxonomy_lock": {"status": "unlocked"}},
+        "governance": {"promotion_state": "intake_complete"},
         "slides": [
             slide("S01", 1, "Title", "title", "opening", "cross-lane", "", [], "Demo title.", dur=20),
             slide("S02", 2, "Opening case", "opening_case", "opening", "cues",

@@ -36,26 +36,44 @@ def test_status_is_read_only(tmp_path):
     before = spec.read_text()
     out = _rg(spec, "--no-regate", "status")
     assert out["release_status_declared"] == "review-needed"
-    assert len(out["approvals_missing"]) == 6
+    assert "approvals_missing" not in out  # no sign-off workflow
     assert spec.read_text() == before
 
 
-def test_release_ready_requires_all_approvals_and_lock(tmp_path):
+def test_release_ready_needs_no_sign_off(tmp_path):
+    """A clean package reaches release-ready on set-release alone.
+
+    There are no approval keys and no taxonomy lock; the reference lesson
+    carries only minor defects, so nothing stands between it and release.
+    """
     spec = _copy_lesson(tmp_path)
     out = _rg(spec, "set-release", "release-ready", "--by", "Tester")
-    assert out["release_status_computed"] == "review-needed"
-    for key in gate.APPROVAL_KEYS:
-        out = _rg(spec, "approve", key, "--by", "Tester", "--date", "2026-09-06")
-    assert out["release_status_computed"] == "review-needed"  # lock still missing
-    out = _rg(spec, "lock-taxonomy", "--by", "Tester")
     assert out["release_status_computed"] == "release-ready"
-    assert out["approvals_missing"] == []
-    data = json.loads(spec.read_text())
-    assert len(data["governance"]["approval_log"]) == 6
-    assert all(e["by"] == "Tester" for e in data["governance"]["approval_log"])
-    assert len(data["revision_log"]) == 8
+    assert out["defects"]["blocker"] == 0 and out["defects"]["major"] == 0
     deck = Path(out["deck"])
     assert deck.exists() and "_DRAFT" not in deck.name
+
+
+def test_major_defect_still_downgrades_release_ready(tmp_path):
+    """Defects are the only thing that can hold a package back."""
+    spec_path = _copy_lesson(tmp_path)
+    spec = json.loads(spec_path.read_text())
+    spec["qa"]["release_status"] = "release-ready"
+    spec["slides"][3]["concept_lane"] = "not-a-declared-lane"  # major defect
+    spec_path.write_text(json.dumps(spec, indent=2))
+
+    result = gate.run(json.loads(spec_path.read_text()), tmp_path / "pkg", demo=False)
+
+    assert result["status"] == "review-needed"
+    assert any(d["severity"] == "major" for d in result["defects"])
+
+
+def test_approve_and_lock_commands_are_gone(tmp_path):
+    spec = _copy_lesson(tmp_path)
+    for argv in (["approve", "source_approved", "--by", "Tester"], ["lock-taxonomy", "--by", "Tester"]):
+        r = subprocess.run([sys.executable, str(SCRIPTS / "record_gate.py"), str(spec), *argv],
+                           capture_output=True, text=True)
+        assert r.returncode != 0, f"{argv[0]} should no longer exist"
 
 
 def test_promote_requires_source_refs_and_logs_evidence(tmp_path):
@@ -118,7 +136,7 @@ def test_qa_visual_structural_report(tmp_path):
 
 
 def test_pre_removal_faculty_vocabulary_is_normalised_not_flagged(tmp_path):
-    """A spec written before the faculty role was removed still gates cleanly.
+    """A spec written before the sign-off workflow was retired still gates cleanly.
 
     Regression: normalise_governance() originally ran inside resolve_release_status(),
     i.e. after validate_spec(), so legacy values produced two MAJOR defects and an
@@ -127,7 +145,7 @@ def test_pre_removal_faculty_vocabulary_is_normalised_not_flagged(tmp_path):
     spec_path = _copy_lesson(tmp_path)
     spec = json.loads(spec_path.read_text())
     spec["governance"]["promotion_state"] = "faculty_review"
-    spec["governance"]["approvals"]["faculty_approved"] = False
+    spec["governance"].setdefault("approvals", {})["faculty_approved"] = False
     spec["qa"]["release_status"] = "faculty-review-needed"
     spec_path.write_text(json.dumps(spec, indent=2))
 

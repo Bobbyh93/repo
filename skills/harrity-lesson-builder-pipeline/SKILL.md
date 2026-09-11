@@ -444,7 +444,8 @@ Do not label inferred content as source-grounded.
 - `scripts/export_lms.py`: HTML bundle, Common Cartridge 1.1 + QTI 1.2, best-effort PDF; called by the gate.
 - `scripts/validate_unified_package.py`: post-build package directory check.
 - `scripts/compliance_sync.py`: release-ready package → CA BRN Evidence Registry + Attachments (dry run by default; `references/frameworks/` holds the req_id snapshot).
-- `scripts/qa_visual.py`, `scripts/verify_sources.py`, `scripts/record_gate.py`: review-and-release tools used by the project skill `lesson-release` (thumbnails + structural QA + optional Canvas import; source term-overlap verification; signed approvals/promotions with regate).
+- `scripts/qa_visual.py`, `scripts/verify_sources.py`, `scripts/record_gate.py`: review-and-release tools used by the project skill `lesson-release` (thumbnails + structural QA + optional Canvas import; source term-overlap verification; spec edits and evidence promotions with regate). There is no approval workflow — defects alone decide release status.
+- `scripts/extract_chapter_text.py`: carve one chapter out of a whole-book PDF into `handoff/source/raw/ch<N>/chapter.md` when the source hosts are unreachable.
 - `assets/reference_montage.png`: visual reference for the map-first slide style.
 
 ## Final response pattern

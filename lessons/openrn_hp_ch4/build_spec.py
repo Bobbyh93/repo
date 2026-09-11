@@ -558,9 +558,6 @@ def build() -> dict:
         },
         "governance": {
             "promotion_state": "human_review",
-            "approvals": {k: False for k in ["source_approved", "taxonomy_approved", "objectives_approved", "outline_approved",
-                                             "script_approved", "release_approved"]},
-            "taxonomy_lock": {"status": "unlocked", "approved_by": "", "approval_date": ""},
             "administrative_metadata": {"lesson_id": "LESSON-NHP-CH4-FAMILY-DYNAMICS", "version": "0.1.0",
                                         "content_owner": "R. Harrity", "reviewer": "R. Harrity", "created_date": "2026-09-06"},
         },

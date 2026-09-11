@@ -1,22 +1,21 @@
 #!/usr/bin/env python3
-"""Record human review decisions into lesson_spec.json and re-run the gate.
+"""Edit lesson_spec.json and re-run the gate.
 
-Every write carries a reviewer name and a date, lands in `revision_log`
-(and `governance.approval_log`), and is followed by a gate run so the
-package on disk always matches the spec. Nothing here raises a release
-status on its own: the gate computes status from the recorded approvals.
+There is no sign-off workflow: no approval keys, no taxonomy lock, and no
+signature needed to reach release-ready. The gate decides status from
+defects alone. These commands record an edit, land it in `revision_log`,
+and regenerate the package so it matches the spec.
 
-    record_gate.py SPEC approve KEY --by NAME [--date YYYY-MM-DD] [--note ...]
-    record_gate.py SPEC lock-taxonomy --by NAME
-    record_gate.py SPEC gate-pass GATE --by NAME [--note ...]
-    record_gate.py SPEC promote SLIDE --to STATUS --by NAME --evidence TEXT
-    record_gate.py SPEC set-state STATE --by NAME          # promotion_state
-    record_gate.py SPEC set-release STATUS --by NAME       # qa.release_status
+    record_gate.py SPEC gate-pass GATE [--by NAME] [--note ...]
+    record_gate.py SPEC promote SLIDE --to STATUS --evidence TEXT --by NAME
+    record_gate.py SPEC set-state STATE [--by NAME]        # promotion_state
+    record_gate.py SPEC set-release STATUS [--by NAME]     # qa.release_status
     record_gate.py SPEC status                             # print, no write
     common: --outdir DIR (default: <spec dir>/package)  --no-regate
 
-Approval keys: source_approved taxonomy_approved objectives_approved
-outline_approved script_approved release_approved
+`promote` keeps --by and --evidence: raising a slide to source-grounded
+asserts that someone checked it against the cited source, so the spec
+records who and on what basis. That is provenance, not permission.
 """
 from __future__ import annotations
 
@@ -44,9 +43,6 @@ def save(path: Path, spec: Dict[str, Any]) -> None:
 def _gov(spec: Dict[str, Any]) -> Dict[str, Any]:
     g = spec.setdefault("governance", {})
     g.setdefault("promotion_state", "intake_complete")
-    g.setdefault("approvals", {})
-    g.setdefault("taxonomy_lock", {"status": "unlocked"})
-    g.setdefault("approval_log", [])
     return g
 
 
@@ -56,23 +52,6 @@ def _revision(spec: Dict[str, Any], changed: List[str], prev: str, new: str, rea
     log.append({"revision_id": rid, "date": on, "by": by, "changed_ids": changed, "previous_summary": prev,
                 "new_summary": new, "reason": reason, "downstream_effects": ["package regenerated"]})
     return rid
-
-
-def cmd_approve(spec, a) -> str:
-    if a.key not in gate.APPROVAL_KEYS:
-        raise SystemExit(f"unknown approval key {a.key}; choose from {gate.APPROVAL_KEYS}")
-    g = _gov(spec)
-    prev = g["approvals"].get(a.key, False)
-    g["approvals"][a.key] = True
-    g["approval_log"].append({"key": a.key, "by": a.by, "date": a.date, "note": a.note or ""})
-    return _revision(spec, ["governance.approvals." + a.key], f"{a.key}={prev}", f"{a.key}=True", a.note or "approval recorded", a.by, a.date)
-
-
-def cmd_lock(spec, a) -> str:
-    g = _gov(spec)
-    prev = g["taxonomy_lock"].get("status", "unlocked")
-    g["taxonomy_lock"] = {"status": "locked", "approved_by": a.by, "approval_date": a.date}
-    return _revision(spec, ["governance.taxonomy_lock"], f"status={prev}", "status=locked", a.note or "taxonomy locked", a.by, a.date)
 
 
 def cmd_gate_pass(spec, a) -> str:
@@ -119,16 +98,12 @@ def cmd_set_release(spec, a) -> str:
 
 def status_summary(spec: Dict[str, Any], result: Dict[str, Any] | None = None) -> Dict[str, Any]:
     g = _gov(spec)
-    approvals = {k: bool(g["approvals"].get(k, False)) for k in gate.APPROVAL_KEYS}
     ev = {}
     for s in spec["slides"]:
         ev[s.get("evidence_status", "")] = ev.get(s.get("evidence_status", ""), 0) + 1
     out = {
         "release_status_declared": spec.get("qa", {}).get("release_status"),
         "promotion_state": g["promotion_state"],
-        "taxonomy_lock": g["taxonomy_lock"].get("status"),
-        "approvals": approvals,
-        "approvals_missing": [k for k, v in approvals.items() if not v],
         "gates_passed": spec.get("qa", {}).get("gates_passed", []),
         "evidence_status_counts": ev,
         "revisions": len(spec.get("revision_log") or []),
@@ -148,15 +123,14 @@ def main(argv: List[str]) -> int:
     ap.add_argument("--no-regate", action="store_true")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
-    def common(p):
-        p.add_argument("--by", required=True, help="reviewer name (human sign-off)")
+    def common(p, by_required=False):
+        p.add_argument("--by", required=by_required, default="author",
+                       help="who made the edit (recorded in revision_log)")
         p.add_argument("--date", default=date.today().isoformat())
         p.add_argument("--note", default="")
 
-    p = sub.add_parser("approve"); p.add_argument("key"); common(p)
-    p = sub.add_parser("lock-taxonomy"); common(p)
     p = sub.add_parser("gate-pass"); p.add_argument("gate"); common(p)
-    p = sub.add_parser("promote"); p.add_argument("slide"); p.add_argument("--to", required=True); p.add_argument("--evidence", required=True); common(p)
+    p = sub.add_parser("promote"); p.add_argument("slide"); p.add_argument("--to", required=True); p.add_argument("--evidence", required=True); common(p, by_required=True)
     p = sub.add_parser("set-state"); p.add_argument("state"); common(p)
     p = sub.add_parser("set-release"); p.add_argument("status"); common(p)
     sub.add_parser("status")
@@ -164,7 +138,7 @@ def main(argv: List[str]) -> int:
 
     spec = load(a.spec)
     outdir = a.outdir or (a.spec.parent / "package")
-    handlers = {"approve": cmd_approve, "lock-taxonomy": cmd_lock, "gate-pass": cmd_gate_pass, "promote": cmd_promote,
+    handlers = {"gate-pass": cmd_gate_pass, "promote": cmd_promote,
                 "set-state": cmd_set_state, "set-release": cmd_set_release}
     if a.cmd != "status":
         rid = handlers[a.cmd](spec, a)
