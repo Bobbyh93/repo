@@ -26,7 +26,7 @@ Every source host is refused by the egress proxy: wtcs.pressbooks.pub, ncbi.nlm.
 
 1. Open the PPTX; record `visual_qa`.
 2. `verify_sources.py --fetch`; promote slides that hold.
-3. Confirm BRN-14 / BRN-17, decide BRN-16.
+3. Confirm BRN-14 / BRN-17, decide BRN-16 — see `DECISION_BRN16.md` (recommendation: no).
 4. Canvas sandbox import; record `lms_import`.
 5. Seven approvals + taxonomy lock + set-state/set-release.
 6. `compliance_sync.py --apply` with `AIRTABLE_TOKEN`.
