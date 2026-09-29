@@ -414,8 +414,13 @@ SLIDES = [
           "A safe nurse assesses the family as part of the client, sorts cues by required action, and teaches what protects.",
           ["Notice: roles, functions, interaction, strain", "Sort: report, refer, resource, teach",
            "Protect: privacy first, client's voice first", "Teach: guidance, not punishment"],
-          "Closing frame.",
-          ev="instructor-added", refs=[], dur=45,
+          "Four words to leave with, and they are in the order you will use them. Notice: the family is part of "
+          "the assessment, not context around it. Sort: every cue you noticed belongs to a report, a referral, a "
+          "resource or a teaching moment, and deciding which is the nursing judgement. Protect: privacy first, and "
+          "the client decides who is in the room. Teach: guidance rather than punishment. If you keep one of the "
+          "four, keep protect, because the other three only keep working while the client is still willing to tell "
+          "you what is happening at home.",
+          ev="instructor-added", refs=[], dur=60,
           card=[{"title": "notice", "body": "roles, functions, interaction patterns, caregiver strain"},
                 {"title": "sort", "body": "mandated report, provider and social work referral, resources, teaching"},
                 {"title": "protect", "body": "privacy first; ask the client who they want present"},

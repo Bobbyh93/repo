@@ -389,8 +389,13 @@ SLIDES = [
            "Name: which system, and in which direction",
            "Act together: escalate and stabilize in parallel",
            "Check again: reassess, and escalate again if it persists"],
-          "Closing frame. The patient from the opening case had one cue and no alarm. That is what this looks like in real life.",
-          ev="instructor-added", refs=[], dur=45,
+          "Four moves, in order, and they are the whole lesson. Notice: in a patient who might have an infection, "
+          "anything new is a cue. Name it: which system is reporting, and which direction it is moving. Act together: "
+          "escalation and stabilization run in parallel, not in sequence, because waiting to finish one before "
+          "starting the other is how time is lost. Check again: the reassessment is the part that tells you whether "
+          "any of it worked. Go back to the patient we opened with. One cue, no alarm, nobody shouting. That is what "
+          "this looks like on a real unit, and it is why the four moves have to be a habit rather than a decision.",
+          ev="instructor-added", refs=[], dur=70,
           card=[{"title": "notice", "body": "possible infection plus anything new"},
                 {"title": "name", "body": "which system is reporting, and which way it is moving"},
                 {"title": "act together", "body": "pathway, communication, diagnostics and stabilization, in parallel"},

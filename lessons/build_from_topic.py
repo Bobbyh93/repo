@@ -19,10 +19,13 @@ It adds no clinical content. Where a topic states something qualitatively
 (no thresholds, no scoring tools, no drug names, no timings) the lesson stays
 at that level, because anything more specific would be invented.
 
-It also does not write a teaching voice. Speaker scripts here are assembled
-from the topic's own sentences; they carry the content but they are not the
-prose a person would say out loud. Each generated package records that in
-qa.defects. lessons/nclex_sepsis_recognition/ is the hand-written comparison.
+Speaker scripts are written to be said out loud. The clinical substance in them
+is still only the topic's own -- every sentence carrying a clinical claim is the
+module's wording. What the generator adds around that wording is teaching frame:
+why a slide comes where it does, what to do with it, what going wrong here costs
+you later. Those sentences assert nothing clinical, so they are safe to generate;
+they are also one voice applied to seven lessons, which the packages record.
+lessons/nclex_sepsis_recognition/ is the hand-written comparison.
 
 Distractors are the module's own three, which repeat across every fact and are
 all implausible. They are used unchanged rather than invented, and flagged.
@@ -43,6 +46,47 @@ RUN_DATE = date.today().strftime("%Y%m%d")
 
 CJM = ["recognize cues", "analyze cues", "prioritize hypotheses",
        "generate solutions", "take action", "evaluate outcomes"]
+
+# Teaching frame. Nothing below states anything clinical -- these are sentences
+# about how to use a slide, which is why a generator may write them. The clinical
+# sentences in every script come from the topic and are interpolated verbatim.
+RISK_CLAUSE = {
+    "high": "its top rating, so this is one to be able to do under pressure rather "
+            "than one to recognise on a test",
+    "elevated": "below the top rating, but high enough to be singled out from "
+                "everything else in its category",
+}
+# Positional, not topical: what each role sentence says is true of a first, middle
+# or last move whatever that move happens to be. A sentence describing what the
+# lane contains would be a clinical claim, and would be wrong for some topics --
+# "the lane that closes the loop" does not describe a third lane called
+# "Assess safety".
+LANE_ROLE = [
+    "This is the first of the three, and the two after it assume it. What you get "
+    "wrong here does not stay here; it propagates quietly into every decision the "
+    "rest of the lesson asks you to make.",
+    "This is the middle move, and it is where most of the disagreement in this "
+    "lesson will sit: the point at which a defensible action and the priority "
+    "action stop being the same answer.",
+    "This is the last of the three, and it is the one most often left implicit -- "
+    "the step learners can describe accurately and then do not actually perform "
+    "when the first two have gone well. Say it out loud; that is how it survives "
+    "contact with a busy shift.",
+]
+
+
+NUMBER_WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven"}
+
+
+def spoken(n: int) -> str:
+    """Scripts are read aloud, so small counts are words rather than digits."""
+    return NUMBER_WORDS.get(n, str(n))
+
+
+def lowered(sentence: str) -> str:
+    """Drop an objective into mid-sentence: no leading capital, no trailing stop."""
+    s = sentence.strip().rstrip(".")
+    return s[:1].lower() + s[1:] if s else s
 
 
 def slug(text: str) -> str:
@@ -131,7 +175,23 @@ def mcq_options(action: str, distractors: list[str], rotate: int) -> tuple[list[
     return [f"{letters[i]}. {o}" for i, o in enumerate(ordered)], letters[pos]
 
 
-def build(topic: dict, distractors: list[str]) -> dict:
+def existing_run_date(spec_path: Path) -> str | None:
+    """The run date a previous build used, if this lesson has been built before.
+
+    Package filenames are stamped with it. Re-running the generator to change how
+    a script reads should not rename every artifact in the package, so a rebuild
+    keeps the date the lesson was first built on.
+    """
+    if not spec_path.exists():
+        return None
+    try:
+        prev = json.loads(spec_path.read_text(encoding="utf-8"))
+        return prev["runtime_config"]["runtime"]["run_date_yyyymmdd"] or None
+    except (json.JSONDecodeError, KeyError, TypeError):
+        return None
+
+
+def build(topic: dict, distractors: list[str], run_date: str = RUN_DATE) -> dict:
     lanes = lane_names(topic)
     secs = topic["lessonSections"]
     facts = topic["facts"]
@@ -150,18 +210,27 @@ def build(topic: dict, distractors: list[str]) -> dict:
         n += 1
         S.append(slide(f"S{n:02d}", n, *args, **kw))
 
+    risk = RISK_CLAUSE.get(topic["safetyRisk"], "a risk the module flags explicitly")
     add(title, "title", "open", "cross-lane",
         "Orient to the lesson's promise.",
         [title, f"Prelicensure RN · {topic['category_label']} · safety risk: {topic['safetyRisk']}"],
-        f"{title}. {ocq} Five lanes carry the lesson: {', '.join(lanes)}.",
-        ev="instructor-added", refs=[], dur=35)
+        f"{title}. The concept underneath it is {topic['concept'].lower()}, and the module rates its safety risk "
+        f"{topic['safetyRisk']} — {risk}. Here is the whole lesson in one sentence. {ocq} By the end you should be "
+        f"able to do {spoken(len(objectives))} things: " + "; ".join(lowered(o) for o in objectives[:-1])
+        + f"; and {lowered(objectives[-1])}. "
+        + f"We get there in {spoken(len(secs))} moves, and then spend the second half putting all of them "
+        f"against patient cues, because knowing this and doing it at the bedside are not the same skill.",
+        ev="instructor-added", refs=[], dur=60)
 
     f0 = facts[0]
     add("Opening case", "opening_case", "open", lanes[0],
         "Enter the lesson through a single patient cue.",
         [],
-        f"Start with one cue. {f0['cue']} Decide what you would do before the lesson tells you, and hold on to it; "
-        f"the same cue returns as the first assessment item.",
+        f"We start with a cue rather than a definition, because that is the order the unit gives you: the patient "
+        f"arrives first and the explanation catches up later. Here it is. {f0['cue']} Decide now, before any of this "
+        f"is taught, what you would do and why that thing first. Write it somewhere you will still be able to read "
+        f"at the end, because this exact cue comes back as the first assessment item. Comparing the two answers is "
+        f"most of what the rest of this session is for.",
         cjm=["recognize cues"],
         card=[{"presentation": f0["cue"],
                "cues": [f"Objective in play: {objectives[0]}", f"Concept: {topic['concept']}"],
@@ -171,7 +240,11 @@ def build(topic: dict, distractors: list[str]) -> dict:
     add("The question this lesson answers", "clinical_question", "map", "cross-lane",
         "State the organizing clinical question.",
         [],
-        f"One question organizes the lesson: {ocq}",
+        f"Everything that follows answers one question. {ocq} Keep that sentence in view for the rest of the "
+        f"session. When a slide stops making sense it is almost always because you have lost which part of this "
+        f"sentence it is working on, and naming the part is the fastest way back. The lesson takes the question in "
+        f"{spoken(len(secs))} moves — " + ", then ".join(s["heading"].lower() for s in secs)
+        + " — and then asks you to apply all of them to cues you have not seen.",
         cjm=["recognize cues", "analyze cues"],
         card=[{"lane": lanes[i], "nodes": [secs[i]["heading"]]} for i in range(len(secs))]
              + [{"lane": "apply", "nodes": ["case and items"]}, {"lane": "evaluate", "nodes": ["retrieval", "takeaway"]}],
@@ -180,7 +253,11 @@ def build(topic: dict, distractors: list[str]) -> dict:
     add("Lesson map", "chapter_map", "map", "cross-lane",
         "Locate any cue on the map before acting on it.",
         [],
-        "Map first. The three teaching lanes are the topic's own sections; apply and evaluate close the loop.",
+        "Map first, detail second. The lanes on the left are the lesson's teaching moves, in the order a nurse "
+        "actually performs them; apply and evaluate on the right are where you are made to use them. The reason to "
+        "show this before teaching any of it is orientation: every cue you meet today sits in one of these lanes, "
+        "and knowing which lane a cue belongs to usually tells you what to do with it before you can explain why. "
+        "When you get stuck later, come back to this slide rather than to the last one you read.",
         card=[{"lane": lanes[i], "nodes": [secs[i]["heading"]]} for i in range(len(secs))]
              + [{"lane": "apply", "nodes": ["mini case", "capstone"]}, {"lane": "evaluate", "nodes": ["exit check"]}],
         ev="instructor-added", refs=[], dur=55)
@@ -201,9 +278,10 @@ def build(topic: dict, distractors: list[str]) -> dict:
         add(sec["heading"], "concept_cards", f"lane: {lanes[i]}", lanes[i],
             objectives[min(i, len(objectives) - 1)],
             bullets_from(sec["body"]),
-            f"{sec['heading']}. {sec['body']} Everything on this slide is the source topic's own wording; the bullets "
-            f"are that same sentence broken up for the screen. This is lane {i + 1} of {len(secs)}, and it answers: "
-            f"{objectives[min(i, len(objectives) - 1)].rstrip('.')}.",
+            f"{sec['heading']}. {sec['body']} {LANE_ROLE[min(i, len(LANE_ROLE) - 1)]} Do not move on until you can "
+            f"say this part back without the slide. The test is the objective: if you can "
+            f"{lowered(objectives[min(i, len(objectives) - 1)])}, this lane has done its job, and if you cannot, "
+            f"nothing later in the lesson will fix it — it will only hide it.",
             cjm=[["recognize cues", "analyze cues"], ["prioritize hypotheses", "generate solutions"],
                  ["take action", "evaluate outcomes"]][min(i, 2)],
             card=[{"heading": sec["heading"], "body": sec["body"], "cjm": CJM[min(i * 2, 4)]}],
@@ -213,7 +291,10 @@ def build(topic: dict, distractors: list[str]) -> dict:
     add("Activity: match the cue to the move it calls for", "match_activity", "practice", "apply",
         "Match each cue to the lesson move that answers it.",
         [],
-        "Work with one partner. Match each cue to the section of the lesson that tells you what to do with it.",
+        "Work in pairs, four minutes. Every cue on the left was written for one of the lesson moves on the right; "
+        "your job is to say which, and to be able to defend one of the four out loud. Where the two of you match a "
+        "cue differently, stop and stay there — you have found a cue whose lane is genuinely arguable, and those "
+        "are worth more than the three you agreed on instantly. Bring one disagreement to the debrief.",
         cjm=["recognize cues", "analyze cues"],
         activity="Write the four matches and one sentence explaining one of them.",
         answers=[f"{chr(65+i)} relates to: {secs[min(i, len(secs)-1)]['heading']}" for i in range(4)],
@@ -224,7 +305,11 @@ def build(topic: dict, distractors: list[str]) -> dict:
     add("Debrief: the reasoning behind each action", "debrief", "practice", "apply",
         "Explain why each keyed action follows from its cue.",
         [],
-        "Each rationale below is the topic's own. Read them as a set: they describe one habit of mind, not five rules.",
+        "Read these four rationales as a set rather than one at a time. They are deliberately repetitive: the same "
+        "habit of mind is showing up behind four different cues, and that repetition is the teaching point rather "
+        "than an accident of writing. A learner who memorises four rules will meet a fifth cue and stall. A learner "
+        "who can name the one habit will handle cues this lesson never showed them. Say the habit out loud in your "
+        "own words before you leave this slide.",
         cjm=["analyze cues"],
         card=[{"heading": f["action"][:58], "body": f["rationale"], "cjm": "analyze cues"} for f in facts[:4]],
         co=co_ids[min(1, len(co_ids) - 1)])
@@ -278,8 +363,10 @@ def build(topic: dict, distractors: list[str]) -> dict:
     add("Documentation frame", "concept_cards", "apply", "apply",
         "Record the lesson's decisions in a reusable frame.",
         topic["guidedNotes"],
-        "These are the fields the topic asks you to be able to fill in for any patient. If you cannot complete one, "
-        "that is the part of the assessment still to do.",
+        "This is the lesson turned into something you can write down. The module asks you to be able to fill every "
+        "one of these fields for any patient in this situation, and the value is in the blanks: a field you cannot "
+        "complete is not a documentation gap, it is an assessment you have not done yet. Fill them now for the "
+        "mini-case patient, and notice which field you reach for last — that one is your weak lane.",
         cjm=["generate solutions"],
         card=[{"heading": g.rstrip(":"), "body": "—", "cjm": "generate solutions"} for g in topic["guidedNotes"]],
         co=co_ids[min(2, len(co_ids) - 1)], nac="document")
@@ -314,8 +401,11 @@ def build(topic: dict, distractors: list[str]) -> dict:
     add("Takeaway", "takeaway", "close", "cross-lane",
         ocq,
         review,
-        "Closing frame.",
-        ev="instructor-added", refs=[], dur=45,
+        f"Close where we opened. The question was: {ocq} The lines on this slide are the module's own answer, and "
+        f"they are what should still be there in a week when the detail has gone. If you keep one, keep the first: "
+        f"{review[0]} Everything else here is that sentence applied to a different cue. Go back now to what you "
+        f"wrote at the opening case and see whether you would still do it.",
+        ev="instructor-added", refs=[], dur=60,
         card=[{"title": r.rstrip(".")[:40], "body": r} for r in review])
 
     items = []
@@ -340,7 +430,7 @@ def build(topic: dict, distractors: list[str]) -> dict:
     return {
         "schema_version": "1.2",
         "runtime_config": {
-            "runtime": {"run_date_yyyymmdd": RUN_DATE, "package_id": f"NCLEX-{topic['id'].upper()}-R1",
+            "runtime": {"run_date_yyyymmdd": run_date, "package_id": f"NCLEX-{topic['id'].upper()}-R1",
                         "build_mode": "full_production", "deployment_mode": "hybrid", "rebuild_scope": "full",
                         "output_root": "."},
             "outputs": {"filename_pattern": "{{runtime.run_date_yyyymmdd}}_{{lesson.course_code}}_{{lesson.chapter_title}}_Part_{{deck.part_number}}.pptx"},
@@ -407,9 +497,12 @@ def build(topic: dict, distractors: list[str]) -> dict:
             "defects": [
                 {"severity": "minor", "slide_id": "-",
                  "note": "[generated] This package was assembled by lessons/build_from_topic.py from the SRC02 topic's "
-                         "own fields. No clinical content was added. Speaker scripts carry the topic's sentences but "
-                         "are not written in a teaching voice; a prose pass by the author is expected before teaching. "
-                         "lessons/nclex_sepsis_recognition/ is the hand-written comparison."},
+                         "own fields. No clinical content was added: every sentence in a script that makes a clinical "
+                         "claim is the module's own wording, interpolated verbatim. Speaker scripts are written to be "
+                         "said out loud, but the teaching frame around that wording is one generated voice applied to "
+                         "all seven topics, so the framing sentences recur across lessons and a teacher who runs more "
+                         "than one of them should vary them. lessons/nclex_sepsis_recognition/ is the hand-written "
+                         "comparison."},
                 {"severity": "minor", "slide_id": "-",
                  "note": "[clinical specificity] The source topic states its content qualitatively and names no numeric "
                          "thresholds, scoring tools, drug names or timings. None were added. Programme-specific criteria "
@@ -449,10 +542,10 @@ def main() -> int:
     for tid in targets:
         if tid not in by_id:
             raise SystemExit(f"unknown topic {tid}; known: {', '.join(by_id)}")
-        spec = build(by_id[tid], distractors)
         outdir = a.outroot / f"nclex_{slug(tid)}"
         outdir.mkdir(parents=True, exist_ok=True)
         out = outdir / "lesson_spec.json"
+        spec = build(by_id[tid], distractors, existing_run_date(out) or RUN_DATE)
         out.write_text(json.dumps(spec, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         covered = {f for s in spec["slides"] for f in s["cjm_functions"]}
         missing = [f for f in CJM if f not in covered]

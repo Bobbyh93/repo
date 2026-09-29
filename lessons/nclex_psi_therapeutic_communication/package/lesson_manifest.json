@@ -1,7 +1,7 @@
 {
   "schema_version": "1.2",
   "adapter_version": "1.2.0",
-  "generated_at_iso": "2026-09-11T10:41:41",
+  "generated_at_iso": "2026-09-29T16:59:27",
   "demo": false,
   "runtime_config": {
     "runtime": {
@@ -144,7 +144,7 @@
       "version": "0.1.0",
       "content_owner": "R. Harrity",
       "reviewer": "R. Harrity",
-      "created_date": "2026-09-11"
+      "created_date": "2026-09-29"
     }
   },
   "slides": [
@@ -157,7 +157,7 @@
       "evidence_status": "instructor-added",
       "source_refs": [],
       "cjm_functions": [],
-      "target_duration_sec": 35,
+      "target_duration_sec": 60,
       "audio_duration_sec": null,
       "audio_filename": "",
       "qa_status": "unreviewed",
@@ -456,7 +456,7 @@
       "evidence_status": "instructor-added",
       "source_refs": [],
       "cjm_functions": [],
-      "target_duration_sec": 45,
+      "target_duration_sec": 60,
       "audio_duration_sec": null,
       "audio_filename": "",
       "qa_status": "unreviewed",

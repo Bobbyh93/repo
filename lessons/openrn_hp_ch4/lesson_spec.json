@@ -1693,9 +1693,9 @@
       "activity_prompt": "",
       "answer_key": [],
       "visual_notes": "",
-      "speaker_script": "Closing frame.",
+      "speaker_script": "Four words to leave with, and they are in the order you will use them. Notice: the family is part of the assessment, not context around it. Sort: every cue you noticed belongs to a report, a referral, a resource or a teaching moment, and deciding which is the nursing judgement. Protect: privacy first, and the client decides who is in the room. Teach: guidance rather than punishment. If you keep one of the four, keep protect, because the other three only keep working while the client is still willing to tell you what is happening at home.",
       "tts_text": "",
-      "target_duration_sec": 45,
+      "target_duration_sec": 60,
       "audio_duration_sec": null,
       "auto_advance": false,
       "layout_spec": {

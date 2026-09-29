@@ -140,7 +140,7 @@
       "version": "0.1.0",
       "content_owner": "R. Harrity",
       "reviewer": "R. Harrity",
-      "created_date": "2026-09-11"
+      "created_date": "2026-09-29"
     }
   },
   "slides": [
@@ -163,9 +163,9 @@
       "activity_prompt": "",
       "answer_key": [],
       "visual_notes": "",
-      "speaker_script": "Therapeutic Communication During Emotional Distress. Use presence, observation, open invitations, reflection, and direct safety assessment without false reassurance or judgment. Five lanes carry the lesson: create space, clarify, assess safety, apply, evaluate.",
+      "speaker_script": "Therapeutic Communication During Emotional Distress. The concept underneath it is therapeutic communication, and the module rates its safety risk high — its top rating, so this is one to be able to do under pressure rather than one to recognise on a test. Here is the whole lesson in one sentence. Use presence, observation, open invitations, reflection, and direct safety assessment without false reassurance or judgment. By the end you should be able to do three things: select therapeutic responses to distress; avoid common nontherapeutic communication barriers; and escalate statements that indicate possible self-harm. We get there in three moves, and then spend the second half putting all of them against patient cues, because knowing this and doing it at the bedside are not the same skill.",
       "tts_text": "",
-      "target_duration_sec": 35,
+      "target_duration_sec": 60,
       "audio_duration_sec": null,
       "auto_advance": false,
       "layout_spec": {
@@ -214,7 +214,7 @@
       "activity_prompt": "",
       "answer_key": [],
       "visual_notes": "",
-      "speaker_script": "Start with one cue. A patient says, \"Nothing will ever get better.\" Decide what you would do before the lesson tells you, and hold on to it; the same cue returns as the first assessment item.",
+      "speaker_script": "We start with a cue rather than a definition, because that is the order the unit gives you: the patient arrives first and the explanation catches up later. Here it is. A patient says, \"Nothing will ever get better.\" Decide now, before any of this is taught, what you would do and why that thing first. Write it somewhere you will still be able to read at the end, because this exact cue comes back as the first assessment item. Comparing the two answers is most of what the rest of this session is for.",
       "tts_text": "",
       "target_duration_sec": 150,
       "audio_duration_sec": null,
@@ -273,7 +273,7 @@
       "activity_prompt": "",
       "answer_key": [],
       "visual_notes": "",
-      "speaker_script": "One question organizes the lesson: Use presence, observation, open invitations, reflection, and direct safety assessment without false reassurance or judgment.",
+      "speaker_script": "Everything that follows answers one question. Use presence, observation, open invitations, reflection, and direct safety assessment without false reassurance or judgment. Keep that sentence in view for the rest of the session. When a slide stops making sense it is almost always because you have lost which part of this sentence it is working on, and naming the part is the fastest way back. The lesson takes the question in three moves — create space, then clarify, then assess safety — and then asks you to apply all of them to cues you have not seen.",
       "tts_text": "",
       "target_duration_sec": 55,
       "audio_duration_sec": null,
@@ -352,7 +352,7 @@
       "activity_prompt": "",
       "answer_key": [],
       "visual_notes": "",
-      "speaker_script": "Map first. The three teaching lanes are the topic's own sections; apply and evaluate close the loop.",
+      "speaker_script": "Map first, detail second. The lanes on the left are the lesson's teaching moves, in the order a nurse actually performs them; apply and evaluate on the right are where you are made to use them. The reason to show this before teaching any of it is orientation: every cue you meet today sits in one of these lanes, and knowing which lane a cue belongs to usually tells you what to do with it before you can explain why. When you get stuck later, come back to this slide rather than to the last one you read.",
       "tts_text": "",
       "target_duration_sec": 55,
       "audio_duration_sec": null,
@@ -497,7 +497,7 @@
       "activity_prompt": "",
       "answer_key": [],
       "visual_notes": "Section 1 of 3 from the source topic.",
-      "speaker_script": "Create space. Use calm presence, observations, and open invitations that allow the patient to set the pace and describe their experience. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 1 of 3, and it answers: Select therapeutic responses to distress.",
+      "speaker_script": "Create space. Use calm presence, observations, and open invitations that allow the patient to set the pace and describe their experience. This is the first of the three, and the two after it assume it. What you get wrong here does not stay here; it propagates quietly into every decision the rest of the lesson asks you to make. Do not move on until you can say this part back without the slide. The test is the objective: if you can select therapeutic responses to distress, this lane has done its job, and if you cannot, nothing later in the lesson will fix it — it will only hide it.",
       "tts_text": "",
       "target_duration_sec": 150,
       "audio_duration_sec": null,
@@ -558,7 +558,7 @@
       "activity_prompt": "",
       "answer_key": [],
       "visual_notes": "Section 2 of 3 from the source topic.",
-      "speaker_script": "Clarify. Reflect or restate the patient's meaning and ask focused questions when safety or symptoms require clarification. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 2 of 3, and it answers: Avoid common nontherapeutic communication barriers.",
+      "speaker_script": "Clarify. Reflect or restate the patient's meaning and ask focused questions when safety or symptoms require clarification. This is the middle move, and it is where most of the disagreement in this lesson will sit: the point at which a defensible action and the priority action stop being the same answer. Do not move on until you can say this part back without the slide. The test is the objective: if you can avoid common nontherapeutic communication barriers, this lane has done its job, and if you cannot, nothing later in the lesson will fix it — it will only hide it.",
       "tts_text": "",
       "target_duration_sec": 150,
       "audio_duration_sec": null,
@@ -619,7 +619,7 @@
       "activity_prompt": "",
       "answer_key": [],
       "visual_notes": "Section 3 of 3 from the source topic.",
-      "speaker_script": "Assess safety. Statements suggesting hopelessness or self-harm require direct, nonjudgmental assessment and immediate protection according to risk. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 3 of 3, and it answers: Escalate statements that indicate possible self-harm.",
+      "speaker_script": "Assess safety. Statements suggesting hopelessness or self-harm require direct, nonjudgmental assessment and immediate protection according to risk. This is the last of the three, and it is the one most often left implicit -- the step learners can describe accurately and then do not actually perform when the first two have gone well. Say it out loud; that is how it survives contact with a busy shift. Do not move on until you can say this part back without the slide. The test is the objective: if you can escalate statements that indicate possible self-harm, this lane has done its job, and if you cannot, nothing later in the lesson will fix it — it will only hide it.",
       "tts_text": "",
       "target_duration_sec": 150,
       "audio_duration_sec": null,
@@ -682,7 +682,7 @@
         "D relates to: Assess safety"
       ],
       "visual_notes": "",
-      "speaker_script": "Work with one partner. Match each cue to the section of the lesson that tells you what to do with it.",
+      "speaker_script": "Work in pairs, four minutes. Every cue on the left was written for one of the lesson moves on the right; your job is to say which, and to be able to defend one of the four out loud. Where the two of you match a cue differently, stop and stay there — you have found a cue whose lane is genuinely arguable, and those are worth more than the three you agreed on instantly. Bring one disagreement to the debrief.",
       "tts_text": "",
       "target_duration_sec": 170,
       "audio_duration_sec": null,
@@ -748,7 +748,7 @@
       "activity_prompt": "",
       "answer_key": [],
       "visual_notes": "",
-      "speaker_script": "Each rationale below is the topic's own. Read them as a set: they describe one habit of mind, not five rules.",
+      "speaker_script": "Read these four rationales as a set rather than one at a time. They are deliberately repetitive: the same habit of mind is showing up behind four different cues, and that repetition is the teaching point rather than an accident of writing. A learner who memorises four rules will meet a fifth cue and stall. A learner who can name the one habit will handle cues this lesson never showed them. Say the habit out loud in your own words before you leave this slide.",
       "tts_text": "",
       "target_duration_sec": 150,
       "audio_duration_sec": null,
@@ -1029,7 +1029,7 @@
       "activity_prompt": "",
       "answer_key": [],
       "visual_notes": "",
-      "speaker_script": "These are the fields the topic asks you to be able to fill in for any patient. If you cannot complete one, that is the part of the assessment still to do.",
+      "speaker_script": "This is the lesson turned into something you can write down. The module asks you to be able to fill every one of these fields for any patient in this situation, and the value is in the blanks: a field you cannot complete is not a documentation gap, it is an assessment you have not done yet. Fill them now for the mini-case patient, and notice which field you reach for last — that one is your weak lane.",
       "tts_text": "",
       "target_duration_sec": 150,
       "audio_duration_sec": null,
@@ -1236,9 +1236,9 @@
       "activity_prompt": "",
       "answer_key": [],
       "visual_notes": "",
-      "speaker_script": "Closing frame.",
+      "speaker_script": "Close where we opened. The question was: Use presence, observation, open invitations, reflection, and direct safety assessment without false reassurance or judgment. The lines on this slide are the module's own answer, and they are what should still be there in a week when the detail has gone. If you keep one, keep the first: Acknowledge emotion before problem-solving. Everything else here is that sentence applied to a different cue. Go back now to what you wrote at the opening case and see whether you would still do it.",
       "tts_text": "",
-      "target_duration_sec": 45,
+      "target_duration_sec": 60,
       "audio_duration_sec": null,
       "auto_advance": false,
       "layout_spec": {
@@ -1461,7 +1461,7 @@
       {
         "severity": "minor",
         "slide_id": "-",
-        "note": "[generated] This package was assembled by lessons/build_from_topic.py from the SRC02 topic's own fields. No clinical content was added. Speaker scripts carry the topic's sentences but are not written in a teaching voice; a prose pass by the author is expected before teaching. lessons/nclex_sepsis_recognition/ is the hand-written comparison."
+        "note": "[generated] This package was assembled by lessons/build_from_topic.py from the SRC02 topic's own fields. No clinical content was added: every sentence in a script that makes a clinical claim is the module's own wording, interpolated verbatim. Speaker scripts are written to be said out loud, but the teaching frame around that wording is one generated voice applied to all seven topics, so the framing sentences recur across lessons and a teacher who runs more than one of them should vary them. lessons/nclex_sepsis_recognition/ is the hand-written comparison."
       },
       {
         "severity": "minor",
