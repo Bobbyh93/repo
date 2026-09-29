@@ -43,7 +43,7 @@ its name claims. **Medium** = unreliable in a reachable condition.
 | **D3** | High | `record_gate.py gate-pass` accepted any string. `KNOWN_GATES` did not exist. | The operator runs `gate-pass visaul_qa`, sees `recorded R08: gate-pass by …`, and believes the visual QA is on file. It is on file — as a string no check will ever match. Combined with D1 this is the realistic path to a false release, because the operator did the work and the record silently does not count it. Reproduced: <br>`manifest release_status: release-ready`<br>`manifest gates_passed  : ['visaul_qa', 'totally_made_up_gate', 'deck_render', 'package_manifest']` | 15-name `KNOWN_GATES`; `gate-pass` exits non-zero on an unknown name and writes nothing, with `--new-gate` as the deliberate escape hatch. The gate also raises a `minor` for unknown names already in a spec. |
 | **D4** | High | The CJM coverage check excused **every** missing function whenever `qa.cjm_coverage_rationale` was non-empty, regardless of what the rationale said. | CJM mapping is the lesson's link to the NCSBN clinical judgment model and the reason the package is accreditation evidence at all. One sentence — "Short package; coverage addressed in the unit exam" — cleared all six functions. A lesson mapped to the model in no way passed the check named for that mapping. | Zero mapped functions is now a `blocker` that no rationale can clear ("a coverage rationale cannot stand in for the mapping itself"). A partial gap is excused only for the functions the rationale **names**; unnamed gaps stay blockers. |
 | **D5** | Medium | `record_gate.py status` with no package directory omitted `release_status_computed` entirely and printed the declared status. | A key that is absent reads as agreement. The operator saw `release_status_declared: release-ready` with nothing contradicting it, on a run that computed nothing. | The key is always present, set to `"not recomputed (no package directory)"`, with a `[note]` on stderr saying how to get a real recomputation. |
-| **D6** | High | `verify_sources.py` recorded a partial fetch ("fetched 3/12 urls") **only in the string returned by that run**. The cache it wrote carried no provenance. | The egress proxy blocks most Pressbooks URLs, so partial fetches are this repo's normal condition, not an edge case. On the next run the cache was read and reported as `cache <path>` — a verification against a quarter of the chapter was indistinguishable from one against all of it. Worse, `--fetch` short-circuited on the cache and never retried the missing sections. | Every cache is written with a `<SRC>.provenance.json` sidecar recording urls attempted, succeeded, failed, and a `complete` flag. A cache with no sidecar reads as **unknown, therefore incomplete**. `--fetch` over a partial cache re-attempts the missing URLs. `how` carries `[PARTIAL: n/m sections]`. |
+| **D6** | High | `verify_sources.py` recorded a partial fetch ("fetched 3/12 urls") **only in the string returned by that run**. The cache it wrote carried no provenance. | The egress proxy blocks most Pressbooks URLs, so partial fetches are this repo's normal condition, not an edge case. On the next run the cache was read and reported as `cache <path>` — a verification against a quarter of the chapter was indistinguishable from one against all of it. Worse, `--fetch` short-circuited on the cache and never retried the missing sections. | Every cache is written with a `<SRC>.provenance.json` sidecar recording urls attempted, succeeded, failed, and a `complete` flag. A cache with no sidecar reads as **unknown, therefore incomplete**. `--fetch` over a partial or unknown cache re-fetches the whole source rather than reusing it (every URL, not only the failed ones, since a section that did download may itself be truncated). `how` carries `[PARTIAL: n/m sections]`. |
 | **D6b** | High | (The same defect, pointing the other way.) A low-overlap result against a partially-loaded source was reported as `flag: low overlap`. | Against a half-loaded chapter, "this claim is not in the source" and "the section holding it never downloaded" are the same number. The report accused the lesson of unsupported claims on the strength of a network failure — and a faculty reviewer acting on it would rewrite correct material. | A sub-threshold result against an incomplete source now returns `cannot verify: source text incomplete`. High-overlap results are still reported, because those terms were positively found in text that did load. |
 
 ## Why the existing suite could not see any of this
@@ -147,3 +147,65 @@ structural failure, not proof of the behaviour. The fourth
 a slide-less package and fails on the old code with `assert True is False`
 against `visual_gate_ready`. That one is the decisive case; the other three
 guard the logic once the boundary exists.
+
+---
+
+# Skill-package audit — 2026-09-29
+
+The two audit passes above changed the CLI surface and the refusal behaviour of
+five scripts. The prose that tells a reviewer how to drive them was not re-read.
+This pass checks the packages against the code.
+
+`skills/harrity-lesson-builder-pipeline/` and `.claude/skills/lesson-release/`,
+audited mechanically and then read. **No `cli-drift`**: every documented command
+still passes flags the scripts accept. The drift was of a kind no flag check can
+see — prose that was true on 2026-09-06 and is now wrong.
+
+## Fixed
+
+| Sev | Defect | Why it mattered |
+|---|---|---|
+| Critical | `references/schemas.md` cited in `failure-modes.md` and `lesson-quality-gates.md`; the file does not exist (it is `lesson-artifact-schemas.md`) | Both citations are prevention advice — "reuse the canonical field names in …". Following either landed on nothing, in the two documents whose whole job is stopping field-name drift. |
+| **Critical (prose)** | `lesson-release` §3 said a refused `release-ready` meant "a missing approval or a major defect" | After D1 there is a third cause, and it is the one that looks like nothing is wrong: a required QA gate not recorded. A reviewer completes all seven approvals and the lock, sees `faculty-review-needed`, reads this line, and goes hunting for a missing approval — while `approvals_missing` says `[]`. The doc pointed away from the actual cause. Now three numbered causes, the gate one first. |
+| Major | §1 keyed its instructions to `render.ran`; §3 never said `visual_qa` was a precondition for it | The phase-1 → phase-3 dependency D1 created was undocumented, so the two halves of the procedure read as independent. §1 now keys on `visual_gate_ready`, distinguishes a dead rasteriser from a short render, and states the precondition. |
+| Major | `gate-pass` refusal and `--new-gate` undocumented | The refusal is new behaviour a reviewer meets at the prompt with no explanation, and the escape hatch for a genuinely new gate was unfindable. |
+| Major | §4 did not mention the D7/D8 refusals, or that a `standards_ref` is unchecked | A dry run now exits 1 on a manifest listing an absent file. And the over-claim path stays open by design — worth saying plainly in the skill, since every other over-claim here is now caught. |
+| Major | §2 listed only the four original suggestion values | `cannot verify: source text incomplete` is new and is explicitly *not* a finding against the lesson. Read as one, it would send a reviewer to rewrite correct material. |
+
+## Accepted, not fixed — vocabulary
+
+The scan reported four `vocabulary-split` majors. Three are deliberate, and
+collapsing any of them would break something. Recorded here so the next audit
+does not re-litigate a decision already made:
+
+- **`evidence_status` / `source_status`** — the adapter boundary itself.
+  `source_status` is the renderer's native field; `spec_adapter.py:333` translates
+  `evidence_status` into it. Two names is what makes the WP-1 merge work.
+- **`speaker_script` / `narration_text`** — different deliverables. The first is
+  the deck's notes field; the second is the video-handoff field, required
+  non-empty by `validate_lesson_json.py:289`.
+- **`cjm_functions` / `cjm_function`** — plural on the slide field, singular as
+  the `assessment_map.csv` column. The column name ships in exports, and
+  `validate_unified_package.py` accepts both spellings on purpose.
+
+The fourth, `mode` / `output_mode`, I did not confirm as a real pair; it looks
+like the scan's synonym heuristic matching an unrelated `mode`. Left alone rather
+than asserted either way.
+
+## Two reported criticals that are not defects
+
+`lesson-release` was flagged for invoking `scripts/qa_visual.py` and
+`scripts/verify_sources.py`, "which do not exist". They do — the SKILL.md writes
+`skills/harrity-lesson-builder-pipeline/scripts/qa_visual.py`, repo-root-relative
+and correct. The checker resolves script paths relative to the package directory,
+which is the wrong assumption for a project skill that drives another package's
+scripts. No change made.
+
+## What this pass says about the previous two
+
+Both earlier passes ended with a green suite, and the suite is still green — 54
+passing, re-confirmed in a rebuilt container on 2026-09-29. Neither pass touched
+the documentation that tells a human how to use what changed, and a test suite
+cannot fail on a stale paragraph. The §3 defect is the sharpest case: the control
+D1 added works exactly as designed, and the prose beside it explained the
+resulting refusal wrongly, which is its own kind of silent pass.

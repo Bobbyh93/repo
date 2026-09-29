@@ -149,8 +149,11 @@ def load_source_text(src: Dict[str, Any], outdir: Path, overrides: Dict[str, Pat
                 how += (f" [PARTIAL: {len(cached_prov.get('urls_ok') or [])}/"
                         f"{cached_prov.get('urls_attempted', '?')} sections; re-run with --fetch]")
             return cache.read_text(encoding="utf-8"), tables, how, cached_prov
-        # --fetch over a partial cache re-attempts what was missing rather than
-        # silently reusing the short read.
+        # --fetch over a partial or unknown cache falls through and re-fetches the
+        # whole source rather than silently reusing the short read. Every URL is
+        # re-attempted, not just the ones that failed: a section that downloaded
+        # during a partly-blocked run may itself have been truncated, and the
+        # cache cannot tell us which.
 
     if not do_fetch:
         return "", [], "no source text (no --fetch, no file, no cache)", {"origin": "none", "complete": False}
