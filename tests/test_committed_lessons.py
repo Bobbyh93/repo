@@ -40,29 +40,43 @@ def test_there_are_lessons_to_check():
     assert LESSON_SPECS, f"no lessons/*/lesson_spec.json under {ROOT}"
 
 
+def _worktree_state(path: Path) -> str:
+    """What git thinks of one directory, as a string to compare before against after."""
+    proc = subprocess.run(["git", "status", "--porcelain", "--", str(path)],
+                          cwd=ROOT, capture_output=True, text=True)
+    assert proc.returncode == 0, proc.stderr
+    return proc.stdout
+
+
 @pytest.fixture(scope="module", params=LESSON_SPECS, ids=LESSON_IDS)
 def gated(request, tmp_path_factory):
     spec_path = request.param
     spec = json.loads(spec_path.read_text(encoding="utf-8"))
     outdir = tmp_path_factory.mktemp(spec_path.parent.name)
+    # Sampled either side of the run, because what matters is whether gating changed
+    # the directory -- not whether the directory happened to be clean when the suite
+    # started. Asserting "clean" instead makes the test fail for anyone with
+    # uncommitted work in lessons/, which says nothing about the gate.
+    before = _worktree_state(spec_path.parent)
     result = gate.run(spec, outdir, demo=False)
-    return spec_path, spec, outdir, result
+    after = _worktree_state(spec_path.parent)
+    return spec_path, spec, outdir, result, before, after
 
 
 def test_no_blocker_or_major_defects(gated):
-    _, _, _, result = gated
+    _, _, _, result, _, _ = gated
     serious = [d for d in result["defects"] if d["severity"] in {"blocker", "major"}]
     assert not serious, "\n".join(f"[{d['severity']}] {d['slide_id']}: {d['note']}" for d in serious)
 
 
 def test_status_is_shippable(gated):
-    _, _, _, result = gated
+    _, _, _, result, _, _ = gated
     assert result["status"] in SHIPPABLE
     assert result["exit"] == 0
 
 
 def test_deck_renders_with_every_slide(gated):
-    _, spec, _, result = gated
+    _, spec, _, result, _, _ = gated
     deck = Path(result["deck"])
     assert deck.exists()
     assert "_DRAFT" not in deck.name, "a blocker stamped the deck _DRAFT"
@@ -70,7 +84,7 @@ def test_deck_renders_with_every_slide(gated):
 
 
 def test_package_validates(gated):
-    _, _, outdir, _ = gated
+    _, _, outdir, _, _, _ = gated
     proc = subprocess.run([sys.executable, str(SCRIPTS / "validate_unified_package.py"), str(outdir)],
                           capture_output=True, text=True)
     assert proc.returncode == 0, proc.stdout + proc.stderr
@@ -78,9 +92,8 @@ def test_package_validates(gated):
 
 
 def test_gating_does_not_touch_the_repository(gated):
-    """The gate writes to outdir only; a lesson directory must come out unchanged."""
-    spec_path, _, _, _ = gated
-    proc = subprocess.run(["git", "status", "--porcelain", "--", str(spec_path.parent)],
-                          cwd=ROOT, capture_output=True, text=True)
-    assert proc.returncode == 0, proc.stderr
-    assert proc.stdout.strip() == "", f"gating dirtied the working tree:\n{proc.stdout}"
+    """The gate writes to outdir only; gating must leave the lesson directory as it was."""
+    spec_path, _, _, _, before, after = gated
+    assert after == before, (
+        f"gating changed {spec_path.parent} on disk:\n"
+        f"  before: {before.strip() or '(clean)'}\n  after:  {after.strip() or '(clean)'}")

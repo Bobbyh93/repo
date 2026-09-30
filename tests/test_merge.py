@@ -109,9 +109,16 @@ def test_case3_original_demo_through_gate(tmp_path):
 
 
 def test_release_ready_needs_no_approvals(tmp_path):
-    """No sign-off workflow: a clean spec declaring release-ready is release-ready."""
+    """No sign-off workflow: nobody else has to agree before a lesson is released.
+
+    The lesson's own QA record still has to back the claim (see
+    test_release_ready_without_its_qa_gate_is_downgraded), which is why the gate
+    is recorded here -- that is this author checking their own deck, not a
+    second person approving it.
+    """
     spec = gate.demo_spec()
     spec["qa"]["release_status"] = "release-ready"
+    spec["qa"]["gates_passed"] = ["visual_qa"]
     result = gate.run(spec, tmp_path / "gov", demo=False)
     assert result["status"] == "release-ready", result["defects"]
     assert not any("approval" in d["note"].lower() for d in result["defects"])
@@ -121,12 +128,49 @@ def test_legacy_approval_block_is_ignored_not_enforced(tmp_path):
     """A spec still carrying the retired approvals/lock block is unaffected by it."""
     spec = gate.demo_spec()
     spec["qa"]["release_status"] = "release-ready"
+    spec["qa"]["gates_passed"] = ["visual_qa"]
     spec["governance"] = {"promotion_state": "release_ready",
                           "approvals": {"source_approved": False, "faculty_approved": False},
                           "taxonomy_lock": {"status": "unlocked"}}
     result = gate.run(spec, tmp_path / "gov2", demo=False)
     assert result["status"] == "release-ready", result["defects"]
     assert not any("approval" in d["note"].lower() or "taxonomy_lock" in d["note"] for d in result["defects"])
+
+
+def test_release_ready_without_its_qa_gate_is_downgraded(tmp_path):
+    """qa.gates_passed used to be written and read by nothing.
+
+    A lesson nobody had opened could be declared release-ready and the gate
+    agreed. It now warns rather than blocks: the build still succeeds at exit 0,
+    but the claim is downgraded to review-needed and a major says why.
+    """
+    spec = gate.demo_spec()
+    spec["qa"]["release_status"] = "release-ready"
+    spec["qa"]["gates_passed"] = []
+    result = gate.run(spec, tmp_path / "nogate", demo=False)
+    assert result["status"] == "review-needed"
+    assert result["exit"] == 0, "a missing QA gate must not block the build"
+    assert not result.get("blocked")
+    assert any("without required QA gate(s): visual_qa" in d["note"]
+               and d["severity"] == "major" for d in result["defects"]), result["defects"]
+
+
+def test_a_lesson_can_declare_it_requires_no_qa_gate(tmp_path):
+    """The opt-out is explicit and lives in the spec, where a reader can see it."""
+    spec = gate.demo_spec()
+    spec["qa"]["release_status"] = "release-ready"
+    spec["qa"]["gates_passed"] = []
+    spec["qa"]["required_gates"] = []
+    result = gate.run(spec, tmp_path / "optout", demo=False)
+    assert result["status"] == "release-ready", result["defects"]
+
+
+def test_a_misspelled_gate_is_flagged_not_silently_unsatisfying(tmp_path):
+    """A typo satisfies nothing while the operator believes QA is on record."""
+    spec = gate.demo_spec()
+    spec["qa"]["gates_passed"] = ["visaul_qa"]
+    result = gate.run(spec, tmp_path / "typo", demo=False)
+    assert any("unknown gate 'visaul_qa'" in d["note"] for d in result["defects"])
 
 
 def test_evidence_gate_blocks_unsourced_claim(tmp_path):

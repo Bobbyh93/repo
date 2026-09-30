@@ -12,8 +12,8 @@ Use these checks to decide whether to proceed, revise, or block the next stage.
 
 Fail any stage if one of these is true:
 - duplicate `slide_id` values exist
-- a required field from `references/schemas.md` is missing
-- the glossary or taxonomy changed silently after approval
+- a required field from `references/lesson-artifact-schemas.md` is missing
+- the glossary or taxonomy changed silently after the lesson was released
 - the duration budget is violated by more than 20 percent without an explicit note
 - unsupported factual claims are presented as source-grounded
 

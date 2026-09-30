@@ -44,7 +44,7 @@ Use this list to prevent the most common bugs in lesson-generation workflows.
 
 ## 11. Machine-readable instability
 **Symptom:** Downstream tools break because field names or structures shift between runs.
-**Prevention:** Reuse the canonical field names in `references/schemas.md` and validate saved JSON with `scripts/validate_lesson_json.py`.
+**Prevention:** Reuse the canonical field names in `references/lesson-artifact-schemas.md` and validate saved JSON with `scripts/validate_lesson_json.py`.
 
 ## 12. Visual dependence
 **Symptom:** The script says things like "as you can see here" in an audio-only context.
