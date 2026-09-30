@@ -170,6 +170,7 @@ see — prose that was true on 2026-09-06 and is now wrong.
 | Major | §1 keyed its instructions to `render.ran`; §3 never said `visual_qa` was a precondition for it | The phase-1 → phase-3 dependency D1 created was undocumented, so the two halves of the procedure read as independent. §1 now keys on `visual_gate_ready`, distinguishes a dead rasteriser from a short render, and states the precondition. |
 | Major | `gate-pass` refusal and `--new-gate` undocumented | The refusal is new behaviour a reviewer meets at the prompt with no explanation, and the escape hatch for a genuinely new gate was unfindable. |
 | Major | §4 did not mention the D7/D8 refusals, or that a `standards_ref` is unchecked | A dry run now exits 1 on a manifest listing an absent file. And the over-claim path stays open by design — worth saying plainly in the skill, since every other over-claim here is now caught. |
+| Major | Nine command invocations written `python .../script.py` with a literal ellipsis — unrunnable as printed (found 2026-09-30, see below) | The skill is the reviewer's interface to the pipeline; a command that cannot be pasted is a stop, and the file mixed three path conventions. Now one `$S` declaration and thirteen invocations, each executed to confirm exit 0. |
 | Major | §2 listed only the four original suggestion values | `cannot verify: source text incomplete` is new and is explicitly *not* a finding against the lesson. Read as one, it would send a reviewer to rewrite correct material. |
 
 ## Accepted, not fixed — vocabulary
@@ -188,18 +189,40 @@ does not re-litigate a decision already made:
   the `assessment_map.csv` column. The column name ships in exports, and
   `validate_unified_package.py` accepts both spellings on purpose.
 
-The fourth, `mode` / `output_mode`, I did not confirm as a real pair; it looks
-like the scan's synonym heuristic matching an unrelated `mode`. Left alone rather
-than asserted either way.
+The fourth, `mode` / `output_mode`, is a false positive, now confirmed rather
+than assumed: `mode` is the pipeline's build mode (`interactive` | `automation`,
+`lesson-artifact-schemas.md:8`), `output_mode` is the video handoff's narration
+format (`plain narration` | `tts prompt` | `ssml-ready`,
+`video-handoff-prompt-pack.md:123`). Unrelated concepts that share a word; the
+scan's synonym heuristic matched the substring.
 
-## Two reported criticals that are not defects
+## Two reported criticals: wrong reason, real defect — 2026-09-30
 
+First read, these looked like false positives and were recorded as such.
 `lesson-release` was flagged for invoking `scripts/qa_visual.py` and
-`scripts/verify_sources.py`, "which do not exist". They do — the SKILL.md writes
-`skills/harrity-lesson-builder-pipeline/scripts/qa_visual.py`, repo-root-relative
-and correct. The checker resolves script paths relative to the package directory,
-which is the wrong assumption for a project skill that drives another package's
-scripts. No change made.
+`scripts/verify_sources.py`, "which do not exist" — and those two lines did write
+the full repo-root-relative path, correctly. The checker resolves script paths
+relative to the package directory, which is the wrong assumption for a project
+skill driving another package's scripts.
+
+But dismissing the finding meant not reading the rest of the command blocks. Most
+of them were **not runnable at all**: nine invocations across §1–§3 were written
+`python .../record_gate.py …` with a literal ellipsis standing in for the script
+directory. A reviewer copying any of them gets
+`can't open file '.../record_gate.py'`. The file had three conventions at once —
+full path, ellipsis placeholder, and a `$S` variable declared locally in §4 — and
+only two of the three could be executed.
+
+Fixed by declaring `S=skills/harrity-lesson-builder-pipeline/scripts` once below
+the intro and writing every invocation as `$S/<script>.py`. All thirteen were then
+run against a copy of the reference lesson; each exits 0. The audit's two
+criticals cleared as a side effect, because the substring it was misreading is
+gone — the checker was right that those lines were broken and wrong about why.
+
+The lesson for this register: a finding dismissed on its stated reason is not a
+finding investigated. The path resolution really was the checker's bug, and
+stopping there left nine dead commands in the file a reviewer is meant to work
+from.
 
 ## What this pass says about the previous two
 

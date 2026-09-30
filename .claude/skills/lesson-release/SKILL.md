@@ -7,12 +7,16 @@ description: Drive a gated Harrity lesson package from faculty-review-needed to 
 
 Four phases, each a script in `skills/harrity-lesson-builder-pipeline/scripts/`. The scripts do the mechanical work and write reports; you read the reports and the artifacts and make the judgment calls; the human signs the decisions. That split is deliberate: the gate can only lower a release status, and nothing in this skill can raise one without a named reviewer.
 
-Paths below assume the repository root. A lesson lives at `lessons/<name>/lesson_spec.json` with its package in `lessons/<name>/package/`.
+Paths below assume the repository root. A lesson lives at `lessons/<name>/lesson_spec.json` with its package in `lessons/<name>/package/`. Every command block below is runnable as written once `$S` is set:
+
+```bash
+S=skills/harrity-lesson-builder-pipeline/scripts
+```
 
 ## 1. QA the package (`qa`)
 
 ```bash
-python skills/harrity-lesson-builder-pipeline/scripts/qa_visual.py lessons/<name>/package [--canvas-course-id ID]
+python $S/qa_visual.py lessons/<name>/package [--canvas-course-id ID]
 ```
 
 Produces `package/qa_visual/report.json`, `slide-NN.png` thumbnails and `contact_sheet.png` when LibreOffice and pdftoppm are present. Then:
@@ -26,8 +30,8 @@ Produces `package/qa_visual/report.json`, `slide-NN.png` thumbnails and `contact
 Record what passed with a reviewer name (the person who looked, not you):
 
 ```bash
-python .../record_gate.py lessons/<name>/lesson_spec.json gate-pass visual_qa --by "Name" --note "contact sheet reviewed, no overflow"
-python .../record_gate.py lessons/<name>/lesson_spec.json gate-pass lms_import --by "Name" --note "Canvas sandbox course 123: migration completed, 1 quiz, 10 items"
+python $S/record_gate.py lessons/<name>/lesson_spec.json gate-pass visual_qa --by "Name" --note "contact sheet reviewed, no overflow"
+python $S/record_gate.py lessons/<name>/lesson_spec.json gate-pass lms_import --by "Name" --note "Canvas sandbox course 123: migration completed, 1 quiz, 10 items"
 ```
 
 `gate-pass` rejects a gate name it does not know and writes nothing, so a typo
@@ -39,9 +43,9 @@ recorded here is a precondition for §3**: the gate will not compute
 ## 2. Verify slides against the source (`verify`)
 
 ```bash
-python skills/harrity-lesson-builder-pipeline/scripts/verify_sources.py lessons/<name>/lesson_spec.json --out lessons/<name>/verification --fetch
+python $S/verify_sources.py lessons/<name>/lesson_spec.json --out lessons/<name>/verification --fetch
 # or, when the network is blocked, with a saved chapter page:
-python .../verify_sources.py lessons/<name>/lesson_spec.json --out lessons/<name>/verification --html SRC01=/path/chapter.html
+python $S/verify_sources.py lessons/<name>/lesson_spec.json --out lessons/<name>/verification --html SRC01=/path/chapter.html
 ```
 
 The script measures term overlap between each sourced slide or item and the source text, names the best-matching section, and suggests `keep-as-is`, `promote`, `review`, or `flag`. Overlap is not faithfulness: a slide can reuse every noun and still misstate the claim. So for every `promote` and `review` row:
@@ -51,7 +55,7 @@ The script measures term overlap between each sourced slide or item and the sour
 3. Promote only when every clinical claim on the slide is stated or directly implied in the source. Cite the section in `--evidence`.
 
 ```bash
-python .../record_gate.py lessons/<name>/lesson_spec.json promote S05 --to source-grounded --by "Name" --evidence "4.2 Family Structures: five functions listed verbatim; Table 4.2 checked"
+python $S/record_gate.py lessons/<name>/lesson_spec.json promote S05 --to source-grounded --by "Name" --evidence "4.2 Family Structures: five functions listed verbatim; Table 4.2 checked"
 ```
 
 `flag` rows with "source text unavailable" mean the fetch failed; report that and stop, do not guess. A `flag: low overlap` on a `source-aligned` slide is a real finding: either the slide drifted from the source or it cites the wrong section.
@@ -72,11 +76,11 @@ sidecar beside it is of unknown completeness and is treated as incomplete.
 The master-lesson envelope has seven approvals in sequence: `source_approved`, `taxonomy_approved`, `objectives_approved`, `outline_approved`, `script_approved`, `faculty_approved`, `release_approved`, plus the taxonomy lock. Record each one only when the named person has actually signed off on it in the conversation; never infer an approval from silence or from a passing test.
 
 ```bash
-python .../record_gate.py lessons/<name>/lesson_spec.json approve source_approved --by "Name" --note "SRC01 CC BY 4.0 verified 2026-09-05"
-python .../record_gate.py lessons/<name>/lesson_spec.json lock-taxonomy --by "Name"
-python .../record_gate.py lessons/<name>/lesson_spec.json set-state release_ready --by "Name"
-python .../record_gate.py lessons/<name>/lesson_spec.json set-release release-ready --by "Name"
-python .../record_gate.py lessons/<name>/lesson_spec.json status
+python $S/record_gate.py lessons/<name>/lesson_spec.json approve source_approved --by "Name" --note "SRC01 CC BY 4.0 verified 2026-09-05"
+python $S/record_gate.py lessons/<name>/lesson_spec.json lock-taxonomy --by "Name"
+python $S/record_gate.py lessons/<name>/lesson_spec.json set-state release_ready --by "Name"
+python $S/record_gate.py lessons/<name>/lesson_spec.json set-release release-ready --by "Name"
+python $S/record_gate.py lessons/<name>/lesson_spec.json status
 ```
 
 Every command re-runs the gate and prints `release_status_computed`. The computed status is the truth: if it says `faculty-review-needed` after you set `release-ready`, the gate refused, and the QA log says why. There are three causes, and the first is the one that looks like nothing is wrong:
@@ -99,7 +103,6 @@ agreement with the declared status — nothing was computed. Run the gate, or pa
 Once the computed status is `release-ready`, the package is evidence for the CA BRN requirements named in `lesson.standards_refs`. The BRN base models this its own way, and the script follows it: the `Evidence Registry` holds one stable pack per requirement (`EV-BRN-14`), and package files become `Attachments` records linked to those packs. **The script never creates a pack**; if one is missing it names it and refuses, because inventing a requirement record pollutes an accreditation registry.
 
 ```bash
-S=skills/harrity-lesson-builder-pipeline/scripts
 python $S/compliance_sync.py lessons/<name>/lesson_spec.json --drive-url "<package folder>"   # dry run, always first
 AIRTABLE_TOKEN=… python $S/compliance_sync.py lessons/<name>/lesson_spec.json --drive-url "…" --apply
 ```
