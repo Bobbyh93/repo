@@ -26,6 +26,13 @@ pytest -q tests/
 
 Exit codes: `0` clean, `1` rendered with blockers (deck is `_DRAFT`), `2` spec unreadable.
 
+`.github/workflows/ci.yml` runs those same commands on every pull request and on
+every push to `master`. `pytest` covers the committed lessons too: every
+`lessons/*/lesson_spec.json` is re-gated into a temp directory and the resulting
+package validated, so a spec that stops gating clean fails CI rather than
+surfacing at the next hand rebuild. The runner has no LibreOffice, so each
+package records one advisory MINOR for the missing deck PDF.
+
 ## Layout
 
 | Path | What |
