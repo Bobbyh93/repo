@@ -2,9 +2,10 @@
 """Edit lesson_spec.json and re-run the gate.
 
 There is no sign-off workflow: no approval keys, no taxonomy lock, and no
-signature needed to reach release-ready. The gate decides status from
-defects alone. These commands record an edit, land it in `revision_log`,
-and regenerate the package so it matches the spec.
+signature needed to reach release-ready. The gate decides status from the
+lesson's own defects and QA record -- `gate-pass visual_qa` is how the latter
+gets recorded. These commands land an edit in `revision_log` and regenerate
+the package so it matches the spec.
 
     record_gate.py SPEC gate-pass GATE [--by NAME] [--note ...]
     record_gate.py SPEC promote SLIDE --to STATUS --evidence TEXT --by NAME

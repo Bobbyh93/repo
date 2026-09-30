@@ -42,6 +42,11 @@ def structural(pkg: Path, report: Dict[str, Any]) -> None:
     report["release_status"] = manifest["qa"]["release_status"]
     decks = list(pkg.glob("*.pptx"))
     report["deck"] = decks[0].name if decks else None
+    if not decks:
+        report["slide_count"] = 0
+        report["slide_count_matches_manifest"] = False
+        report["error"] = "no .pptx in package; run the gate first"
+        return
     prs = Presentation(str(decks[0]))
     active = [s for s in manifest["slides"] if not s.get("retired")]
     report["slide_count"] = len(prs.slides)
@@ -60,7 +65,8 @@ def structural(pkg: Path, report: Dict[str, Any]) -> None:
     report["possible_text_overflow"] = overflow
     r = subprocess.run([sys.executable, str(Path(__file__).with_name("validate_unified_package.py")), str(pkg)],
                        capture_output=True, text=True)
-    report["validate_unified_package"] = {"exit": r.returncode, "output": r.stdout.strip()}
+    report["validate_unified_package"] = {"exit": r.returncode, "output": r.stdout.strip(),
+                                          "stderr": r.stderr.strip()[:500]}
     cc = list(pkg.glob("*.imscc"))
     if cc:
         errs = export_lms.validate_cartridge(cc[0], len(manifest.get("assessment_items") or []))
@@ -104,6 +110,11 @@ def render(pkg: Path, out: Path, dpi: int, report: Dict[str, Any]) -> None:
             for i, page in enumerate(doc, 1):
                 page.get_pixmap(dpi=dpi).save(str(out / f"slide-{i:02d}.png"))
     pngs = sorted(out.glob("slide-*.png"))
+    if not pngs:
+        # the PDF converted but rasterising produced nothing; the visual gate
+        # must not pass on an empty thumbnail set
+        report["render"] = {"ran": False, "reason": "rasteriser produced no images", "pdf": "deck.pdf"}
+        return
     report["render"] = {"ran": True, "thumbnails": [p.name for p in pngs], "pdf": "deck.pdf"}
     try:
         from PIL import Image, ImageDraw
@@ -153,7 +164,10 @@ def canvas_import(pkg: Path, course_id: str, report: Dict[str, Any]) -> None:
     pre = mig.get("pre_attachment") or {}
     upload_url, params = pre.get("upload_url"), pre.get("upload_params") or {}
     if not upload_url:
-        report["canvas_import"] = {"ran": False, "reason": f"no upload_url in response: {mig}"}
+        # the response body carries signed upload credentials; report only its shape
+        report["canvas_import"] = {"ran": False,
+                                   "reason": "Canvas returned no pre_attachment.upload_url",
+                                   "response_keys": sorted(mig.keys())}
         return
     boundary = "----lessonrelease" + str(int(time.time()))
     parts = []
@@ -176,6 +190,8 @@ def canvas_import(pkg: Path, course_id: str, report: Dict[str, Any]) -> None:
     quizzes = _canvas("GET", f"{base}/api/v1/courses/{course_id}/quizzes?per_page=100", token)
     pages = _canvas("GET", f"{base}/api/v1/courses/{course_id}/pages?per_page=100", token)
     report["canvas_import"] = {"ran": True, "migration_id": mid, "workflow_state": state,
+                               "warning": "Canvas cartridge import does not de-duplicate; "
+                                          "re-running adds a second copy of every page and quiz",
                                "quizzes_in_course": len(quizzes) if isinstance(quizzes, list) else None,
                                "pages_in_course": len(pages) if isinstance(pages, list) else None,
                                "pass": state == "completed"}
@@ -187,6 +203,35 @@ def main(argv: List[str]) -> int:
     ap.add_argument("--dpi", type=int, default=50)
     ap.add_argument("--canvas-course-id")
     a = ap.parse_args(argv)
+    return _run(a)
+
+
+def finalize(report: Dict[str, Any]) -> Dict[str, Any]:
+    """Compute the report's verdicts from what the stages actually produced.
+
+    Separated from `main` so the verdict can be tested against a report dict
+    without a working rasteriser — the axis the suite could not vary before.
+    """
+    # D9: `render.ran` only says the rasteriser produced at least one image. A
+    # reviewer cannot record `visual_qa` off a thumbnail set that does not cover
+    # the deck, and a deck with no slides is not a rendered deck at any count.
+    r = report.get("render") or {}
+    thumbs = len(r.get("thumbnails") or [])
+    slides = report.get("slide_count") or 0
+    report["thumbnails_cover_deck"] = bool(slides) and thumbs == slides
+    report["visual_gate_ready"] = bool(r.get("ran")) and report["thumbnails_cover_deck"]
+    if r.get("ran") and not report["thumbnails_cover_deck"]:
+        r["reason"] = (f"rendered {thumbs} image(s) for a {slides}-slide deck; "
+                       f"the visual gate needs one per slide")
+    report["structural_pass"] = bool(report.get("validate_unified_package", {}).get("exit") == 0
+                                     and report.get("cartridge", {}).get("pass")
+                                     and report.get("slide_count_matches_manifest"))
+    ci = report.get("canvas_import") or {}
+    report["canvas_pass"] = (not ci.get("ran")) or bool(ci.get("pass"))
+    return report
+
+
+def _run(a) -> int:
     out = a.package / "qa_visual"
     out.mkdir(parents=True, exist_ok=True)
     report: Dict[str, Any] = {"package": str(a.package)}
@@ -196,13 +241,11 @@ def main(argv: List[str]) -> int:
         canvas_import(a.package, a.canvas_course_id, report)
     else:
         report["canvas_import"] = {"ran": False, "reason": "no --canvas-course-id given"}
-    report["visual_gate_ready"] = bool(report.get("render", {}).get("ran"))
-    report["structural_pass"] = (report["validate_unified_package"]["exit"] == 0 and report["cartridge"]["pass"]
-                                 and report["slide_count_matches_manifest"])
+    finalize(report)
     (out / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps({k: report[k] for k in ("release_status", "slide_count", "structural_pass", "visual_gate_ready",
                                              "possible_text_overflow", "render", "canvas_import")}, indent=2))
-    return 0 if report["structural_pass"] else 1
+    return 0 if (report["structural_pass"] and report["canvas_pass"]) else 1
 
 
 if __name__ == "__main__":

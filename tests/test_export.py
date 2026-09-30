@@ -94,3 +94,35 @@ def test_validator_catches_broken_cartridge(tmp_path):
     assert any("unknown resource" in e for e in errs)
     assert any("missing from zip" in e for e in errs)
     assert any("no CC assessment" in e for e in errs)
+
+
+def test_qti_html_text_survives_angle_brackets_and_ampersands(tmp_path):
+    """A stem like "SpO2 < 90% & falling" must reach the LMS intact. The QTI
+    mattext is HTML inside XML, so it needs two levels of escaping; one level
+    would truncate the question at the '<'."""
+    spec = json.loads(REF_SPEC.read_text(encoding="utf-8"))
+    spec["assessment_items"][0]["stem"] = "A client has SpO2 < 90% & rising RR. What is the priority?"
+    spec["assessment_items"][0]["rationale"] = "Escalate when SpO2 < 90% & work of breathing rises."
+    _run(spec, tmp_path / "esc")
+    cc = next((tmp_path / "esc").glob("*.imscc"))
+    xml = zipfile.ZipFile(cc).read("quiz/assessment.xml").decode()
+    q = ET.fromstring(xml)                      # must stay well-formed
+    ns = {"q": export_lms.QTI_NS}
+    mattext = q.find(".//q:item//q:mattext", ns).text
+    # one XML decode has happened; what remains is an HTML fragment in which
+    # the clinical text is still escaped, so the HTML renderer shows it whole
+    assert mattext.startswith("<p>") and mattext.endswith("</p>")
+    assert "SpO2 &lt; 90% &amp; rising RR" in mattext
+    assert "<90" not in mattext
+
+
+def test_qti_identifiers_stay_distinct_for_punctuation_variants(tmp_path):
+    spec = json.loads(REF_SPEC.read_text(encoding="utf-8"))
+    spec["assessment_items"] = spec["assessment_items"][:2]
+    spec["assessment_items"][0]["item_id"] = "Q-1"
+    spec["assessment_items"][1]["item_id"] = "Q.1"
+    _run(spec, tmp_path / "ids")
+    cc = next((tmp_path / "ids").glob("*.imscc"))
+    q = ET.fromstring(zipfile.ZipFile(cc).read("quiz/assessment.xml"))
+    idents = [i.get("ident") for i in q.findall(f".//{{{export_lms.QTI_NS}}}item")]
+    assert len(idents) == len(set(idents)) == 2

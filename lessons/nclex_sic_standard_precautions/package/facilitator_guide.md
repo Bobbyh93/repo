@@ -7,7 +7,7 @@
 
 **Concept lanes:** anticipate exposure → hand hygiene → exposure response → apply → evaluate
 
-**Target duration:** 34 min
+**Target duration:** 35 min
 
 
 ## Sources
@@ -18,12 +18,12 @@
 ## Slide-by-slide
 
 ### S01 · Standard Precautions and Exposure Prevention
-*title · cross-lane · instructor-added · 35 s*  
+*title · cross-lane · instructor-added · 60 s*  
 **Objective:** Orient to the lesson's promise.  
 
 **Script:**
 
-Standard Precautions and Exposure Prevention. Select hand hygiene and protective equipment from the anticipated exposure, then remove equipment without contaminating clean areas. Five lanes carry the lesson: anticipate exposure, hand hygiene, exposure response, apply, evaluate.
+Standard Precautions and Exposure Prevention. The concept underneath it is infection prevention, and the module rates its safety risk high — its top rating, so this is one to be able to do under pressure rather than one to recognise on a test. Here is the whole lesson in one sentence. Select hand hygiene and protective equipment from the anticipated exposure, then remove equipment without contaminating clean areas. By the end you should be able to do three things: apply standard precautions to every patient encounter; select PPE from the anticipated exposure; and respond safely to a sharps or body-fluid exposure. We get there in three moves, and then spend the second half putting all of them against patient cues, because knowing this and doing it at the bedside are not the same skill.
 
 ### S02 · Opening case
 *opening_case · anticipate exposure · source-aligned · 150 s*  
@@ -33,7 +33,7 @@ Standard Precautions and Exposure Prevention. Select hand hygiene and protective
 
 **Script:**
 
-Start with one cue. A procedure may splash body fluid toward the face. Decide what you would do before the lesson tells you, and hold on to it; the same cue returns as the first assessment item.
+We start with a cue rather than a definition, because that is the order the unit gives you: the patient arrives first and the explanation catches up later. Here it is. A procedure may splash body fluid toward the face. Decide now, before any of this is taught, what you would do and why that thing first. Write it somewhere you will still be able to read at the end, because this exact cue comes back as the first assessment item. Comparing the two answers is most of what the rest of this session is for.
 
 ### S03 · The question this lesson answers
 *clinical_question · cross-lane · instructor-added · 55 s*  
@@ -42,7 +42,7 @@ Start with one cue. A procedure may splash body fluid toward the face. Decide wh
 
 **Script:**
 
-One question organizes the lesson: Select hand hygiene and protective equipment from the anticipated exposure, then remove equipment without contaminating clean areas.
+Everything that follows answers one question. Select hand hygiene and protective equipment from the anticipated exposure, then remove equipment without contaminating clean areas. Keep that sentence in view for the rest of the session. When a slide stops making sense it is almost always because you have lost which part of this sentence it is working on, and naming the part is the fastest way back. The lesson takes the question in three moves — anticipate exposure, then hand hygiene, then exposure response — and then asks you to apply all of them to cues you have not seen.
 
 ### S04 · Lesson map
 *chapter_map · cross-lane · instructor-added · 55 s*  
@@ -50,7 +50,7 @@ One question organizes the lesson: Select hand hygiene and protective equipment 
 
 **Script:**
 
-Map first. The three teaching lanes are the topic's own sections; apply and evaluate close the loop.
+Map first, detail second. The lanes on the left are the lesson's teaching moves, in the order a nurse actually performs them; apply and evaluate on the right are where you are made to use them. The reason to show this before teaching any of it is orientation: every cue you meet today sits in one of these lanes, and knowing which lane a cue belongs to usually tells you what to do with it before you can explain why. When you get stuck later, come back to this slide rather than to the last one you read.
 
 ### S05 · Warm-up: put the three moves in order
 *warmup_sequence · cross-lane · instructor-added · 70 s*  
@@ -76,7 +76,7 @@ One minute, before any of this is taught. These three headings are the whole les
 
 **Script:**
 
-Anticipate exposure. Standard precautions apply to every patient. Add gloves, gown, mask, and eye protection according to likely contact with blood, body fluids, mucous membranes, nonintact skin, or contaminated equipment. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 1 of 3, and it answers: Apply standard precautions to every patient encounter.
+Anticipate exposure. Standard precautions apply to every patient. Add gloves, gown, mask, and eye protection according to likely contact with blood, body fluids, mucous membranes, nonintact skin, or contaminated equipment. This is the first of the three, and the two after it assume it. What you get wrong here does not stay here; it propagates quietly into every decision the rest of the lesson asks you to make. Do not move on until you can say this part back without the slide. The test is the objective: if you can apply standard precautions to every patient encounter, this lane has done its job, and if you cannot, nothing later in the lesson will fix it — it will only hide it.
 
 ### S07 · Hand hygiene
 *concept_cards · hand hygiene · source-aligned · 150 s*  
@@ -86,7 +86,7 @@ Anticipate exposure. Standard precautions apply to every patient. Add gloves, go
 
 **Script:**
 
-Hand hygiene. Perform hand hygiene at indicated moments and after glove removal. Gloves do not replace hand hygiene. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 2 of 3, and it answers: Select PPE from the anticipated exposure.
+Hand hygiene. Perform hand hygiene at indicated moments and after glove removal. Gloves do not replace hand hygiene. This is the middle move, and it is where most of the disagreement in this lesson will sit: the point at which a defensible action and the priority action stop being the same answer. Do not move on until you can say this part back without the slide. The test is the objective: if you can select PPE from the anticipated exposure, this lane has done its job, and if you cannot, nothing later in the lesson will fix it — it will only hide it.
 
 ### S08 · Exposure response
 *concept_cards · exposure response · source-aligned · 150 s*  
@@ -96,7 +96,7 @@ Hand hygiene. Perform hand hygiene at indicated moments and after glove removal.
 
 **Script:**
 
-Exposure response. Immediately wash or flush the exposed area, report the event, and follow the organization's exposure evaluation process. Everything on this slide is the source topic's own wording; the bullets are that same sentence broken up for the screen. This is lane 3 of 3, and it answers: Respond safely to a sharps or body-fluid exposure.
+Exposure response. Immediately wash or flush the exposed area, report the event, and follow the organization's exposure evaluation process. This is the last of the three, and it is the one most often left implicit -- the step learners can describe accurately and then do not actually perform when the first two have gone well. Say it out loud; that is how it survives contact with a busy shift. Do not move on until you can say this part back without the slide. The test is the objective: if you can respond safely to a sharps or body-fluid exposure, this lane has done its job, and if you cannot, nothing later in the lesson will fix it — it will only hide it.
 
 ### S09 · Activity: match the cue to the move it calls for
 *match_activity · apply · source-aligned · 170 s*  
@@ -106,7 +106,7 @@ Exposure response. Immediately wash or flush the exposed area, report the event,
 
 **Script:**
 
-Work with one partner. Match each cue to the section of the lesson that tells you what to do with it.
+Work in pairs, four minutes. Every cue on the left was written for one of the lesson moves on the right; your job is to say which, and to be able to defend one of the four out loud. Where the two of you match a cue differently, stop and stay there — you have found a cue whose lane is genuinely arguable, and those are worth more than the three you agreed on instantly. Bring one disagreement to the debrief.
 
 **Activity:** Write the four matches and one sentence explaining one of them.
 
@@ -124,7 +124,7 @@ Work with one partner. Match each cue to the section of the lesson that tells yo
 
 **Script:**
 
-Each rationale below is the topic's own. Read them as a set: they describe one habit of mind, not five rules.
+Read these four rationales as a set rather than one at a time. They are deliberately repetitive: the same habit of mind is showing up behind four different cues, and that repetition is the teaching point rather than an accident of writing. A learner who memorises four rules will meet a fifth cue and stall. A learner who can name the one habit will handle cues this lesson never showed them. Say the habit out loud in your own words before you leave this slide.
 
 ### S11 · Checkpoint
 *checkpoint_mcq · hand hygiene · source-aligned · 120 s*  
@@ -181,7 +181,7 @@ Two columns, and the sorting rule is the point of the slide. Put a cue on the le
 
 **Script:**
 
-These are the fields the topic asks you to be able to fill in for any patient. If you cannot complete one, that is the part of the assessment still to do.
+This is the lesson turned into something you can write down. The module asks you to be able to fill every one of these fields for any patient in this situation, and the value is in the blanks: a field you cannot complete is not a documentation gap, it is an assessment you have not done yet. Fill them now for the mini-case patient, and notice which field you reach for last — that one is your weak lane.
 
 ### S15 · Capstone: choose the next safe action
 *capstone_mcq · evaluate · source-aligned · 150 s*  
@@ -217,12 +217,12 @@ Close the loop with no notes. Answer each of these aloud or on paper, one per la
 - Report occupational exposures immediately.
 
 ### S17 · Takeaway
-*takeaway · cross-lane · instructor-added · 45 s*  
+*takeaway · cross-lane · instructor-added · 60 s*  
 **Objective:** Select hand hygiene and protective equipment from the anticipated exposure, then remove equipment without contaminating clean areas.  
 
 **Script:**
 
-Closing frame.
+Close where we opened. The question was: Select hand hygiene and protective equipment from the anticipated exposure, then remove equipment without contaminating clean areas. The lines on this slide are the module's own answer, and they are what should still be there in a week when the detail has gone. If you keep one, keep the first: Standard precautions apply to all patients. Everything else here is that sentence applied to a different cue. Go back now to what you wrote at the opening case and see whether you would still do it.
 
 
 ## Assessment items

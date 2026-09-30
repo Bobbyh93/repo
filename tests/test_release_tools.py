@@ -41,12 +41,14 @@ def test_status_is_read_only(tmp_path):
 
 
 def test_release_ready_needs_no_sign_off(tmp_path):
-    """A clean package reaches release-ready on set-release alone.
+    """A clean package reaches release-ready on the author's own say-so.
 
-    There are no approval keys and no taxonomy lock; the reference lesson
-    carries only minor defects, so nothing stands between it and release.
+    There are no approval keys and no taxonomy lock and no second person. The
+    one thing the claim rests on is this author's own QA record, recorded with
+    the same CLI, so the whole path is two commands by one person.
     """
     spec = _copy_lesson(tmp_path)
+    _rg(spec, "gate-pass", "visual_qa", "--by", "Tester")
     out = _rg(spec, "set-release", "release-ready", "--by", "Tester")
     assert out["release_status_computed"] == "release-ready"
     assert out["defects"]["blocker"] == 0 and out["defects"]["major"] == 0
@@ -55,7 +57,7 @@ def test_release_ready_needs_no_sign_off(tmp_path):
 
 
 def test_major_defect_still_downgrades_release_ready(tmp_path):
-    """Defects are the only thing that can hold a package back."""
+    """A major defect downgrades a declared release-ready."""
     spec_path = _copy_lesson(tmp_path)
     spec = json.loads(spec_path.read_text())
     spec["qa"]["release_status"] = "release-ready"

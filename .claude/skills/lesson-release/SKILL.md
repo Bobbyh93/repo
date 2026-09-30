@@ -1,6 +1,6 @@
 ---
 name: lesson-release
-description: Drive a Harrity lesson package from review-needed to release-ready. Use this whenever the user wants to QA a lesson deck or package, check slides visually, validate or import the Common Cartridge (.imscc) into Canvas or another LMS, verify slides against their cited source, promote evidence status (source-aligned to source-grounded), release a lesson, file a released lesson as accreditation evidence in the BRN Airtable base (Evidence Registry), or asks "is this lesson ready", "ship it", "release", "check the deck", "verify against Open RN" — even if they don't name the skill. Also use it after any change to a lesson_spec.json so the package is regenerated and the status recomputed. There is no approval workflow: defects alone decide status.
+description: Drive a Harrity lesson package from review-needed to release-ready. Use this whenever the user wants to QA a lesson deck or package, check slides visually, validate or import the Common Cartridge (.imscc) into Canvas or another LMS, verify slides against their cited source, promote evidence status (source-aligned to source-grounded), release a lesson, file a released lesson as accreditation evidence in the BRN Airtable base (Evidence Registry), or asks "is this lesson ready", "ship it", "release", "check the deck", "verify against Open RN" — even if they don't name the skill. Also use it after any change to a lesson_spec.json so the package is regenerated and the status recomputed. There is no approval workflow and no second person: the author's own defects and QA record decide status.
 ---
 
 # Lesson release
@@ -52,15 +52,21 @@ python .../record_gate.py lessons/<name>/lesson_spec.json promote S05 --to sourc
 
 ## 3. Release (`set-release`)
 
-There is no sign-off workflow: no approval keys, no taxonomy lock, no signature. If the package is clean, declaring it release-ready is enough.
+There is no sign-off workflow: no approval keys, no taxonomy lock, no second person, no signature. What a release-ready claim does rest on is the lesson's own QA record — by default that you ran section 1 and looked at the deck. Record it with the same CLI; it is the author checking their own work, not an approval.
 
 ```bash
+python .../record_gate.py lessons/<name>/lesson_spec.json gate-pass visual_qa
 python .../record_gate.py lessons/<name>/lesson_spec.json set-state release_ready
 python .../record_gate.py lessons/<name>/lesson_spec.json set-release release-ready
 python .../record_gate.py lessons/<name>/lesson_spec.json status
 ```
 
-Every command re-runs the gate and prints `release_status_computed`. The computed status is the truth: if it says `review-needed` after you set `release-ready`, the gate found a **major defect** — that is the only thing that can hold a package back now — and the QA log says which. Fix the cause; do not re-issue the command.
+Every command re-runs the gate and prints `release_status_computed`. The computed status is the truth: if it says `review-needed` after you set `release-ready`, a **major defect** is why, and the QA log says which. Two causes, and check the second one first because it looks like nothing is wrong:
+
+1. **A required QA gate is not recorded** — the note reads `release-ready claimed without required QA gate(s)`. Run `gate-pass` for the named gate. If this lesson genuinely needs none, set `qa.required_gates: []` in the spec so the decision is visible to whoever reads it next.
+2. **A real defect in the lesson** — fix the cause.
+
+Either way: fix it, do not re-issue `set-release`. Re-declaring produces the same major.
 
 `status` with no write is the right first move when the user asks "where is this lesson at".
 

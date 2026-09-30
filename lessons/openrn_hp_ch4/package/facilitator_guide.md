@@ -251,12 +251,12 @@ Close the loop. Five questions, one per lane, answered aloud or on paper. The an
 - establish cultural safety and privacy, and ask the client who they want present
 
 ### S20 · Takeaway: what the nurse notices, and what the nurse does first
-*takeaway · cross-lane · instructor-added · 45 s*  
+*takeaway · cross-lane · instructor-added · 60 s*  
 **Objective:** A safe nurse assesses the family as part of the client, sorts cues by required action, and teaches what protects.  
 
 **Script:**
 
-Closing frame.
+Four words to leave with, and they are in the order you will use them. Notice: the family is part of the assessment, not context around it. Sort: every cue you noticed belongs to a report, a referral, a resource or a teaching moment, and deciding which is the nursing judgement. Protect: privacy first, and the client decides who is in the room. Teach: guidance rather than punishment. If you keep one of the four, keep protect, because the other three only keep working while the client is still willing to tell you what is happening at home.
 
 
 ## Assessment items

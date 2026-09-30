@@ -26,6 +26,13 @@ pytest -q tests/
 
 Exit codes: `0` clean, `1` rendered with blockers (deck is `_DRAFT`), `2` spec unreadable.
 
+`.github/workflows/ci.yml` runs those same commands on every pull request and on
+every push to `master`. `pytest` covers the committed lessons too: every
+`lessons/*/lesson_spec.json` is re-gated into a temp directory and the resulting
+package validated, so a spec that stops gating clean fails CI rather than
+surfacing at the next hand rebuild. The runner has no LibreOffice, so each
+package records one advisory MINOR for the missing deck PDF.
+
 ## Layout
 
 | Path | What |
@@ -48,16 +55,28 @@ S=skills/harrity-lesson-builder-pipeline/scripts; L=lessons/openrn_hp_ch4
 python $S/qa_visual.py $L/package [--canvas-course-id ID]          # thumbnails, structural checks, optional Canvas import
 python $S/verify_sources.py $L/lesson_spec.json --out $L/verification --fetch   # term overlap per slide/item vs cited source
 python $S/record_gate.py $L/lesson_spec.json status                 # where the lesson is
+python $S/record_gate.py $L/lesson_spec.json gate-pass visual_qa    # record that you looked at the deck
 python $S/record_gate.py $L/lesson_spec.json set-release release-ready              # ship it, then regate
 python $S/compliance_sync.py $L/lesson_spec.json [--apply]                         # release-ready package → BRN Evidence Registry
 ```
 
-No sign-off workflow: no approval keys, no taxonomy lock, no signature required to
-reach release-ready. Defects are the only thing that hold a package back — a blocker
-blocks, a major downgrades a declared `release-ready` to `review-needed` until it is
-fixed, and minors are advisory. `promote` is the one command that still takes `--by`
-and `--evidence`, because raising a slide to `source-grounded` asserts that someone
-checked it against the cited source; the spec records who and on what basis.
+No sign-off workflow: no approval keys, no taxonomy lock, no second person, no
+signature required to reach release-ready. A blocker blocks, a major downgrades a
+declared `release-ready` to `review-needed` until it is fixed, and minors are
+advisory.
+
+Two things can raise that major. Defects in the lesson are one. The other is
+declaring `release-ready` without the QA gates the lesson requires — by default
+`visual_qa`, meaning you ran `qa_visual.py` and looked at the rendered deck.
+Nothing about this blocks a build: the package still renders and the command still
+exits 0, but the claim lands at `review-needed` and the major says why. `gates_passed`
+was written into the manifest and read by no condition before this, so a lesson
+nobody had opened could certify as released. A lesson that genuinely needs no QA gate
+says `qa.required_gates: []` in its spec, where a reader can see the decision.
+
+`promote` is the one command that still takes `--by` and `--evidence`, because raising
+a slide to `source-grounded` asserts that someone checked it against the cited source;
+the spec records who and on what basis.
 
 ## Constraints carried in the gate
 

@@ -61,6 +61,19 @@ REQUIRED_SLIDE_KEYS = ["slide_id", "slide_number", "slide_title", "slide_archety
                        "target_duration_sec", "audio_duration_sec", "auto_advance", "layout_spec",
                        "allow_overlap", "qa_status", "qa_notes", "remediation_target", "audio_filename"]
 RELEASE_STATES = {"release-ready", "review-needed", "draft-only", "blocked"}
+# Gate vocabulary. A recorded gate outside this set is almost always a typo, and a
+# typo silently satisfies nothing while the operator believes QA is on record.
+KNOWN_GATES = {"runtime", "source", "taxonomy", "blueprint", "cjm_coverage", "outline", "script",
+               "timing", "layout", "deck_render", "package_manifest",
+               "visual_qa", "visual_qa_ai", "lms_import", "source_verification"}
+# Until this existed, qa.gates_passed was written into the manifest and read by no
+# condition anywhere: a lesson nobody had rendered could be declared release-ready
+# and the gate agreed. Nothing here blocks a build. Claiming release-ready without
+# the gates the lesson requires is a major defect, and a major downgrades a declared
+# release-ready to review-needed (see resolve_release_status). A lesson that genuinely
+# needs no QA gate says so in qa.required_gates: [] -- explicitly, in the spec, where
+# a reader can see it.
+DEFAULT_REQUIRED_GATES = ["visual_qa"]
 # Vocabulary from the retired sign-off workflow; read, normalised, never written.
 LEGACY_RELEASE_STATES = {"faculty-review-needed": "review-needed"}
 LEGACY_PROMOTION_STATES = {"faculty_review": "human_review"}
@@ -206,16 +219,36 @@ def validate_spec(spec: Dict[str, Any], defects: Defects) -> None:
 
 
 def validate_governance(spec: Dict[str, Any], defects: Defects) -> None:
-    """Check only that qa.release_status is a value the tooling understands.
+    """Check the release claim against the QA actually recorded for this lesson.
 
-    There is no sign-off workflow: no approval keys, no taxonomy lock, no
-    signature required to reach release-ready. Status is decided by defects
-    alone (see resolve_release_status). Any `governance` block left in a spec
-    is carried through untouched and never gates anything.
+    There is no sign-off workflow: no approval keys, no taxonomy lock, no second
+    person, no signature required to reach release-ready. What is checked is the
+    lesson's own record of itself -- that a release-ready claim is backed by the
+    gates the lesson says it requires, and that the recorded gate names mean
+    something. Any `governance` block left in a spec is carried through untouched
+    and never gates anything.
     """
     rs = spec["qa"].get("release_status", "draft-only")
     if rs not in RELEASE_STATES:
         defects.add("major", "-", f"qa.release_status '{rs}' not in {sorted(RELEASE_STATES)}")
+
+    # Recorded gates are only meaningful if their names mean something.
+    passed = [str(x) for x in (spec["qa"].get("gates_passed") or [])]
+    for name in passed:
+        if name not in KNOWN_GATES:
+            defects.add("minor", "-", f"qa.gates_passed has unknown gate '{name}' "
+                                      f"(typo? known gates: {sorted(KNOWN_GATES)})")
+
+    # A release-ready claim has to be backed by the QA gates the lesson requires.
+    if rs == "release-ready":
+        required = spec["qa"].get("required_gates")
+        if required is None:
+            required = DEFAULT_REQUIRED_GATES
+        absent = [name for name in required if name not in passed]
+        if absent:
+            defects.add("major", "-", f"release-ready claimed without required QA gate(s): "
+                                      f"{', '.join(absent)}; record them with record_gate.py gate-pass, "
+                                      f"or set qa.required_gates to say what this lesson actually requires")
 
 
 # --------------------------------------------------------------------------
